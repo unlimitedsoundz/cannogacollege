@@ -11,7 +11,27 @@ interface DbFAQProps {
 }
 
 export default function DbFAQ({ pageSlug, fallbackFaqs, refreshKey }: DbFAQProps) {
-    const [faqs, setFaqs] = useState<FAQItem[]>([]);
+    const sanitize = (text: string) => {
+        if (pageSlug === 'admissions/tuition') {
+            return text
+                .replace(/Flywire/gi, 'our secure payment gateway')
+                .replace(/https:\/\/www\.flywire\.com\//gi, '#');
+        }
+        return text;
+    };
+
+    const [faqs, setFaqs] = useState<FAQItem[]>(() => {
+        const items = fallbackFaqs || [];
+        if (pageSlug === 'admissions/tuition') {
+            return items.map(faq => ({
+                ...faq,
+                question: sanitize(faq.question),
+                answer: sanitize(faq.answer as string)
+            }));
+        }
+        return items;
+    });
+
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -32,13 +52,8 @@ export default function DbFAQ({ pageSlug, fallbackFaqs, refreshKey }: DbFAQProps
                     .eq('slug', pageSlug)
                     .single();
 
-                console.log('DbFAQ: Looking up page for slug', pageSlug, 'result:', pageData, 'error:', pageError);
-
                 if (pageError || !pageData || !supabase) {
-                    console.warn('FAQ page not found or Supabase not initialized for slug:', pageSlug, pageError);
-                    if (mounted) {
-                        setFaqs([]);
-                    }
+                    if (mounted) setLoading(false);
                     return;
                 }
 
@@ -49,32 +64,22 @@ export default function DbFAQ({ pageSlug, fallbackFaqs, refreshKey }: DbFAQProps
                     .eq('is_published', true)
                     .order('order_index');
 
-                console.log('DbFAQ: Fetched FAQs for page', pageSlug, 'page_id:', pageData.id, 'faqs:', faqData);
-
-                if (faqError) {
-                    if (mounted) {
-                        setError('Unable to load FAQ entries.');
-                        setFaqs([]);
-                    }
-                    return;
-                }
-
-                if (mounted) {
-                    setFaqs(faqData || []);
+                if (!faqError && mounted) {
+                    const sanitizedFaqs = (faqData || []).map(faq => ({
+                        ...faq,
+                        question: sanitize(faq.question),
+                        answer: sanitize(faq.answer)
+                    }));
+                    setFaqs(sanitizedFaqs);
                 }
             } catch (loadError) {
                 console.error('Failed to load FAQs:', loadError);
-                if (mounted) {
-                    setError('Unable to load FAQs.');
-                    setFaqs([]);
-                }
             } finally {
                 if (mounted) {
                     setLoading(false);
                 }
             }
         }
-
         loadFaqs();
 
         return () => {

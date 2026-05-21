@@ -6,11 +6,11 @@ import { Info } from '@/components/ui/Info';
 import { Highlight } from '@/components/ui/Highlight';
 
 export const metadata = {
-    title: 'Why Study in Finland? 10 Reasons International Students Choose Helsinki | Kestora University',
+    title: 'Why Study in Finland? 10 Reasons International Students Choose Helsinki | Penkka University',
     description: 'Discover why Finland is one of Europe\'s top study destinations. From world-class education to a thriving tech ecosystem, here are 10 reasons students choose Helsinki.',
     keywords: 'study in finland, why finland for international students, study in helsinki, finnish education, study abroad finland',
     alternates: {
-        canonical: 'https://kestora.online/news/why-study-in-finland/',
+        canonical: 'https://penkka.fi/news/why-study-in-finland/',
     },
 };
 
@@ -23,12 +23,12 @@ const reasons = [
     {
         icon: Certificate,
         title: "Globally Recognised Degrees",
-        content: "Finnish degrees are internationally accredited and respected by employers worldwide. Whether you plan to work in Europe, Africa, Asia, or North America, your qualification holds strong value. Kestora University degrees follow the European Bologna Process, ensuring seamless credit transfer and recognition."
+        content: "Finnish degrees are internationally accredited and respected by employers worldwide. Whether you plan to work in Europe, Africa, Asia, or North America, your qualification holds strong value. Penkka University degrees follow the European Bologna Process, ensuring seamless credit transfer and recognition."
     },
     {
         icon: Globe,
         title: "English-Taught Programmes",
-        content: "You do not need to speak Finnish to study in Finland. Many bachelor's and master's programmes are delivered fully in English, especially in Helsinki. At Kestora University, all international degree programmes are taught entirely in English."
+        content: "You do not need to speak Finnish to study in Finland. Many bachelor's and master's programmes are delivered fully in English, especially in Helsinki. At Penkka University, all international degree programmes are taught entirely in English."
     },
     {
         icon: ShieldCheck,
@@ -43,7 +43,7 @@ const reasons = [
     {
         icon: Leaf,
         title: "Strong Focus on Sustainability",
-        content: "Finland is a global leader in environmental responsibility and sustainable development. Universities integrate sustainability into their curriculum and campus operations. At Kestora University, sustainability is woven into every programme across all four schools."
+        content: "Finland is a global leader in environmental responsibility and sustainable development. Universities integrate sustainability into their curriculum and campus operations. At Penkka University, sustainability is woven into every programme across all four schools."
     },
     {
         icon: Briefcase,
@@ -53,7 +53,7 @@ const reasons = [
     {
         icon: Buildings,
         title: "Modern Learning Facilities",
-        content: "Finnish universities provide advanced laboratories, digital libraries, collaborative spaces, and strong student support systems. Kestora University's campus features state-of-the-art facilities designed for hands-on, project-based learning."
+        content: "Finnish universities provide advanced laboratories, digital libraries, collaborative spaces, and strong student support systems. Penkka University's campus features state-of-the-art facilities designed for hands-on, project-based learning."
     },
     {
         icon: Heart,
@@ -105,7 +105,7 @@ export default function WhyStudyInFinlandPage() {
                     items={[
                         { title: "Published", body: "14.2.2026" },
                         { title: "Updated", body: "15.2.2026" },
-                        { title: "Author", body: "Kestora Admissions" },
+                        { title: "Author", body: "Penkka Admissions" },
                         {
                             tagGroup: {
                                 tags: [
@@ -136,13 +136,13 @@ export default function WhyStudyInFinlandPage() {
                     <div className="relative aspect-[16/9] overflow-hidden">
                         <Image
                             src="/images/news/helsinki-study-hero.png"
-                            alt="International students at Kestora University campus in Helsinki"
+                            alt="International students at Penkka University campus in Helsinki"
                             fill
                             className="object-cover object-top"
                             sizes="(max-width: 768px) 100vw, 800px"
                         />
                     </div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-neutral-500 mt-4">Kestora University Campus | Helsinki</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-neutral-500 mt-4">Penkka University Campus | Helsinki</p>
                 </div>
 
                 {/* Reasons */}
@@ -177,7 +177,7 @@ export default function WhyStudyInFinlandPage() {
                 <div className="py-12">
                     <CTA
                         title="Ready to Start Your Journey?"
-                        body="Kestora University offers world-class English-taught programmes in Business, Technology, Science, and Arts & Architecture. Applications for Autumn 2026 are now open."
+                        body="Penkka University offers world-class English-taught programmes in Business, Technology, Science, and Arts & Architecture. Applications for Autumn 2026 are now open."
                         cta={{
                             label: "Apply Now",
                             linkComponentProps: {

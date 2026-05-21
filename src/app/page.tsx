@@ -11,7 +11,7 @@ import { Highlight } from "@/components/ui/Highlight";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://kestora.online/',
+    canonical: 'https://penkka.fi/',
   },
 };
 
@@ -24,23 +24,23 @@ export default async function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "Kestora University",
-            "alternateName": "Kestora University Helsinki",
-            "url": "https://kestora.online"
+            "name": "Penkka University",
+            "alternateName": "Penkka University Helsinki",
+            "url": "https://penkka.fi"
           })
         }}
       />
 
       {/* HERO SECTION */}
       <Hero
-        title="Welcome to Kestora"
-        body="Kestora University is an independent higher education institution based in Helsinki, Finland, offering internationally focused Bachelor’s and Master’s degree programmes taught in English."
+        title="Welcome to Penkka"
+        body="Penkka University is an independent higher education institution based in Helsinki, Finland, offering internationally focused Bachelor’s and Master’s degree programmes taught in English."
         backgroundColor="#392d56"
         tinted
         lightText={true}
         image={{
-          src: "/images/kestora hero.png",
-          alt: "Student studying at Kestora University campus in Finland"
+          src: "/images/penkka hero.png",
+          alt: "Student studying at Penkka University campus in Finland"
         }}
         imagePosition="object-center"
       >
@@ -87,7 +87,7 @@ export default async function Home() {
         <div className="flex justify-between items-end mb-16">
           <div>
             <h2 className="text-aalto-5 font-bold mb-4 tracking-tight">Limelight</h2>
-            <p className="text-aalto-3 font-medium text-neutral-600">Latest news and stories from Kestora University.</p>
+            <p className="text-aalto-3 font-medium text-neutral-600">Latest news and stories from Penkka University.</p>
           </div>
           <Button
             href="/news"
@@ -105,13 +105,13 @@ export default async function Home() {
       {/* 3.5. HIGHLIGHT QUOTE */}
       <section className="pb-24 container mx-auto px-4">
         <Highlight
-          body="My decision to move to Finland and study at Kestora has been one of the best decisions of my life. The community here is truly international and supportive."
+          body="My decision to move to Finland and study at Penkka has been one of the best decisions of my life. The community here is truly international and supportive."
           source="Elena, Student Ambassador"
           alignment="left"
         />
         <div className="flex justify-start">
           <Button
-            href="/student-guide/chat-with-kestora-students"
+            href="/student-guide/chat-with-penkka-students"
             type="primary"
             label="Chat with our students"
             icon={<ArrowRight size={20} weight="bold" />}
@@ -146,7 +146,7 @@ export default async function Home() {
             <div className="relative aspect-square overflow-hidden border border-neutral-200">
               <Image
                 src="/images/campus-welcome-v2.png"
-                alt="Kestora campus"
+                alt="Penkka campus"
                 fill
                 className="object-cover object-top"
               />
@@ -175,7 +175,7 @@ export default async function Home() {
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
           <div className="max-w-2xl">
             <h2 className="text-aalto-6 font-bold tracking-tight">
-              Study at Kestora University
+              Study at Penkka University
             </h2>
             <p className="text-neutral-400 text-aalto-2 mt-4 font-medium max-w-xl">
               Join a community of innovators in the heart of Helsinki. Offering English-taught degree programmes across four specialized schools.
@@ -184,7 +184,7 @@ export default async function Home() {
 
           <div className="flex flex-col gap-6 w-full md:w-auto">
             {[
-              { label: "Study at Kestora", href: "/studies" },
+              { label: "Study at Penkka", href: "/studies" },
               { label: "Open positions", href: "/careers" },
               { label: "Contact us", href: "/contact" }
             ].map((item) => (

@@ -17,8 +17,8 @@ async function updateEmails() {
     } else if (students) {
         let updateCount = 0;
         for (const student of students) {
-            if (student.institutional_email && student.institutional_email.includes('@kestora.fi')) {
-                const newEmail = student.institutional_email.replace('@kestora.fi', '@kestora.online');
+            if (student.institutional_email && student.institutional_email.includes('@penkka.fi')) {
+                const newEmail = student.institutional_email.replace('@penkka.fi', '@penkka.fi');
                 await supabase
                     .from('students')
                     .update({ institutional_email: newEmail })
@@ -39,8 +39,8 @@ async function updateEmails() {
     } else if (faculty) {
         let updateCount = 0;
         for (const member of faculty) {
-            if (member.email && member.email.includes('@kestora.fi')) {
-                const newEmail = member.email.replace('@kestora.fi', '@kestora.online');
+            if (member.email && member.email.includes('@penkka.fi')) {
+                const newEmail = member.email.replace('@penkka.fi', '@penkka.fi');
                 await supabase
                     .from('Faculty')
                     .update({ email: newEmail })
@@ -59,8 +59,8 @@ async function updateEmails() {
             let updated = false;
             let newDesc = asset.description;
             let newUrl = asset.login_url;
-            if (newDesc && newDesc.includes('kestora.fi')) { newDesc = newDesc.replace(/kestora\.fi/g, 'kestora.online'); updated = true; }
-            if (newUrl && newUrl.includes('kestora.fi')) { newUrl = newUrl.replace(/kestora\.fi/g, 'kestora.online'); updated = true; }
+            if (newDesc && newDesc.includes('penkka.fi')) { newDesc = newDesc.replace(/penkka\.fi/g, 'penkka.fi'); updated = true; }
+            if (newUrl && newUrl.includes('penkka.fi')) { newUrl = newUrl.replace(/penkka\.fi/g, 'penkka.fi'); updated = true; }
             if (updated) {
                 await supabase.from('it_assets').update({ description: newDesc, login_url: newUrl }).eq('id', asset.id);
                 assetCount++;

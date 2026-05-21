@@ -31,7 +31,7 @@ export default function HousingAssignedEmail({
     startDate = '01.08.2026',
     monthlyRate = 600,
 }: HousingAssignedEmailProps) {
-    const previewText = `Your Housing at Kestora University has been Issued`;
+    const previewText = `Your Housing at Penkka University has been Issued`;
 
     return (
         <Html>
@@ -42,10 +42,10 @@ export default function HousingAssignedEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://kestora.online/logo-kestora.png"
+                                src="https://penkka.fi/logo-penkka.png"
                                 width="64"
                                 height="64"
-                                alt="Kestora University"
+                                alt="Penkka University"
                                 className="my-0 mx-auto"
                             />
                         </Section>
@@ -59,7 +59,7 @@ export default function HousingAssignedEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            We are pleased to inform you that your housing application has been processed and a room has been officially assigned to you at Kestora University.
+                            We are pleased to inform you that your housing application has been processed and a room has been officially assigned to you at Penkka University.
                         </Text>
 
                         <Section className="my-[20px] p-[20px] bg-neutral-50 rounded">
@@ -76,7 +76,7 @@ export default function HousingAssignedEmail({
                         <Section className="text-center mt-[32px] mb-[32px]">
                             <Link
                                 className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                                href="https://kestora.online/portal/student/housing"
+                                href="https://penkka.fi/portal/student/housing"
                             >
                                 View Housing Dashboard
                             </Link>
@@ -93,7 +93,7 @@ export default function HousingAssignedEmail({
                             Student Housing Office
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            Kestora University
+                            Penkka University
                         </Text>
                     </Container>
                 </Body>

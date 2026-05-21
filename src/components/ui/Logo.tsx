@@ -13,8 +13,8 @@ export function Logo({ className = "", onClick }: { className?: string, onClick?
             <div className={`relative h-full transition-all duration-300 ${isDarkBackground ? 'invert' : ''}`}>
 
                 <Image
-                    src="/logo-kestora.png"
-                    alt="Kestora University"
+                    src="/logo-penkka.png"
+                    alt="Penkka University"
                     width={120}
                     height={120}
                     className="object-contain w-auto h-full"

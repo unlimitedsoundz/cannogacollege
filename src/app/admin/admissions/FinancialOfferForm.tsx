@@ -6,7 +6,9 @@ import { createAdmissionOffer } from './actions';
 import {
     EARLY_PAYMENT_DISCOUNT_PERCENT,
     calculateDiscountedFee,
-    calculateFullProgramDiscountedFee
+    calculateFullProgramDiscountedFee,
+    calculateTuitionDeposit,
+    TuitionField
 } from '@/utils/tuition';
 import { DegreeLevel } from '@/types/database';
 
@@ -15,10 +17,11 @@ interface FinancialOfferFormProps {
     baseTuition: number;
     programYears: number;
     degreeLevel?: DegreeLevel;
+    tuitionField?: TuitionField;
     onSuccess?: () => void;
 }
 
-export function FinancialOfferForm({ applicationId, baseTuition, programYears, degreeLevel, onSuccess }: FinancialOfferFormProps) {
+export function FinancialOfferForm({ applicationId, baseTuition, programYears, degreeLevel, tuitionField = 'TECHNOLOGY', onSuccess }: FinancialOfferFormProps) {
     const [offerType, setOfferType] = useState<'DEPOSIT' | 'FIRST_YEAR' | 'FULL_PROGRAM'>('FIRST_YEAR');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
@@ -29,17 +32,21 @@ export function FinancialOfferForm({ applicationId, baseTuition, programYears, d
     
     let currentBase = baseTuition;
     if (offerType === 'FULL_PROGRAM') currentBase = fullProgramBase;
-    if (offerType === 'DEPOSIT') currentBase = baseTuition * 0.5;
-
+    
     let discountedFee: number;
+    let depositAmountForView = 0;
+
     if (isDeposit) {
-        discountedFee = Math.round(currentBase);
+        // Special case: if they issue just a deposit offer
+        discountedFee = calculateTuitionDeposit(baseTuition, tuitionField, false);
     } else if (offerType === 'FULL_PROGRAM') {
         discountedFee = calculateFullProgramDiscountedFee(baseTuition, programYears);
     } else {
-        discountedFee = calculateDiscountedFee(currentBase);
+        discountedFee = calculateDiscountedFee(baseTuition);
     }
 
+    // For display in the UI card
+    const displayDeposit = calculateTuitionDeposit(baseTuition, tuitionField, !isDeposit);
     const discountAmount = isDeposit ? 0 : currentBase - discountedFee;
 
 
@@ -146,11 +153,21 @@ export function FinancialOfferForm({ applicationId, baseTuition, programYears, d
                             <Award size={12} weight="bold" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-neutral-500 uppercase leading-none mb-0.5">Standard Deposit (50%)</p>
-                            <p className="text-[8px] font-bold text-neutral-400 uppercase">No Early Bird waiver applied</p>
+                            <p className="text-[10px] font-black text-neutral-500 uppercase leading-none mb-0.5">Manual Deposit Amount</p>
+                            <p className="text-[8px] font-bold text-neutral-400 uppercase">Fixed deposit to secure place</p>
                         </div>
                     </div>
                 )}
+                
+                <div className="flex items-center gap-2 p-2 bg-neutral-50 rounded-xl border border-neutral-100">
+                    <div className="w-6 h-6 bg-neutral-900 rounded-lg flex items-center justify-center text-white text-[10px] font-bold">
+                        €
+                    </div>
+                    <div>
+                        <p className="text-[10px] font-black text-neutral-900 uppercase leading-none mb-0.5">Required Deposit</p>
+                        <p className="text-[8px] font-bold text-neutral-400 uppercase">€{displayDeposit.toLocaleString()} EUR</p>
+                    </div>
+                </div>
 
                 {offerType === 'FIRST_YEAR' && programYears > 1 && (
                     <div className="flex items-center gap-2 p-2 bg-blue-50 rounded-xl border border-blue-100">

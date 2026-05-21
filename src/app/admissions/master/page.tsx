@@ -11,10 +11,10 @@ import { getPageContentSection } from '@/lib/pageContentConfig';
 
 
 export const metadata = {
-    title: 'Apply to Master’s Programmes | Kestora University',
-    description: 'Application guide for Master’s programmes at Kestora University. Deadlines, eligibility, and steps for 2026 admission.',
+    title: 'Apply to Master’s Programmes | Penkka University',
+    description: 'Application guide for Master’s programmes at Penkka University. Deadlines, eligibility, and steps for 2026 admission.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/master/',
+        canonical: 'https://penkka.fi/admissions/master/',
     },
 };
 

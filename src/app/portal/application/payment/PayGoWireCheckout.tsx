@@ -300,7 +300,7 @@ export default function PayGoWireCheckout({
                     </div>
 
                     <div className="flex flex-col text-right">
-                        <span className="text-black uppercase tracking-widest mb-0.5">Kestora University receives</span>
+                        <span className="text-black uppercase tracking-widest mb-0.5">Penkka University receives</span>
                         <span className="font-normal text-black text-sm md:text-base">
                             € {amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
@@ -537,7 +537,7 @@ export default function PayGoWireCheckout({
                         <button
                             onClick={() => {
                                 if (selectedMethod?.id === 'flutterwave_uae' || selectedMethod?.id === 'flutterwave_cm_momo') {
-                                    window.open('https://flutterwave.com/pay/Kestora', '_blank');
+                                    window.open('https://flutterwave.com/pay/Penkka', '_blank');
                                     handleConfirmPayment();
                                 } else if (selectedMethod?.id === 'ng_bank' || selectedMethod?.id === 'usd_wire' || selectedMethod?.id === 'eur_wire' || selectedMethod?.id === 'gbp_wire' || selectedMethod?.id === 'wire' || selectedMethod?.id === 'sepa') {
                                     handleStepChange('BANK_INSTRUCTIONS');

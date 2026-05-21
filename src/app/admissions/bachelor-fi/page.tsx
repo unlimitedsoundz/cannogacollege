@@ -5,13 +5,13 @@ import { ArrowRight, CheckCircle, Globe, Users, BookOpen, Briefcase, GraduationC
 import GuideSidebarLayout from '@/components/layout/StudentGuideLayout';
 
 export const metadata = {
-    title: 'Kandidaattiohjelmat (Suomi ja Ruotsi) | Kestora University',
-    description: 'Hae Kestora Universityn suomen- ja ruotsinkielisiin kandidaattiohjelmiin. Tietoa hyödyistä, opintopoluista, apurahoista ja valinnoista.',
+    title: 'Kandidaattiohjelmat (Suomi ja Ruotsi) | Penkka University',
+    description: 'Hae Penkka Universityn suomen- ja ruotsinkielisiin kandidaattiohjelmiin. Tietoa hyödyistä, opintopoluista, apurahoista ja valinnoista.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/bachelor-fi/',
+        canonical: 'https://penkka.fi/admissions/bachelor-fi/',
         languages: {
-            'en': 'https://kestora.online/admissions/bachelor/',
-            'fi': 'https://kestora.online/admissions/bachelor-fi/',
+            'en': 'https://penkka.fi/admissions/bachelor/',
+            'fi': 'https://penkka.fi/admissions/bachelor-fi/',
         },
     },
 };
@@ -38,7 +38,7 @@ export default function BachelorAdmissionsFiPage() {
                             Hae suomen- ja ruotsinkielisiin ohjelmiin
                         </h1>
                         <p className="text-[21px] text-black max-w-xl leading-relaxed">
-                            Aloita matkasi Kestora Universityssa ja hanki taidot, kansainvälinen näkökulma ja verkostot menestyäksesi maailmanlaajuisesti.
+                            Aloita matkasi Penkka Universityssa ja hanki taidot, kansainvälinen näkökulma ja verkostot menestyäksesi maailmanlaajuisesti.
                         </p>
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Link href="/admissions/application-process" className="text-lg font-bold underline underline-offset-8 decoration-black hover:opacity-70 transition-colors text-black inline-flex items-center gap-2">
@@ -99,7 +99,7 @@ export default function BachelorAdmissionsFiPage() {
                                 </div>
                                 <div className="bg-neutral-100 h-80 overflow-hidden relative group">
                                     <div className="absolute inset-0 bg-neutral-200 flex items-center justify-center text-black">
-                                        <Image src="/images/admissions/benefits.jpg" alt="Hyödyt Kestora Universityssa opiskelusta" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+                                        <Image src="/images/admissions/benefits.jpg" alt="Hyödyt Penkka Universityssa opiskelusta" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
                                     </div>
                                 </div>
                             </div>
@@ -117,9 +117,9 @@ export default function BachelorAdmissionsFiPage() {
                                     </div>
                                 </div>
                                 <div className="space-y-6 text-lg text-black">
-                                    <p>Kandidaatin tutkinnon suorittaminen Kestora Universityssa avaa saumattoman tien jatko-opintoihin:</p>
+                                    <p>Kandidaatin tutkinnon suorittaminen Penkka Universityssa avaa saumattoman tien jatko-opintoihin:</p>
                                     <ul className="space-y-3">
-                                        <li className="flex gap-4 items-start"><ArrowRight size={20} weight="bold" className="mt-1 text-black shrink-0" /> <span><strong>Sisäinen Jatkoväylä:</strong> Suora polku Kestoran maisteriohjelmiin.</span></li>
+                                        <li className="flex gap-4 items-start"><ArrowRight size={20} weight="bold" className="mt-1 text-black shrink-0" /> <span><strong>Sisäinen Jatkoväylä:</strong> Suora polku Penkkan maisteriohjelmiin.</span></li>
                                         <li className="flex gap-4 items-start"><ArrowRight size={20} weight="bold" className="mt-1 text-black shrink-0" /> <span><strong>Erikoistumislinjat:</strong> Keskity laskentatoimeen, taloustieteeseen tai johtamiseen.</span></li>
                                         <li className="flex gap-4 items-start"><ArrowRight size={20} weight="bold" className="mt-1 text-black shrink-0" /> <span><strong>Kansainväliset Mahdollisuudet:</strong> Hae huippuyliopistoihin ympäri maailmaa.</span></li>
                                         <li className="flex gap-4 items-start"><ArrowRight size={20} weight="bold" className="mt-1 text-black shrink-0" /> <span><strong>Tutkimusintegraatio:</strong> Kandidaatintutkielma askeleena kohti syvällisempää tutkimusta.</span></li>
@@ -267,7 +267,7 @@ export default function BachelorAdmissionsFiPage() {
 
                         {/* Learn More */}
                         <section id="more" className="scroll-mt-32 text-center max-w-4xl mx-auto">
-                            <h2 className="text-3xl font-bold mb-8">Lue Lisää Kestora Universityssa Opiskelusta</h2>
+                            <h2 className="text-3xl font-bold mb-8">Lue Lisää Penkka Universityssa Opiskelusta</h2>
                             <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-left">
                                 <div className="p-4 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors group">
                                     <h4 className="font-bold mb-1">Moderni Kampus</h4>

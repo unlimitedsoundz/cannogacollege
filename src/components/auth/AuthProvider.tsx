@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const signOut = async () => {
         await supabase.auth.signOut();
-        localStorage.removeItem('Kestora_user');
+        localStorage.removeItem('Penkka_user');
         router.push("/login");
         router.refresh();
     };

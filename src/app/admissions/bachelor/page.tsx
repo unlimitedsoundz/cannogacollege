@@ -13,13 +13,13 @@ import { SchemaLD } from '@/components/seo/SchemaLD';
 import { Breadcrumbs } from '@aalto-dx/react-modules';
 
 export const metadata = {
-    title: 'Bachelor\'s Admissions | Kestora University',
-    description: 'Apply to Bachelor\'s Programmes in English at Kestora University. Information on benefits, progression, scholarships, and admissions.',
+    title: 'Bachelor\'s Admissions | Penkka University',
+    description: 'Apply to Bachelor\'s Programmes in English at Penkka University. Information on benefits, progression, scholarships, and admissions.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/bachelor/',
+        canonical: 'https://penkka.fi/admissions/bachelor/',
         languages: {
-            'en': 'https://kestora.online/admissions/bachelor/',
-            'fi': 'https://kestora.online/admissions/bachelor-fi/',
+            'en': 'https://penkka.fi/admissions/bachelor/',
+            'fi': 'https://penkka.fi/admissions/bachelor-fi/',
         },
     },
 };
@@ -161,7 +161,7 @@ export default function BachelorAdmissionsPage() {
 
                          {/* Learn More */}
                          <section id="more" className="scroll-mt-32 text-left">
-                             <h2 className="text-3xl font-bold mb-8">Learn More About Studying at Kestora</h2>
+                             <h2 className="text-3xl font-bold mb-8">Learn More About Studying at Penkka</h2>
                              <div className="prose-arrows">
                                  <DbPageContent
                                      pageSlug={pageSlug}
@@ -209,11 +209,11 @@ export default function BachelorAdmissionsPage() {
                 "@context": "https://schema.org",
                 "@type": "EducationalOccupationalProgram",
                 "name": "Bachelor's Degree Programmes",
-                "description": "Information on Bachelor's degree programmes taught in English at Kestora University.",
+                "description": "Information on Bachelor's degree programmes taught in English at Penkka University.",
                 "provider": {
                     "@type": "UniversityOrUniversity",
-                    "name": "Kestora University",
-                    "url": "https://kestora.online"
+                    "name": "Penkka University",
+                    "url": "https://penkka.fi"
                 },
                 "educationalLevel": "Bachelor",
                 "offers": {

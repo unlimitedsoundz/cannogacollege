@@ -6,10 +6,10 @@ import { formatToDDMMYYYY } from '@/utils/date';
 import { Calendar, MapPin, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'News & Events | Kestora University',
-    description: 'The latest news, announcements, and upcoming events from Kestora University.',
+    title: 'News & Events | Penkka University',
+    description: 'The latest news, announcements, and upcoming events from Penkka University.',
     alternates: {
-        canonical: 'https://kestora.online/news/',
+        canonical: 'https://penkka.fi/news/',
     },
 };
 
@@ -38,7 +38,7 @@ export default async function NewsPage() {
             {/* HERO SECTION */}
             <Hero
                 title="News & Events"
-                body="Stay up to date with the latest stories, research breakthroughs, and upcoming events from Kestora University."
+                body="Stay up to date with the latest stories, research breakthroughs, and upcoming events from Penkka University."
                 backgroundColor="#dc6ade"
                 tinted
                 lightText={true}
@@ -48,7 +48,7 @@ export default async function NewsPage() {
                 ]}
                 image={{
                     src: "/images/news/helsinki-study-hero.png",
-                    alt: "Kestora University News & Events"
+                    alt: "Penkka University News & Events"
                 }}
             />
 

@@ -37,10 +37,10 @@ export default function OfferRejectionEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://kestora.online/logo-kestora.png" // Replace with actual logo URL
+                                src="https://penkka.fi/logo-penkka.png" // Replace with actual logo URL
                                 width="40"
                                 height="40"
-                                alt="Kestora University"
+                                alt="Penkka University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
@@ -54,7 +54,7 @@ export default function OfferRejectionEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            We have received your decision to decline the offer of admission to the <strong>{courseName}</strong> program at Kestora University.
+                            We have received your decision to decline the offer of admission to the <strong>{courseName}</strong> program at Penkka University.
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
@@ -62,15 +62,15 @@ export default function OfferRejectionEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            If you declined this offer by mistake, please contact our Admissions Office immediately at <Link href="mailto:admissions@kestora.online" className="text-blue-600 no-underline">admissions@kestora.online</Link>.
+                            If you declined this offer by mistake, please contact our Admissions Office immediately at <Link href="mailto:admissions@penkka.fi" className="text-blue-600 no-underline">admissions@penkka.fi</Link>.
                         </Text>
 
                         <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
                         <Section className="text-center mt-[10px] mb-[20px]">
                             <Text className="m-0">
-                                <Link href="https://www.linkedin.com/company/kestora-university" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">LinkedIn</Link>
-                                <Link href="https://www.tiktok.com/@kestorauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
-                                <Link href="https://snapchat.com/add/kestorauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Snapchat</Link>
+                                <Link href="https://www.linkedin.com/company/penkka-university" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">LinkedIn</Link>
+                                <Link href="https://www.tiktok.com/@penkkauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
+                                <Link href="https://snapchat.com/add/penkkauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Snapchat</Link>
                             </Text>
                         </Section>
 

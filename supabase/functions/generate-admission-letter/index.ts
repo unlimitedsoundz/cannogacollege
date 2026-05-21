@@ -137,12 +137,12 @@ serve(async (req) => {
         // =====================================================
         // SECTION 1: HEADER — Institution + Address
         // =====================================================
-        page.drawText('KESTORA UNIVERSITY', { x: margin, y, size: 14, font: boldFont, color: black });
+        page.drawText('PENKKA UNIVERSITY', { x: margin, y, size: 14, font: boldFont, color: black });
         y -= 16;
         page.drawText('\u2013 Helsinki Campus', { x: margin, y, size: 9, font: regularFont, color: darkGrey });
 
         // Right-aligned address
-        const addr = ['Pohjoisesplanadi 51', '00150 Helsinki, Finland', 'Phone: +358 09 42721884', 'kestora.online', 'admissions@kestora.online'];
+        const addr = ['Pohjoisesplanadi 51', '00150 Helsinki, Finland', 'Phone: +358 09 42721884', 'penkka.fi', 'admissions@penkka.fi'];
         let ay = height - margin;
         for (const line of addr) {
             const lw = regularFont.widthOfTextAtSize(line, 8);
@@ -234,7 +234,7 @@ serve(async (req) => {
             const offerPara1 = `Dear ${firstName},`;
             y = drawParagraph(page, offerPara1, margin, y, regularFont, 9, cw, black);
             y -= 6;
-            const offerPara2 = `We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Kestora University has decided to offer you a place in the ${programTitle} (${degreeLevel}) programme for the Autumn 2026 intake.`;
+            const offerPara2 = `We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Penkka University has decided to offer you a place in the ${programTitle} (${degreeLevel}) programme for the Autumn 2026 intake.`;
             y = drawParagraph(page, offerPara2, margin, y, regularFont, 9, cw, darkGrey);
             y -= 6;
             const offerPara3 = `This offer is subject to the conditions outlined below, including acceptance of the offer via the student portal and confirmation of tuition payment by the specified deadline. Upon fulfillment of these conditions, an official Letter of Admission will be issued confirming your enrollment.`;
@@ -304,7 +304,7 @@ serve(async (req) => {
             y -= 10; drawLine(page, margin, y, cw, 0.5); y -= 30;
             page.drawText('Admissions Office', { x: margin, y, size: 10, font: boldFont, color: black });
             y -= 13;
-            page.drawText('Kestora University | Helsinki, Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
+            page.drawText('Penkka University | Helsinki, Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
             const did1 = 'Verified Document ID';
             const dw1 = regularFont.widthOfTextAtSize(did1, 8);
             page.drawText(did1, { x: width - margin - dw1, y: y + 13, size: 8, font: regularFont, color: lightGrey });
@@ -372,7 +372,7 @@ serve(async (req) => {
             const dobRaw = app.user?.date_of_birth || personal.dateOfBirth || personal.dob;
             const dobDisplay = dobRaw ? new Date(dobRaw).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : 'N/A';
             
-            const officialStatement = `This letter serves as official notification that ${fullName} (Passport: ${passport}, DOB: ${dobDisplay}) has been formally admitted and fully enrolled as a degree student at Kestora University for the 2026 - 2027 academic year. Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the ${programTitle} (${app.course?.programType || 'Full-time'}). This program is a full-time course of study conducted in the English language at our Helsinki campus location (Pohjoisesplanadi 51, 00150 Helsinki, Finland).`;
+            const officialStatement = `This letter serves as official notification that ${fullName} (Passport: ${passport}, DOB: ${dobDisplay}) has been formally admitted and fully enrolled as a degree student at Penkka University for the 2026 - 2027 academic year. Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the ${programTitle} (${app.course?.programType || 'Full-time'}). This program is a full-time course of study conducted in the English language at our Helsinki campus location (Pohjoisesplanadi 51, 00150 Helsinki, Finland).`;
             
             y = drawParagraph(page, officialStatement, margin, y, regularFont, 10, cw, black, 16);
             y -= 25;
@@ -412,7 +412,7 @@ serve(async (req) => {
                 },
                 {
                     title: 'Refund Policy',
-                    content: 'Tuition fees are subject to the university\u2019s refund policy. Full details can be found at https://kestora.online/refund-withdrawal-policy/.'
+                    content: 'Tuition fees are subject to the university\u2019s refund policy. Full details can be found at https://penkka.fi/refund-withdrawal-policy/.'
                 }
             ];
 
@@ -436,11 +436,11 @@ serve(async (req) => {
             y -= 13;
             page.drawText('Dosentti (Docent) Anna Virtanen, FT (Doctor of Philosophy)', { x: margin, y, size: 9, font: regularFont, color: black });
             y -= 12;
-            page.drawText('Kestora University | Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
+            page.drawText('Penkka University | Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
 
             // Footer
             y = 40;
-            const footerText = 'Generated electronically via Kestora SIS. Valid without physical signature if verified online.';
+            const footerText = 'Generated electronically via Penkka SIS. Valid without physical signature if verified online.';
             const fw = regularFont.widthOfTextAtSize(footerText, 8);
             page.drawText(footerText, { x: (width - fw) / 2, y, size: 8, font: italicFont, color: grey });
         }

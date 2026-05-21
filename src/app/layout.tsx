@@ -15,15 +15,15 @@ const playfair = { variable: "font-playfair-var" };
 
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://kestora.online'),
+    metadataBase: new URL('https://penkka.fi'),
     title: {
-        default: "Kestora University Helsinki | English-Taught Degrees in Finland",
-        template: "%s | Kestora University"
+        default: "Penkka University Helsinki | English-Taught Degrees in Finland",
+        template: "%s | Penkka University"
     },
-    description: "Kestora University Helsinki is an independent higher education institution in Finland offering English-taught degree programs for international students.",
-    applicationName: "Kestora University",
+    description: "Penkka University Helsinki is an independent higher education institution in Finland offering English-taught degree programs for international students.",
+    applicationName: "Penkka University",
     appleWebApp: {
-        title: "Kestora University",
+        title: "Penkka University",
         statusBarStyle: "default",
         capable: true,
     },
@@ -39,24 +39,24 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://kestora.online',
-        siteName: 'Kestora University',
-        title: 'Kestora University Helsinki | English-Taught Degrees in Finland',
-        description: 'Kestora University Helsinki is an independent higher education institution in Finland offering English-taught degree programs for international students.',
+        url: 'https://penkka.fi',
+        siteName: 'Penkka University',
+        title: 'Penkka University Helsinki | English-Taught Degrees in Finland',
+        description: 'Penkka University Helsinki is an independent higher education institution in Finland offering English-taught degree programs for international students.',
         images: [
             {
-                url: '/logo-kestora.png',
+                url: '/logo-penkka.png',
                 width: 800,
                 height: 600,
-                alt: 'Kestora University Logo',
+                alt: 'Penkka University Logo',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Kestora University Helsinki | English-Taught Degrees in Finland',
-        description: 'Kestora University Helsinki is an independent higher education institution in Finland offering English-taught degree programs for international students.',
-        images: ['/logo-kestora.png'],
+        title: 'Penkka University Helsinki | English-Taught Degrees in Finland',
+        description: 'Penkka University Helsinki is an independent higher education institution in Finland offering English-taught degree programs for international students.',
+        images: ['/logo-penkka.png'],
     }
 };
 
@@ -83,14 +83,14 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "UniversityOrUniversity",
-                            "name": "Kestora University",
-                            "description": "Kestora University is an independent higher education institution in Helsinki, Finland offering English-taught degree programs for international students.",
-                            "alternateName": "Kestora University Helsinki",
-                            "url": "https://www.kestora.online",
-                            "logo": "https://www.kestora.online/logo-kestora.png",
+                            "name": "Penkka University",
+                            "description": "Penkka University is an independent higher education institution in Helsinki, Finland offering English-taught degree programs for international students.",
+                            "alternateName": "Penkka University Helsinki",
+                            "url": "https://www.penkka.fi",
+                            "logo": "https://www.penkka.fi/logo-penkka.png",
                             "address": {
                                 "@type": "PostalAddress",
-                                "streetAddress": "Kestora University – Helsinki Campus, Pohjoisesplanadi 51",
+                                "streetAddress": "Penkka University – Helsinki Campus, Pohjoisesplanadi 51",
                                 "addressLocality": "Helsinki",
                                 "postalCode": "00150",
                                 "addressRegion": "Uusimaa",
@@ -101,13 +101,13 @@ export default function RootLayout({
                                 "name": "Helsinki, Finland"
                             },
                             "sameAs": [
-                                "https://www.linkedin.com/company/kestora-university"
+                                "https://www.linkedin.com/company/penkka-university"
                             ],
                             "contactPoint": {
                                 "@type": "ContactPoint",
                                 "telephone": "+358-20-4721-739",
                                 "contactType": "admissions",
-                                "email": "admissions@kestora.online"
+                                "email": "admissions@penkka.fi"
                             }
                         })
                     }}

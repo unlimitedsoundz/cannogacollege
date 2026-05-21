@@ -95,7 +95,7 @@ export default function PortalHeader() {
         if (supabase) {
             await supabase.auth.signOut();
         }
-        localStorage.removeItem('Kestora_user');
+        localStorage.removeItem('Penkka_user');
 
 
         // Clear local state
@@ -130,7 +130,7 @@ export default function PortalHeader() {
                 }`}>
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-8">
-                        <Logo className="h-10 md:h-12" />
+                        <Logo className="h-8 md:h-10" />
 
                         <nav className="hidden md:flex items-center gap-1">
                             {isLoggedIn && navItems.map((item) => {

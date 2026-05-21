@@ -19,7 +19,7 @@ async function main() {
         return;
     }
 
-    console.log(`Found ${assets.length} assets. Updating content to use kestora.online...`);
+    console.log(`Found ${assets.length} assets. Updating content to use penkka.fi...`);
 
     let totalUpdates = 0;
 
@@ -29,20 +29,20 @@ async function main() {
         let newDesc = asset.description || '';
 
         // Check and replace in URL
-        if (newUrl.includes('kestora')) {
-            newUrl = newUrl.replace(/kestora\.edu/gi, 'kestora.online')
-                .replace(/kestora/gi, 'kestora')
-                .replace(/kestora\.fi/gi, 'kestora.online')
-                .replace(/kestora\.edu/gi, 'kestora.online');
+        if (newUrl.includes('penkka')) {
+            newUrl = newUrl.replace(/penkka\.edu/gi, 'penkka.fi')
+                .replace(/penkka/gi, 'penkka')
+                .replace(/penkka\.fi/gi, 'penkka.fi')
+                .replace(/penkka\.edu/gi, 'penkka.fi');
             changed = true;
         }
 
         // Check and replace in description
-        if (newDesc.includes('kestora')) {
-            newDesc = newDesc.replace(/kestora\.edu/gi, 'kestora.online')
-                .replace(/kestora/gi, 'kestora')
-                .replace(/kestora\.fi/gi, 'kestora.online')
-                .replace(/kestora\.edu/gi, 'kestora.online');
+        if (newDesc.includes('penkka')) {
+            newDesc = newDesc.replace(/penkka\.edu/gi, 'penkka.fi')
+                .replace(/penkka/gi, 'penkka')
+                .replace(/penkka\.fi/gi, 'penkka.fi')
+                .replace(/penkka\.edu/gi, 'penkka.fi');
             changed = true;
         }
 

@@ -51,12 +51,12 @@ export const searchablePages: SearchablePage[] = [
     { title: "Student Life", href: "/student-life", category: "Student Life & Guides" },
     { title: "Campus Information", href: "/student-guide", category: "Student Life & Guides" },
 
-    // About Kestora
-    { title: "Our Story", href: "/about-kestora-university", category: "About Kestora" },
-    { title: "Contact Information", href: "/contact", category: "About Kestora" },
-    { title: "News & Events", href: "/news", category: "About Kestora" },
-    { title: "Collaboration", href: "/collaboration", category: "About Kestora" },
-    { title: "Innovation", href: "/innovation", category: "About Kestora" },
+    // About Penkka
+    { title: "Our Story", href: "/about-penkka-university", category: "About Penkka" },
+    { title: "Contact Information", href: "/contact", category: "About Penkka" },
+    { title: "News & Events", href: "/news", category: "About Penkka" },
+    { title: "Collaboration", href: "/collaboration", category: "About Penkka" },
+    { title: "Innovation", href: "/innovation", category: "About Penkka" },
 
     // Legal & Privacy
     { title: "Privacy Policy", href: "/privacy", category: "Legal & Privacy" },

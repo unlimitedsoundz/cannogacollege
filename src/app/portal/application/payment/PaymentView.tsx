@@ -95,7 +95,7 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
                 </h2>
                 <p className="text-sm text-black mb-8 max-w-[280px] mx-auto leading-relaxed">
                     {isEnrolled
-                        ? <>Your enrollment is now confirmed. Welcome to <span className="font-semibold text-black">Kestora University</span>.</>
+                        ? <>Your enrollment is now confirmed. Welcome to <span className="font-semibold text-black">Penkka University</span>.</>
                         : <>Your payment has been recorded and is currently under review. <span className="font-semibold text-black">Access to student services is paused</span> until our finance team verifies the transaction.</>
                     }
                 </p>

@@ -31,7 +31,7 @@ async function seedAccounting() {
         {
             id: 'description',
             title: 'Description',
-            content: `<p>The Accounting & Finance BSc program at Kestora University provides a solid foundation in accounting, finance, and management. Students gain practical and theoretical knowledge in financial accounting, management accounting, corporate governance, auditing, performance management, and financial decision-making.</p><p>The program equips students with analytical skills and business understanding necessary for careers in accounting, finance, and corporate administration.</p>`
+            content: `<p>The Accounting & Finance BSc program at Penkka University provides a solid foundation in accounting, finance, and management. Students gain practical and theoretical knowledge in financial accounting, management accounting, corporate governance, auditing, performance management, and financial decision-making.</p><p>The program equips students with analytical skills and business understanding necessary for careers in accounting, finance, and corporate administration.</p>`
         },
         {
             id: 'language',
@@ -41,12 +41,12 @@ async function seedAccounting() {
         {
             id: 'tuition',
             title: 'Tuition Fees and Scholarships',
-            content: `<p>Tuition Fee: Included in degree tuition for full-time BSc students</p><p>Scholarships:</p><ul><li>Merit-based scholarships for high-achieving students</li><li>Need-based financial aid</li><li>Support for international students</li><li>Detailed scholarship information is available on the Kestora University Scholarships page.</li></ul>`
+            content: `<p>Tuition Fee: Included in degree tuition for full-time BSc students</p><p>Scholarships:</p><ul><li>Merit-based scholarships for high-achieving students</li><li>Need-based financial aid</li><li>Support for international students</li><li>Detailed scholarship information is available on the Penkka University Scholarships page.</li></ul>`
         },
         {
             id: 'structure',
             title: 'Structure of Studies',
-            content: `<p>This is the structure content with Kestora University.</p>`
+            content: `<p>This is the structure content with Penkka University.</p>`
         },
         {
             id: 'specialisations',
@@ -91,7 +91,7 @@ async function seedAccounting() {
         degreeLevel: 'BACHELOR',
         duration: '3 Years',
         language: 'English',
-        description: 'The Accounting & Finance BSc program at Kestora University provides a solid foundation in accounting, finance, and management. Students gain practical and theoretical knowledge in financial accounting, management accounting, corporate governance, auditing, performance management, and financial decision-making. The program equips students with analytical skills and business understanding necessary for careers in accounting, finance, and corporate administration.',
+        description: 'The Accounting & Finance BSc program at Penkka University provides a solid foundation in accounting, finance, and management. Students gain practical and theoretical knowledge in financial accounting, management accounting, corporate governance, auditing, performance management, and financial decision-making. The program equips students with analytical skills and business understanding necessary for careers in accounting, finance, and corporate administration.',
         departmentId: dept.id,
         schoolId: dept.schoolId,
         sections: sections,

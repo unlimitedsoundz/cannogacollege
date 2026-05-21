@@ -553,6 +553,7 @@ function ApplicationReviewContent() {
                                         baseTuition={getTuitionFee(app.course?.degreeLevel || 'BACHELOR', mapSchoolToTuitionField(app.course?.school?.slug || 'technology'))}
                                         programYears={getProgramYears(app.course?.duration || '3 years', app.course?.degreeLevel)}
                                         degreeLevel={app.course?.degreeLevel}
+                                        tuitionField={mapSchoolToTuitionField(app.course?.school?.slug || 'technology')}
                                         onSuccess={fetchData}
                                     />
 

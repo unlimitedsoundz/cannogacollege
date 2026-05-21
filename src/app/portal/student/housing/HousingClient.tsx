@@ -47,7 +47,15 @@ export default function HousingDashboardClient({ student, application, assignmen
 
     // Calculate actual total paid from database invoices
     const totalPaid = invoices
-        .filter(inv => inv.application_id === application?.id || inv.application_id === assignment?.application_id)
+        .filter(inv => {
+            // Include if explicitly linked to application or assignment
+            const isLinked = inv.application_id === application?.id || inv.application_id === assignment?.application_id;
+            // Also include if it's a housing invoice for this student (even if not linked)
+            // This handles manually created invoices by admin that might have missed the linkage
+            const isStudentHousingInvoice = inv.student_id === student.id;
+            
+            return isLinked || isStudentHousingInvoice;
+        })
         .reduce((sum, inv) => sum + (inv.paid_amount || 0), 0);
 
     useEffect(() => {
@@ -56,27 +64,28 @@ export default function HousingDashboardClient({ student, application, assignmen
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+
+        if (!catalogBuildingId || !catalogApartmentId) {
+            setError('Mandatory Action: Please browse the catalog and select a specific property before submitting your application.');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
         setLoading(true);
         setError('');
-        setSuccess(false);
-
-        const formData = new FormData(e.currentTarget);
 
         const rentingMode = formData.get('rentingMode') as string;
         
         let formattedNotes = `Housing Preference: ${rentingMode}`;
         
         let totalContractValue = 0;
-        if (catalogBuildingId && catalogApartmentId) {
-            const b = BUILDINGS_CATALOG.find(x => x.id === catalogBuildingId);
-            const a = b?.apartments.find(x => x.id === catalogApartmentId);
-            totalContractValue = (a?.price || 0) * catalogLeaseDuration;
-            formattedNotes += `\nSelected Property: ${b?.name} - ${a?.type} (${a?.size}, ${a?.price}€/mo)`;
-            formattedNotes += `\nLease Duration: ${catalogLeaseDuration} months`;
-            formattedNotes += `\nTotal Contract Value: ${totalContractValue}€`;
-        } else {
-            formattedNotes += `\nSelected Property: No preference`;
-        }
+        const b = BUILDINGS_CATALOG.find(x => x.id === catalogBuildingId);
+        const a = b?.apartments.find(x => x.id === catalogApartmentId);
+        totalContractValue = (a?.price || 0) * catalogLeaseDuration;
+        formattedNotes += `\nSelected Property: ${b?.name} - ${a?.type} (${a?.size}, ${a?.price}€/mo)`;
+        formattedNotes += `\nLease Duration: ${catalogLeaseDuration} months`;
+        formattedNotes += `\nTotal Contract Value: ${totalContractValue}€`;
 
         const baseNotes = formData.get('notes') as string;
         if (baseNotes) {
@@ -241,7 +250,7 @@ export default function HousingDashboardClient({ student, application, assignmen
             )}
 
             {/* Receipt Modal */}
-            {mounted && showReceipt && assignment && createPortal(
+            {mounted && showReceipt && application && createPortal(
                 <div id="receipt-root" className="fixed inset-0 bg-white z-[10000] flex flex-col overflow-y-auto font-sans print:overflow-visible">
                     {/* Top Bar for Mobile/Desktop Navigation */}
                     <div className="sticky top-0 bg-white/80 backdrop-blur-sm border-b border-neutral-100 p-4 flex justify-end no-print">
@@ -259,17 +268,17 @@ export default function HousingDashboardClient({ student, application, assignmen
                             <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-black pb-6 gap-6 print:pb-4">
                                 <div className="space-y-4 print:space-y-2">
                                     <img 
-                                        src="/logo-kestora.png" 
-                                        alt="Kestora University" 
+                                        src="/logo-penkka.png" 
+                                        alt="Penkka University" 
                                         className="h-10 w-auto"
                                     />
                                     <div className="space-y-1">
                                         <p className="text-[10px] uppercase font-black text-black">Housing Office Receipt</p>
-                                        <p className="text-[10px] font-bold text-black opacity-60">Kestora University Official Document</p>
+                                        <p className="text-[10px] font-bold text-black opacity-60">Penkka University Official Document</p>
                                     </div>
                                 </div>
                                 <div className="text-left md:text-right space-y-1">
-                                    <p className="text-[10px] font-black uppercase text-black">Receipt No: KC-HS-{assignment.id.slice(0,8).toUpperCase()}</p>
+                                    <p className="text-[10px] font-black uppercase text-black">Receipt No: KC-HS-{application.id.slice(0,8).toUpperCase()}</p>
                                     <p className="text-[10px] font-black uppercase text-black">Date: {new Date().toLocaleDateString('en-GB')}</p>
                                 </div>
                             </div>
@@ -286,8 +295,12 @@ export default function HousingDashboardClient({ student, application, assignmen
                                     </div>
                                     <div className="space-y-2 md:text-right">
                                         <p className="text-[9px] font-black uppercase text-black opacity-50">Accommodation</p>
-                                        <p className="text-sm font-black uppercase text-black leading-tight">{assignment.room?.building?.name}</p>
-                                        <p className="text-xs font-bold text-black">Room #{assignment.room?.room_number} | {assignment.room?.room_type}</p>
+                                        <p className="text-sm font-black uppercase text-black leading-tight">
+                                            {assignment ? assignment.room?.building?.name : 'Pending Assignment'}
+                                        </p>
+                                        {assignment && (
+                                            <p className="text-xs font-bold text-black">Room #{assignment.room?.room_number} | {assignment.room?.room_type}</p>
+                                        )}
                                     </div>
                                 </div>
 
@@ -328,7 +341,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                     >
                                         Print Official Receipt
                                     </button>
-                                    <p className="text-[9px] font-black uppercase text-black">Kestora Housing Office</p>
+                                    <p className="text-[9px] font-black uppercase text-black">Penkka Housing Office</p>
                                 </div>
                             </div>
                         </div>
@@ -435,10 +448,10 @@ export default function HousingDashboardClient({ student, application, assignmen
                         </div>
                         <div>
                             <h2 className="text-xl font-black uppercase text-black leading-none mb-1">
-                                {application.status === 'APPROVED' ? 'Payment Received' : 'Application Pending'}
+                                {application.status === 'APPROVED' || application.status === 'ASSIGNED' || totalPaid > 0 ? 'Payment Received' : 'Application Pending'}
                             </h2>
                             <p className="text-[10px] font-black uppercase text-black">
-                                {application.status === 'APPROVED' 
+                                {application.status === 'APPROVED' || application.status === 'ASSIGNED' || totalPaid > 0
                                     ? 'Awaiting Confirmation from Housing Office' 
                                     : 'Currently Under Review'}
                             </p>
@@ -448,8 +461,8 @@ export default function HousingDashboardClient({ student, application, assignmen
                     <div className="space-y-4">
                         <div className="p-4 bg-amber-50 border border-amber-200">
                             <p className="text-sm font-medium text-amber-900 leading-relaxed">
-                                {application.status === 'APPROVED' 
-                                    ? "Your payment has been successfully verified. The Student Housing Office is now finalizing your room assignment. You will receive an update here once a room is assigned."
+                                {application.status === 'APPROVED' || totalPaid > 0
+                                    ? "Your payment has been successfully received. The Student Housing Office is now finalizing your room assignment. You will receive an update here once a room is assigned."
                                     : "We have received your application. Once reviewed, you will be notified to pay the housing deposit to secure your spot."}
                             </p>
                         </div>
@@ -468,11 +481,19 @@ export default function HousingDashboardClient({ student, application, assignmen
                                 <p className="text-[10px] font-bold text-black">{application.lease_duration} Months</p>
                             </div>
                             <div>
-                                <p className="text-[9px] font-black uppercase text-neutral-400 mb-1">Status</p>
-                                <span className={`text-[9px] font-black uppercase px-3 py-1 rounded-full tracking-wider ${application.status === 'APPROVED' ? 'bg-green-100 text-green-700' : 'bg-neutral-100 text-neutral-500'}`}>
-                                    {application.status}
+                                <span className={`text-[9px] font-black uppercase px-3 py-1 rounded-full tracking-wider ${application.status === 'APPROVED' || application.status === 'ASSIGNED' ? 'bg-green-100 text-green-700' : 'bg-neutral-100 text-neutral-500'}`}>
+                                    {application.status === 'ASSIGNED' ? 'ASSIGNED & CONFIRMED' : application.status}
                                 </span>
                             </div>
+                        </div>
+
+                        <div className="flex justify-end mt-4">
+                            <button 
+                                onClick={() => setShowReceipt(true)}
+                                className="px-6 py-2.5 border-2 border-black text-black text-[9px] font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all shadow-none"
+                            >
+                                View Payment Receipt
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -540,8 +561,8 @@ export default function HousingDashboardClient({ student, application, assignmen
                                     </select>
                                 </div>
 
-                                <div className="p-4 border border-neutral-200 bg-neutral-50 rounded-none mb-6">
-                                    <h3 className="text-[10px] font-black uppercase tracking-widest text-black mb-2">Selected Property</h3>
+                                <div className={`p-4 border rounded-none mb-6 transition-colors ${(!catalogBuildingId || !catalogApartmentId) ? 'border-amber-400 bg-amber-50/30' : 'border-neutral-200 bg-neutral-50'}`}>
+                                    <h3 className="text-[10px] font-black uppercase tracking-widest text-black mb-2">Selected Property *</h3>
                                     {catalogBuildingId && catalogApartmentId ? (
                                         <div className="flex justify-between items-center">
                                             <div>
@@ -598,7 +619,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                 <div className="space-y-4 pt-4 border-t border-neutral-200">
                                     <div>
                                         <h3 className="text-sm font-black uppercase text-black mb-1">Housing preference</h3>
-                                        <p className="text-xs text-black">You can apply for an apartment as soon as you are admitted to Kestora University.</p>
+                                        <p className="text-xs text-black">You can apply for an apartment as soon as you are admitted to Penkka University.</p>
                                         <p className="text-[10px] text-black mt-1">*Mandatory field</p>
                                     </div>
                                     

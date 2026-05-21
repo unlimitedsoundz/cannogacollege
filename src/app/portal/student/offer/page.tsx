@@ -24,7 +24,7 @@ export default function StudentOfferPage() {
 
                 // 2. Secondary Auth Check (LocalStorage Fallback)
                 if (!sbUser) {
-                    const savedUser = localStorage.getItem('Kestora_user');
+                    const savedUser = localStorage.getItem('Penkka_user');
                     if (savedUser) {
                         const localProfile = JSON.parse(savedUser);
                         currentUserEmail = localProfile.email;
@@ -37,10 +37,10 @@ export default function StudentOfferPage() {
                     return;
                 }
 
-                // 2. Fetch Admission record
+                // 2. Fetch Admission record with Course details
                 const { data: admission } = await supabase
                     .from('admission_offers')
-                    .select('*')
+                    .select('*, application:applications(*, course:Course(*, school:School(*)))')
                     .eq('application_id', (
                         await supabase
                             .from('applications')

@@ -14,7 +14,7 @@ interface SearchFieldProps {
 }
 
 /**
- * Standardized SearchField component for Kestora University.
+ * Standardized SearchField component for Penkka University.
  * Aliased from @aalto-dx/react-components.
  */
 export function SearchField({ 

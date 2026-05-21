@@ -174,17 +174,15 @@ export default function HousingManagementClient({
         try {
             const supabase = createClient();
 
-            // 1. Get assignment details to identify room
+            // 1. Get assignment details to identify room and application
             const { data: assignment, error: fetchError } = await supabase
                 .from('housing_assignments')
-                .select('room_id')
+                .select('room_id, application_id')
                 .eq('id', id)
                 .single();
 
             if (fetchError) {
                 console.error('Error fetching assignment before delete:', fetchError);
-                // We typically continue to try to delete even if fetch fails, 
-                // but if we can't find it, maybe it's already gone.
             }
 
             console.log('Found assignment to delete:', assignment);
@@ -201,8 +199,6 @@ export default function HousingManagementClient({
                     if (!window.confirm('Failed to update room status. Continue deleting assignment anyway?')) {
                         return;
                     }
-                } else {
-                    console.log('Room status updated to AVAILABLE');
                 }
             }
 
@@ -214,7 +210,16 @@ export default function HousingManagementClient({
 
             if (deleteError) {
                 console.error('Delete failed:', deleteError);
-                throw new Error(`Failed to delete assignment: ${deleteError.message} (Code: ${deleteError.code})`);
+                throw new Error(`Failed to delete assignment: ${deleteError.message}`);
+            }
+
+            // 4. Revert Application Status to APPROVED
+            if (assignment?.application_id) {
+                await supabase
+                    .from('housing_applications')
+                    .update({ status: 'APPROVED' })
+                    .eq('id', assignment.application_id);
+                console.log('Application status reverted to APPROVED');
             }
 
             console.log('Assignment deleted successfully. Refreshing...');

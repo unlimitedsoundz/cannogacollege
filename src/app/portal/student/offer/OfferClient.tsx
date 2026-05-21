@@ -6,6 +6,13 @@ import { CircleNotch as Loader2 } from "@phosphor-icons/react/dist/ssr";
 import { acceptApplicationOffer } from './actions';
 import { createClient } from '@/utils/supabase/client';
 import { format } from 'date-fns';
+import { 
+    getProgramYears, 
+    getAnnualFeeFromTotal, 
+    calculateDiscountedFee, 
+    calculateTuitionDeposit, 
+    mapSchoolToTuitionField 
+} from '@/utils/tuition';
 
 interface OfferClientProps {
     admission: any;
@@ -59,6 +66,20 @@ export function OfferClient({ admission }: OfferClientProps) {
     const handlePayment = () => {
         router.push(`/portal/application/payment?id=${admission.application_id}`);
     };
+
+    // Calculate dynamic fee details based on annual fee
+    const app = admission.application || {};
+    const course = app.course || {};
+    const school = course.school || {};
+
+    const years = getProgramYears(course.duration || '', course.degreeLevel);
+    const field = mapSchoolToTuitionField(school.slug || 'technology');
+    const isEarlyBird = (admission.discount_amount || 0) > 0;
+
+    const annualFee = getAnnualFeeFromTotal(admission.tuition_fee || 0, admission.discount_amount || 0, years);
+    const firstYearFee = isEarlyBird ? calculateDiscountedFee(annualFee) : annualFee;
+    const depositAmount = calculateTuitionDeposit(annualFee, field, isEarlyBird);
+    const remainingBalance = firstYearFee - depositAmount;
 
     return (
         <div className="grid lg:grid-cols-3 gap-6">
@@ -117,15 +138,15 @@ export function OfferClient({ admission }: OfferClientProps) {
                         <div className="space-y-5 relative z-10">
                             <div className="flex justify-between items-end">
                                 <div>
-                                    <p className="text-[9px] font-black uppercase text-neutral-400 mb-1">Tuition Deposit (50%)</p>
+                                    <p className="text-[9px] font-black uppercase text-neutral-400 mb-1">Tuition Deposit</p>
                                     <p className="text-3xl font-black tracking-tight leading-none text-emerald-400">
-                                        €{(Math.round(((admission.tuition_fee || 0) + (admission.discount_amount || 0)) * 0.5)).toLocaleString()}
+                                        €{depositAmount.toLocaleString()}
                                     </p>
                                 </div>
                                 <div className="text-right">
-                                    <p className="text-[9px] font-black uppercase text-neutral-400 mb-1">Remaining Balance</p>
+                                    <p className="text-[9px] font-black uppercase text-neutral-400 mb-1">Remaining (1st Year)</p>
                                     <p className="text-sm font-black text-white">
-                                        €{(Math.round(((admission.tuition_fee || 0) + (admission.discount_amount || 0)) * 0.5)).toLocaleString()}
+                                        €{remainingBalance.toLocaleString()}
                                     </p>
                                 </div>
                             </div>
@@ -154,7 +175,7 @@ export function OfferClient({ admission }: OfferClientProps) {
                             <div className="flex flex-col items-center">
                                 <div className="space-y-6 max-w-2xl w-full">
                                     <div className="text-center space-y-2 border-b border-neutral-200 pb-6">
-                                        <h2 className="text-2xl font-bold text-neutral-900">Welcome to Kestora University!</h2>
+                                        <h2 className="text-2xl font-bold text-neutral-900">Welcome to Penkka University!</h2>
                                         <p className="text-sm text-neutral-600">
                                             Your Journey Starts Here
                                         </p>
@@ -177,7 +198,7 @@ export function OfferClient({ admission }: OfferClientProps) {
                                                     <h4 className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Next Steps for Enrollment:</h4>
                                                     <div className="grid gap-4">
                                                         <WelcomeStep number="01" title="Tuition Clearance" description="Proceed to the finance section to settle your initial tuition fees." />
-                                                        <WelcomeStep number="02" title="IT Credentials" description="You will receive your Kestora credentials once the payment is confirmed." />
+                                                        <WelcomeStep number="02" title="IT Credentials" description="You will receive your Penkka credentials once the payment is confirmed." />
                                                         <WelcomeStep number="03" title="Orientation" description="Check your portal for the upcoming orientation schedule." />
                                                     </div>
                                                 </div>

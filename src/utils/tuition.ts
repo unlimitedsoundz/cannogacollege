@@ -59,13 +59,42 @@ export function calculateFullProgramDiscountedFee(annualFee: number, years: numb
  */
 export function getProgramYears(duration: string, level?: DegreeLevel): number {
     // Explicit overrides based on user request: Bachelors x 3, Masters x 2
-    if (level === 'BACHELOR') return 3;
-    if (level === 'MASTER') return 2;
+    const lvl = (level || '').toUpperCase();
+    if (lvl.includes('BACHELOR')) return 3;
+    if (lvl.includes('MASTER')) return 2;
 
     if (duration.toLowerCase().includes('2 years')) return 2;
     if (duration.toLowerCase().includes('3 years')) return 3;
     if (duration.toLowerCase().includes('4 years')) return 4;
-    return 2; // Default
+    return lvl.includes('MASTER') ? 2 : 3; // Default
+}
+
+/**
+ * Calculates the annual original fee from the total discounted fee and discount amount.
+ * Based on the rule: Total = (Annual * 0.75) + (Annual * (Years - 1)) if discounted.
+ * Or: Total = Annual * Years if not discounted.
+ */
+export function getAnnualFeeFromTotal(totalFee: number, discountAmount: number, years: number): number {
+    if (discountAmount > 0) {
+        // discountAmount = annualFee * 0.25
+        return Math.round(discountAmount / (EARLY_PAYMENT_DISCOUNT_PERCENT / 100));
+    }
+    return Math.round(totalFee / years);
+}
+
+/**
+ * Calculates the tuition deposit required to secure a place.
+ * Rules:
+ * - Business/Arts/Tech: 50% of original annual fee (6000 -> 3000)
+ * - Science Standard: 50% of original annual fee (9500 -> 4750)
+ * - Science Early Bird: €4,500 (Specific requirement)
+ */
+export function calculateTuitionDeposit(annualFee: number, field: TuitionField, isEarlyBird: boolean): number {
+    if (field === 'SCIENCE' && isEarlyBird) {
+        return 4500;
+    }
+    // Default to 50% of annual fee
+    return Math.round(annualFee * 0.5);
 }
 
 

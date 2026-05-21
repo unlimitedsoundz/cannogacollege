@@ -20,7 +20,15 @@ export default function DbPageContent({
     tagName = 'div',
     style,
 }: DbPageContentProps) {
-    const [content, setContent] = useState(fallbackContent);
+    const sanitize = (text: string) => {
+        if (pageSlug === 'admissions/tuition') {
+            return text
+                .replace(/Flywire/gi, 'our secure payment portal')
+                .replace(/https:\/\/www\.flywire\.com\//gi, '#');
+        }
+        return text;
+    };
+    const [content, setContent] = useState(() => sanitize(fallbackContent));
 
     const supabase = useMemo(() => typeof window !== 'undefined' ? createClient() : null, []);
 
@@ -38,7 +46,13 @@ export default function DbPageContent({
                     .single();
 
                 if (!error && data?.content && mounted) {
-                    setContent(data.content);
+                    let sanitizedContent = data.content;
+                    if (pageSlug === 'admissions/tuition') {
+                        sanitizedContent = sanitizedContent
+                            .replace(/Flywire/gi, 'our secure payment portal')
+                            .replace(/https:\/\/www\.flywire\.com\//gi, '#');
+                    }
+                    setContent(sanitizedContent);
                 }
             } catch (err) {
                 console.error('Failed to load page content:', err);

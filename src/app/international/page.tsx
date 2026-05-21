@@ -1,7 +1,7 @@
 
 export const metadata = {
-    title: 'International Students — Kestora University Finland | Visa, Housing & Work Rights',
-    description: 'Essential information for international students at Kestora University. Residence permits, student housing, health insurance, working rights, and Finnish language courses in Helsinki.',
+    title: 'International Students — Penkka University Finland | Visa, Housing & Work Rights',
+    description: 'Essential information for international students at Penkka University. Residence permits, student housing, health insurance, working rights, and Finnish language courses in Helsinki.',
 };
 
 export default function InternationalPage() {
@@ -13,7 +13,7 @@ export default function InternationalPage() {
 
                 <div className="prose prose-lg max-w-none text-neutral-600 mb-12">
                     <p>
-                        Welcome to Kestora! Each year, we welcome hundreds of students from around the world. We are committed to making your transition to Finland as smooth as possible.
+                        Welcome to Penkka! Each year, we welcome hundreds of students from around the world. We are committed to making your transition to Finland as smooth as possible.
                     </p>
                 </div>
 

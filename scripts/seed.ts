@@ -99,7 +99,7 @@ async function main() {
                 name: 'Dr. Elena Virtanen',
                 role: 'Head of Renewable Energy',
                 bio: 'Leading expert in solar photovoltaic systems with 15 years of industry experience.',
-                email: 'elena.virtanen@kestora.online',
+                email: 'elena.virtanen@penkka.fi',
                 schoolId: schoolEngineering.id,
                 departmentId: deptRenewable.id,
             },
@@ -107,7 +107,7 @@ async function main() {
                 name: 'Prof. Markus Korhonen',
                 role: 'Senior Lecturer',
                 bio: 'Specialist in circular economy economics.',
-                email: 'markus.korhonen@kestora.online',
+                email: 'markus.korhonen@penkka.fi',
                 schoolId: schoolBusiness.id,
                 departmentId: deptManagement.id,
             }
@@ -206,8 +206,8 @@ async function main() {
 
         await supabase.from('News').insert([
             {
-                title: 'Kestora University Partners with GreenTech Finland',
-                slug: 'kestora-partners-greentech',
+                title: 'Penkka University Partners with GreenTech Finland',
+                slug: 'penkka-partners-greentech',
                 content: 'We are thrilled to announce a new strategic partnership with GreenTech Finland...',
                 excerpt: 'New internship opportunities for engineering students.',
                 published: true,

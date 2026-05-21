@@ -70,7 +70,7 @@ export async function initiatePayment(
 
         // Mock PayGoWire Interaction
         const pgwTxId = `PGW-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
-        const mockPaymentUrl = `https://kestora.online/portal/application/payment/verify?ref=${pgwTxId}`;
+        const mockPaymentUrl = `https://penkka.fi/portal/application/payment/verify?ref=${pgwTxId}`;
 
         // Create Payment Record
         const { error: paymentError } = await supabase
@@ -145,10 +145,32 @@ export async function verifyPayment(
                 .eq('id', payment.invoice_id);
 
 
-            if (isPaid && updatedInvoice.application_id) {
-                await supabase.from('housing_applications')
-                    .update({ status: 'APPROVED' })
-                    .eq('id', updatedInvoice.application_id);
+            if (isPaid) {
+                let targetApplicationId = updatedInvoice.application_id;
+
+                // Fallback: If no application_id, find a pending one for this student
+                if (!targetApplicationId) {
+                    const { data: pendingApp } = await supabase
+                        .from('housing_applications')
+                        .select('id')
+                        .eq('student_id', updatedInvoice.student_id)
+                        .eq('status', 'PENDING')
+                        .order('created_at', { ascending: false })
+                        .limit(1)
+                        .maybeSingle();
+                    
+                    if (pendingApp) {
+                        targetApplicationId = pendingApp.id;
+                        // Link the invoice for future
+                        await supabase.from('housing_invoices').update({ application_id: targetApplicationId }).eq('id', updatedInvoice.id);
+                    }
+                }
+
+                if (targetApplicationId) {
+                    await supabase.from('housing_applications')
+                        .update({ status: 'APPROVED' })
+                        .eq('id', targetApplicationId);
+                }
             }
 
             // Notify Admin & Student via Edge Function
@@ -276,11 +298,33 @@ export async function reconcilePayment(paymentId: string) {
     if (invoiceUpdateError) throw invoiceUpdateError;
 
     // 4. Update Application if Fully Paid
-    if (isFullyPaid && invoice.application_id) {
-        await supabase
-            .from('housing_applications')
-            .update({ status: 'APPROVED' })
-            .eq('id', invoice.application_id);
+    if (isFullyPaid) {
+        let targetApplicationId = invoice.application_id;
+
+        // Fallback: If no application_id, find a pending one for this student
+        if (!targetApplicationId) {
+            const { data: pendingApp } = await supabase
+                .from('housing_applications')
+                .select('id')
+                .eq('student_id', invoice.student_id)
+                .eq('status', 'PENDING')
+                .order('created_at', { ascending: false })
+                .limit(1)
+                .maybeSingle();
+            
+            if (pendingApp) {
+                targetApplicationId = pendingApp.id;
+                // Link the invoice for future
+                await supabase.from('housing_invoices').update({ application_id: targetApplicationId }).eq('id', invoice.id);
+            }
+        }
+
+        if (targetApplicationId) {
+            await supabase
+                .from('housing_applications')
+                .update({ status: 'APPROVED' })
+                .eq('id', targetApplicationId);
+        }
     }
 
     // 5. Notify Student via Edge Function
@@ -366,12 +410,33 @@ export async function verifyHousingPaymentManually(invoiceId: string, amount: nu
         .eq('id', invoiceId);
 
 
-    // 5. Update Application if Fully Paid
-    if (isFullyPaid && invoice.application_id) {
-        await supabase
-            .from('housing_applications')
-            .update({ status: 'APPROVED' })
-            .eq('id', invoice.application_id);
+    if (isFullyPaid) {
+        let targetApplicationId = invoice.application_id;
+
+        // Fallback: If no application_id, find a pending one for this student
+        if (!targetApplicationId) {
+            const { data: pendingApp } = await supabase
+                .from('housing_applications')
+                .select('id')
+                .eq('student_id', invoice.student_id)
+                .eq('status', 'PENDING')
+                .order('created_at', { ascending: false })
+                .limit(1)
+                .maybeSingle();
+            
+            if (pendingApp) {
+                targetApplicationId = pendingApp.id;
+                // Link the invoice for future
+                await supabase.from('housing_invoices').update({ application_id: targetApplicationId }).eq('id', invoiceId);
+            }
+        }
+
+        if (targetApplicationId) {
+            await supabase
+                .from('housing_applications')
+                .update({ status: 'APPROVED' })
+                .eq('id', targetApplicationId);
+        }
     }
 
     // 6. Notify Admin & Student via Edge Function

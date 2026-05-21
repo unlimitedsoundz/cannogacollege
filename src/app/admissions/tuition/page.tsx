@@ -13,10 +13,10 @@ import { SchemaLD } from '@/components/seo/SchemaLD';
 import { Breadcrumbs } from '@aalto-dx/react-modules';
 
 export const metadata = {
-    title: 'Paying the Tuition Fee | Kestora University',
-    description: 'Structure of tuition fees, payment methods (Bank Transfer), and refund policies for international students at Kestora University.',
+    title: 'Paying the Tuition Fee | Penkka University',
+    description: 'Structure of tuition fees, payment methods (Bank Transfer), and refund policies for international students at Penkka University.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/tuition/',
+        canonical: 'https://penkka.fi/admissions/tuition/',
     },
 };
 

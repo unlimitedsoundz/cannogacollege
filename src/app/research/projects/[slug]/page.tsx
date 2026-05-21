@@ -19,10 +19,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!project) return { title: 'Project Not Found' };
 
     return {
-        title: `${project.title} | Kestora Research`,
+        title: `${project.title} | Penkka Research`,
         description: project.description,
         alternates: {
-            canonical: `https://kestora.online/research/projects/${slug}/`,
+            canonical: `https://penkka.fi/research/projects/${slug}/`,
         },
     };
 }

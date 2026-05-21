@@ -547,6 +547,9 @@ export type HousingRoom = {
   monthly_rate: number;
   amenities: string[];
   status: 'AVAILABLE' | 'OCCUPIED' | 'MAINTENANCE';
+  room_type?: string;
+  size?: string;
+  images?: string[];
   building?: HousingBuilding;
 }
 
@@ -555,9 +558,12 @@ export type HousingApplication = {
   student_id: string;
   semester_id: string;
   preferred_building_id: string | null;
-  status: 'PENDING' | 'APPROVED' | 'REJECTED' | 'CANCELLED';
+  status: 'PENDING' | 'APPROVED' | 'ASSIGNED' | 'REJECTED' | 'CANCELLED';
   move_in_date: string;
   move_out_date: string;
+  lease_duration?: number;
+  room_type?: string;
+  total_contract_value?: number;
   notes?: string;
   priority_score?: number;
   created_at: string;

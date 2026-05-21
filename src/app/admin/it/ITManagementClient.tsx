@@ -63,7 +63,7 @@ export default function ITManagementClient({
         switch (assetType) {
             case 'EMAIL':
                 return {
-                    email: `student${Math.floor(Math.random() * 10000)}@kestora.online`,
+                    email: `student${Math.floor(Math.random() * 10000)}@penkka.fi`,
                     password: 'SET_ON_FIRST_LOGIN'
                 };
             case 'LMS':
@@ -74,7 +74,7 @@ export default function ITManagementClient({
             case 'VPN':
                 return {
                     vpn_key: generateToken(),
-                    config_url: 'https://vpn.kestora.online/config'
+                    config_url: 'https://vpn.penkka.fi/config'
                 };
             case 'LIBRARY':
                 return {
@@ -84,7 +84,7 @@ export default function ITManagementClient({
             case 'VIRTUAL_LAB':
                 return {
                     lab_username: `vlab_${Math.floor(Math.random() * 10000)}`,
-                    access_url: 'https://labs.kestora.online'
+                    access_url: 'https://labs.penkka.fi'
                 };
             default:
                 return {

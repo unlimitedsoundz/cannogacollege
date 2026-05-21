@@ -70,19 +70,14 @@ export default function AcademicDashboard({ student }: AcademicDashboardProps) {
                     </div>
 
                     {/* Status Banner */}
-                    <div className="bg-neutral-50 border border-neutral-200 p-4 md:p-6 flex items-start gap-4 rounded-sm">
-                        <div className="w-8 h-8 md:w-10 md:h-10 bg-neutral-100 rounded-full flex items-center justify-center text-neutral-700 shrink-0">
-                            <Layout size={18} weight="regular" className="md:w-5 md:h-5" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-black text-[13px] md:text-[15px]">Academic Status: Active</h3>
-                            <p className="text-black text-[11px] md:text-[13px] mt-1 leading-relaxed">
-                                You are officially enrolled for the upcoming term. Orientation schedule has been sent to your institutional email.
-                                <br /><span className="opacity-75">View <Link href="/refund-withdrawal-policy/" className="underline hover:text-neutral-700">Refund Policy</Link>.</span>
-                            </p>
-                            <div className="mt-3 md:mt-4 flex gap-3 text-[11px] md:text-[13px] text-black">
-                                <span className="bg-white/50 px-2 py-1 rounded"><strong>Email:</strong> {student.institutional_email}</span>
-                            </div>
+                    <div className="bg-neutral-50 p-4 md:p-6 border-l-2 border-black">
+                        <h3 className="text-[13px] md:text-[15px] font-semibold mb-1">Academic Status: Active</h3>
+                        <p className="text-black text-[11px] md:text-[13px] leading-relaxed">
+                            You are officially enrolled for the upcoming term. An information on how to set up your instituitional email will be sent to your email.
+                            <br /><span className="opacity-75">View <Link href="/refund-withdrawal-policy/" className="underline hover:text-neutral-700">Refund Policy</Link>.</span>
+                        </p>
+                        <div className="mt-3 md:mt-4 flex gap-3 text-[11px] md:text-[13px] text-black">
+                            <span className="bg-white/50 px-2 py-1 rounded"><strong>Institutional Email:</strong> {student.institutional_email}</span>
                         </div>
                     </div>
 

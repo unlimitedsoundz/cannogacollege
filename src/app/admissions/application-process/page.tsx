@@ -19,10 +19,10 @@ const sections = [
 
 
 export const metadata = {
-    title: 'How to Apply | Kestora University',
-    description: 'Step-by-step guide to applying to Kestora University. Deadlines, requirements, and admission procedures.',
+    title: 'How to Apply | Penkka University',
+    description: 'Step-by-step guide to applying to Penkka University. Deadlines, requirements, and admission procedures.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/application-process/',
+        canonical: 'https://penkka.fi/admissions/application-process/',
     },
 };
 
@@ -51,7 +51,7 @@ export default function ApplicationProcessPage() {
                             className="text-[21px] text-black max-w-xl leading-relaxed"
                             pageSlug={pageSlug}
                             sectionKey="hero_subtitle"
-                            fallbackContent={getSectionDefault('hero_subtitle') || 'Follow our step-by-step guide to ensure a smooth application process for your studies at Kestora University.'}
+                            fallbackContent={getSectionDefault('hero_subtitle') || 'Follow our step-by-step guide to ensure a smooth application process for your studies at Penkka University.'}
                         />
                         <div className="flex flex-col gap-4 pt-4">
                             <Link href="#steps" className="text-lg font-bold underline underline-offset-8 decoration-black hover:opacity-70 transition-colors text-black inline-flex items-center gap-2">
@@ -124,7 +124,7 @@ export default function ApplicationProcessPage() {
                       <section className="mt-16">
                           <CTA
                               title="Ready to Start Your Journey?"
-                              body="Join the next generation of global leaders at Kestora University. Create your portal account to begin your official application."
+                              body="Join the next generation of global leaders at Penkka University. Create your portal account to begin your official application."
                               cta={{
                                   label: "Create Portal Account",
                                   linkComponentProps: {

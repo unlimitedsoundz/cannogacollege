@@ -20,14 +20,14 @@ export function CookieConsent() {
     });
 
     useEffect(() => {
-        const savedPrefs = localStorage.getItem('Kestora-cookie-preferences');
+        const savedPrefs = localStorage.getItem('Penkka-cookie-preferences');
         if (!savedPrefs) {
             setShowConsent(true);
         }
     }, []);
 
     const savePreferences = (updatedPrefs: CookiePreferences) => {
-        localStorage.setItem('Kestora-cookie-preferences', JSON.stringify(updatedPrefs));
+        localStorage.setItem('Penkka-cookie-preferences', JSON.stringify(updatedPrefs));
         localStorage.setItem('cookie-consent-accepted', 'true');
         setShowConsent(false);
     };

@@ -25,7 +25,7 @@ const htmlContent = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kestora University Newsletter</title>
+    <title>Penkka University Newsletter</title>
 </head>
 
 <body style="margin:0; padding:0; background-color:#f8f9fa; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1a1a1a;">
@@ -39,14 +39,14 @@ const htmlContent = `<!DOCTYPE html>
                     <!-- HEADER / LOGO -->
                     <tr>
                         <td style="background:#ffffff; padding:30px; text-align:center; border-bottom: 1px solid #eeeeee;">
-                            <img src="https://kestora.online/logo-kestora.png" width="160" alt="Kestora University" style="display: block; margin: 0 auto;">
+                            <img src="https://penkka.fi/logo-penkka.png" width="160" alt="Penkka University" style="display: block; margin: 0 auto;">
                         </td>
                     </tr>
 
                     <!-- HERO IMAGE -->
                     <tr>
                         <td style="padding:0;">
-                            <img src="https://kestora.online/images/international-students.png" width="600" alt="International Students at Kestora University" style="display: block; width: 100%; height: auto;">
+                            <img src="https://penkka.fi/images/international-students.png" width="600" alt="International Students at Penkka University" style="display: block; width: 100%; height: auto;">
                         </td>
                     </tr>
 
@@ -55,7 +55,7 @@ const htmlContent = `<!DOCTYPE html>
                         <td style="padding:40px 40px 20px 40px;">
                             <h2 style="margin-top:0; font-size: 26px; font-weight: 600; color: #000000; line-height: 1.2;">Your Journey to Study in Finland Starts Here</h2>
                             <p style="font-size: 16px; line-height: 1.6; color: #444444;">
-                                We are pleased to welcome you to the Kestora University community. This newsletter serves to provide you with critical updates, upcoming deadlines, and the necessary next steps for your official admission process.
+                                We are pleased to welcome you to the Penkka University community. This newsletter serves to provide you with critical updates, upcoming deadlines, and the necessary next steps for your official admission process.
                             </p>
                         </td>
                     </tr>
@@ -76,7 +76,7 @@ const htmlContent = `<!DOCTYPE html>
                             <table border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td align="center" bgcolor="#000000" style="border-radius: 2px;">
-                                        <a href="https://kestora.online/portal" target="_blank" style="font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; padding: 16px 35px; display: inline-block; text-transform: uppercase; letter-spacing: 1px;">
+                                        <a href="https://penkka.fi/portal" target="_blank" style="font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; padding: 16px 35px; display: inline-block; text-transform: uppercase; letter-spacing: 1px;">
                                             Access Your Dashboard
                                         </a>
                                     </td>
@@ -95,7 +95,7 @@ const htmlContent = `<!DOCTYPE html>
                             <table border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
                                 <tr>
                                     <td align="center" bgcolor="#000000" style="border-radius: 2px;">
-                                        <a href="https://students.kestora.online/" target="_blank" style="font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; padding: 16px 35px; display: inline-block; text-transform: uppercase; letter-spacing: 1px;">
+                                        <a href="https://students.penkka.fi/" target="_blank" style="font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; padding: 16px 35px; display: inline-block; text-transform: uppercase; letter-spacing: 1px;">
                                             Student Community
                                         </a>
                                     </td>
@@ -120,14 +120,14 @@ const htmlContent = `<!DOCTYPE html>
                     <!-- FOOTER -->
                     <tr>
                         <td style="padding:40px; text-align:center; color: #888888; font-size: 12px;">
-                            <p style="margin:0; font-weight: bold; color: #333333; text-transform: uppercase; letter-spacing: 1px;">Kestora University</p>
-                            <p style="margin:10px 0;">Admissions Office: admissions@kestora.online</p>
+                            <p style="margin:0; font-weight: bold; color: #333333; text-transform: uppercase; letter-spacing: 1px;">Penkka University</p>
+                            <p style="margin:10px 0;">Admissions Office: admissions@penkka.fi</p>
                             <div style="margin:20px 0; border-top: 1px solid #eeeeee; padding-top: 20px;">
-                                <a href="https://kestora.online" style="color:#333333; text-decoration: none; margin: 0 10px;">Website</a>
+                                <a href="https://penkka.fi" style="color:#333333; text-decoration: none; margin: 0 10px;">Website</a>
                                 <span style="color: #dddddd;">|</span>
-                                <a href="https://kestora.online/privacy" style="color:#333333; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+                                <a href="https://penkka.fi/privacy" style="color:#333333; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
                             </div>
-                            <p style="margin:0;">&copy; 2026 Kestora University. All rights reserved.</p>
+                            <p style="margin:0;">&copy; 2026 Penkka University. All rights reserved.</p>
                         </td>
                     </tr>
 
@@ -145,7 +145,7 @@ async function sendBatch() {
     for (const email of emails) {
         try {
             const data = await resend.emails.send({
-                from: "Kestora University <admissions@kestora.online>",
+                from: "Penkka University <admissions@penkka.fi>",
                 to: [email],
                 subject: "Important Update: August 2026 Intake & Next Steps",
                 html: htmlContent

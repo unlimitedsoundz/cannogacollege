@@ -6,10 +6,10 @@ import { TagGroup } from '@/components/ui/TagGroup';
 import { LiftupCollection } from '@aalto-dx/react-modules';
 
 export const metadata = {
-    title: 'Research at Kestora University — Sustainability, Innovation & Technology',
-    description: 'Explore research at Kestora University. Funded projects in sustainability, clean technology, design, and social innovation. Publications, labs, and collaboration opportunities.',
+    title: 'Research at Penkka University — Sustainability, Innovation & Technology',
+    description: 'Explore research at Penkka University. Funded projects in sustainability, clean technology, design, and social innovation. Publications, labs, and collaboration opportunities.',
     alternates: {
-        canonical: 'https://kestora.online/research/',
+        canonical: 'https://penkka.fi/research/',
     },
 };
 
@@ -38,7 +38,7 @@ export default function ResearchPage() {
                      <h2 className="text-4xl font-semibold mb-10 uppercase tracking-tighter">Where Curiosity Meets Creation</h2>
                      <div className="prose prose-xl text-black max-w-none font-medium leading-relaxed">
                         <p className="mb-8">
-                            At <strong>Kestora University</strong>, research is not locked away in labs or journals — it lives in studios, classrooms, communities, and real-world projects. We explore questions that matter now and ideas that shape what comes next, blending <strong>technology, design, business, science, and culture</strong> into a shared space of experimentation and discovery.
+                            At <strong>Penkka University</strong>, research is not locked away in labs or journals — it lives in studios, classrooms, communities, and real-world projects. We explore questions that matter now and ideas that shape what comes next, blending <strong>technology, design, business, science, and culture</strong> into a shared space of experimentation and discovery.
                         </p>
                         <p>
                             Our research culture welcomes both analytical thinkers and creative makers. Whether through data, design, systems, or stories, we believe knowledge grows stronger when disciplines cross paths.
@@ -248,7 +248,7 @@ export default function ResearchPage() {
                     <div>
                         <h2 className="text-4xl font-semibold mb-10 uppercase tracking-tighter">Ethics & Integrity</h2>
                         <p className="text-xl text-black mb-10 leading-relaxed font-medium">
-                            All research and creative activity at Kestora University follows clear ethical guidelines and quality standards. Integrity, transparency, and accountability are central to how we work.
+                            All research and creative activity at Penkka University follows clear ethical guidelines and quality standards. Integrity, transparency, and accountability are central to how we work.
                         </p>
                         <h3 className="text-2xl font-semibold uppercase tracking-tighter mb-6">Support Infrastructure</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -268,7 +268,7 @@ export default function ResearchPage() {
                 <div className="container mx-auto px-4">
                     <h2 className="text-5xl md:text-7xl font-semibold mb-10 uppercase tracking-tighter">Manifest Your Research</h2>
                     <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto mb-16 font-medium leading-relaxed">
-                        Students and staff are invited to actively engage in exploration. At Kestora University, research is not just something you study — <strong>it’s something you do</strong>.
+                        Students and staff are invited to actively engage in exploration. At Penkka University, research is not just something you study — <strong>it’s something you do</strong>.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
                         <Link href="/research/projects" className="bg-black text-white px-12 py-5 font-medium uppercase tracking-widest text-sm hover:bg-neutral-800 transition-all">

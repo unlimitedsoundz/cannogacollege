@@ -19,10 +19,10 @@ END $$;
 -- 2. Ensure Assets Exist
 INSERT INTO it_assets (asset_type, name, description, auto_provision, access_url)
 VALUES 
-    ('LMS', 'Canvas LMS', 'Primary Learning Management System', true, 'https://canvas.kestora.online'),
+    ('LMS', 'Canvas LMS', 'Primary Learning Management System', true, 'https://canvas.penkka.fi'),
     ('EMAIL', 'Student Email', 'Official University Email (Outlook)', true, 'https://outlook.office.com'),
-    ('VPN', 'University VPN', 'Secure Access to Campus Network', true, 'https://vpn.kestora.online'),
-    ('LIBRARY', 'Digital Library', 'Access to JSTOR, EBSCO, and Research DBs', true, 'https://library.kestora.online')
+    ('VPN', 'University VPN', 'Secure Access to Campus Network', true, 'https://vpn.penkka.fi'),
+    ('LIBRARY', 'Digital Library', 'Access to JSTOR, EBSCO, and Research DBs', true, 'https://library.penkka.fi')
 ON CONFLICT DO NOTHING;
 
 -- 3. Provision for All Active Students

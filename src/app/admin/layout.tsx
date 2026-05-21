@@ -46,7 +46,7 @@ export default function AdminLayout({
                 }
 
                 // 2. Database-Validated Session (Primary for Static Export)
-                const savedUser = localStorage.getItem('Kestora_user');
+                const savedUser = localStorage.getItem('Penkka_user');
                 if (savedUser) {
                     const localProfile = JSON.parse(savedUser);
 
@@ -62,7 +62,7 @@ export default function AdminLayout({
                         setUser({ id: dbProfile.id, email: dbProfile.email });
                         setProfile(dbProfile);
                         // Refresh local cache with latest DB data
-                        localStorage.setItem('Kestora_user', JSON.stringify(dbProfile));
+                        localStorage.setItem('Penkka_user', JSON.stringify(dbProfile));
                     } else {
                         throw new Error('Invalid database session');
                     }
@@ -71,7 +71,7 @@ export default function AdminLayout({
                 }
             } catch (error) {
                 console.error("Admin auth check error:", error);
-                localStorage.removeItem('Kestora_user');
+                localStorage.removeItem('Penkka_user');
                 setRedirecting(true);
                 router.replace('/portal/account/admin-login');
             } finally {
@@ -89,7 +89,7 @@ export default function AdminLayout({
 
     const handleSignOut = async () => {
         await supabase.auth.signOut();
-        localStorage.removeItem('Kestora_user');
+        localStorage.removeItem('Penkka_user');
 
         // Clear local state
         setUser(null);
@@ -143,7 +143,7 @@ export default function AdminLayout({
         <div className="min-h-screen bg-neutral-100 flex flex-col md:flex-row font-sans text-base" data-theme="admin">
             {/* Mobile Header */}
             <header className="md:hidden bg-neutral-900 p-4 flex items-center justify-between sticky top-0 z-50">
-                <Logo className="text-white h-10" />
+                <Logo className="text-white h-8" />
                 <button
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                     className="text-white p-2 hover:bg-neutral-800 rounded-lg transition-all active:scale-95"
@@ -171,7 +171,7 @@ export default function AdminLayout({
                 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
             `}>
                 <div className="p-8 hidden md:block">
-                    <Logo className="text-white h-16" />
+                    <Logo className="text-white h-12" />
                 </div>
 
                 <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto custom-scrollbar">

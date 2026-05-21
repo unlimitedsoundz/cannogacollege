@@ -20,56 +20,58 @@ export default function AdminHousingPage() {
     });
     const [loading, setLoading] = useState(true);
 
-    const fetchHousingData = async () => {
-        setLoading(true);
+    const fetchHousingData = async (isRefresh = false) => {
+        console.log('fetchHousingData called, isRefresh:', isRefresh);
+        if (!isRefresh) setLoading(true);
+        
         const supabase = createClient();
+        
         try {
-            // Fetch all housing applications with student info (joined)
-            const { data: apps } = await supabase
-                .from('housing_applications')
-                .select('*, student:students(*, user:profiles(*)), semester:semesters(name), preferred_building:housing_buildings(name, campus_location)')
-                .order('created_at', { ascending: false });
-
-            console.log('Fetched Housing Apps:', apps);
-
-            // Fetch all available rooms with building info
-            const { data: rooms } = await supabase
-                .from('housing_rooms')
-                .select('*, building:housing_buildings(*)')
-                .eq('status', 'AVAILABLE')
-                .order('building_id');
-
-            // Fetch all housing assignments with complete data
-            const { data: assign, error: assignError } = await supabase
-                .from('housing_assignments')
-                .select(`
-                    *,
-                    student:students(*, user:profiles(*)),
-                    room:housing_rooms(
+            console.log('Fetching fresh housing data...');
+            
+            // Fetch all data in parallel for speed and consistency
+            const [appsRes, roomsRes, assignRes, bldgsRes] = await Promise.all([
+                supabase
+                    .from('housing_applications')
+                    .select('*, student:students(*, user:profiles(*)), semester:semesters(name), preferred_building:housing_buildings(name, campus_location)')
+                    .order('created_at', { ascending: false }),
+                supabase
+                    .from('housing_rooms')
+                    .select('*, building:housing_buildings(*)')
+                    .order('building_id'),
+                supabase
+                    .from('housing_assignments')
+                    .select(`
                         *,
-                        building:housing_buildings(*)
-                    )
-                `)
-                .order('created_at', { ascending: false });
+                        student:students(*, user:profiles(*)),
+                        room:housing_rooms(
+                            *,
+                            building:housing_buildings(*)
+                        )
+                    `)
+                    .order('created_at', { ascending: false }),
+                supabase
+                    .from('housing_buildings')
+                    .select('*')
+                    .order('name')
+            ]);
 
-            console.log('Fetched Housing Assignments:', assign);
+            if (appsRes.error) throw appsRes.error;
+            if (roomsRes.error) throw roomsRes.error;
+            if (assignRes.error) throw assignRes.error;
+            if (bldgsRes.error) throw bldgsRes.error;
 
-            if (assignError) console.error("Error fetching assignments:", assignError);
-
-            // Fetch all buildings for stats
-            const { data: bldgs } = await supabase
-                .from('housing_buildings')
-                .select('*')
-                .order('name');
+            console.log(`Update successful: ${appsRes.data?.length} apps, ${assignRes.data?.length} assignments`);
 
             setData({
-                applications: apps || [],
-                availableRooms: rooms || [],
-                assignments: assign || [],
-                buildings: bldgs || []
+                applications: appsRes.data || [],
+                availableRooms: roomsRes.data || [],
+                assignments: assignRes.data || [],
+                buildings: bldgsRes.data || []
             });
         } catch (error) {
-            console.error("Error fetching housing data:", error);
+            console.error("Error refreshing housing data:", error);
+            alert("Failed to refresh data. Please check your connection.");
         } finally {
             setLoading(false);
         }
@@ -101,12 +103,12 @@ export default function AdminHousingPage() {
 
                 <HousingManagementClient
                     applications={data.applications}
-                    availableRooms={data.availableRooms}
+                    rooms={data.availableRooms}
                     assignments={data.assignments}
                     buildings={data.buildings}
-                    onRefresh={fetchHousingData}
+                    onRefresh={() => fetchHousingData(true)}
                 />
             </div>
-            );</div>
+        </div>
     );
 }

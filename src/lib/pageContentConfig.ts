@@ -44,7 +44,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions-application-process',
         sectionKey: 'hero_subtitle',
         label: 'Hero Subtitle',
-        defaultContent: 'Follow our step-by-step guide to ensure a smooth application process for your studies at Kestora University.',
+        defaultContent: 'Follow our step-by-step guide to ensure a smooth application process for your studies at Penkka University.',
     },
     {
         pageSlug: 'admissions-application-process',
@@ -110,7 +110,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions-bachelor',
         sectionKey: 'benefits_content',
         label: 'Benefits Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">Studying at Kestora combines small-group teaching, practical case work, and a modern campus environment. Our Bachelor’s students benefit from personalised guidance, strong industry links, and a curriculum designed for international careers.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">Studying at Penkka combines small-group teaching, practical case work, and a modern campus environment. Our Bachelor’s students benefit from personalised guidance, strong industry links, and a curriculum designed for international careers.</p>
 <ul class="space-y-3">
     <li class="flex gap-3 items-start">International Classroom: Study with students from around the world.</li>
     <li class="flex gap-3 items-start">Career-Ready Skills: Focus on finance, management, and economics.</li>
@@ -122,9 +122,9 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions-bachelor',
         sectionKey: 'progression_content',
         label: 'Progression Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">Completing a Bachelor’s degree at Kestora opens seamless progression paths into Master’s programmes, specialised tracks, and international partner universities.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">Completing a Bachelor’s degree at Penkka opens seamless progression paths into Master’s programmes, specialised tracks, and international partner universities.</p>
 <ul class="space-y-3">
-    <li class="flex gap-3 items-start">Internal Continuation: Direct progression to Kestora Master’s programmes.</li>
+    <li class="flex gap-3 items-start">Internal Continuation: Direct progression to Penkka Master’s programmes.</li>
     <li class="flex gap-3 items-start">Specialised Tracks: Accounting, Economics, or Management.</li>
     <li class="flex gap-3 items-start">International Opportunities: Partner universities worldwide.</li>
     <li class="flex gap-3 items-start">Research Integration: Bachelor theses as a bridge to advanced research.</li>
@@ -239,7 +239,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/master',
         sectionKey: 'study_options_content',
         label: 'Study Options Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">Kestora University offers Master’s programmes in several fields. Applicants may apply to a maximum of two programmes per application.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">Penkka University offers Master’s programmes in several fields. Applicants may apply to a maximum of two programmes per application.</p>
 <div class="grid md:grid-cols-3 gap-6">
     <div class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl text-black shadow-sm"><h3 class="font-bold text-xl mb-2">Business & Economics</h3><p class="text-sm leading-relaxed">MSc in Accounting & Finance, Strategic Management, and related areas.</p></div>
     <div class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl text-black shadow-sm"><h3 class="font-bold text-xl mb-2">Art & Design</h3><p class="text-sm leading-relaxed">MA in Design, Architecture, and Visual Arts.</p></div>
@@ -250,7 +250,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/master',
         sectionKey: 'scholarships_content',
         label: 'Scholarships Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">At Kestora University, we believe in rewarding academic excellence and supporting students through various financial aid options. Our scholarship programme is designed to help international talent thrive in Finland.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">At Penkka University, we believe in rewarding academic excellence and supporting students through various financial aid options. Our scholarship programme is designed to help international talent thrive in Finland.</p>
 <ul class="space-y-4">
     <li class="flex gap-4 items-start">Merit-Based Scholarships Awarded to top-performing applicants based on academic record.</li>
     <li class="flex gap-4 items-start">Performance Waivers Maintain a 3.5 GPA and 55 ECTS/year for a 50% waiver from the 2nd year onwards.</li>
@@ -337,7 +337,7 @@ export const pageContentSections: PageContentSection[] = [
         <li>Minimum Focus Edition score: 555</li>
         <li>GRE General Test equivalent accepted</li>
     </ul>
-    <p class="mt-8 text-sm">Scores must be sent directly by the testing organization to Kestora University.</p>
+    <p class="mt-8 text-sm">Scores must be sent directly by the testing organization to Penkka University.</p>
 </div>`,
     },
     {
@@ -381,7 +381,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/tuition',
         sectionKey: 'fee_structure_content',
         label: 'Fee Structure Section',
-        defaultContent: `<p class="text-lg leading-relaxed mb-6">Tuition fees at Kestora University depend on your degree level, field of study, and start date. The exact amount for your programme is always listed in your personal admission letter.</p>
+        defaultContent: `<p class="text-lg leading-relaxed mb-6">Tuition fees at Penkka University depend on your degree level, field of study, and start date. The exact amount for your programme is always listed in your personal admission letter.</p>
 <div class="bg-gray-100 p-6 md:p-12 pl-6 md:pl-16 rounded-xl"><p class="font-medium">Note: Students whose right to study began on or before 1 August 2025 may have different fee levels. The tables below apply to new students starting in 2026.</p></div>`,
     },
     {
@@ -419,25 +419,25 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/tuition',
         sectionKey: 'merit_scholarship_content',
         label: 'Merit Scholarship Section',
-        defaultContent: `<div class="mb-8"><h3 class="text-2xl font-bold mb-4">Continuing Merit Scholarship</h3><p class="text-lg leading-relaxed mb-6">Kestora University rewards academic excellence. After the first year, international students can apply for a merit scholarship covering 50% of tuition for the next academic year.</p><div class="grid md:grid-cols-2 gap-8"><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Academic Criteria</h4><ul class="space-y-3"><li>Complete at least 55 ECTS credits per academic year</li><li>Maintain a minimum weighted GPA of 3.5 / 5.0</li></ul></div><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Application & Review</h4><p class="text-sm leading-relaxed">Scholarship eligibility is automatically reviewed every August and eligible students will be notified before the autumn tuition deadline.</p></div></div></div>`,
+        defaultContent: `<div class="mb-8"><h3 class="text-2xl font-bold mb-4">Continuing Merit Scholarship</h3><p class="text-lg leading-relaxed mb-6">Penkka University rewards academic excellence. After the first year, international students can apply for a merit scholarship covering 50% of tuition for the next academic year.</p><div class="grid md:grid-cols-2 gap-8"><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Academic Criteria</h4><ul class="space-y-3"><li>Complete at least 55 ECTS credits per academic year</li><li>Maintain a minimum weighted GPA of 3.5 / 5.0</li></ul></div><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Application & Review</h4><p class="text-sm leading-relaxed">Scholarship eligibility is automatically reviewed every August and eligible students will be notified before the autumn tuition deadline.</p></div></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'payment_methods_content',
         label: 'Payment Methods Section',
-        defaultContent: `<div class="space-y-8"><div class="bg-gray-100 p-6 md:p-12 rounded-2xl"><p class="text-lg leading-relaxed mb-4">Kestora partners with <a href="https://www.flywire.com/" target="_blank" rel="noopener noreferrer" class="underline">Flywire</a> to provide secure, convenient payment options using local and international channels.</p><p class="leading-relaxed">All tuition payments are processed through Flywire for accurate tracking, faster confirmation, and proper allocation to your student account.</p></div><div class="bg-card p-6 md:p-12 shadow-sm rounded-xl"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Step-by-Step Payment Process</h3><div class="space-y-6"><div><h4 class="font-bold mb-1">Accept Your Offer</h4><p class="text-sm leading-relaxed">Once you accept your offer through the portal, you will be redirected to the Flywire payment page.</p></div><div><h4 class="font-bold mb-1">Choose Where You’re Paying From</h4><p class="text-sm leading-relaxed">Select the country from which you will make your payment. Flywire shows local payment options specific to your location.</p></div><div><h4 class="font-bold mb-1">Review Payment Details</h4><p class="text-sm leading-relaxed">Confirm your full name, student ID, programme, amount payable, and payment reference before submitting.</p></div><div><h4 class="font-bold mb-1">Select Your Payment Method</h4><p class="text-sm leading-relaxed">Choose one of the available Flywire payment methods based on your country and preference.</p></div><div><h4 class="font-bold mb-1">Complete the Payment</h4><p class="text-sm leading-relaxed">Follow the on-screen instructions to pay securely.</p></div><div><h4 class="font-bold mb-1">Payment Confirmation</h4><p class="text-sm leading-relaxed">Once payment is confirmed, your payment status updates automatically and an official receipt is issued.</p></div></div></div><div class="grid md:grid-cols-2 gap-6"><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Processing Time</h3><p class="leading-relaxed">Most payments are confirmed within 24–72 hours, depending on the selected payment method.</p></div><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">Need Help With Payment?</h3><p class="leading-relaxed">If you experience any difficulties, contact the Admissions Office through your student portal or by email.</p><a href="mailto:admissions@kestora.online" class="inline-flex items-center gap-2 font-bold uppercase tracking-widest text-black underline">Email Admissions</a></div></div><div class="bg-gray-100 p-6 rounded-xl shadow-sm"><p class="text-sm leading-relaxed">If payment is not received by 23 April 2026, the waiver may be voided and the full fee required to confirm enrolment.</p><p class="text-sm">This waiver applies only to the first academic year and cannot be combined with other waivers.</p></div></div>`,
+        defaultContent: `<div class="space-y-8"><div class="bg-gray-100 p-6 md:p-12 rounded-2xl"><p class="text-lg leading-relaxed mb-4">Penkka provides secure, convenient payment options using local and international channels through our integrated payment gateway.</p><p class="leading-relaxed">All tuition payments are processed through our secure portal for accurate tracking, faster confirmation, and proper allocation to your student account.</p></div><div class="bg-card p-6 md:p-12 shadow-sm rounded-xl"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Step-by-Step Payment Process</h3><div class="space-y-6"><div><h4 class="font-bold mb-1">Accept Your Offer</h4><p class="text-sm leading-relaxed">Once you accept your offer through the portal, you will be redirected to the secure payment page.</p></div><div><h4 class="font-bold mb-1">Choose Where You’re Paying From</h4><p class="text-sm leading-relaxed">Select the country from which you will make your payment. The portal shows local payment options specific to your location.</p></div><div><h4 class="font-bold mb-1">Review Payment Details</h4><p class="text-sm leading-relaxed">Confirm your full name, student ID, programme, amount payable, and payment reference before submitting.</p></div><div><h4 class="font-bold mb-1">Select Your Payment Method</h4><p class="text-sm leading-relaxed">Choose one of the available payment methods based on your country and preference.</p></div><div><h4 class="font-bold mb-1">Complete the Payment</h4><p class="text-sm leading-relaxed">Follow the on-screen instructions to pay securely.</p></div><div><h4 class="font-bold mb-1">Payment Confirmation</h4><p class="text-sm leading-relaxed">Once payment is confirmed, your payment status updates automatically and an official receipt is issued.</p></div></div></div><div class="grid md:grid-cols-2 gap-6"><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Processing Time</h3><p class="leading-relaxed">Most payments are confirmed within 24–72 hours, depending on the selected payment method.</p></div><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">Need Help With Payment?</h3><p class="leading-relaxed">If you experience any difficulties, contact the Admissions Office through your student portal or by email.</p><a href="mailto:admissions@penkka.fi" class="inline-flex items-center gap-2 font-bold uppercase tracking-widest text-black underline">Email Admissions</a></div></div><div class="bg-gray-100 p-6 rounded-xl shadow-sm"><p class="text-sm leading-relaxed">If payment is not received by 23 April 2026, the waiver may be voided and the full fee required to confirm enrolment.</p><p class="text-sm">This waiver applies only to the first academic year and cannot be combined with other waivers.</p></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'timing_content',
         label: 'Payment Schedule Section',
-        defaultContent: `<div class="grid md:grid-cols-2 gap-8"><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">First Academic Year</h3><p class="leading-relaxed">After accepting the admission offer, pay the full tuition fee in a single instalment. Payment in multiple instalments is not permitted for first-year enrolment.</p></div><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">After the First Year</h3><p class="leading-relaxed">Students are encouraged to pay the full fee in one instalment during the annual enrolment period. Alternatively, two instalments may be allowed, but this can affect your attendance status.</p><div class="mt-4 p-4 bg-gray-100 rounded-lg text-sm">Important: Non-attending status may affect visa or residence permit conditions.</div></div></div><p class="mt-8 text-black text-center">For further details, consult the official Kestora University enrolment guidelines.</p>`,
+        defaultContent: `<div class="grid md:grid-cols-2 gap-8"><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">First Academic Year</h3><p class="leading-relaxed">After accepting the admission offer, pay the full tuition fee in a single instalment. Payment in multiple instalments is not permitted for first-year enrolment.</p></div><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">After the First Year</h3><p class="leading-relaxed">Students are encouraged to pay the full fee in one instalment during the annual enrolment period. Alternatively, two instalments may be allowed, but this can affect your attendance status.</p><div class="mt-4 p-4 bg-gray-100 rounded-lg text-sm">Important: Non-attending status may affect visa or residence permit conditions.</div></div></div><p class="mt-8 text-black text-center">For further details, consult the official Penkka University enrolment guidelines.</p>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'additional_fees_content',
         label: 'Additional Fees Section',
-        defaultContent: `<div class="space-y-16"><div class="max-w-4xl"><h3 class="text-2xl font-bold mb-6">Financial Requirements & Living Costs</h3><p class="text-neutral-600 leading-relaxed mb-8">Beyond tuition, ensure you have sufficient means for rent, personal expenses, transportation, meals, insurance, and any Finnish Immigration Service requirements.</p><div class="p-8 bg-gray-100 rounded-2xl shadow-sm"><p class="font-bold">Kestora University has a housing quota especially for tuition fee-liable international degree students moving to Finland.</p></div></div><div class="grid md:grid-cols-2 gap-8"><div class="p-8 bg-gray-100 rounded-3xl shadow-sm"><h3 class="text-xl font-bold mb-4">What’s Included?</h3><p class="mb-6">The tuition fee includes teaching and access to the newest learning facilities. Student services are free.</p><ul class="grid grid-cols-1 gap-3 text-sm font-medium"><li>Library access</li><li>Student Services</li><li>Career Services</li><li>Exchange Services</li><li>Study support</li></ul></div><div class="p-8 bg-black text-white rounded-3xl shadow-md"><h3 class="text-xl font-bold mb-4">HYY Student Union</h3><p class="leading-relaxed mb-6">The tuition fee includes the compulsory Student Union (HYY) membership, offering advocacy, events, and discounts.</p><div class="space-y-3"><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">Significant meal discounts</div><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">Public transport reductions</div></div></div></div></div>`,
+        defaultContent: `<div class="space-y-16"><div class="max-w-4xl"><h3 class="text-2xl font-bold mb-6">Financial Requirements & Living Costs</h3><p class="text-neutral-600 leading-relaxed mb-8">Beyond tuition, ensure you have sufficient means for rent, personal expenses, transportation, meals, insurance, and any Finnish Immigration Service requirements.</p><div class="p-8 bg-gray-100 rounded-2xl shadow-sm"><p class="font-bold">Penkka University has a housing quota especially for tuition fee-liable international degree students moving to Finland.</p></div></div><div class="grid md:grid-cols-2 gap-8"><div class="p-8 bg-gray-100 rounded-3xl shadow-sm"><h3 class="text-xl font-bold mb-4">What’s Included?</h3><p class="mb-6">The tuition fee includes teaching and access to the newest learning facilities. Student services are free.</p><ul class="grid grid-cols-1 gap-3 text-sm font-medium"><li>Library access</li><li>Student Services</li><li>Career Services</li><li>Exchange Services</li><li>Study support</li></ul></div><div class="p-8 bg-black text-white rounded-3xl shadow-md"><h3 class="text-xl font-bold mb-4">HYY Student Union</h3><p class="leading-relaxed mb-6">The tuition fee includes the compulsory Student Union (HYY) membership, offering advocacy, events, and discounts.</p><div class="space-y-3"><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">Significant meal discounts</div><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">Public transport reductions</div></div></div></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
@@ -455,19 +455,19 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/tuition',
         sectionKey: 'contact_content',
         label: 'Contact Section',
-        defaultContent: `<p class="text-white mb-10 max-w-2xl mx-auto text-lg leading-relaxed">If you have questions about payment processes, deadlines, or refunds, contact the Tuition Fee Office.</p><a href="mailto:tuition@kestora.online" class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-md">Contact Tuition Office</a>`,
+        defaultContent: `<p class="text-white mb-10 max-w-2xl mx-auto text-lg leading-relaxed">If you have questions about payment processes, deadlines, or refunds, contact the Tuition Fee Office.</p><a href="mailto:tuition@penkka.fi" class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-md">Contact Tuition Office</a>`,
     },
     {
         pageSlug: 'admissions',
         sectionKey: 'hero_title',
         label: 'Hero Title',
-        defaultContent: 'Admissions to Kestora University',
+        defaultContent: 'Admissions to Penkka University',
     },
     {
         pageSlug: 'admissions',
         sectionKey: 'hero_subtitle',
         label: 'Hero Subtitle',
-        defaultContent: 'Apply to Kestora University Helsinki and begin your Bachelor’s or Master’s studies in an internationally focused learning environment. Our admissions process is transparent, supportive, and open to students from around the world.',
+        defaultContent: 'Apply to Penkka University Helsinki and begin your Bachelor’s or Master’s studies in an internationally focused learning environment. Our admissions process is transparent, supportive, and open to students from around the world.',
     },
 ];
 

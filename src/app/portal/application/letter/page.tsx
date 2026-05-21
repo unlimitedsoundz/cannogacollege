@@ -10,7 +10,14 @@ import { formatToDDMMYYYY } from '@/utils/date';
 import PrintButton from '@/components/portal/PrintButton';
 import RejectOfferButton from './RejectOfferButton';
 import Image from 'next/image';
-import { getTuitionFee, calculateDiscountedFee, mapSchoolToTuitionField } from '@/utils/tuition';
+import { 
+    getTuitionFee, 
+    calculateDiscountedFee, 
+    mapSchoolToTuitionField,
+    getProgramYears,
+    getAnnualFeeFromTotal,
+    calculateTuitionDeposit
+} from '@/utils/tuition';
 
 interface EnrichedApplication extends Application {
     offer?: any[];
@@ -120,21 +127,24 @@ function AdmissionLetterContent() {
 
     const application = data;
 
-    // Determine Fees (Fallback to defaults if missing in DB)
-    // Handle both array and single object due to recent UNIQUE constraint change
+    // Determine Fees (Annual based for Deposit calculation)
     let displayOffer = Array.isArray(data.offer) ? data.offer[0] : data.offer;
     displayOffer = displayOffer || {};
 
-    let tuitionFee = displayOffer.tuition_fee;
-    let discountAmount = displayOffer.discount_amount || 0;
+    const years = getProgramYears(application.course?.duration || '', application.course?.degreeLevel);
+    const field = mapSchoolToTuitionField(application.course?.school?.slug || 'technology');
+    const isEarlyBird = (displayOffer.discount_amount || 0) > 0;
 
-    if (!tuitionFee && application.course) {
-        const field = mapSchoolToTuitionField(application.course.school?.slug || 'technology');
-        const baseFee = getTuitionFee(application.course.degreeLevel, field);
-        tuitionFee = baseFee;
-        discountAmount = baseFee - calculateDiscountedFee(baseFee);
-        displayOffer = { ...displayOffer, tuition_fee: tuitionFee, discount_amount: discountAmount };
+    let annualFee: number;
+    if (displayOffer.tuition_fee) {
+        annualFee = getAnnualFeeFromTotal(displayOffer.tuition_fee, displayOffer.discount_amount || 0, years);
+    } else {
+        annualFee = getTuitionFee(application.course?.degreeLevel || 'BACHELOR', field);
     }
+
+    const firstYearFee = isEarlyBird ? calculateDiscountedFee(annualFee) : annualFee;
+    const depositAmount = calculateTuitionDeposit(annualFee, field, isEarlyBird);
+    const remainingBalance = firstYearFee - depositAmount;
 
     const today = new Date();
     const showAcceptButton = application.status === 'ADMITTED';
@@ -182,8 +192,8 @@ function AdmissionLetterContent() {
                     <div>
                         <div className="mb-2 relative w-56 h-12">
                             <Image
-                                src="/logo-kestora.png"
-                                alt="Kestora University Official Logo"
+                                src="/logo-penkka.png"
+                                alt="Penkka University Official Logo"
                                 fill
                                 style={{ objectFit: 'contain', objectPosition: 'left center' }}
                                 priority
@@ -191,12 +201,12 @@ function AdmissionLetterContent() {
                         </div>
                     </div>
                     <div className="text-left md:text-right text-[10px] font-medium text-black leading-relaxed uppercase tracking-wide">
-                        <strong className="text-black text-xs">Kestora University – Helsinki Campus</strong><br />
+                        <strong className="text-black text-xs">Penkka University – Helsinki Campus</strong><br />
                         Pohjoisesplanadi 51<br />
                         00150 Helsinki, Finland<br />
                         Phone: +358 09 42721884<br />
-                        kestora.online<br />
-                        admissions@kestora.online
+                        penkka.fi<br />
+                        admissions@penkka.fi
                     </div>
                 </div>
 
@@ -247,7 +257,7 @@ function AdmissionLetterContent() {
                         {/* Official Statement */}
                         <div className="text-sm print:text-xs leading-relaxed text-black mb-6 print:mb-4">
                             <p className="mb-2 print:mb-1 text-black">
-                                This letter serves as official notification that {application.personal_info?.firstName} {application.personal_info?.lastName} (Passport: {application.personal_info?.passportNumber || 'N/A'}, DOB: {formatToDDMMYYYY(application.user?.date_of_birth || application.personal_info?.dateOfBirth || today.toISOString())}) has been formally admitted and fully enrolled as a degree student at Kestora University for the 2026 - 2027 academic year.
+                                This letter serves as official notification that {application.personal_info?.firstName} {application.personal_info?.lastName} (Passport: {application.personal_info?.passportNumber || 'N/A'}, DOB: {formatToDDMMYYYY(application.user?.date_of_birth || application.personal_info?.dateOfBirth || today.toISOString())}) has been formally admitted and fully enrolled as a degree student at Penkka University for the 2026 - 2027 academic year.
                             </p>
                             <p className="text-black">
                                 Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the <strong className="text-black">{application.course?.title} ({application.course?.programType || 'Full-time'})</strong>. This program is a full-time course of study conducted in the English language at our Helsinki campus location (Pohjoisesplanadi 51, 00150 Helsinki, Finland).
@@ -305,7 +315,7 @@ function AdmissionLetterContent() {
                             <div>
                                 <h4 className="text-[10px] font-bold text-black uppercase tracking-widest mb-2 border-b border-black pb-1 text-center">Refund Policy</h4>
                                 <p className="text-[10px] text-black leading-relaxed">
-                                    Tuition fees are subject to the university’s refund policy. Full details can be found at <a href="https://kestora.online/refund-withdrawal-policy/" className="underline text-black">kestora.online/refund-withdrawal-policy/</a>.
+                                    Tuition fees are subject to the university’s refund policy. Full details can be found at <a href="https://penkka.fi/refund-withdrawal-policy/" className="underline text-black">penkka.fi/refund-withdrawal-policy/</a>.
                                 </p>
                             </div>
                         </div>
@@ -324,13 +334,13 @@ function AdmissionLetterContent() {
                                 </div>
                                 <div className="text-[11px] font-black text-black uppercase">Office of the Registrar</div>
                                 <div className="text-[11px] font-bold text-black mt-0.5">Dosentti (Docent) Anna Virtanen, FT (Doctor of Philosophy)</div>
-                                <div className="text-[10px] font-bold text-black uppercase tracking-widest mt-1">Kestora University | Finland</div>
+                                <div className="text-[10px] font-bold text-black uppercase tracking-widest mt-1">Penkka University | Finland</div>
                             </div>
                         </div>
 
                         <div className="mt-6 text-center">
                             <p className="text-[10px] text-black">
-                                Generated electronically via Kestora SIS. Valid without physical signature if verified online.
+                                Generated electronically via Penkka SIS. Valid without physical signature if verified online.
                             </p>
                         </div>
                     </div>
@@ -401,7 +411,7 @@ function AdmissionLetterContent() {
                                 Dear {application.personal_info?.firstName},
                             </p>
                             <p className="text-sm print:text-xs leading-relaxed text-black mb-3 print:mb-1">
-                                We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Kestora University has decided to offer you a place in the <strong>{application.course?.title}</strong> ({application.course?.programType || 'Full-time'}) programme for the <strong>Autumn 2026</strong> intake.
+                                We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Penkka University has decided to offer you a place in the <strong>{application.course?.title}</strong> ({application.course?.programType || 'Full-time'}) programme for the <strong>Autumn 2026</strong> intake.
                             </p>
                             <p className="text-sm print:text-xs leading-relaxed text-black">
                                 This offer is subject to the conditions outlined below, including acceptance of the offer via the student portal and confirmation of tuition payment by the specified deadline. Upon fulfillment of these conditions, an official Letter of Admission will be issued confirming your enrollment.
@@ -429,12 +439,12 @@ function AdmissionLetterContent() {
                                 <table className="w-full text-sm print:text-xs text-left">
                                     <tbody className="text-black">
                                         <tr className="font-bold bg-neutral-50/10 text-black border-y border-neutral-100">
-                                            <td className="py-4 print:py-2 px-4 print:px-2 uppercase tracking-tighter">Tuition Deposit (50% to Secure Place)</td>
-                                            <td className="py-4 print:py-2 px-4 print:px-2 text-right text-lg print:text-base border-l border-neutral-100">€{(Math.round(((tuitionFee || 0) + (discountAmount || 0)) * 0.5)).toLocaleString()} EUR</td>
+                                            <td className="py-4 print:py-2 px-4 print:px-2 uppercase tracking-tighter">Tuition Deposit (To Secure Place)</td>
+                                            <td className="py-4 print:py-2 px-4 print:px-2 text-right text-lg print:text-base border-l border-neutral-100">€{depositAmount.toLocaleString()} EUR</td>
                                         </tr>
                                         <tr className="bg-white/50">
-                                            <td className="py-3 print:py-1.5 px-4 print:px-2 text-[10px] font-bold uppercase text-neutral-500">Remaining Balance (Due before commencement)</td>
-                                            <td className="py-3 print:py-1.5 px-4 print:px-2 text-right font-bold text-neutral-600">€{(Math.round(((tuitionFee || 0) + (discountAmount || 0)) * 0.5)).toLocaleString()} EUR</td>
+                                            <td className="py-3 print:py-1.5 px-4 print:px-2 text-[10px] font-bold uppercase text-neutral-500">Remaining Balance (1st Year)</td>
+                                            <td className="py-3 print:py-1.5 px-4 print:px-2 text-right font-bold text-neutral-600">€{remainingBalance.toLocaleString()} EUR</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -483,7 +493,7 @@ function AdmissionLetterContent() {
                                     Admissions Office
                                 </div>
                                 <div className="text-[9px] font-bold text-black uppercase tracking-widest leading-none mt-1">
-                                    Kestora University | Finland
+                                    Penkka University | Finland
                                 </div>
                             </div>
 

@@ -19,10 +19,10 @@ const tocSections = [
 ];
 
 export const metadata = {
-    title: 'International Student Guide | Kestora University',
-    description: 'A comprehensive guide for international students joining Kestora University in Finland.',
+    title: 'International Student Guide | Penkka University',
+    description: 'A comprehensive guide for international students joining Penkka University in Finland.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/international/',
+        canonical: 'https://penkka.fi/student-guide/international/',
     },
 };
 
@@ -58,7 +58,7 @@ export default function InternationalGuidePage() {
             {/* Hero Section */}
             <Hero
                 title="International Students"
-                body="Practical guidance for your journey to Finland and Kestora University."
+                body="Practical guidance for your journey to Finland and Penkka University."
                 backgroundColor="#dc6ade"
                 tinted
                 lightText={true}
@@ -106,7 +106,7 @@ export default function InternationalGuidePage() {
                                     </div>
                                     <div className="bg-neutral-100 p-8 border-l-4 border-black">
                                         <p className="font-bold text-sm text-black uppercase tracking-widest leading-relaxed">
-                                            Kestora University operates across four campuses within Helsinki, along with 15 international hubs.
+                                            Penkka University operates across four campuses within Helsinki, along with 15 international hubs.
                                         </p>
                                     </div>
                                     <div className="flex flex-wrap gap-8">
@@ -254,7 +254,7 @@ export default function InternationalGuidePage() {
                     </section>
 
                     <div className="mt-12 pt-8 border-t border-neutral-100 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
-                        <p>Updated: 25.4.2026 | Kestora International Student Services</p>
+                        <p>Updated: 25.4.2026 | Penkka International Student Services</p>
                     </div>
                 </div>
             </div>

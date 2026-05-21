@@ -8,10 +8,10 @@ import { ContentBox } from '@/components/ui/ContentBox';
 import { Highlight } from '@/components/ui/Highlight';
 
 export const metadata = {
-    title: 'Housing for Students | Kestora University',
-    description: 'Find information about student housing, apartments, and shared flats for students at Kestora University.',
+    title: 'Housing for Students | Penkka University',
+    description: 'Find information about student housing, apartments, and shared flats for students at Penkka University.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/housing-for-students/',
+        canonical: 'https://penkka.fi/student-guide/housing-for-students/',
     },
 };
 
@@ -77,7 +77,7 @@ export default function HousingGuidePage() {
                                     <div className="grid md:grid-cols-2 gap-8 text-left">
                                         <div>
                                             <h4 className="font-bold text-black mb-2">HOAS</h4>
-                                            <p className="text-sm text-neutral-600 font-bold">The Foundation for Student Housing in the Helsinki Region (HOAS) is the primary provider for Kestora University students.</p>
+                                            <p className="text-sm text-neutral-600 font-bold">The Foundation for Student Housing in the Helsinki Region (HOAS) is the primary provider for Penkka University students.</p>
                                             <Link href="https://hoas.fi/en/" target="_blank" className="font-bold underline text-xs mt-4 block">Visit HOAS.fi</Link>
                                         </div>
                                         <div>

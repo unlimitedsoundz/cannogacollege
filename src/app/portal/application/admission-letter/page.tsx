@@ -192,12 +192,12 @@ function AdmissionLetterContent() {
                 {/* Content Wrapper */}
                 <div className="space-y-3 print:space-y-1">
                     {/* 1. Header (Logo & Contact + To Block) */}
-                    <div className="flex flex-col md:flex-row justify-between items-start gap-4 border-b border-black pb-3">
+                    <div className="flex flex-col md:flex-row justify-between items-start gap-4 pb-3">
                         <div className="space-y-4">
                             <div className="relative w-40 h-10">
                                 <Image
-                                    src="/logo-kestora.png"
-                                    alt="Kestora University"
+                                    src="/logo-penkka.png"
+                                    alt="Penkka University"
                                     fill
                                     style={{ objectFit: 'contain', objectPosition: 'left center' }}
                                 />
@@ -211,12 +211,12 @@ function AdmissionLetterContent() {
                             </div>
                         </div>
                         <div className="text-left md:text-right text-[9px] font-medium text-black leading-tight uppercase tracking-wide">
-                            <strong className="text-black block mb-1 text-[10px]">Kestora University – Helsinki Campus</strong>
+                            <strong className="text-black block mb-1 text-[10px]">Penkka University – Helsinki Campus</strong>
                             Pohjoisesplanadi 51<br />
                             00150 Helsinki, Finland<br />
                             Phone: +358 09 42721884<br />
                             <div className="mt-1 text-[8px]">
-                                kestora.online | admissions@kestora.online
+                                penkka.fi | admissions@penkka.fi
                             </div>
                         </div>
                     </div>
@@ -227,26 +227,16 @@ function AdmissionLetterContent() {
                         </h1>
                     </div>
 
-                    {/* Admission Details Grid */}
-                    <div className="grid grid-cols-3 gap-4 print:gap-1 p-3 print:p-1 mb-4 print:mb-2 border-y border-black">
-                        <div className="text-center">
-                            <span className="block text-[7px] font-bold text-black uppercase tracking-widest mb-0.5 print:mb-0">Enrollment Date</span>
-                            <span className="block font-bold text-[10px] text-black">{issueDate}</span>
-                        </div>
-                        <div className="text-center">
-                            <span className="block text-[7px] font-bold text-black uppercase tracking-widest mb-0.5 print:mb-0">Admission Reference</span>
-                            <span className="block font-bold text-[10px] text-black font-mono">{admissionRef}</span>
-                        </div>
-                        <div className="text-center">
-                            <span className="block text-[7px] font-bold text-black uppercase tracking-widest mb-0.5 print:mb-0">Official Student ID</span>
-                            <span className="block font-bold text-[10px] text-black font-mono">{displayStudentId}</span>
-                        </div>
+                    {/* Admission Details */}
+                    <div className="mb-4 print:mb-2 text-[10px] text-black space-y-1">
+                        <div><strong>Enrollment Date:</strong> {issueDate}</div>
+                        <div><strong>Official Student ID:</strong> <span className="font-mono">{displayStudentId}</span></div>
                     </div>
 
                     {/* Official Statement */}
                     <div className="text-xs print:text-[10px] leading-normal text-black mb-4 print:mb-2">
                         <p className="mb-2 print:mb-1 text-black">
-                            This letter serves as official notification that {studentName} (Passport: {passportNumber}, DOB: {dob}) has been formally admitted and fully enrolled as a degree student at Kestora University for the 2026 - 2027 academic year.
+                            This letter serves as official notification that {studentName} (Passport: {passportNumber}, DOB: {dob}) has been formally admitted and fully enrolled as a degree student at Penkka University for the 2026 - 2027 academic year.
                         </p>
                         <p className="text-black">
                             Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the <strong className="text-black">{application.course?.title} ({application.course?.programType || 'Full-time'})</strong>. This program is a full-time course of study conducted in the English language at our Helsinki campus location.
@@ -254,56 +244,56 @@ function AdmissionLetterContent() {
                     </div>
 
 
-                    {/* Details Table */}
-                    <div className="space-y-0 mb-4 print:mb-2">
-                        {[
-                            { label: 'Date of Admission', value: issueDate },
-                            { label: 'Academic Year', value: academicYear },
-                            { label: 'Intake', value: intake },
-                            { label: 'Programme Start Date', value: '17.08.2026' },
-                            { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '17.08.2028' : '17.08.2029' },
-                            { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 ECTS' : '180 ECTS' },
-                            { label: 'Programme of Study', value: `${application.course?.title} (${application.course?.programType || 'Full-time'})` }
-                        ].map((row, idx) => (
-                            <div key={idx} className="flex justify-between py-1.5 print:py-0.5 border-b border-black/10">
-                                <span className="text-[10px] print:text-[9px] font-bold uppercase text-black">{row.label}</span>
-                                <span className="text-[10px] print:text-[9px] font-medium text-black">{row.value}</span>
-                            </div>
-                        ))}
+                    {/* Details List */}
+                    <div className="mb-4 print:mb-2 text-[10px] text-black">
+                        <p className="font-bold mb-1 uppercase tracking-widest text-[9px]">Programme Details</p>
+                        <ul className="list-none space-y-1 ml-0">
+                            {[
+                                { label: 'Date of Admission', value: issueDate },
+                                { label: 'Academic Year', value: academicYear },
+                                { label: 'Intake', value: intake },
+                                { label: 'Programme Start Date', value: '17.08.2026' },
+                                { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '17.08.2028' : '17.08.2029' },
+                                { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 ECTS' : '180 ECTS' },
+                                { label: 'Programme of Study', value: `${application.course?.title} (${application.course?.programType || 'Full-time'})` }
+                            ].map((row, idx) => (
+                                <li key={idx}><strong>{row.label}:</strong> {row.value}</li>
+                            ))}
+                        </ul>
                     </div>
 
                     {/* Rights & Access, Official Use, Next Steps, Refund Policy */}
-                    <div className="grid grid-cols-2 gap-x-8 gap-y-4 print:gap-y-2">
+                    <div className="space-y-4 print:space-y-2 mb-4 print:mb-2">
                         <div>
-                            <h4 className="text-[9px] font-bold uppercase tracking-widest mb-1 border-b border-black pb-0.5 text-center text-black">Student Rights</h4>
-                            <p className="text-[9px] text-black leading-tight">
+                            <h4 className="text-[9px] font-bold uppercase tracking-widest mb-1 text-black">Student Rights</h4>
+                            <p className="text-[10px] text-black leading-tight">
                                 Access to campus facilities (Library, Labs), digital resources, and student portal.
                             </p>
                         </div>
                         <div>
-                            <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 border-b border-black pb-0.5 text-center">Official Use</h4>
-                            <p className="text-[9px] text-black leading-tight italic">
+                            <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1">Official Use</h4>
+                            <p className="text-[10px] text-black leading-tight italic">
                                 Certificate of admission for visa applications and residence permit processing (Migri).
                             </p>
                         </div>
                         <div>
-                            <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 border-b border-black pb-0.5 text-center">Next Steps</h4>
-                            <ul className="list-decimal ml-3 text-[9px] text-black space-y-0.5 leading-tight">
+                            <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1">Next Steps</h4>
+                            <ul className="list-disc ml-4 text-[10px] text-black space-y-0.5 leading-tight">
                                 <li>Activate IT account and student email.</li>
                                 <li>Register for orientation sessions.</li>
                                 <li>Submit housing application if pending.</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 border-b border-black pb-0.5 text-center">Refund Policy</h4>
-                            <p className="text-[9px] text-black leading-tight">
-                                Subject to the university’s refund policy at <a href="https://kestora.online/refund-withdrawal-policy/" className="underline text-black">kestora.online/refund</a>.
+                            <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1">Refund Policy</h4>
+                            <p className="text-[10px] text-black leading-tight">
+                                Subject to the university’s refund policy at <a href="https://penkka.fi/refund-withdrawal-policy/" className="underline text-black">penkka.fi/refund</a>.
                             </p>
                         </div>
                     </div>
 
                     {/* Signature Block */}
-                    <div className="mt-4 print:mt-2 pt-2 print:pt-1 border-t border-black flex flex-row justify-between items-end">
+                    <div className="mt-4 print:mt-2 pt-2 print:pt-1 flex flex-row justify-between items-end">
                         <div className="w-1/2">
                             <div className="w-32 h-12 print:h-10 mb-1 print:mb-0.5 relative">
 
@@ -316,13 +306,13 @@ function AdmissionLetterContent() {
                             </div>
                             <div className="text-[10px] font-black text-black uppercase">Office of the Registrar</div>
                             <div className="text-[9px] font-bold text-black">Dosentti Anna Virtanen, FT</div>
-                            <div className="text-[8px] font-bold text-black uppercase tracking-widest">Kestora University | Finland</div>
+                            <div className="text-[8px] font-bold text-black uppercase tracking-widest">Penkka University | Finland</div>
                         </div>
                     </div>
 
                     <div className="mt-6 text-center">
                         <p className="text-[10px] text-black italic">
-                            Generated electronically via Kestora SIS. Valid without physical signature if verified online.
+                            Generated electronically via Penkka SIS. Valid without physical signature if verified online.
                         </p>
                     </div>
                 </div>

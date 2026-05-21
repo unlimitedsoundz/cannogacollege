@@ -29,12 +29,12 @@ async function main() {
         let changed = false;
         let credsStr = JSON.stringify(log.credentials);
 
-        if (credsStr.includes('kestora')) {
-            credsStr = credsStr.replace(/kestora\.edu/gi, 'kestora.online')
-                .replace(/kestora\.fi/gi, 'kestora.online')
-                .replace(/kestora/gi, 'kestora')
-                .replace(/kestora\.fi/gi, 'kestora.online')
-                .replace(/kestora\.edu/gi, 'kestora.online');
+        if (credsStr.includes('penkka')) {
+            credsStr = credsStr.replace(/penkka\.edu/gi, 'penkka.fi')
+                .replace(/penkka\.fi/gi, 'penkka.fi')
+                .replace(/penkka/gi, 'penkka')
+                .replace(/penkka\.fi/gi, 'penkka.fi')
+                .replace(/penkka\.edu/gi, 'penkka.fi');
             changed = true;
         }
 

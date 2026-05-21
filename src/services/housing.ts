@@ -5,6 +5,9 @@ export async function submitHousingApplication(data: {
     preferredBuildingId: string | null;
     moveInDate: string;
     moveOutDate: string;
+    leaseDuration?: number;
+    totalContractValue?: number;
+    roomType?: string;
     notes?: string;
 }): Promise<{ success: boolean; application?: any; error?: string }> {
     try {
@@ -49,6 +52,9 @@ export async function submitHousingApplication(data: {
                 preferred_building_id: data.preferredBuildingId,
                 move_in_date: data.moveInDate,
                 move_out_date: data.moveOutDate,
+                lease_duration: data.leaseDuration || 1,
+                total_contract_value: data.totalContractValue,
+                room_type: data.roomType,
                 notes: data.notes,
                 priority_score: priorityScore,
                 status: 'PENDING'

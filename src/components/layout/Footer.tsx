@@ -26,20 +26,20 @@ export function Footer() {
                 <div className="mb-12 pb-10 border-b border-white/10">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                         <div>
-                            <Logo className="h-12 md:h-16 text-white mb-4" />
+                            <Logo className="h-10 md:h-14 text-white mb-4" />
                             <p className="text-neutral-400 text-sm max-w-md leading-relaxed">
-                                Kestora University is an independent higher education institution in Helsinki, Finland, offering English-taught Bachelor’s and Master’s degree programmes focused on engineering, technology, business, science, and the arts.
+                                Penkka University is an independent higher education institution in Helsinki, Finland, offering English-taught Bachelor’s and Master’s degree programmes focused on engineering, technology, business, science, and the arts.
                             </p>
 
                         </div>
                         <div className="flex gap-3">
-                            <a href="https://www.linkedin.com/company/kestora-university" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-white" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/company/penkka-university" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-white" aria-label="LinkedIn">
                                 <Linkedin size={18} weight="fill" />
                             </a>
-                            <a href="https://www.tiktok.com/@kestorauniversity" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-white" aria-label="TikTok">
+                            <a href="https://www.tiktok.com/@penkkauniversity" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-white" aria-label="TikTok">
                                 <TikTok size={18} weight="fill" />
                             </a>
-                            <a href="https://snapchat.com/add/kestorauniversity" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-white" aria-label="Snapchat">
+                            <a href="https://snapchat.com/add/penkkauniversity" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-white" aria-label="Snapchat">
                                 <Snapchat size={18} weight="fill" />
                             </a>
                         </div>
@@ -64,7 +64,7 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">About</h3>
                         <ul className="space-y-3">
-                            <li><Link href="/about-kestora-university" className="text-neutral-400 text-sm hover:text-white transition-colors">Our Story</Link></li>
+                            <li><Link href="/about-penkka-university" className="text-neutral-400 text-sm hover:text-white transition-colors">Our Story</Link></li>
                             <li><Link href="/news" className="text-neutral-400 text-sm hover:text-white transition-colors">News & Events</Link></li>
                             <li><Link href="/research" className="text-neutral-400 text-sm hover:text-white transition-colors">Research</Link></li>
                             <li><Link href="/student-life" className="text-neutral-400 text-sm hover:text-white transition-colors">Campus Life</Link></li>
@@ -93,14 +93,14 @@ export function Footer() {
                             <li className="flex items-start gap-3 text-neutral-400 text-sm">
                                 <MapPin size={16} className="shrink-0 text-neutral-500 mt-0.5" />
                                 <div className="space-y-3">
-                                    <span className="block">Kestora University – Helsinki Campus</span>
+                                    <span className="block">Penkka University – Helsinki Campus</span>
                                     <span className="block">Pohjoisesplanadi 51,</span>
                                     <span className="block">00150 Helsinki, Uusimaa</span>
                                 </div>
                             </li>
                             <li className="flex items-center gap-3 text-neutral-400 text-sm">
                                 <EnvelopeSimple size={16} className="shrink-0 text-neutral-500" />
-                                <a href="mailto:info@kestora.online" className="hover:text-white transition-colors">info@kestora.online</a>
+                                <a href="mailto:info@penkka.fi" className="hover:text-white transition-colors">info@penkka.fi</a>
                             </li>
                         </ul>
                     </div>
@@ -112,7 +112,7 @@ export function Footer() {
                 <div className="container mx-auto px-4 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-neutral-500 text-xs order-2 md:order-1">
-                            © 2026 Kestora University – Independent higher education institution in Helsinki, Finland. All rights reserved.
+                            © 2026 Penkka University – Independent higher education institution in Helsinki, Finland. All rights reserved.
                         </p>
                         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 order-1 md:order-2">
                             <Link href="/site-index" className="text-neutral-500 text-xs hover:text-white transition-colors">Site Index</Link>

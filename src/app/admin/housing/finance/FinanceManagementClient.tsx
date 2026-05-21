@@ -60,6 +60,8 @@ export default function FinanceManagementClient({
     const [invoiceType, setInvoiceType] = useState('HOUSING_DEPOSIT');
     const [studentSearch, setStudentSearch] = useState('');
     const [studentResults, setStudentResults] = useState(students);
+    const [studentApplications, setStudentApplications] = useState<any[]>([]);
+    const [selectedApplicationId, setSelectedApplicationId] = useState<string | null>(null);
 
     const stats = {
         totalRevenue: payments
@@ -454,10 +456,24 @@ export default function FinanceManagementClient({
                                                 <button
                                                     key={s.id}
                                                     type="button"
-                                                    onClick={() => {
+                                                    onClick={async () => {
                                                         setInvoiceStudentId(s.id);
                                                         setStudentSearch(`${s.user?.first_name} ${s.user?.last_name}`);
                                                         setStudentResults([]);
+                                                        
+                                                        // Fetch applications for this student
+                                                        const { createClient } = await import('@/utils/supabase/client');
+                                                        const supabase = createClient();
+                                                        const { data: apps } = await supabase
+                                                            .from('housing_applications')
+                                                            .select('*, semester:semesters(name)')
+                                                            .eq('student_id', s.id)
+                                                            .order('created_at', { ascending: false });
+                                                        
+                                                        setStudentApplications(apps || []);
+                                                        if (apps && apps.length > 0) {
+                                                            setSelectedApplicationId(apps[0].id);
+                                                        }
                                                     }}
                                                     className={`w-full text-left px-4 py-2 text-xs font-bold uppercase hover:bg-neutral-50 ${invoiceStudentId === s.id ? 'bg-neutral-100' : ''}`}
                                                 >
@@ -472,6 +488,8 @@ export default function FinanceManagementClient({
                                                 setInvoiceStudentId('');
                                                 setStudentSearch('');
                                                 setStudentResults(students);
+                                                setStudentApplications([]);
+                                                setSelectedApplicationId(null);
                                             }}
                                             className="text-[8px] font-bold text-red-500 uppercase tracking-widest mt-1 hover:underline"
                                         >
@@ -479,6 +497,23 @@ export default function FinanceManagementClient({
                                         </button>
                                     )}
                                 </div>
+                                {invoiceStudentId && studentApplications.length > 0 && (
+                                    <div className="mt-4">
+                                        <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Link to Application</label>
+                                        <select
+                                            className="w-full px-4 py-3 border-2 border-black font-bold outline-none bg-white text-xs font-bold uppercase"
+                                            value={selectedApplicationId || ''}
+                                            onChange={(e) => setSelectedApplicationId(e.target.value)}
+                                        >
+                                            <option value="">Do Not Link</option>
+                                            {studentApplications.map(app => (
+                                                <option key={app.id} value={app.id}>
+                                                    {app.semester?.name} - {app.status} ({new Date(app.created_at).toLocaleDateString()})
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
@@ -541,7 +576,7 @@ export default function FinanceManagementClient({
                                     }
                                     setLoading(true);
                                     try {
-                                        await generateHousingInvoice(invoiceStudentId, null, [
+                                        await generateHousingInvoice(invoiceStudentId, selectedApplicationId, [
                                             {
                                                 description: invoiceDescription,
                                                 type: invoiceType,

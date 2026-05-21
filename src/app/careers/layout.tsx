@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Careers | Kestora University',
-    description: 'Join the Kestora University team. Explore our open positions and learn about our multi-disciplinary institutional culture in Helsinki, Finland.',
+    title: 'Careers | Penkka University',
+    description: 'Join the Penkka University team. Explore our open positions and learn about our multi-disciplinary institutional culture in Helsinki, Finland.',
     alternates: {
-        canonical: 'https://www.kestora.online/careers',
+        canonical: 'https://www.penkka.fi/careers',
     },
 };
 

@@ -21,16 +21,16 @@ type NavItem = {
 
 const navigation: NavItem[] = [
     {
-        name: "Kestora",
+        name: "Penkka",
         href: "#",
         children: [
             { name: "Student Guide", href: "/student-guide" },
             { name: "International Students", href: "/student-guide/international" },
-            { name: "Chat with Students", href: "/student-guide/chat-with-kestora-students" },
+            { name: "Chat with Students", href: "/student-guide/chat-with-penkka-students" },
             { name: "Housing for students", href: "/student-guide/housing-for-students" },
             { name: "Arrival Guide", href: "/student-guide/arrival" },
             { name: "Exchange Guide", href: "/student-guide/exchange" },
-            { name: "Kestora Student Ambassadors", href: "https://ourblogs.kestora.online/" },
+            { name: "Penkka Student Ambassadors", href: "https://ourblogs.penkka.fi/" },
             { name: "News and Events", href: "/news" },
             { name: "Academic Calendar", href: "/student-guide#calendar" },
             { name: "Support Services", href: "/student-guide#support" },
@@ -100,7 +100,7 @@ const navigation: NavItem[] = [
         ]
     },
     { name: "Student Life", href: "/student-life" },
-    { name: "About", href: "/about-kestora-university" },
+    { name: "About", href: "/about-penkka-university" },
 ]
 
 export function Header() {
@@ -121,7 +121,7 @@ export function Header() {
         >
             <div className="container mx-auto px-4 h-20 flex items-center justify-between">
                 <Logo
-                    className={`h-10 md:h-14 ${isAdmissionsPage ? 'text-white' : ''}`}
+                    className={`h-8 md:h-12 ${isAdmissionsPage ? 'text-white' : ''}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                 />
 
@@ -193,7 +193,7 @@ export function Header() {
                     <div className="flex items-center gap-4 pl-6">
                         <LanguageSelector />
                         <Link href="/admissions/application-process" className="bg-black text-white w-[150px] h-[60px] flex items-center justify-center rounded-full text-xs font-bold tracking-wider hover:bg-neutral-800 transition-colors">
-                            Apply to Kestora
+                            Apply to Penkka
                         </Link>
                     </div>
                 </div>
@@ -290,7 +290,7 @@ export function Header() {
 
                         <div className="p-4">
                             <Link href="/admissions/application-process" className="flex w-[150px] h-[60px] items-center justify-center bg-black text-white font-bold hover:bg-neutral-800" onClick={() => setIsMobileMenuOpen(false)}>
-                                Apply to Kestora
+                                Apply to Penkka
                             </Link>
                         </div>
                     </div>

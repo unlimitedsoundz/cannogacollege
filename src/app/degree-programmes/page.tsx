@@ -11,10 +11,10 @@ const sections = [
 ];
 
 export const metadata = {
-    title: 'Degree Programmes | Kestora University',
-    description: 'Explore our comprehensive range of bachelor\'s and master\'s degree programmes at Kestora University.',
+    title: 'Degree Programmes | Penkka University',
+    description: 'Explore our comprehensive range of bachelor\'s and master\'s degree programmes at Penkka University.',
     alternates: {
-        canonical: 'https://kestora.online/degree-programmes/',
+        canonical: 'https://penkka.fi/degree-programmes/',
     },
 };
 

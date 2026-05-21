@@ -39,10 +39,10 @@ export default function AdminApplicationEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://kestora.online/logo-kestora.png"
+                                src="https://penkka.fi/logo-penkka.png"
                                 width="40"
                                 height="40"
-                                alt="Kestora University"
+                                alt="Penkka University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
@@ -72,7 +72,7 @@ export default function AdminApplicationEmail({
                         <Section className="text-center mt-[32px] mb-[32px]">
                             <Link
                                 className="bg-[#000000] rounded text-white text-[12px] font-bold no-underline text-center px-6 py-3 uppercase tracking-widest"
-                                href={`https://kestora.online/admin/admissions/applications/${applicationId}`}
+                                href={`https://penkka.fi/admin/admissions/applications/${applicationId}`}
                             >
                                 Review Application
                             </Link>
@@ -81,14 +81,14 @@ export default function AdminApplicationEmail({
                         <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
                         <Section className="text-center mt-[10px] mb-[20px]">
                             <Text className="m-0">
-                                <Link href="https://www.linkedin.com/company/kestora-university" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">LinkedIn</Link>
-                                <Link href="https://www.tiktok.com/@kestorauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
-                                <Link href="https://snapchat.com/add/kestorauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Snapchat</Link>
+                                <Link href="https://www.linkedin.com/company/penkka-university" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">LinkedIn</Link>
+                                <Link href="https://www.tiktok.com/@penkkauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
+                                <Link href="https://snapchat.com/add/penkkauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Snapchat</Link>
                             </Text>
                         </Section>
 
                         <Text className="text-[#666666] text-[10px] uppercase font-bold tracking-widest leading-[24px]">
-                            Internal Notification Service — Kestora University
+                            Internal Notification Service — Penkka University
                         </Text>
                     </Container>
                 </Body>

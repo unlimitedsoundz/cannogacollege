@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { School } from '@/types/database';
 
 export const metadata = {
-    title: 'Academic Schools — Kestora University Finland | Arts, Business, Science, Technology',
-    description: 'Kestora University is organized into four schools: Arts & Architecture, Business, Science, and Technology. Explore departments, research, and degree programmes.',
+    title: 'Academic Schools — Penkka University Finland | Arts, Business, Science, Technology',
+    description: 'Penkka University is organized into four schools: Arts & Architecture, Business, Science, and Technology. Explore departments, research, and degree programmes.',
     alternates: {
-        canonical: 'https://kestora.online/schools/',
+        canonical: 'https://penkka.fi/schools/',
     },
 };
 
@@ -38,7 +38,7 @@ export default async function SchoolsPage() {
             {/* Hero Section */}
             <Hero
                 title="Our Schools"
-                body="Kestora University is organized into specialized schools, each driving innovation in technology, business, science, and design through world-class research and English-taught Bachelor’s and Master’s programmes."
+                body="Penkka University is organized into specialized schools, each driving innovation in technology, business, science, and design through world-class research and English-taught Bachelor’s and Master’s programmes."
                 backgroundColor="#6c531b"
                 tinted
                 lightText={true}

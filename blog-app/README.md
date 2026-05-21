@@ -1,6 +1,6 @@
-# Kestora Blog App
+# Penkka Blog App
 
-A standalone Node.js Express application for displaying the Kestora University blog, powered by Supabase.
+A standalone Node.js Express application for displaying the Penkka University blog, powered by Supabase.
 
 ## Features
 

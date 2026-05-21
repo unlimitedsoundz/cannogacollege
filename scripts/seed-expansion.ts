@@ -468,7 +468,7 @@ async function main() {
                 ...courseInfo,
                 duration: courseInfo.degreeLevel === "BACHELOR" ? "3 Years" : "2 Years",
                 credits: courseInfo.degreeLevel === "BACHELOR" ? 180 : 120,
-                description: `Official ${courseInfo.title} programme at Kestora University.`,
+                description: `Official ${courseInfo.title} programme at Penkka University.`,
                 language: 'English',
                 careerPaths: "Diverse opportunities in global industries.",
                 imageUrl: null
