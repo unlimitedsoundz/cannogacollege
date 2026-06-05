@@ -150,8 +150,8 @@ export default function PayGoWireCheckout({
         if (country === 'India') {
             methods.unshift({ id: 'upi', name: 'UPI', description: 'GPay, PhonePe, Paytm', type: 'WALLET', icon: Wallet, processingTime: '10-30 minutes' });
             methods.push({ id: 'in_bank', name: 'Net Banking', description: 'Direct transfer from Indian banks', type: 'BANK', icon: BankIcon, processingTime: '1-2 business days' });
-        } else if (country === 'Finland' || country === 'France' || country === 'Germany') {
-            if (country === 'Finland') methods.push({ id: 'nordea', name: 'Nordea Online', description: 'Local Finnish bank login', type: 'BANK', icon: BankIcon, processingTime: 'Instant' });
+        } else if (country === 'Ottawa, Canada' || country === 'France' || country === 'Germany') {
+            if (country === 'Ottawa, Canada') methods.push({ id: 'nordea', name: 'Nordea Online', description: 'Local Finnish bank login', type: 'BANK', icon: BankIcon, processingTime: 'Instant' });
         } else if (country === 'Nigeria' && ngnEnabled) {
             methods.unshift({ 
                 id: 'ng_bank', 
@@ -201,15 +201,16 @@ export default function PayGoWireCheckout({
         let rate = 1.0;
         let localCurrency = defaultCurrency;
 
-        if (selectedMethod?.id === 'usd_wire') { rate = 1.08; localCurrency = 'USD'; }
-        else if (selectedMethod?.id === 'eur_wire') { rate = 1.0; localCurrency = 'EUR'; }
-        else if (selectedMethod?.id === 'gbp_wire') { rate = 0.85; localCurrency = 'GBP'; }
-        else if (selectedCountry === 'Nigeria') { rate = 1620.50; localCurrency = 'NGN'; }
-        else if (selectedCountry === 'India') { rate = 89.42; localCurrency = 'INR'; }
-        else if (selectedCountry === 'United States') { rate = 1.08; localCurrency = 'USD'; }
-        else if (selectedCountry === 'United Arab Emirates') { rate = 3.97; localCurrency = 'AED'; }
-        else if (selectedCountry === 'Cameroon') { rate = 655.96; localCurrency = 'XAF'; }
-        else if (['France', 'Germany', 'Finland'].includes(selectedCountry)) { rate = 1.0; localCurrency = 'EUR'; }
+        if (selectedMethod?.id === 'usd_wire') { rate = 0.73; localCurrency = 'USD'; }
+        else if (selectedMethod?.id === 'eur_wire') { rate = 0.68; localCurrency = 'EUR'; }
+        else if (selectedMethod?.id === 'gbp_wire') { rate = 0.58; localCurrency = 'GBP'; }
+        else if (selectedCountry === 'Nigeria') { rate = 979.09; localCurrency = 'NGN'; }
+        else if (selectedCountry === 'India') { rate = 61.42; localCurrency = 'INR'; }
+        else if (selectedCountry === 'United States') { rate = 0.73; localCurrency = 'USD'; }
+        else if (selectedCountry === 'United Arab Emirates') { rate = 2.69; localCurrency = 'AED'; }
+        else if (selectedCountry === 'Cameroon') { rate = 440.00; localCurrency = 'XAF'; }
+        else if (['France', 'Germany'].includes(selectedCountry)) { rate = 0.68; localCurrency = 'EUR'; }
+        else if (selectedCountry === 'Ottawa, Canada') { rate = 1.0; localCurrency = 'CAD'; }
 
         // Special handling for EUR wire method which has a flat 25 EUR fee
         let localAmount = (amount * rate).toFixed(2);
@@ -300,9 +301,9 @@ export default function PayGoWireCheckout({
                     </div>
 
                     <div className="flex flex-col text-right">
-                        <span className="text-black uppercase tracking-widest mb-0.5">Penkka University receives</span>
+                        <span className="text-black uppercase tracking-widest mb-0.5">Cannoga College receives</span>
                         <span className="font-normal text-black text-sm md:text-base">
-                            € {amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            $ {amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
                     </div>
                 </div>
@@ -472,15 +473,15 @@ export default function PayGoWireCheckout({
                                     <p className="text-2xl md:text-3xl font-normal">{fxData.localCurrency} {Number(fxData.localAmount).toLocaleString()}</p>
                                 </div>
                                 <div className="text-right">
-                                    <p className="text-[10px] md:text-sm font-normal text-black uppercase tracking-widest mb-1">Settlement (EUR)</p>
-                                    <p className="text-xl md:text-2xl font-normal">€ {amount.toLocaleString()}</p>
+                                    <p className="text-[10px] md:text-sm font-normal text-black uppercase tracking-widest mb-1">Settlement (CAD)</p>
+                                    <p className="text-xl md:text-2xl font-normal">$ {amount.toLocaleString()}</p>
                                 </div>
                             </div>
 
                             <div className="pt-6 space-y-3">
                                 <div className="flex justify-between text-xs md:text-sm font-normal">
                                     <span className="text-black">Exchange Rate</span>
-                                    <span className="text-[#147BD1] font-normal">1 EUR = {fxData.rate} {fxData.localCurrency}</span>
+                                    <span className="text-[#147BD1] font-normal">1 CAD = {fxData.rate} {fxData.localCurrency}</span>
                                 </div>
                                 <div className="flex justify-between text-xs md:text-sm font-normal pt-2">
                                     <span>Total Payable</span>
@@ -537,7 +538,7 @@ export default function PayGoWireCheckout({
                         <button
                             onClick={() => {
                                 if (selectedMethod?.id === 'flutterwave_uae' || selectedMethod?.id === 'flutterwave_cm_momo') {
-                                    window.open('https://flutterwave.com/pay/Penkka', '_blank');
+                                    window.open('https://flutterwave.com/pay/Cannoga', '_blank');
                                     handleConfirmPayment();
                                 } else if (selectedMethod?.id === 'ng_bank' || selectedMethod?.id === 'usd_wire' || selectedMethod?.id === 'eur_wire' || selectedMethod?.id === 'gbp_wire' || selectedMethod?.id === 'wire' || selectedMethod?.id === 'sepa') {
                                     handleStepChange('BANK_INSTRUCTIONS');
@@ -625,7 +626,7 @@ export default function PayGoWireCheckout({
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Beneficiary</span>
-                                            <span className="text-sm text-black font-normal text-right">SYKLI EDUCATIONAL SERVICES/FLYWIRE</span>
+                                            <span className="text-sm text-black font-normal text-right">CANNOGA COLLEGE/FLYWIRE</span>
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Reference</span>
@@ -662,7 +663,7 @@ export default function PayGoWireCheckout({
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Beneficiary</span>
-                                            <span className="text-sm text-black font-normal text-right">SYKLI EDUCATIONAL SERVICES/FLYWIRE</span>
+                                            <span className="text-sm text-black font-normal text-right">CANNOGA COLLEGE/FLYWIRE</span>
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Reference</span>
@@ -717,7 +718,7 @@ export default function PayGoWireCheckout({
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Beneficiary</span>
-                                            <span className="text-sm text-black font-normal text-right">SYKLI EDUCATIONAL SERVICES/FLYWIRE</span>
+                                            <span className="text-sm text-black font-normal text-right">CANNOGA COLLEGE/FLYWIRE</span>
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Reference</span>
@@ -747,7 +748,7 @@ export default function PayGoWireCheckout({
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Beneficiary</span>
-                                            <span className="text-sm text-black font-normal text-right">SYKLI EDUCATIONAL SERVICES/FLYWIRE</span>
+                                            <span className="text-sm text-black font-normal text-right">CANNOGA COLLEGE/FLYWIRE</span>
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Reference</span>

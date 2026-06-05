@@ -8,10 +8,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata: Metadata = {
-    title: 'Bachelor\'s Students Guide | Penkka University',
+    title: 'Bachelor\'s Students Guide | Cannoga College',
     description: 'Essential information for students admitted to Bachelor\'s programmes taught in English. Read carefully to ensure a smooth start to your studies.',
     alternates: {
-        canonical: 'https://penkka.fi/student-guide/bachelor/',
+        canonical: 'https://cannogacollege.ca/student-guide/bachelor/',
     },
 };
 
@@ -55,7 +55,7 @@ export default function BachelorsGuidePage() {
                         <section id="intro" className="scroll-mt-32">
                             <ContentBox
                                 icon="info"
-                                title="Welcome to Penkka University!"
+                                title="Welcome to Cannoga College!"
                                 body="This guide covers the critical steps from accepting your offer to arriving on campus. Follow the deadlines closely to secure your study place."
                             />
                         </section>
@@ -91,7 +91,7 @@ export default function BachelorsGuidePage() {
                             <div className="grid md:grid-cols-2 gap-8">
                                 <Card
                                     title="General Rules"
-                                    body="Non-EU/EEA students typically pay tuition. Fees are due after acceptance and before enrolment."
+                                    body="International students typically pay tuition. Fees are due after acceptance and before enrolment."
                                 />
                                 <Card
                                     title="Early Payment Discount"
@@ -105,8 +105,8 @@ export default function BachelorsGuidePage() {
                         <section id="residence" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">3. Residence Permit</h2>
                             <div className="grid md:grid-cols-3 gap-6">
-                                <Card title="Non-EU/EEA" body="Apply for a student residence permit immediately. The process takes time." />
-                                <Card title="EU/EEA" body="Register right of residence at a local authority within 3 months of arrival." />
+                                <Card title="International Students" body="Apply for a Canadian study permit immediately after accepting your offer. Processing typically takes 4–12 weeks." />
+                                <Card title="Canadian Citizens / PR" body="No study permit required. Register for your programme and complete enrolment online." />
                                 <Card title="Nordic" body="Register with the Population Info System upon arrival for a personal ID code." />
                             </div>
                         </section>
@@ -116,7 +116,7 @@ export default function BachelorsGuidePage() {
                             <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">4. Enrol for the Academic Year</h2>
                             <ContentBox
                                 icon="identificationBadge"
-                                title="Deadline: 14 August 2026"
+                                title="Application Windows"
                                 body={
                                     <div className="grid md:grid-cols-2 gap-8 text-left">
                                         <div>
@@ -137,7 +137,7 @@ export default function BachelorsGuidePage() {
                             <ContentBox
                                 icon="laptop"
                                 title="5. Activate IT Account"
-                                body="After enrolling, you will receive an email to activate your Penkka University IT account. This gives you access to email and learning platforms."
+                                body="After enrolling, you will receive an email to activate your Cannoga College IT account. This gives you access to email and learning platforms."
                             />
                         </section>
 
@@ -180,11 +180,11 @@ export default function BachelorsGuidePage() {
                             <div className="grid md:grid-cols-2 gap-8">
                                 <Card
                                     title="Housing"
-                                    body="Apply immediately. Penkka assists with the application process for student housing."
+                                    body="Apply immediately. Cannoga assists with the application process for student housing."
                                 />
                                 <Card
                                     title="Financial Aid"
-                                    body="Check eligibility for Finnish student aid early and apply through Kela."
+                                    body="Check eligibility for Canadian student aid (OSAP) early and apply before the deadline."
                                 />
                             </div>
                         </section>

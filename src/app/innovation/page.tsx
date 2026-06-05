@@ -2,10 +2,10 @@
 import { RocketLaunch as Rocket, Lightbulb } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'Innovation Hub — Penkka University | Startups, Incubation & Entrepreneurship',
-    description: 'Penkka University Innovation Hub connects students, researchers, and industry to turn ideas into impact. Startup incubation, workshops, and entrepreneurship support.',
+    title: 'Innovation Hub — Cannoga College | Startups, Incubation & Entrepreneurship',
+    description: 'Cannoga College Innovation Hub connects students, researchers, and industry to turn ideas into impact. Startup incubation, workshops, and entrepreneurship support.',
     alternates: {
-        canonical: 'https://penkka.fi/innovation/',
+        canonical: 'https://cannogacollege.ca/innovation/',
     },
 };
 

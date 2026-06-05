@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://penkka.fi';
+    const baseUrl = 'https://cannogacollege.ca';
 
     // Core pages with highest priority
     const corePages = [
@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${baseUrl}/admissions/application-process`, changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: `${baseUrl}/admissions/tuition`, changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: `${baseUrl}/admissions/requirements`, changeFrequency: 'monthly' as const, priority: 0.8 },
-        { url: `${baseUrl}/admissions/bachelor-fi`, changeFrequency: 'monthly' as const, priority: 0.7 },
     ];
 
     // Schools & departments
@@ -47,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Institutional pages
     const institutionalPages = [
-        { url: `${baseUrl}/about-penkka-university`, changeFrequency: 'monthly' as const, priority: 0.5 },
+        { url: `${baseUrl}/about-cannoga-college`, changeFrequency: 'monthly' as const, priority: 0.5 },
         { url: `${baseUrl}/contact`, changeFrequency: 'monthly' as const, priority: 0.5 },
         { url: `${baseUrl}/news`, changeFrequency: 'daily' as const, priority: 0.6 },
         { url: `${baseUrl}/alumni`, changeFrequency: 'monthly' as const, priority: 0.4 },

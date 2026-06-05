@@ -95,7 +95,7 @@ export default function PortalHeader() {
         if (supabase) {
             await supabase.auth.signOut();
         }
-        localStorage.removeItem('Penkka_user');
+        localStorage.removeItem('Cannoga_user');
 
 
         // Clear local state

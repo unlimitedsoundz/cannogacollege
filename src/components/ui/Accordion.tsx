@@ -34,22 +34,22 @@ export function Accordion({ sections }: AccordionProps) {
                 return (
                     <div 
                         key={section.accordionKey} 
-                        className="border-t-2 border-black last:border-b-2"
+                        className="border-t-2 border-[#5c2d91] last:border-b-2"
                     >
                         <button
                             onClick={() => toggle(section.accordionKey)}
-                            className="w-full flex items-center justify-between py-8 px-0 text-left hover:bg-neutral-50 transition-colors focus:outline-none group"
+                            className="w-full flex items-center justify-between py-8 px-0 text-left hover:bg-[#f7f4fc] transition-colors focus:outline-none group"
                             aria-expanded={isOpen}
                         >
-                            <span className="text-aalto-5 md:text-aalto-6 font-bold text-black pr-8 leading-aalto-5 tracking-aalto-2">
+                            <span className="text-aalto-5 md:text-aalto-6 font-bold text-[#2e1150] pr-8 leading-aalto-5 tracking-aalto-2">
                                 {section.title}
                             </span>
-                            <div className="flex-shrink-0 bg-black text-white p-2">
+                            <div className="flex-shrink-0 bg-[#5c2d91] text-white p-2">
                                 {isOpen ? (
                                     <Minus size={20} weight="bold" />
                                 ) : (
                                     <Plus size={20} weight="bold" />
-                                )}
+                                ) }
                             </div>
                         </button>
                         <div
@@ -57,7 +57,7 @@ export function Accordion({ sections }: AccordionProps) {
                                 isOpen ? 'max-h-[2000px] opacity-100 pb-12' : 'max-h-0 opacity-0'
                             } overflow-hidden`}
                         >
-                            <div className="prose prose-lg max-w-none text-black leading-relaxed">
+                            <div className="prose prose-lg max-w-none text-neutral-800 leading-relaxed">
                                 {section.children}
                             </div>
                         </div>

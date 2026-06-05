@@ -545,20 +545,24 @@ function ApplicationReviewContent() {
                             </div>
 
                             {/* Financial Offer Form (Manual Override) */}
-                            {app.status !== 'REJECTED' && app.status !== 'DRAFT' && (
-                                <div className="mt-4 pt-4 border-t border-neutral-100 border-dashed">
-                                    <p className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest mb-3">Issue/Update Financial Offer</p>
-                                    <FinancialOfferForm
-                                        applicationId={id!}
-                                        baseTuition={getTuitionFee(app.course?.degreeLevel || 'BACHELOR', mapSchoolToTuitionField(app.course?.school?.slug || 'technology'))}
-                                        programYears={getProgramYears(app.course?.duration || '3 years', app.course?.degreeLevel)}
-                                        degreeLevel={app.course?.degreeLevel}
-                                        tuitionField={mapSchoolToTuitionField(app.course?.school?.slug || 'technology')}
-                                        onSuccess={fetchData}
-                                    />
-
-                                </div>
-                            )}
+                            {app.status !== 'REJECTED' && app.status !== 'DRAFT' && (() => {
+                                const nationality = app.personal_info?.nationality;
+                                const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'canada' || nationality.toLowerCase().trim() === 'canadian' || nationality.toLowerCase().trim() === 'domestic') : false;
+                                return (
+                                    <div className="mt-4 pt-4 border-t border-neutral-100 border-dashed">
+                                        <p className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest mb-3">Issue/Update Financial Offer</p>
+                                        <FinancialOfferForm
+                                            applicationId={id!}
+                                            baseTuition={getTuitionFee(app.course?.degreeLevel || 'BACHELOR', mapSchoolToTuitionField(app.course?.school?.slug || 'technology'), isDomestic)}
+                                            programYears={getProgramYears(app.course?.duration || '3 years', app.course?.degreeLevel)}
+                                            degreeLevel={app.course?.degreeLevel}
+                                            tuitionField={mapSchoolToTuitionField(app.course?.school?.slug || 'technology')}
+                                            onSuccess={fetchData}
+                                            isDomestic={isDomestic}
+                                        />
+                                    </div>
+                                );
+                            })()}
                         </div>
 
                         {/* Internal Notes */}

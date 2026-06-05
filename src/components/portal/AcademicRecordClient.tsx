@@ -88,7 +88,7 @@ export default function AcademicRecordClient({ enrollments }: AcademicRecordClie
                                 <th className="p-4 border-r-2 border-black">Semester</th>
                                 <th className="p-4 border-r-2 border-black">Module Code</th>
                                 <th className="p-4 border-r-2 border-black">Title</th>
-                                <th className="p-4 border-r-2 border-black text-center">ECTS</th>
+                                <th className="p-4 border-r-2 border-black text-center">Credits</th>
                                 <th className="p-4 border-r-2 border-black text-center">Grade</th>
                                 <th className="p-4">Status</th>
                             </tr>

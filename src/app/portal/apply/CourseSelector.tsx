@@ -12,7 +12,7 @@ interface CourseSelectorProps {
 }
 
 export default function CourseSelector({ initialCourses, initialSelected }: CourseSelectorProps) {
-    const [filter, setFilter] = useState<'ALL' | 'BACHELOR' | 'MASTER'>('ALL');
+    const [filter, setFilter] = useState<'ALL' | 'CERTIFICATE' | 'DIPLOMA' | 'BACHELOR' | 'MASTER'>('ALL');
     const [searchQuery, setSearchQuery] = useState('');
     const [isSubmitting, setIsSubmitting] = useState<string | null>(null);
     const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
@@ -126,7 +126,7 @@ export default function CourseSelector({ initialCourses, initialSelected }: Cour
                 <div className="flex flex-col gap-2 w-full md:w-auto">
                     <span className="text-[11px] font-bold text-black">Filter by Level</span>
                     <div className="flex gap-2">
-                        {(['ALL', 'BACHELOR', 'MASTER'] as const).map((level) => (
+                        {(['ALL', 'CERTIFICATE', 'DIPLOMA', 'BACHELOR', 'MASTER'] as const).map((level) => (
                             <button
                                 key={level}
                                 onClick={() => setFilter(level)}
@@ -135,7 +135,7 @@ export default function CourseSelector({ initialCourses, initialSelected }: Cour
                                     : 'bg-white text-black border-neutral-200 hover:border-neutral-400'
                                     }`}
                             >
-                                {level === 'ALL' ? 'All Degrees' : level === 'BACHELOR' ? 'Bachelors' : 'Masters'}
+                                {level === 'ALL' ? 'All Programs' : level === 'CERTIFICATE' ? 'Certificate' : level === 'DIPLOMA' ? 'Diploma' : level === 'BACHELOR' ? 'Bachelors' : 'Masters'}
                             </button>
                         ))}
                     </div>
@@ -166,11 +166,13 @@ export default function CourseSelector({ initialCourses, initialSelected }: Cour
                                     <h3 className="text-lg font-bold text-black leading-none group-hover:text-black transition-colors">{course.title}</h3>
                                     <p className="text-[11px] text-black font-semibold leading-none">{course.school?.name}</p>
                                 </div>
-                                <span className={`px-2 py-1 rounded-sm text-[11px] font-bold border transition-colors ${course.degreeLevel === 'MASTER'
-                                    ? 'border-black text-black'
+                                <span className={`px-2 py-1 rounded-sm text-[11px] font-bold border transition-colors ${
+                                    course.degreeLevel === 'MASTER' ? 'border-black text-black'
+                                    : course.degreeLevel === 'CERTIFICATE' ? 'border-amber-400 text-amber-700 bg-amber-50'
+                                    : course.degreeLevel === 'DIPLOMA' ? 'border-blue-300 text-blue-700 bg-blue-50'
                                     : 'border-neutral-300 text-black'
                                     }`}>
-                                    {course.degreeLevel === 'MASTER' ? 'Masters' : 'Bachelors'}
+                                    {course.degreeLevel === 'MASTER' ? 'Masters' : course.degreeLevel === 'CERTIFICATE' ? 'Certificate' : course.degreeLevel === 'DIPLOMA' ? 'Diploma' : 'Bachelors'}
                                 </span>
                             </div>
                             <p className="text-[13px] text-black font-medium mb-6 line-clamp-2 leading-relaxed">
@@ -186,20 +188,17 @@ export default function CourseSelector({ initialCourses, initialSelected }: Cour
                                         </span>
                                     )}
                                 </span>
-                                {(() => {
-                                    const baseFee = getTuitionFee(
-                                        course.degreeLevel,
-                                        mapSchoolToTuitionField((course as any).school?.slug || 'technology')
-                                    );
-                                    const discountedFee = calculateDiscountedFee(baseFee);
+                                 {(() => {
+                                    const domesticFee = getTuitionFee(course.degreeLevel, undefined, true);
+                                    const internationalFee = getTuitionFee(course.degreeLevel, undefined, false);
 
                                     return (
-                                        <div className="flex items-center gap-4">
+                                        <div className="flex flex-wrap items-center gap-3">
                                             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm border border-neutral-100 text-black font-bold text-[13px]">
-                                                €{baseFee} <span className="text-[11px] text-black font-medium lowercase">/ year</span>
+                                                ${domesticFee.toLocaleString()} <span className="text-[11px] text-black font-medium lowercase ml-1">/ year (Domestic)</span>
                                             </div>
-                                            <div className="flex items-center gap-2 px-3 py-1.5 text-black rounded-sm font-bold text-[13px] border border-black/20 bg-black/5">
-                                                €{discountedFee} Early Bird Tuition
+                                            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm border border-neutral-100 text-black font-bold text-[13px]">
+                                                ${internationalFee.toLocaleString()} <span className="text-[11px] text-black font-medium lowercase ml-1">/ year (International)</span>
                                             </div>
                                         </div>
                                     );

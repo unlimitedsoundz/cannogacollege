@@ -8,10 +8,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata: Metadata = {
-    title: 'Master\'s Students Guide | Penkka University',
-    description: 'Essential steps and instructions for newly admitted Master\'s students at Penkka University. Follow this guide to ensure a smooth start to your studies.',
+    title: 'Master\'s Students Guide | Cannoga College',
+    description: 'Essential steps and instructions for newly admitted Master\'s students at Cannoga College. Follow this guide to ensure a smooth start to your studies.',
     alternates: {
-        canonical: 'https://penkka.fi/student-guide/master/',
+        canonical: 'https://cannogacollege.ca/student-guide/master/',
     },
 };
 
@@ -33,7 +33,7 @@ export default function MastersGuidePage() {
                 {/* HERO SECTION */}
                 <Hero
                     title="Master’s Students Guide"
-                    body="Essential steps and instructions for newly admitted Master’s students at Penkka University. Follow this guide to ensure a smooth start to your studies."
+                    body="Essential steps and instructions for newly admitted Master’s students at Cannoga College. Follow this guide to ensure a smooth start to your studies."
                     backgroundColor="#dc6ade"
                     tinted
                     lightText={true}
@@ -89,7 +89,7 @@ export default function MastersGuidePage() {
                                         <div className="bg-neutral-100 p-6 rounded-xl border-l-4 border-black">
                                             <h4 className="font-bold text-lg mb-2">Important Conditions</h4>
                                             <ul className="text-sm font-bold space-y-2">
-                                                <li>• You can accept only one study place in Finland per term.</li>
+                                                <li>• You can accept only one study place in Ottawa, Canada per term.</li>
                                                 <li>• Binding acceptance: strictly no cancellations after acceptance.</li>
                                             </ul>
                                         </div>
@@ -103,14 +103,12 @@ export default function MastersGuidePage() {
                             <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">2. Submit Certified Documents</h2>
                             <div className="grid md:grid-cols-2 gap-8">
                                 <Card
-                                    title="Submission Deadline (May)"
-                                    body="For decisions published by 15 May, submit certified copies by 19 June 2026."
-                                    badge={{ label: "19 June" }}
+                                    title="Submission Deadline (Early)"
+                                    body="For decisions published early in the cycle, submit certified copies by the deadline specified in your offer."
                                 />
                                 <Card
-                                    title="Submission Deadline (Aug)"
-                                    body="For decisions after 15 May, submit certified copies by 21 August 2026."
-                                    badge={{ label: "21 August" }}
+                                    title="Submission Deadline (Rolling)"
+                                    body="Submit certified copies within 14 days of your admission decision."
                                 />
                             </div>
                         </section>
@@ -121,7 +119,7 @@ export default function MastersGuidePage() {
                             <div className="grid md:grid-cols-2 gap-8">
                                 <Card
                                     title="Tuition Fees"
-                                    body="Non-EU/EEA citizens are generally required to pay. Recommended deadline: 14 August 2026."
+                                    body="Tuition fees apply to international students. Check scholarship opportunities for fee support. Recommended: complete payment before your intake start date."
                                 />
                                 <Card
                                     title="Excellence Scholarship"
@@ -135,9 +133,8 @@ export default function MastersGuidePage() {
                         <section id="residence" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">4. Residence Permit</h2>
                             <div className="grid md:grid-cols-3 gap-6">
-                                <Card title="Non-EU/EEA" body="Apply immediately and schedule a visit to a Finnish mission promptly." />
-                                <Card title="EU/EEA" body="Register right of residence within 3 months of arrival." />
-                                <Card title="Nordic" body="Register personal data in the Population Info System upon arrival." />
+                                <Card title="International Students" body="Apply for a Canadian study permit immediately. Schedule your visa application centre appointment early." />
+                                <Card title="Canadian Citizens / PR" body="No study permit required. Complete enrolment online and ensure your provincial health coverage is active." />
                             </div>
                         </section>
 
@@ -149,7 +146,7 @@ export default function MastersGuidePage() {
                                 title="Enrolment Opens 18 May"
                                 body={
                                     <div className="space-y-6 text-left">
-                                        <p className="text-sm font-bold text-neutral-700 leading-relaxed">Recommended deadline: 23 April 2026. Enroll through the national student service.</p>
+                                        <p className="text-sm font-bold text-neutral-700 leading-relaxed">Apply for your chosen intake. September intake: October–February. January intake: June–September.</p>
                                         <div className="grid sm:grid-cols-2 gap-8">
                                             <div>
                                                 <h4 className="font-bold text-black mb-1">Attending</h4>
@@ -170,7 +167,7 @@ export default function MastersGuidePage() {
                             <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">6. Apply for Student Housing</h2>
                             <Card
                                 title="Start Your Application"
-                                body="Apply as soon as you accept your study place. Queue times are long. Penkka assists with the application process for student housing."
+                                body="Apply as soon as you accept your study place. Queue times are long. Cannoga assists with the application process for student housing."
                                 cta={{ label: "Housing Guide", linkComponentProps: { href: "/student-guide/housing-for-students" } }}
                             />
                         </section>

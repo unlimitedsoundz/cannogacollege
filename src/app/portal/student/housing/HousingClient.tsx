@@ -19,7 +19,7 @@ interface HousingDashboardClientProps {
     invoices: HousingInvoice[];
 }
 
-const COUNTRIES = ['Finland', 'United States', 'United Kingdom', 'Germany', 'France', 'China', 'India', 'Nigeria', 'Other'];
+const COUNTRIES = ['Ottawa, Canada', 'United States', 'United Kingdom', 'Germany', 'France', 'China', 'India', 'Nigeria', 'Other'];
 
 export default function HousingDashboardClient({ student, application, assignment, buildings, semesters, invoices }: HousingDashboardClientProps) {
     const [showForm, setShowForm] = useState(false);
@@ -156,7 +156,7 @@ export default function HousingDashboardClient({ student, application, assignmen
         if (!selectedInvoice) return;
         setPaying(true);
         try {
-            const result = await initiatePayment(selectedInvoice.id, 'BANK_TRANSFER', details.country || 'Finland');
+            const result = await initiatePayment(selectedInvoice.id, 'BANK_TRANSFER', details.country || 'Ottawa, Canada');
             if (result.success && result.transactionId) {
                 // Here we verify the transaction
                 await verifyPayment(result.transactionId);
@@ -268,13 +268,13 @@ export default function HousingDashboardClient({ student, application, assignmen
                             <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-black pb-6 gap-6 print:pb-4">
                                 <div className="space-y-4 print:space-y-2">
                                     <img 
-                                        src="/logo-penkka.png" 
-                                        alt="Penkka University" 
+                                        src="/logo-cannoga.png" 
+                                        alt="Cannoga College" 
                                         className="h-10 w-auto"
                                     />
                                     <div className="space-y-1">
                                         <p className="text-[10px] uppercase font-black text-black">Housing Office Receipt</p>
-                                        <p className="text-[10px] font-bold text-black opacity-60">Penkka University Official Document</p>
+                                        <p className="text-[10px] font-bold text-black opacity-60">Cannoga College Official Document</p>
                                     </div>
                                 </div>
                                 <div className="text-left md:text-right space-y-1">
@@ -341,7 +341,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                     >
                                         Print Official Receipt
                                     </button>
-                                    <p className="text-[9px] font-black uppercase text-black">Penkka Housing Office</p>
+                                    <p className="text-[9px] font-black uppercase text-black">Cannoga Housing Office</p>
                                 </div>
                             </div>
                         </div>
@@ -619,7 +619,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                 <div className="space-y-4 pt-4 border-t border-neutral-200">
                                     <div>
                                         <h3 className="text-sm font-black uppercase text-black mb-1">Housing preference</h3>
-                                        <p className="text-xs text-black">You can apply for an apartment as soon as you are admitted to Penkka University.</p>
+                                        <p className="text-xs text-black">You can apply for an apartment as soon as you are admitted to Cannoga College.</p>
                                         <p className="text-[10px] text-black mt-1">*Mandatory field</p>
                                     </div>
                                     

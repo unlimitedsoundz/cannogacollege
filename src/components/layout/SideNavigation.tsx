@@ -1,4 +1,4 @@
-import { NavigationAccordion } from "@aalto-dx/react-modules";
+import { NavigationAccordion } from "@/components/ui/NavigationAccordion";
 
 interface NavLink {
     label: string;
@@ -21,7 +21,7 @@ interface SideNavigationProps {
 
 export function SideNavigation({ sections, onChange }: SideNavigationProps) {
     return (
-        <div className="w-80 h-full bg-black">
+        <div className="w-80 h-full bg-transparent">
             <NavigationAccordion sections={sections} onChange={onChange} />
         </div>
     );

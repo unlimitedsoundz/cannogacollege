@@ -30,10 +30,10 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return {
-        title: `${school.name} — Penkka University | Research & Programmes`,
-        description: school.description || `Explore the ${school.name} at Penkka University. Departments, research, and degree programmes.`,
+        title: `${school.name} — Cannoga College | Research & Programmes`,
+        description: school.description || `Explore the ${school.name} at Cannoga College. Departments, research, and degree programmes.`,
         alternates: {
-            canonical: `https://penkka.fi/schools/${slug}/`,
+            canonical: `https://cannogacollege.ca/schools/${slug}/`,
         },
     };
 }
@@ -194,7 +194,7 @@ export default async function SchoolDetails({ params }: Props) {
                                             fallbackSrc={school.imageUrl || '/images/placeholders/design.png'}
                                             fill
                                             className="object-cover object-top"
-                                            alt={`Study ${course.title} at Penkka University`}
+                                            alt={`Study ${course.title} at Cannoga College`}
                                             sizes="(max-width: 768px) 100vw, 25vw"
                                         />
                                         <span className="absolute top-2 right-2 bg-white/90 text-xs font-bold px-2 py-1 rounded text-neutral-800 z-10">
@@ -342,19 +342,19 @@ export default async function SchoolDetails({ params }: Props) {
                             <div className="space-y-8">
                                 <div className="flex gap-4 items-start">
                                     <div className="bg-neutral-100 p-10 border border-black">
-                                        <p className="font-bold text-lg">Penkka University – Helsinki Campus</p>
-                                        <p className="font-medium text-neutral-800">Pohjoisesplanadi 51, 00150 Helsinki</p>
+                                        <p className="font-bold text-lg">Cannoga College – Ottawa Campus</p>
+                                        <p className="font-medium text-neutral-800">2368 Midway Ave, Ottawa, ON K2B 5J8, Canada</p>
                                     </div>
                                 </div>
                                 <div className="space-y-4">
                                     <div className="flex gap-4 items-center">
-                                        <span className="font-medium">General: {school.slug}@penkka.fi</span>
+                                        <span className="font-medium">General: {school.slug}@cannogacollege.ca</span>
                                     </div>
                                     <div className="flex gap-4 items-center">
-                                        <span className="font-medium">Admissions: {school.slug}.admissions@penkka.fi</span>
+                                        <span className="font-medium">Admissions: {school.slug}.admissions@cannogacollege.ca</span>
                                     </div>
                                     <div className="flex gap-4 items-center">
-                                        <span className="font-medium">Partnerships: {school.slug}.partners@penkka.fi</span>
+                                        <span className="font-medium">Partnerships: {school.slug}.partners@cannogacollege.ca</span>
                                     </div>
                                 </div>
                                 <Link href="/contact" className="inline-flex items-center gap-2 font-bold group">

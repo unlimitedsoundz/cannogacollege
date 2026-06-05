@@ -29,7 +29,7 @@ interface CardCollectionProps {
 }
 
 /**
- * Standardized CardCollection component for Penkka University.
+ * Standardized CardCollection component for Cannoga College.
  * Aliased from @aalto-dx/react-modules.
  */
 export function CardCollection({ tiles, tilesPerRow = 3 }: CardCollectionProps) {

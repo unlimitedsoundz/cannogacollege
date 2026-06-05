@@ -25,7 +25,7 @@ interface NavigationAccordionProps {
 }
 
 /**
- * Standardized NavigationAccordion component for Penkka University.
+ * Standardized NavigationAccordion component for Cannoga College.
  * Aliased from @aalto-dx/react-modules.
  */
 export function NavigationAccordion({ sections, onChange }: NavigationAccordionProps) {
@@ -70,13 +70,13 @@ export function NavigationAccordion({ sections, onChange }: NavigationAccordionP
                                             className="aalto-link__rlink aalto-statefx medium"
                                             onClick={() => onChange?.(section.header.label)}
                                         >
-                                            <span className="aalto-link__rlink-label aalto-txt-small-bold">
+                                            <span className="aalto-link__rlink-label aalto-txt-small">
                                                 {section.header.label}
                                             </span>
                                         </Link>
                                     ) : (
                                         <span className="aalto-link__rlink aalto-statefx medium cursor-default">
-                                            <span className="aalto-link__rlink-label aalto-txt-small-bold">
+                                            <span className="aalto-link__rlink-label aalto-txt-small">
                                                 {section.header.label}
                                             </span>
                                         </span>

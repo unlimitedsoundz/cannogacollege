@@ -13,13 +13,12 @@ import { SchemaLD } from '@/components/seo/SchemaLD';
 import { Breadcrumbs } from '@aalto-dx/react-modules';
 
 export const metadata = {
-    title: 'Bachelor\'s Admissions | Penkka University',
-    description: 'Apply to Bachelor\'s Programmes in English at Penkka University. Information on benefits, progression, scholarships, and admissions.',
+    title: 'Bachelor\'s Admissions | Cannoga College',
+    description: 'Apply to Bachelor\'s Programmes in English at Cannoga College. Information on benefits, progression, scholarships, and admissions.',
     alternates: {
-        canonical: 'https://penkka.fi/admissions/bachelor/',
+        canonical: 'https://cannogacollege.ca/admissions/bachelor/',
         languages: {
-            'en': 'https://penkka.fi/admissions/bachelor/',
-            'fi': 'https://penkka.fi/admissions/bachelor-fi/',
+            'en': 'https://cannogacollege.ca/admissions/bachelor/',
         },
     },
 };
@@ -78,46 +77,43 @@ export default function BachelorAdmissionsPage() {
                 </Link>
             </Hero>
 
-            <div className="container mx-auto px-4 py-8 md:py-16">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    {/* Main Content */}
-                    <div className="lg:col-span-12 space-y-8 md:space-y-24">
+            <div className="cc-container py-8 md:py-16">
+                <div className="space-y-12 md:space-y-20">
 
-                        {/* How You Benefit */}
-                        <section id="benefits" className="scroll-mt-32">
-                            <h2 className="text-3xl font-bold mb-8 text-black">
-                                How You Benefit from Our Programmes
-                            </h2>
-                            <div className="prose-arrows">
-                                <DbPageContent
-                                    pageSlug={pageSlug}
-                                    sectionKey="benefits_content"
-                                    fallbackContent={getSectionDefault('benefits_content')}
-                                />
-                            </div>
-                        </section>
+                    {/* How You Benefit */}
+                    <section id="benefits" className="scroll-mt-32">
+                        <div className="cc-section-divider">
+                            <h2 className="cc-h2">How You Benefit from Our Programmes</h2>
+                        </div>
+                        <div className="prose-arrows">
+                            <DbPageContent
+                                pageSlug={pageSlug}
+                                sectionKey="benefits_content"
+                                fallbackContent={getSectionDefault('benefits_content')}
+                            />
+                        </div>
+                    </section>
 
-                        {/* From Bachelor's to Master's */}
-                        <section id="progression" className="scroll-mt-32">
-                            <h2 className="text-3xl font-bold mb-8 text-black">
-                                From Bachelor's to Master's
-                            </h2>
-                            <div className="prose-arrows">
-                                <DbPageContent
-                                    pageSlug={pageSlug}
-                                    sectionKey="progression_content"
-                                    fallbackContent={getSectionDefault('progression_content')}
-                                />
-                            </div>
-                        </section>
+                    {/* From Bachelor's to Master's */}
+                    <section id="progression" className="scroll-mt-32">
+                        <div className="cc-section-divider">
+                            <h2 className="cc-h2">From Bachelor's to Master's</h2>
+                        </div>
+                        <div className="prose-arrows">
+                            <DbPageContent
+                                pageSlug={pageSlug}
+                                sectionKey="progression_content"
+                                fallbackContent={getSectionDefault('progression_content')}
+                            />
+                        </div>
+                    </section>
 
-                    </div>
                 </div>
             </div>
 
-            {/* YELLOW QUOTE BANNER */}
-            <div className="w-full bg-neutral-100 text-black py-6 my-6">
-                <div className="container mx-auto px-4 text-left md:text-center max-w-4xl">
+            {/* QUOTE BANNER */}
+            <div className="w-full cc-section-tinted py-8 my-0">
+                <div className="cc-container text-left md:text-center max-w-4xl mx-auto">
                     <DbPageContent
                         pageSlug={pageSlug}
                         sectionKey="quote_content"
@@ -126,16 +122,14 @@ export default function BachelorAdmissionsPage() {
                 </div>
             </div>
 
-            <div className="container mx-auto px-4 py-8 md:py-16">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <div className="lg:col-span-3"></div> {/* Spacer to align with previous grid if needed, or just center content from here. Let's keep distinct layout. */}
+            <div className="cc-container py-8 md:py-16">
+                <div className="space-y-12 md:space-y-20">
 
-                    <div className="lg:col-span-12 space-y-24">
                         {/* Scholarships */}
                         <section id="scholarships" className="scroll-mt-32">
-                            <h2 className="text-3xl font-bold mb-6 text-black">
-                                Scholarships and Tuition Fees
-                            </h2>
+                            <div className="cc-section-divider">
+                                <h2 className="cc-h2">Scholarships and Tuition Fees</h2>
+                            </div>
                             <div className="prose-arrows">
                                 <DbPageContent
                                     pageSlug={pageSlug}
@@ -147,9 +141,9 @@ export default function BachelorAdmissionsPage() {
 
                         {/* Admissions Info */}
                         <section id="admissions" className="scroll-mt-32">
-                            <h2 className="text-3xl font-bold mb-8 text-black">
-                                Information on Student Admissions
-                            </h2>
+                            <div className="cc-section-divider">
+                                <h2 className="cc-h2">Information on Student Admissions</h2>
+                            </div>
                             <div className="prose-arrows">
                                 <DbPageContent
                                     pageSlug={pageSlug}
@@ -160,8 +154,10 @@ export default function BachelorAdmissionsPage() {
                         </section>
 
                          {/* Learn More */}
-                         <section id="more" className="scroll-mt-32 text-left">
-                             <h2 className="text-3xl font-bold mb-8">Learn More About Studying at Penkka</h2>
+                         <section id="more" className="scroll-mt-32">
+                             <div className="cc-section-divider">
+                                 <h2 className="cc-h2">Learn More About Studying at Cannoga</h2>
+                             </div>
                              <div className="prose-arrows">
                                  <DbPageContent
                                      pageSlug={pageSlug}
@@ -173,10 +169,10 @@ export default function BachelorAdmissionsPage() {
                          </section>
 
                          {/* Fairs & Events */}
-                          <section id="events" className="scroll-mt-32">
-                             <h2 className="text-3xl font-bold mb-6 text-black">
-                                 Fairs and Events
-                             </h2>
+                         <section id="events" className="scroll-mt-32">
+                             <div className="cc-section-divider">
+                                 <h2 className="cc-h2">Fairs and Events</h2>
+                             </div>
                              <div className="prose-arrows">
                                  <DbPageContent
                                      pageSlug={pageSlug}
@@ -188,16 +184,12 @@ export default function BachelorAdmissionsPage() {
 
                          {/* FAQ */}
                          <section id="faq" className="scroll-mt-32">
-                             <h2 className="text-3xl font-bold mb-8 text-black">
-                                 Frequently Asked Questions
-                             </h2>
+                             <div className="cc-section-divider">
+                                 <h2 className="cc-h2">Frequently Asked Questions</h2>
+                             </div>
                              <BachelorFAQ />
                          </section>
 
-
-
-
-                    </div>
                 </div>
             </div>
             <BreadcrumbSchema items={[
@@ -209,11 +201,11 @@ export default function BachelorAdmissionsPage() {
                 "@context": "https://schema.org",
                 "@type": "EducationalOccupationalProgram",
                 "name": "Bachelor's Degree Programmes",
-                "description": "Information on Bachelor's degree programmes taught in English at Penkka University.",
+                "description": "Information on Bachelor's degree programmes taught in English at Cannoga College.",
                 "provider": {
                     "@type": "UniversityOrUniversity",
-                    "name": "Penkka University",
-                    "url": "https://penkka.fi"
+                    "name": "Cannoga College",
+                    "url": "https://cannogacollege.ca"
                 },
                 "educationalLevel": "Bachelor",
                 "offers": {

@@ -1,5 +1,5 @@
 
-import { CheckCircle, ArrowRight, Calendar, GraduationCap, Globe, Clock } from '@phosphor-icons/react/dist/ssr';
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { Link } from "@aalto-dx/react-components";
 import { CTA } from "@aalto-dx/react-modules";
 import Image from 'next/image';
@@ -16,13 +16,11 @@ const sections = [
     { id: 'faq', title: 'FAQ', content: '' },
 ];
 
-
-
 export const metadata = {
-    title: 'How to Apply | Penkka University',
-    description: 'Step-by-step guide to applying to Penkka University. Deadlines, requirements, and admission procedures.',
+    title: 'How to Apply | Cannoga College',
+    description: 'Step-by-step guide to applying to Cannoga College. Deadlines, requirements, and admission procedures.',
     alternates: {
-        canonical: 'https://penkka.fi/admissions/application-process/',
+        canonical: 'https://cannogacollege.ca/admissions/application-process/',
     },
 };
 
@@ -33,68 +31,112 @@ export default function ApplicationProcessPage() {
     return (
         <GuideSidebarLayout sections={sections}>
             <div className="min-h-screen bg-white text-black">
-            {/* Hero Section */}
-            <section className="text-black overflow-hidden" style={{ backgroundColor: '#DCFCE7' }}>
-                <div className="container mx-auto flex flex-col lg:flex-row items-center gap-2 lg:gap-16 pt-0 md:pt-12 pb-12 lg:pb-0 h-auto lg:h-[600px] lg:py-0 relative mb-0">
-                    {/* Left Content */}
-                    <div className="lg:w-1/2 space-y-6 relative z-10 flex flex-col justify-center h-full pt-2 lg:pt-0 px-4 md:px-0">
+
+            {/* ── HERO – Home-page style ── */}
+            <section
+                className="relative overflow-hidden text-white"
+                style={{ background: 'linear-gradient(135deg, #2e1150 0%, #5c2d91 55%, #7c3aed 100%)' }}
+            >
+                {/* Decorative blobs */}
+                <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+                    <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl" />
+                    <div className="absolute bottom-0 -left-20 w-[350px] h-[350px] rounded-full bg-white/5 blur-2xl" />
+                </div>
+
+                <div className="relative z-10 cc-container flex flex-col lg:flex-row items-center gap-8 lg:gap-16 py-16 lg:py-0 lg:min-h-[580px]">
+                    {/* Left: Text */}
+                    <div className="lg:w-1/2 space-y-7 flex flex-col justify-center">
+                        {/* Breadcrumb */}
+                        <nav className="flex items-center gap-2 text-white/50 text-xs font-semibold uppercase tracking-widest">
+                            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                            <span>/</span>
+                            <Link href="/admissions" className="hover:text-white transition-colors">Admissions</Link>
+                            <span>/</span>
+                            <span className="text-white/80">How to Apply</span>
+                        </nav>
+
                         <DbPageContent
                             tagName="h1"
-                            className="font-bold leading-[1.1] tracking-tight pt-2 text-black"
-                            style={{ fontSize: '40px' }}
+                            className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight text-white"
                             pageSlug={pageSlug}
                             sectionKey="hero_title"
                             fallbackContent={getSectionDefault('hero_title') || 'How to Apply'}
                         />
                         <DbPageContent
                             tagName="p"
-                            className="text-[21px] text-black max-w-xl leading-relaxed"
+                            className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed"
                             pageSlug={pageSlug}
                             sectionKey="hero_subtitle"
-                            fallbackContent={getSectionDefault('hero_subtitle') || 'Follow our step-by-step guide to ensure a smooth application process for your studies at Penkka University.'}
+                            fallbackContent={getSectionDefault('hero_subtitle') || 'Follow our step-by-step guide to ensure a smooth application to Cannoga College.'}
                         />
-                        <div className="flex flex-col gap-4 pt-4">
-                            <Link href="#steps" className="text-lg font-bold underline underline-offset-8 decoration-black hover:opacity-70 transition-colors text-black inline-flex items-center gap-2">
-                                Application steps <ArrowRight size={20} weight="bold" />
+
+                        <div className="flex flex-wrap gap-4 pt-2">
+                            <Link
+                                href="#steps"
+                                className="inline-flex items-center gap-2 bg-white text-[#2e1150] px-7 py-3.5 font-bold hover:bg-neutral-100 transition-all text-sm uppercase tracking-widest"
+                            >
+                                Application Steps <ArrowRight size={18} weight="bold" />
                             </Link>
+                            <Link
+                                href="/portal/account/register"
+                                className="inline-flex items-center gap-2 border-2 border-white/40 text-white px-7 py-3.5 font-bold hover:border-white hover:bg-white/10 transition-all text-sm uppercase tracking-widest"
+                            >
+                                Create Account
+                            </Link>
+                        </div>
+
+                        {/* Quick stats */}
+                        <div className="flex flex-wrap gap-8 pt-4 border-t border-white/20">
+                            {[
+                                { label: 'Sept intake apply', value: 'Oct – Feb' },
+                                { label: 'Jan intake apply', value: 'Jun – Sep' },
+                                { label: 'Decision time', value: '4–6 weeks' },
+                            ].map(({ label, value }) => (
+                                <div key={label}>
+                                    <p className="text-white font-bold text-lg">{value}</p>
+                                    <p className="text-white/50 text-xs uppercase tracking-widest font-semibold">{label}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Right Image */}
-                    <div className="lg:w-1/2 h-full w-full relative lg:translate-y-16 z-20 flex justify-center lg:block order-first lg:order-none">
-                        <div className="h-full w-full">
-                            <div className="relative w-full aspect-square md:aspect-auto lg:w-full lg:h-full bg-neutral-800">
-                                <Image
-                                    src="/images/admissions/how_to_apply_hero.png"
-                                    alt="Application Process"
-                                    fill
-                                    priority
-                                    className="object-cover object-top"
-                                    sizes="100vw"
-                                />
-                            </div>
+                    {/* Right: Image */}
+                    <div className="lg:w-1/2 h-full w-full relative lg:translate-y-8 flex justify-center lg:block order-first lg:order-none">
+                        <div className="relative w-full aspect-[4/3] lg:h-[520px] lg:aspect-auto overflow-hidden shadow-2xl">
+                            <Image
+                                src="/images/admissions/how_to_apply_hero.png"
+                                alt="Application Process at Cannoga College"
+                                fill
+                                priority
+                                className="object-cover object-top opacity-90"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                            {/* Bottom gradient overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#2e1150]/40 via-transparent to-transparent" />
                         </div>
                     </div>
                 </div>
             </section>
-            <div className="container mx-auto px-4 py-16">
-                <div className="max-w-4xl mx-auto space-y-20">
+
+            {/* ── Content ── */}
+            <div className="cc-container py-12 md:py-20">
+                <div className="max-w-4xl mx-auto space-y-16">
 
                     <section id="steps" className="scroll-mt-32">
-                        <h2 className="text-3xl font-bold mb-12 text-black pb-10 pl-2">Application Steps</h2>
+                        <div className="cc-section-divider">
+                            <h2 className="cc-h2">Application Steps</h2>
+                        </div>
                         <DbPageContent
                             pageSlug={pageSlug}
                             sectionKey="steps_content"
                             fallbackContent={getSectionDefault('steps_content')}
                         />
+                    </section>
 
-
-
-                     </section>
-
-                    {/* Section: Required Documents Explained */}
-                    <section id="documents">
-                        <h2 className="text-3xl font-bold mb-8 text-black">Required Documents Explained</h2>
+                    <section id="documents" className="scroll-mt-32">
+                        <div className="cc-section-divider">
+                            <h2 className="cc-h2">Required Documents Explained</h2>
+                        </div>
                         <DbPageContent
                             pageSlug={pageSlug}
                             sectionKey="documents_content"
@@ -102,8 +144,7 @@ export default function ApplicationProcessPage() {
                         />
                     </section>
 
-                    {/* Section: Specific Requirements Checklist */}
-                    <section id="requirements">
+                    <section id="requirements" className="scroll-mt-32">
                         <DbPageContent
                             pageSlug={pageSlug}
                             sectionKey="requirements_content"
@@ -111,7 +152,6 @@ export default function ApplicationProcessPage() {
                         />
                     </section>
 
-                    {/* Section: Evaluation & Decisions, Waiting List, After */}
                     <section id="evaluation" className="scroll-mt-32">
                         <DbPageContent
                             pageSlug={pageSlug}
@@ -120,33 +160,28 @@ export default function ApplicationProcessPage() {
                         />
                     </section>
 
-                      {/* Standardized CTA Section */}
-                      <section className="mt-16">
-                          <CTA
-                              title="Ready to Start Your Journey?"
-                              body="Join the next generation of global leaders at Penkka University. Create your portal account to begin your official application."
-                              cta={{
-                                  label: "Create Portal Account",
-                                  linkComponentProps: {
-                                      href: "/portal/account/register",
-                                  },
-                              }}
-                          />
-                      </section>
+                    <section className="mt-4">
+                        <CTA
+                            title="Ready to Start Your Journey?"
+                            body="Join the next generation of global leaders at Cannoga College. Create your portal account to begin your official application."
+                            cta={{
+                                label: "Create Portal Account",
+                                linkComponentProps: {
+                                    href: "/portal/account/register",
+                                },
+                            }}
+                        />
+                    </section>
 
-                      {/* Section: Frequently Asked Questions */}
-                      <section id="faq" className="scroll-mt-32">
-                          <div className="mb-8 pl-2">
-                              <h2 className="text-3xl font-bold text-black mb-4">Frequently Asked Questions</h2>
-                              <p className="text-lg text-black leading-relaxed max-w-3xl">
-                                  Find quick answers to common questions regarding the application process.
-                              </p>
-                          </div>
-                          <ApplicationFAQ />
-                       </section>
-
-
-
+                    <section id="faq" className="scroll-mt-32">
+                        <div className="cc-section-divider">
+                            <h2 className="cc-h2">Frequently Asked Questions</h2>
+                        </div>
+                        <p className="text-neutral-500 mb-8 leading-relaxed">
+                            Find quick answers to common questions regarding the application process.
+                        </p>
+                        <ApplicationFAQ />
+                    </section>
 
                 </div>
             </div>
@@ -154,4 +189,3 @@ export default function ApplicationProcessPage() {
         </GuideSidebarLayout>
     );
 }
-

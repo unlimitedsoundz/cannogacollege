@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: ['/admin/', '/portal/', '/debug/', '/api/'],
             },
         ],
-        sitemap: 'https://penkka.fi/sitemap.xml',
+        sitemap: 'https://cannogacollege.ca/sitemap.xml',
     };
 }

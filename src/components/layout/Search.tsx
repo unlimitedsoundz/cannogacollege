@@ -58,11 +58,10 @@ export function Search() {
         <div className="relative">
             <button
                 onClick={() => setIsOpen(true)}
-                className="p-2 hover:opacity-70 transition-opacity flex items-center gap-2 group"
+                className="p-2 hover:opacity-70 transition-opacity flex items-center"
                 aria-label="Open Search"
             >
                 <SearchIcon size={20} weight="bold" className="text-[#2d2d2d]" />
-                <span className="hidden xl:inline text-sm font-bold uppercase tracking-wider text-[#2d2d2d]">Search</span>
             </button>
 
             {isOpen && (

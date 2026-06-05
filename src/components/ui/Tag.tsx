@@ -21,7 +21,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 /**
- * Standardized Tag component for the Penkka University project.
+ * Standardized Tag component for the Cannoga College project.
  * Aliased from @aalto-dx/react-components.
  */
 export function Tag({ 

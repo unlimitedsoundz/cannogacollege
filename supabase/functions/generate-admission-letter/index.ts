@@ -177,8 +177,8 @@ serve(async (req) => {
 
         // ---- Tuition Fee Computation (from degree level + school) ----
         const TUITION_FEES: Record<string, Record<string, number>> = {
-            BACHELOR: { BUSINESS: 6000, ARTS: 6000, TECHNOLOGY: 6000, SCIENCE: 9500 },
-            MASTER: { BUSINESS: 6000, ARTS: 6000, TECHNOLOGY: 6000, SCIENCE: 9500 },
+            BACHELOR: { BUSINESS: 8000, ARTS: 8000, TECHNOLOGY: 8000, SCIENCE: 12000 },
+            MASTER: { BUSINESS: 8000, ARTS: 8000, TECHNOLOGY: 8000, SCIENCE: 12000 },
         };
         const EARLY_DISCOUNT_PERCENT = 25;
 
@@ -196,7 +196,7 @@ serve(async (req) => {
         const tuitionField = schoolSlugToField(schoolSlug);
         
         // Use offerData fee if available (since it contains full program calc if applicable)
-        const computedBaseFee = offerData?.tuition_fee || TUITION_FEES[courseDegreeLevel]?.[tuitionField] || 6000;
+        const computedBaseFee = offerData?.tuition_fee || TUITION_FEES[courseDegreeLevel]?.[tuitionField] || 8000;
         const computedDiscount = offerData?.discount_amount || Math.round(computedBaseFee * EARLY_DISCOUNT_PERCENT / 100);
         const computedNetFee = computedBaseFee; // The tuition_fee in DB is already the net fee if coming from offerData
 

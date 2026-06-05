@@ -44,7 +44,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions-application-process',
         sectionKey: 'hero_subtitle',
         label: 'Hero Subtitle',
-        defaultContent: 'Follow our step-by-step guide to ensure a smooth application process for your studies at Penkka University.',
+        defaultContent: 'Follow our step-by-step guide to ensure a smooth application process for your studies at Cannoga College.',
     },
     {
         pageSlug: 'admissions-application-process',
@@ -64,8 +64,8 @@ export const pageContentSections: PageContentSection[] = [
         sectionKey: 'documents_content',
         label: 'Required Documents Content',
         defaultContent: `<div class="grid gap-6 md:grid-cols-2">
-    <div class="bg-card p-8 rounded-2xl"><h4 class="font-bold mb-2">Certified Educational Documents</h4><p class="text-sm">Must be submitted after admission decision by 13 May or 14 August 2026.</p></div>
-    <div class="bg-card p-8 rounded-2xl"><h4 class="font-bold mb-2">Translations</h4><p class="text-sm">Non-English/Finnish/Swedish documents require official translations.</p></div>
+    <div class="bg-card p-8 rounded-2xl"><h4 class="font-bold mb-2">Certified Educational Documents</h4><p class="text-sm">Must be submitted within 14 days of receiving your admission decision.</p></div>
+    <div class="bg-card p-8 rounded-2xl"><h4 class="font-bold mb-2">Translations</h4><p class="text-sm">Non-English documents require official certified translations.</p></div>
     <div class="bg-card p-8 rounded-2xl"><h4 class="font-bold mb-2">Passport</h4><p class="text-sm">Color PDF of the personal information page.</p></div>
 </div>`,
     },
@@ -110,7 +110,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions-bachelor',
         sectionKey: 'benefits_content',
         label: 'Benefits Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">Studying at Penkka combines small-group teaching, practical case work, and a modern campus environment. Our Bachelor’s students benefit from personalised guidance, strong industry links, and a curriculum designed for international careers.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">Studying at Cannoga combines small-group teaching, practical case work, and a modern campus environment. Our Bachelor’s students benefit from personalised guidance, strong industry links, and a curriculum designed for international careers.</p>
 <ul class="space-y-3">
     <li class="flex gap-3 items-start">International Classroom: Study with students from around the world.</li>
     <li class="flex gap-3 items-start">Career-Ready Skills: Focus on finance, management, and economics.</li>
@@ -122,9 +122,9 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions-bachelor',
         sectionKey: 'progression_content',
         label: 'Progression Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">Completing a Bachelor’s degree at Penkka opens seamless progression paths into Master’s programmes, specialised tracks, and international partner universities.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">Completing a Bachelor’s degree at Cannoga opens seamless progression paths into Master’s programmes, specialised tracks, and international partner universities.</p>
 <ul class="space-y-3">
-    <li class="flex gap-3 items-start">Internal Continuation: Direct progression to Penkka Master’s programmes.</li>
+    <li class="flex gap-3 items-start">Internal Continuation: Direct progression to Cannoga Master’s programmes.</li>
     <li class="flex gap-3 items-start">Specialised Tracks: Accounting, Economics, or Management.</li>
     <li class="flex gap-3 items-start">International Opportunities: Partner universities worldwide.</li>
     <li class="flex gap-3 items-start">Research Integration: Bachelor theses as a bridge to advanced research.</li>
@@ -215,23 +215,20 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/master',
         sectionKey: 'hero_subtitle',
         label: 'Hero Subtitle',
-        defaultContent: 'Comprehensive guide for applicants to two-year Master’s programmes taught in English. Admission period: 1 Dec 2025 – 23 April 2026.',
+        defaultContent: 'Comprehensive guide for applicants to two-year Master’s programmes taught in English. Two intakes per year: September (apply Oct–Feb) and January (apply Jun–Sep).',
     },
     {
         pageSlug: 'admissions/master',
         sectionKey: 'schedule_content',
         label: 'Schedule Section',
         defaultContent: `<table style="width:100%;border-collapse:collapse;font-size:inherit;">
-    <thead><tr><th style="text-align:left;padding:10px 16px;border-bottom:2px solid #000;font-weight:700;">Phase</th><th style="text-align:left;padding:10px 16px;border-bottom:2px solid #000;font-weight:700;">Details</th></tr></thead>
+    <thead><tr><th style="text-align:left;padding:10px 16px;border-bottom:2px solid #000;font-weight:700;">Intake</th><th style="text-align:left;padding:10px 16px;border-bottom:2px solid #000;font-weight:700;">Application Window</th><th style="text-align:left;padding:10px 16px;border-bottom:2px solid #000;font-weight:700;">Best Time to Apply</th></tr></thead>
     <tbody>
-        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">1 Dec 2025</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Application period starts and application forms open.</td></tr>
-        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">1 Dec 2025</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Application period opens and application forms open at 9:00am (UTC +2)</td></tr>
-        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">23 April 2026</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Application period closes and application forms end at 15:00/3pm (UTC +2)</td></tr>
-        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;"></td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Final deadline to upload all documents (15:00 UTC+2)</td></tr>
-        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">Evaluation phase</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Applications are carefully evaluated by the admissions committee and faculty.</td></tr>
-        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">Results phase</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Within 1 Week — Admission decision made.</td></tr>
-        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">Enrollment phase</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">19 June / 21 Aug — Submit certified documents</td></tr>
-        <tr><td style="padding:10px 16px;vertical-align:top;font-weight:600;">Aug – Sep</td><td style="padding:10px 16px;">Studies start</td></tr>
+        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">September Intake</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">October – February</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;color:#5c2d91;font-weight:600;">Early application: October – December</td></tr>
+        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">January Intake</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">June – September</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;color:#5c2d91;font-weight:600;">Early application: June – August</td></tr>
+        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">Evaluation phase</td><td colspan="2" style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Applications reviewed by the admissions committee and faculty within 4–6 weeks.</td></tr>
+        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">Decision</td><td colspan="2" style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Admission decision communicated by email within 1 week of evaluation.</td></tr>
+        <tr><td style="padding:10px 16px;vertical-align:top;font-weight:600;">Studies start</td><td colspan="2" style="padding:10px 16px;">September (Autumn) or January (Winter)</td></tr>
     </tbody>
 </table>`,
     },
@@ -239,7 +236,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/master',
         sectionKey: 'study_options_content',
         label: 'Study Options Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">Penkka University offers Master’s programmes in several fields. Applicants may apply to a maximum of two programmes per application.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">Cannoga College offers Master’s programmes in several fields. Applicants may apply to a maximum of two programmes per application.</p>
 <div class="grid md:grid-cols-3 gap-6">
     <div class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl text-black shadow-sm"><h3 class="font-bold text-xl mb-2">Business & Economics</h3><p class="text-sm leading-relaxed">MSc in Accounting & Finance, Strategic Management, and related areas.</p></div>
     <div class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl text-black shadow-sm"><h3 class="font-bold text-xl mb-2">Art & Design</h3><p class="text-sm leading-relaxed">MA in Design, Architecture, and Visual Arts.</p></div>
@@ -250,10 +247,10 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/master',
         sectionKey: 'scholarships_content',
         label: 'Scholarships Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">At Penkka University, we believe in rewarding academic excellence and supporting students through various financial aid options. Our scholarship programme is designed to help international talent thrive in Finland.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">At Cannoga College, we believe in rewarding academic excellence and supporting students through various financial aid options. Our scholarship programme is designed to help international talent thrive in Ottawa, Canada.</p>
 <ul class="space-y-4">
     <li class="flex gap-4 items-start">Merit-Based Scholarships Awarded to top-performing applicants based on academic record.</li>
-    <li class="flex gap-4 items-start">Performance Waivers Maintain a 3.5 GPA and 55 ECTS/year for a 50% waiver from the 2nd year onwards.</li>
+    <li class="flex gap-4 items-start">Performance Waivers Maintain a 3.5 GPA and 55 credits/year for a 50% waiver from the 2nd year onwards.</li>
 </ul>
 <p><a href="/admissions/tuition" class="inline-flex items-center gap-2 text-black font-bold hover:opacity-70 transition-colors">See detailed tuition info →</a></p>`,
     },
@@ -263,7 +260,7 @@ export const pageContentSections: PageContentSection[] = [
         label: 'Eligibility Section',
         defaultContent: `<div class="bg-gray-50 text-black p-12 rounded-3xl shadow-xl">
     <ul class="space-y-4 text-lg">
-        <li>Hold a Bachelor’s degree (180 ECTS) or equivalent.</li>
+        <li>Hold a Bachelor’s degree (180 credits) or equivalent.</li>
         <li>Degree must enable eligibility for Master’s study in the awarding country.</li>
         <li>Only long-cycle degrees are considered in place of a Bachelor’s.</li>
     </ul>
@@ -287,7 +284,7 @@ export const pageContentSections: PageContentSection[] = [
         label: 'Incomplete Degree Section',
         defaultContent: `<p>You may apply before your Bachelor’s degree is complete if you will graduate by 31 July 2026.</p>
 <ul class="space-y-3 pt-4">
-    <li>Admission is conditional upon submission of certified final degree documents by 14 August 2026.</li>
+    <li>Admission is conditional upon submission of certified final degree documents within 14 days of your admission decision.</li>
     <li>Failure to submit by the deadline will cancel your study right.</li>
 </ul>`,
     },
@@ -297,9 +294,9 @@ export const pageContentSections: PageContentSection[] = [
         label: 'Application Steps Section',
         defaultContent: `<div class="space-y-8">
     <div><h3 class="text-xl font-bold mb-4">Prepare in Advance</h3><ul class="space-y-3 text-sm"><li>Check programme-specific eligibility</li><li>Prepare official documents and translations</li><li>Schedule language tests and GMAT/GRE if required</li></ul></div>
-    <div><h3 class="text-[18px] font-bold mb-4">Fill in the Online Application 2026</h3><p class="mb-2">Application period: 1 Dec 2025 – 23 April 2026</p><ul class="space-y-3 text-sm"><li>Only one form per applicant</li><li>Can include two programmes ranked by preference</li><li>Edit application until closing date</li></ul></div>
-    <div><h3 class="text-xl font-bold mb-4">Application Fee</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-4"><div class="p-6 bg-gray-50 rounded-3xl shadow-sm"><div>Non-EU/EEA/Swiss</div><div class="text-2xl font-bold mt-1">Free</div></div><div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl shadow-sm"><div>EU/EEA/Swiss</div><div class="text-2xl font-bold mt-1">Free</div></div></div><p class="text-sm">No payment required to submit your application.</p></div>
-    <div><h3 class="text-xl font-bold mb-4">Upload Required Documents</h3><p class="mb-4">Fill the Application Form Deadline: 23 April 2026 at 15:00 (UTC+2)</p><ul class="grid sm:grid-cols-2 gap-4 text-sm mb-6"><li>Bachelor’s degree & transcripts</li><li>Proof of English proficiency</li><li>International passport only</li><li>CV, Motivation Letter</li><li>Portfolio (if required)</li><li>GMAT/GRE (if required)</li></ul><p class="text-xs text-gray-500">File format: PDF only, named appropriately.</p></div>
+    <div><h3 class="text-[18px] font-bold mb-4">Fill in the Online Application</h3><ul class="space-y-3 text-sm mb-4"><li><strong>September intake:</strong> Apply October – February</li><li><strong>January intake:</strong> Apply June – September</li><li>Only one form per applicant</li><li>Can include two programmes ranked by preference</li><li>Edit application until closing date</li></ul></div>
+    <div><h3 class="text-xl font-bold mb-4">Application Fee</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-4"><div class="p-6 bg-gray-50 rounded-3xl shadow-sm"><div>International Applicants</div><div class="text-2xl font-bold mt-1">Free</div></div><div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl shadow-sm"><div>Domestic (Canadian / PR)</div><div class="text-2xl font-bold mt-1">Free</div></div></div><p class="text-sm">No payment required to submit your application.</p></div>
+    <div><h3 class="text-xl font-bold mb-4">Upload Required Documents</h3><p class="mb-4">Submit documents with your application. Late documents may delay your decision.</p><ul class="grid sm:grid-cols-2 gap-4 text-sm mb-6"><li>Bachelor’s degree & transcripts</li><li>Proof of English proficiency</li><li>International passport only</li><li>CV, Motivation Letter</li><li>Portfolio (if required)</li><li>GMAT/GRE (if required)</li></ul><p class="text-xs text-gray-500">File format: PDF only, named appropriately.</p></div>
 </div>`,
     },
     {
@@ -308,7 +305,7 @@ export const pageContentSections: PageContentSection[] = [
         label: 'Required Documents Section',
         defaultContent: `<div class="grid gap-6 md:grid-cols-2">
     <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-3xl shadow-sm"><h4 class="font-bold mb-2">Certified Educational Documents</h4><p class="text-sm">Must be submitted after admission decision by 13 May or 14 August 2026.</p></div>
-    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-3xl shadow-sm"><h4 class="font-bold mb-2">Translations</h4><p class="text-sm">Non-English/Finnish/Swedish documents require official translations.</p></div>
+    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-3xl shadow-sm"><h4 class="font-bold mb-2">Translations</h4><p class="text-sm">Non-English documents require official certified translations.</p></div>
     <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-3xl shadow-sm"><h4 class="font-bold mb-2">Passport</h4><p class="text-sm">Color PDF of the personal information page.</p></div>
 </div>`,
     },
@@ -322,7 +319,7 @@ export const pageContentSections: PageContentSection[] = [
         <p class="leading-relaxed">English language proficiency is mandatory for all Master’s programmes taught in English. Demonstrate your skills via an accepted language test or previous studies.</p>
         <ul class="space-y-6 pt-6 flex flex-col">
             <li><div class="font-bold uppercase tracking-widest text-[10px] mb-1">Tests</div><div class="text-sm leading-relaxed">Acceptable tests: IELTS Academic, TOEFL iBT, PTE Academic, or C1 Advanced/C2 Proficiency.</div></li>
-            <li><div class="font-bold uppercase tracking-widest text-[10px] mb-1">Exemptions</div><div class="text-sm leading-relaxed">Applicants who completed a degree in English in an EU/EEA country, Australia, Canada, New Zealand, or the USA may be exempt.</div></li>
+            <li><div class="font-bold uppercase tracking-widest text-[10px] mb-1">Exemptions</div><div class="text-sm leading-relaxed">Applicants who completed a degree taught entirely in English in Canada, Australia, New Zealand, the USA, or the UK may be exempt from language requirements.</div></li>
         </ul>
     </div>
 </div>`,
@@ -337,7 +334,7 @@ export const pageContentSections: PageContentSection[] = [
         <li>Minimum Focus Edition score: 555</li>
         <li>GRE General Test equivalent accepted</li>
     </ul>
-    <p class="mt-8 text-sm">Scores must be sent directly by the testing organization to Penkka University.</p>
+    <p class="mt-8 text-sm">Scores must be sent directly by the testing organization to Cannoga College.</p>
 </div>`,
     },
     {
@@ -360,7 +357,7 @@ export const pageContentSections: PageContentSection[] = [
     </ul>
     <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
         <h4 class="font-bold mb-2">International Students</h4>
-        <p class="text-sm leading-relaxed mb-6">Moving to Finland requires planning. Read our comprehensive guide on residence permits, housing, and arrival.</p>
+        <p class="text-sm leading-relaxed mb-6">moving to Ottawa, Canada requires planning. Read our comprehensive guide on residence permits, housing, and arrival.</p>
         <a href="/student-guide/international" class="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm">Open International Student Guide →</a>
     </div>
 </div>`,
@@ -381,29 +378,50 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/tuition',
         sectionKey: 'fee_structure_content',
         label: 'Fee Structure Section',
-        defaultContent: `<p class="text-lg leading-relaxed mb-6">Tuition fees at Penkka University depend on your degree level, field of study, and start date. The exact amount for your programme is always listed in your personal admission letter.</p>
+        defaultContent: `<p class="text-lg leading-relaxed mb-6">Tuition fees at Cannoga College depend on your degree level, field of study, and start date. The exact amount for your programme is always listed in your personal admission letter.</p>
 <div class="bg-gray-100 p-6 md:p-12 pl-6 md:pl-16 rounded-xl"><p class="font-medium">Note: Students whose right to study began on or before 1 August 2025 may have different fee levels. The tables below apply to new students starting in 2026.</p></div>`,
+    },
+    {
+        pageSlug: 'admissions/tuition',
+        sectionKey: 'certificate_fees_content',
+        label: 'Certificate Fees Section',
+        defaultContent: `<p class="text-black mb-6 font-medium">Annual tuition fee and deposit for Certificate programs (6 months – 1 year)</p>
+<div class="rounded-xl overflow-hidden">
+    <table class="w-full text-left border-collapse">
+        <thead class="bg-black text-white"><tr><th class="p-4 font-bold">Student Residency</th><th class="p-4 font-bold">Tuition Fee / Year</th><th class="p-4 font-bold">Tuition Deposit</th></tr></thead>
+        <tbody class="divide-y divide-neutral-200 text-black">
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">Domestic Students</td><td class="p-4">$3,500</td><td class="p-4">$750</td></tr>
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">International Students</td><td class="p-4">$9,500</td><td class="p-4">$2,500</td></tr>
+        </tbody>
+    </table>
+</div>`,
+    },
+    {
+        pageSlug: 'admissions/tuition',
+        sectionKey: 'diploma_fees_content',
+        label: 'Diploma Fees Section',
+        defaultContent: `<p class="text-black mb-6 font-medium">Annual tuition fee and deposit for Diploma and Advanced Diploma programs (2 – 3 years)</p>
+<div class="rounded-xl overflow-hidden">
+    <table class="w-full text-left border-collapse">
+        <thead class="bg-black text-white"><tr><th class="p-4 font-bold">Student Residency</th><th class="p-4 font-bold">Tuition Fee / Year</th><th class="p-4 font-bold">Tuition Deposit</th></tr></thead>
+        <tbody class="divide-y divide-neutral-200 text-black">
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">Domestic Students</td><td class="p-4">$3,500</td><td class="p-4">$750</td></tr>
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">International Students</td><td class="p-4">$9,500</td><td class="p-4">$2,500</td></tr>
+        </tbody>
+    </table>
+</div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'bachelor_fees_content',
         label: 'Bachelor Fees Section',
-        defaultContent: `<p class="text-black mb-6 font-medium">Right to study starting on or after 1 August 2026</p>
+        defaultContent: `<p class="text-black mb-6 font-medium">Annual tuition fee and deposit for Bachelor's degree programs (4-year programs)</p>
 <div class="rounded-xl overflow-hidden">
-    <div class="md:hidden divide-y divide-neutral-200 bg-card">
-        <div class="p-4 space-y-2 bg-card"><div class="flex justify-between items-start"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Field of Study</span><span class="font-bold text-black">Business</span></div><div class="flex justify-between"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Tuition Fee / Year</span><span class="text-black">€6 000</span></div><div class="flex justify-between"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Tuition Deposit</span><span class="text-black">€3 000</span></div></div>
-        <div class="p-4 space-y-2 bg-card"><div class="flex justify-between items-start"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Field of Study</span><span class="font-bold text-black">Arts and Architecture</span></div><div class="flex justify-between"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Tuition Fee / Year</span><span class="text-black">€6 000</span></div><div class="flex justify-between"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Tuition Deposit</span><span class="text-black">€3 000</span></div></div>
-        <div class="p-4 space-y-2 bg-card"><div class="flex justify-between items-start"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Field of Study</span><span class="font-bold text-black">Technology & Engineering</span></div><div class="flex justify-between"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Tuition Fee / Year</span><span class="text-black">€6 000</span></div><div class="flex justify-between"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Tuition Deposit</span><span class="text-black">€3 000</span></div></div>
-        <div class="p-4 space-y-2 bg-card"><div class="flex justify-between items-start"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Field of Study</span><span class="font-bold text-black">Science</span></div><div class="flex justify-between"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Tuition Fee / Year</span><span class="text-black">€9 500</span></div><div class="flex justify-between"><span class="text-sm font-bold uppercase tracking-wider text-neutral-500">Tuition Deposit</span><span class="text-black">€4 750</span></div></div>
-    </div>
-    <table class="hidden md:table w-full text-left border-collapse">
-        <thead class="bg-black text-white"><tr><th class="p-4 font-bold">Field of Study</th><th class="p-4 font-bold">Tuition Fee / Year</th><th class="p-4 font-bold">Tuition Deposit</th></tr></thead>
+    <table class="w-full text-left border-collapse">
+        <thead class="bg-black text-white"><tr><th class="p-4 font-bold">Student Residency</th><th class="p-4 font-bold">Tuition Fee / Year</th><th class="p-4 font-bold">Tuition Deposit</th></tr></thead>
         <tbody class="divide-y divide-neutral-200 text-black">
-            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">Business</td><td class="p-4">€6 000</td><td class="p-4">€3 000</td></tr>
-            <tr class="hover:bg-neutral-50"><td class="p-4">Arts and Architecture</td><td class="p-4">€6 000</td><td class="p-4">€3 000</td></tr>
-            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">Technology & Engineering</td><td class="p-4">€6 000</td><td class="p-4">€3 000</td></tr>
-            <tr><td colSpan="3" class="p-0 border-t border-neutral-300"></td></tr>
-            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">Science</td><td class="p-4">€9 500</td><td class="p-4">€4 750</td></tr>
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">Domestic Students</td><td class="p-4">$6,200</td><td class="p-4">$1,250</td></tr>
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">International Students</td><td class="p-4">$12,500</td><td class="p-4">$3,500</td></tr>
         </tbody>
     </table>
 </div>`,
@@ -412,38 +430,46 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/tuition',
         sectionKey: 'master_fees_content',
         label: 'Master Fees Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed mb-8">Tuition fees for Master’s programmes are determined by the field of study. They are generally consistent with Bachelor’s fees, and students should verify the exact amount in their personal admission letter.</p>
-<div class="bg-gray-100 rounded-2xl p-6 md:p-12"><h3 class="text-2xl font-bold mb-4">Early Bird Tuition Waiver (EBTW)</h3><p class="text-black mb-4">New Master’s students may receive a 25% waiver on their first academic year’s tuition if they accept their offer as instructed.</p><ul class="space-y-2 mb-6 text-sm text-black"><li>Accept your admission offer as instructed</li></ul><div class="bg-card p-6 md:p-12 pl-6 md:pl-16"><h5 class="font-bold text-sm mb-4 uppercase tracking-wider text-black">Waived Fees (1st Year Only)</h5><div class="space-y-2 text-black"><div class="flex justify-between border-b border-gray-300 pb-2"><span>Business</span><span class="font-bold">€4 500</span></div><div class="flex justify-between border-b border-gray-300 pb-2"><span>Arts and Architecture</span><span class="font-bold">€4 500</span></div><div class="flex justify-between border-b border-gray-300 pb-2"><span>Technology & Engineering</span><span class="font-bold">€4 500</span></div><div class="flex justify-between pt-1"><span>Science</span><span class="font-bold">€7 125</span></div></div></div></div>`,
+        defaultContent: `<p class="text-black mb-6 font-medium">Annual tuition fee and deposit for Master's degree programs (2-year programs)</p>
+<div class="rounded-xl overflow-hidden">
+    <table class="w-full text-left border-collapse">
+        <thead class="bg-black text-white"><tr><th class="p-4 font-bold">Student Residency</th><th class="p-4 font-bold">Tuition Fee / Year</th><th class="p-4 font-bold">Tuition Deposit</th></tr></thead>
+        <tbody class="divide-y divide-neutral-200 text-black">
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">Domestic Students</td><td class="p-4">$8,500</td><td class="p-4">$2,000</td></tr>
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">International Students</td><td class="p-4">$18,000</td><td class="p-4">$5,000</td></tr>
+        </tbody>
+    </table>
+</div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'merit_scholarship_content',
         label: 'Merit Scholarship Section',
-        defaultContent: `<div class="mb-8"><h3 class="text-2xl font-bold mb-4">Continuing Merit Scholarship</h3><p class="text-lg leading-relaxed mb-6">Penkka University rewards academic excellence. After the first year, international students can apply for a merit scholarship covering 50% of tuition for the next academic year.</p><div class="grid md:grid-cols-2 gap-8"><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Academic Criteria</h4><ul class="space-y-3"><li>Complete at least 55 ECTS credits per academic year</li><li>Maintain a minimum weighted GPA of 3.5 / 5.0</li></ul></div><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Application & Review</h4><p class="text-sm leading-relaxed">Scholarship eligibility is automatically reviewed every August and eligible students will be notified before the autumn tuition deadline.</p></div></div></div>`,
+        defaultContent: `<div class="mb-8"><h3 class="text-2xl font-bold mb-4">Continuing Merit Scholarship</h3><p class="text-lg leading-relaxed mb-6">Cannoga College rewards academic excellence. After the first year, international students can apply for a merit scholarship covering 50% of tuition for the next academic year.</p><div class="grid md:grid-cols-2 gap-8"><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Academic Criteria</h4><ul class="space-y-3"><li>Complete at least 55 credits per academic year</li><li>Maintain a minimum weighted GPA of 3.5 / 5.0</li></ul></div><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Application & Review</h4><p class="text-sm leading-relaxed">Scholarship eligibility is automatically reviewed every August and eligible students will be notified before the autumn tuition deadline.</p></div></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'payment_methods_content',
         label: 'Payment Methods Section',
-        defaultContent: `<div class="space-y-8"><div class="bg-gray-100 p-6 md:p-12 rounded-2xl"><p class="text-lg leading-relaxed mb-4">Penkka provides secure, convenient payment options using local and international channels through our integrated payment gateway.</p><p class="leading-relaxed">All tuition payments are processed through our secure portal for accurate tracking, faster confirmation, and proper allocation to your student account.</p></div><div class="bg-card p-6 md:p-12 shadow-sm rounded-xl"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Step-by-Step Payment Process</h3><div class="space-y-6"><div><h4 class="font-bold mb-1">Accept Your Offer</h4><p class="text-sm leading-relaxed">Once you accept your offer through the portal, you will be redirected to the secure payment page.</p></div><div><h4 class="font-bold mb-1">Choose Where You’re Paying From</h4><p class="text-sm leading-relaxed">Select the country from which you will make your payment. The portal shows local payment options specific to your location.</p></div><div><h4 class="font-bold mb-1">Review Payment Details</h4><p class="text-sm leading-relaxed">Confirm your full name, student ID, programme, amount payable, and payment reference before submitting.</p></div><div><h4 class="font-bold mb-1">Select Your Payment Method</h4><p class="text-sm leading-relaxed">Choose one of the available payment methods based on your country and preference.</p></div><div><h4 class="font-bold mb-1">Complete the Payment</h4><p class="text-sm leading-relaxed">Follow the on-screen instructions to pay securely.</p></div><div><h4 class="font-bold mb-1">Payment Confirmation</h4><p class="text-sm leading-relaxed">Once payment is confirmed, your payment status updates automatically and an official receipt is issued.</p></div></div></div><div class="grid md:grid-cols-2 gap-6"><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Processing Time</h3><p class="leading-relaxed">Most payments are confirmed within 24–72 hours, depending on the selected payment method.</p></div><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">Need Help With Payment?</h3><p class="leading-relaxed">If you experience any difficulties, contact the Admissions Office through your student portal or by email.</p><a href="mailto:admissions@penkka.fi" class="inline-flex items-center gap-2 font-bold uppercase tracking-widest text-black underline">Email Admissions</a></div></div><div class="bg-gray-100 p-6 rounded-xl shadow-sm"><p class="text-sm leading-relaxed">If payment is not received by 23 April 2026, the waiver may be voided and the full fee required to confirm enrolment.</p><p class="text-sm">This waiver applies only to the first academic year and cannot be combined with other waivers.</p></div></div>`,
+        defaultContent: `<div class="space-y-8"><div class="bg-gray-100 p-6 md:p-12 rounded-2xl"><p class="text-lg leading-relaxed mb-4">Cannoga provides secure, convenient payment options using local and international channels through our integrated payment gateway.</p><p class="leading-relaxed">All tuition payments are processed through our secure portal for accurate tracking, faster confirmation, and proper allocation to your student account.</p></div><div class="bg-card p-6 md:p-12 shadow-sm rounded-xl"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Step-by-Step Payment Process</h3><div class="space-y-6"><div><h4 class="font-bold mb-1">Accept Your Offer</h4><p class="text-sm leading-relaxed">Once you accept your offer through the portal, you will be redirected to the secure payment page.</p></div><div><h4 class="font-bold mb-1">Choose Where You’re Paying From</h4><p class="text-sm leading-relaxed">Select the country from which you will make your payment. The portal shows local payment options specific to your location.</p></div><div><h4 class="font-bold mb-1">Review Payment Details</h4><p class="text-sm leading-relaxed">Confirm your full name, student ID, programme, amount payable, and payment reference before submitting.</p></div><div><h4 class="font-bold mb-1">Select Your Payment Method</h4><p class="text-sm leading-relaxed">Choose one of the available payment methods based on your country and preference.</p></div><div><h4 class="font-bold mb-1">Complete the Payment</h4><p class="text-sm leading-relaxed">Follow the on-screen instructions to pay securely.</p></div><div><h4 class="font-bold mb-1">Payment Confirmation</h4><p class="text-sm leading-relaxed">Once payment is confirmed, your payment status updates automatically and an official receipt is issued.</p></div></div></div><div class="grid md:grid-cols-2 gap-6"><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Processing Time</h3><p class="leading-relaxed">Most payments are confirmed within 24–72 hours, depending on the selected payment method.</p></div><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">Need Help With Payment?</h3><p class="leading-relaxed">If you experience any difficulties, contact the Admissions Office through your student portal or by email.</p><a href="mailto:admissions@cannogacollege.ca" class="inline-flex items-center gap-2 font-bold uppercase tracking-widest text-black underline">Email Admissions</a></div></div><div class="bg-gray-100 p-6 rounded-xl shadow-sm"><p class="text-sm">Please pay by the deadline indicated in your official offer of admission to confirm your enrollment.</p></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'timing_content',
         label: 'Payment Schedule Section',
-        defaultContent: `<div class="grid md:grid-cols-2 gap-8"><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">First Academic Year</h3><p class="leading-relaxed">After accepting the admission offer, pay the full tuition fee in a single instalment. Payment in multiple instalments is not permitted for first-year enrolment.</p></div><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">After the First Year</h3><p class="leading-relaxed">Students are encouraged to pay the full fee in one instalment during the annual enrolment period. Alternatively, two instalments may be allowed, but this can affect your attendance status.</p><div class="mt-4 p-4 bg-gray-100 rounded-lg text-sm">Important: Non-attending status may affect visa or residence permit conditions.</div></div></div><p class="mt-8 text-black text-center">For further details, consult the official Penkka University enrolment guidelines.</p>`,
+        defaultContent: `<div class="grid md:grid-cols-2 gap-8"><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">First Academic Year</h3><p class="leading-relaxed">After accepting the admission offer, pay the full tuition fee in a single instalment. Payment in multiple instalments is not permitted for first-year enrolment.</p></div><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">After the First Year</h3><p class="leading-relaxed">Students are encouraged to pay the full fee in one instalment during the annual enrolment period. Alternatively, two instalments may be allowed, but this can affect your attendance status.</p><div class="mt-4 p-4 bg-gray-100 rounded-lg text-sm">Important: Non-attending status may affect visa or residence permit conditions.</div></div></div><p class="mt-8 text-black text-center">For further details, consult the official Cannoga College enrolment guidelines.</p>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'additional_fees_content',
         label: 'Additional Fees Section',
-        defaultContent: `<div class="space-y-16"><div class="max-w-4xl"><h3 class="text-2xl font-bold mb-6">Financial Requirements & Living Costs</h3><p class="text-neutral-600 leading-relaxed mb-8">Beyond tuition, ensure you have sufficient means for rent, personal expenses, transportation, meals, insurance, and any Finnish Immigration Service requirements.</p><div class="p-8 bg-gray-100 rounded-2xl shadow-sm"><p class="font-bold">Penkka University has a housing quota especially for tuition fee-liable international degree students moving to Finland.</p></div></div><div class="grid md:grid-cols-2 gap-8"><div class="p-8 bg-gray-100 rounded-3xl shadow-sm"><h3 class="text-xl font-bold mb-4">What’s Included?</h3><p class="mb-6">The tuition fee includes teaching and access to the newest learning facilities. Student services are free.</p><ul class="grid grid-cols-1 gap-3 text-sm font-medium"><li>Library access</li><li>Student Services</li><li>Career Services</li><li>Exchange Services</li><li>Study support</li></ul></div><div class="p-8 bg-black text-white rounded-3xl shadow-md"><h3 class="text-xl font-bold mb-4">HYY Student Union</h3><p class="leading-relaxed mb-6">The tuition fee includes the compulsory Student Union (HYY) membership, offering advocacy, events, and discounts.</p><div class="space-y-3"><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">Significant meal discounts</div><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">Public transport reductions</div></div></div></div></div>`,
+        defaultContent: `<div class="space-y-16"><div class="max-w-4xl"><h3 class="text-2xl font-bold mb-6">Financial Requirements &amp; Living Costs</h3><p class="text-neutral-600 leading-relaxed mb-8">Beyond tuition, ensure you have sufficient funds for rent, personal expenses, transportation, meals, insurance, and any Immigration, Refugees and Citizenship Canada (IRCC) requirements.</p><div class="p-8 bg-gray-100 rounded-2xl shadow-sm"><p class="font-bold">Cannoga College supports international students in finding accommodation in Ottawa, Canada. Our housing guide covers all major providers and neighbourhoods.</p></div></div><div class="grid md:grid-cols-2 gap-8"><div class="p-8 bg-gray-100 rounded-3xl shadow-sm"><h3 class="text-xl font-bold mb-4">What's Included?</h3><p class="mb-6">The tuition fee includes teaching and access to modern learning facilities. Core student services are free of charge.</p><ul class="grid grid-cols-1 gap-3 text-sm font-medium"><li>Library access</li><li>Student Services</li><li>Career Services</li><li>Exchange Services</li><li>Study support</li></ul></div><div class="p-8 bg-black text-white rounded-3xl shadow-md"><h3 class="text-xl font-bold mb-4">Cannoga Student Association</h3><p class="leading-relaxed mb-6">All enrolled students are members of the Cannoga Student Association (CSA), offering advocacy, events, discounts, and community.</p><div class="space-y-3"><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">Campus dining discounts</div><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">OC Transpo U-Pass subsidy</div></div></div></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'health_insurance_content',
         label: 'Health Insurance Section',
-        defaultContent: `<div class="bg-gray-100 rounded-2xl p-6 md:p-12 shadow-sm"><div class="flex flex-col md:flex-row items-start gap-6"><div class="relative w-16 h-16 md:w-20 md:h-20 shrink-0 bg-card rounded-xl overflow-hidden shadow-sm"><img src="/images/swisscare-logo.png" alt="SwissCare" class="object-contain w-full h-full p-1" /></div><div><h3 class="text-xl font-bold mb-3">SwissCare — Recommended Insurance Partner</h3><p class="leading-relaxed mb-4">Non-EU/EEA students must have valid private health insurance for a Finnish residence permit. SwissCare is recommended for its student plans and accepted coverage.</p><ul class="space-y-2 mb-6 text-sm"><li>Medical consultations and hospitalization</li><li>Emergency repatriation and evacuation</li><li>Dental emergencies and mental health support</li><li>Coverage accepted for residence permit applications</li></ul><a href="https://www.swisscare.com" target="_blank" rel="noopener noreferrer" class="inline-block text-black underline">Visit SwissCare →</a></div></div></div>`,
+        defaultContent: `<div class="bg-gray-100 rounded-2xl p-6 md:p-12 shadow-sm"><div class="flex flex-col md:flex-row items-start gap-6"><div><h3 class="text-xl font-bold mb-3">Health Insurance in Canada</h3><p class="leading-relaxed mb-4">International students coming to Ontario are eligible for OHIP (Ontario Health Insurance Plan) after a 3-month waiting period. During this time, you must have private health insurance. We recommend obtaining coverage before departure.</p><ul class="space-y-2 mb-6 text-sm"><li>Medical consultations and hospitalization</li><li>Emergency repatriation and evacuation</li><li>Dental emergencies and mental health support</li><li>Coverage accepted for Canadian study permit applications</li></ul><p class="text-sm">After 3 months: <a href="https://www.ontario.ca/page/apply-ohip-and-get-health-card" target="_blank" rel="noopener noreferrer" class="inline-block text-black underline font-bold">Apply for OHIP at ServiceOntario →</a></p></div></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
@@ -455,19 +481,19 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/tuition',
         sectionKey: 'contact_content',
         label: 'Contact Section',
-        defaultContent: `<p class="text-white mb-10 max-w-2xl mx-auto text-lg leading-relaxed">If you have questions about payment processes, deadlines, or refunds, contact the Tuition Fee Office.</p><a href="mailto:tuition@penkka.fi" class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-md">Contact Tuition Office</a>`,
+        defaultContent: `<p class="text-white mb-10 max-w-2xl mx-auto text-lg leading-relaxed">If you have questions about payment processes, deadlines, or refunds, contact the Tuition Fee Office.</p><a href="mailto:tuition@cannogacollege.ca" class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-md">Contact Tuition Office</a>`,
     },
     {
         pageSlug: 'admissions',
         sectionKey: 'hero_title',
         label: 'Hero Title',
-        defaultContent: 'Admissions to Penkka University',
+        defaultContent: 'Admissions to Cannoga College',
     },
     {
         pageSlug: 'admissions',
         sectionKey: 'hero_subtitle',
         label: 'Hero Subtitle',
-        defaultContent: 'Apply to Penkka University Helsinki and begin your Bachelor’s or Master’s studies in an internationally focused learning environment. Our admissions process is transparent, supportive, and open to students from around the world.',
+        defaultContent: 'Apply to Cannoga College Ottawa and begin your Bachelor’s or Master’s studies in an internationally focused learning environment. Our admissions process is transparent, supportive, and open to students from around the world.',
     },
 ];
 

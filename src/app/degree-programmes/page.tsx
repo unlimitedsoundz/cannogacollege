@@ -1,219 +1,224 @@
 import { Link } from "@aalto-dx/react-components";
-import Image from 'next/image';
-import { GraduationCap, BookOpen, Users, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import GuideSidebarLayout from '@/components/layout/StudentGuideLayout';
 
 const sections = [
-    { id: 'bachelor', title: 'Bachelor\'s Programmes', content: '' },
-    { id: 'master', title: 'Master\'s Programmes', content: '' },
+    { id: 'certificates', title: 'Certificate Programs', content: '' },
+    { id: 'diplomas', title: 'Diploma Programs', content: '' },
+    { id: 'advanced-diplomas', title: 'Advanced Diplomas', content: '' },
+    { id: 'bachelor', title: 'Bachelor\u2019s Degrees', content: '' },
+    { id: 'master', title: 'Master\u2019s Degrees', content: '' },
     { id: 'admission', title: 'Admission Requirements', content: '' },
     { id: 'fees', title: 'Tuition & Fees', content: '' },
 ];
 
 export const metadata = {
-    title: 'Degree Programmes | Penkka University',
-    description: 'Explore our comprehensive range of bachelor\'s and master\'s degree programmes at Penkka University.',
+    title: 'Programs & Degrees | Cannoga College',
+    description: 'Explore our comprehensive range of Certificate, Diploma, Advanced Diploma, Bachelor\'s, and Master\'s degree programs at Cannoga College in Ottawa, Canada.',
     alternates: {
-        canonical: 'https://penkka.fi/degree-programmes/',
+        canonical: 'https://cannogacollege.ca/degree-programmes/',
     },
 };
+
+function ProgramCard({ id, duration, title, overview, requirements, admissionHref }: {
+    id: string; duration: string; title: string; overview: string;
+    requirements: string[]; admissionHref: string;
+}) {
+    return (
+        <section id={id} className="scroll-mt-32">
+            <div className="cc-section-divider flex items-center justify-between">
+                <h2 className="cc-h2">{title}</h2>
+                <span className="text-xs font-bold uppercase tracking-widest bg-[#5c2d91] text-white px-4 py-1.5 shrink-0">{duration}</span>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+                <div className="md:col-span-2 cc-card cc-card-body space-y-4">
+                    <h3 className="cc-h3">Overview</h3>
+                    <p className="text-neutral-600 leading-relaxed">{overview}</p>
+                </div>
+                <div className="cc-card cc-card-body flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 className="cc-h3 mb-4">Requirements</h3>
+                        <ul className="space-y-3 text-neutral-600 text-sm">
+                            {requirements.map((r, i) => (
+                                <li key={i} className="flex items-start gap-2">
+                                    <ArrowRight size={16} className="text-[#5c2d91] shrink-0 mt-0.5" />
+                                    <span>{r}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <Link href={admissionHref} className="cc-btn-outline text-sm mt-4 inline-flex no-underline">
+                        Admission Details <ArrowRight size={14} weight="bold" />
+                    </Link>
+                </div>
+            </div>
+        </section>
+    );
+}
 
 export default function DegreeProgrammesPage() {
     return (
         <GuideSidebarLayout sections={sections}>
             <div className="min-h-screen bg-white">
-                <div className="container mx-auto px-4 py-8 md:py-20">
-                    <div className="flex flex-col lg:flex-row gap-16">
-                        <main className="lg:w-full space-y-20 md:space-y-32">
+                <div className="cc-container py-8 md:py-16 space-y-16 md:space-y-24">
 
-                            {/* Hero Section */}
-                            <section className="bg-white border-b-2 border-black pb-16 md:pb-24">
-                                <div className="max-w-4xl">
-                                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 uppercase tracking-tight leading-tight">Degree Programmes</h1>
-                                    <p className="text-xl md:text-2xl text-black leading-relaxed font-medium">
-                                        Discover our diverse range of academic programmes designed to prepare you for success in your career.
-                                        From undergraduate to graduate studies, we offer world-class education in Helsinki.
-                                    </p>
-                                </div>
-                            </section>
+                    {/* Hero */}
+                    <section className="border-b-2 border-[#5c2d91] pb-12">
+                        <p className="cc-label uppercase tracking-widest mb-3">Academic Offerings</p>
+                        <h1 className="cc-h1 mb-6">Programs &amp; Degrees</h1>
+                        <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl">
+                            Discover our diverse range of career-focused programs designed to prepare you for success.
+                            From certificates and diplomas to undergraduate and graduate degrees, we offer world-class education in Ottawa.
+                        </p>
+                        <div className="flex flex-wrap gap-4 mt-8">
+                            <Link href="/admissions" className="cc-btn-primary no-underline">Apply Now <ArrowRight size={14} weight="bold" /></Link>
+                            <Link href="/studies" className="cc-btn-outline no-underline">Browse All Courses <ArrowRight size={14} weight="bold" /></Link>
+                        </div>
+                    </section>
 
-                            {/* Bachelor's Programmes */}
-                            <section id="bachelor" className="scroll-mt-32">
-                                <h2 className="text-3xl md:text-4xl font-bold mb-12 uppercase tracking-widest border-l-4 border-black pl-6">Bachelor's Programmes</h2>
-                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border border-black">
+                    <ProgramCard
+                        id="certificates"
+                        duration="6 Months – 1 Year"
+                        title="Certificate Programs"
+                        overview="Our certificate programs provide rapid, focused training in specific technical or business domains. Perfect for professionals looking to upskill, transition careers, or gain fundamental entry-level knowledge. These programs emphasize hands-on, practical skills directly aligned with immediate industry needs in Ottawa's job market."
+                        requirements={[
+                            "High school diploma or equivalent",
+                            "English language proficiency (IELTS 6.0 or equivalent)",
+                            "Basic computer literacy",
+                        ]}
+                        admissionHref="/admissions"
+                    />
+
+                    <ProgramCard
+                        id="diplomas"
+                        duration="2 Years"
+                        title="Diploma Programs"
+                        overview="Our 2-year diploma programs offer a comprehensive blend of theoretical understanding and intensive practical training. Students dive deep into their chosen discipline, working on real-world projects and collaborative assignments. These programs are structured to prepare graduates for direct entry into the workforce with highly marketable technical capabilities."
+                        requirements={[
+                            "High school diploma or equivalent",
+                            "English language proficiency (IELTS 6.0 or equivalent)",
+                            "Satisfactory grades in prerequisite courses",
+                        ]}
+                        admissionHref="/admissions"
+                    />
+
+                    <ProgramCard
+                        id="advanced-diplomas"
+                        duration="3 Years"
+                        title="Advanced Diploma Programs"
+                        overview="Advanced diploma programs provide an in-depth, multi-year exploration of engineering, technology, or business fields. They feature extensive hands-on laboratory work, advanced technical concepts, and industry-integrated co-op semesters. Graduates gain the senior-level competencies required to design, implement, and manage complex systems."
+                        requirements={[
+                            "High school diploma with strong academic standing",
+                            "English language proficiency (IELTS 6.5 or equivalent)",
+                            "Portfolio review or entrance assessment (specific tracks)",
+                        ]}
+                        admissionHref="/admissions"
+                    />
+
+                    <ProgramCard
+                        id="bachelor"
+                        duration="4 Years"
+                        title="Bachelor's Degree Programs"
+                        overview="Our 4-year undergraduate degree programs offer rigorous academic instruction combined with professional training. Fusing analytical thinking, research methodologies, and leadership skills, these degrees prepare students for high-level careers or postgraduate research. Program structures include comprehensive co-op semesters in Ottawa's public and private sectors."
+                        requirements={[
+                            "High school diploma with competitive GPA (70%+)",
+                            "English language proficiency (IELTS 6.5, no band below 6.0)",
+                            "Prerequisite senior courses (e.g. English, Math)",
+                        ]}
+                        admissionHref="/admissions/bachelor"
+                    />
+
+                    <ProgramCard
+                        id="master"
+                        duration="2 Years"
+                        title="Master's Degree Programs"
+                        overview="Our graduate degree programs are designed for ambitious professionals and researchers seeking to lead innovation in their industries. The curriculum focuses on advanced strategic planning, specialized methodologies, and a major thesis or capstone project. Students collaborate with faculty on active research initiatives."
+                        requirements={[
+                            "Accredited Bachelor's degree in related field",
+                            "Minimum undergraduate GPA of B (3.0/4.0)",
+                            "Two letters of recommendation & Statement of Purpose",
+                        ]}
+                        admissionHref="/admissions/master"
+                    />
+
+                    {/* Admission Requirements */}
+                    <section id="admission" className="scroll-mt-32">
+                        <div className="cc-section-divider">
+                            <h2 className="cc-h2">Admission Requirements</h2>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="cc-card cc-card-body">
+                                <h3 className="cc-h3 mb-6">Undergraduate <span className="text-[#5c2d91]">(Certificates &amp; Diplomas)</span></h3>
+                                <ul className="space-y-4">
+                                    {["High school diploma or equivalent", "Minimum GPA requirements", "English language proficiency", "Academic transcripts of secondary education"].map((r, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-neutral-600">
+                                            <ArrowRight size={18} weight="bold" className="text-[#5c2d91] flex-shrink-0 mt-0.5" />
+                                            {r}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="cc-card cc-card-body">
+                                <h3 className="cc-h3 mb-6">Degrees <span className="text-[#5c2d91]">(Bachelor's &amp; Master's)</span></h3>
+                                <ul className="space-y-4">
+                                    {["Bachelor's degree or equivalent (for Master's)", "High school diploma with required subject prerequisites (for Bachelor's)", "Academic transcripts and letters of recommendation", "Statement of purpose or portfolio (where applicable)"].map((r, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-neutral-600">
+                                            <ArrowRight size={18} weight="bold" className="text-[#5c2d91] flex-shrink-0 mt-0.5" />
+                                            {r}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Tuition & Fees */}
+                    <section id="fees" className="scroll-mt-32">
+                        <div className="cc-section-divider">
+                            <h2 className="cc-h2">Tuition &amp; Fees</h2>
+                            <p className="cc-label">All amounts in Canadian Dollars (CAD)</p>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="cc-card cc-card-body">
+                                <h3 className="cc-h3 mb-6">Domestic Students</h3>
+                                <div className="space-y-4">
                                     {[
-                                        {
-                                            title: "Bachelor of Business Administration",
-                                            duration: "3 years",
-                                            description: "Develop essential business skills and leadership capabilities in our comprehensive BBA programme.",
-                                            image: "/images/programs/business.jpg"
-                                        },
-                                        {
-                                            title: "Bachelor of Information Technology",
-                                            duration: "3 years",
-                                            description: "Master modern IT technologies and software development in our cutting-edge programme.",
-                                            image: "/images/programs/it.jpg"
-                                        },
-                                        {
-                                            title: "Bachelor of Arts in Design",
-                                            duration: "3 years",
-                                            description: "Explore creative design principles and develop your artistic skills in our innovative programme.",
-                                            image: "/images/programs/design.jpg"
-                                        }
-                                    ].map((program, index) => (
-                                        <div key={index} className={`bg-card p-8 group flex flex-col ${index !== 2 ? 'border-b lg:border-b-0 lg:border-r border-black' : ''}`}>
-                                            <div className="h-48 bg-neutral-100 mb-8 relative overflow-hidden border border-black/10">
-                                                <Image
-                                                    src={program.image}
-                                                    alt={program.title}
-                                                    fill
-                                                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                                                    sizes="(max-width: 768px) 100vw, 33vw"
-                                                />
-                                            </div>
-                                            <div className="flex items-center justify-between mb-6">
-                                                <span className="bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest">
-                                                    {program.duration}
-                                                </span>
-                                            </div>
-                                            <h3 className="text-xl font-bold mb-4 uppercase tracking-tight leading-snug h-14 overflow-hidden">{program.title}</h3>
-                                            <p className="text-black mb-8 leading-relaxed flex-grow">{program.description}</p>
-                                            <Link href="/admissions/bachelor" className="text-black font-bold uppercase tracking-widest text-sm inline-flex items-center gap-3 group-hover:gap-5 transition-all">
-                                                Learn more <ArrowRight size={18} weight="bold" />
-                                            </Link>
+                                        ["Certificate & Diploma programs", "$3,500/year"],
+                                        ["Bachelor's degree programs", "$6,200/year"],
+                                        ["Master's degree programs", "$8,500/year"],
+                                    ].map(([label, price]) => (
+                                        <div key={label} className="flex justify-between items-center border-b border-neutral-100 pb-3">
+                                            <span className="text-neutral-600 text-sm">{label}</span>
+                                            <span className="font-bold text-lg text-[#5c2d91]">{price}</span>
                                         </div>
                                     ))}
                                 </div>
-                            </section>
-
-                            {/* Master's Programmes */}
-                            <section id="master" className="scroll-mt-32">
-                                <h2 className="text-3xl md:text-4xl font-bold mb-12 uppercase tracking-widest border-l-4 border-black pl-6">Master's Programmes</h2>
-                                <div className="grid md:grid-cols-2 gap-0 border border-black">
+                            </div>
+                            <div className="cc-card cc-card-body">
+                                <h3 className="cc-h3 mb-6">International Students</h3>
+                                <div className="space-y-4">
                                     {[
-                                        {
-                                            title: "Master of Business Administration (MBA)",
-                                            duration: "2 years",
-                                            description: "Advance your career with our comprehensive MBA programme focusing on strategic leadership and innovation.",
-                                            image: "/images/programs/mba.jpg"
-                                        },
-                                        {
-                                            title: "Master of Information Technology",
-                                            duration: "2 years",
-                                            description: "Specialize in advanced IT technologies, cybersecurity, and digital transformation.",
-                                            image: "/images/programs/mit.jpg"
-                                        }
-                                    ].map((program, index) => (
-                                        <div key={index} className={`bg-card p-10 group flex flex-col ${index === 0 ? 'border-b md:border-b-0 md:border-r border-black' : ''}`}>
-                                            <div className="h-64 bg-neutral-100 mb-8 relative overflow-hidden border border-black/10">
-                                                <Image
-                                                    src={program.image}
-                                                    alt={program.title}
-                                                    fill
-                                                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                                />
-                                            </div>
-                                            <div className="flex items-center justify-between mb-6">
-                                                <span className="bg-black text-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest">
-                                                    {program.duration}
-                                                </span>
-                                            </div>
-                                            <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{program.title}</h3>
-                                            <p className="text-black mb-10 leading-relaxed text-lg flex-grow">{program.description}</p>
-                                            <Link href="/admissions/master" className="text-black font-bold uppercase tracking-widest text-base inline-flex items-center gap-3 group-hover:gap-5 transition-all">
-                                                Explore Programme <ArrowRight size={20} weight="bold" />
-                                            </Link>
+                                        ["Certificate & Diploma programs", "$9,500/year"],
+                                        ["Bachelor's degree programs", "$12,500/year"],
+                                        ["Master's degree programs", "$18,000/year"],
+                                    ].map(([label, price]) => (
+                                        <div key={label} className="flex justify-between items-center border-b border-neutral-100 pb-3">
+                                            <span className="text-neutral-600 text-sm">{label}</span>
+                                            <span className="font-bold text-lg text-[#5c2d91]">{price}</span>
                                         </div>
                                     ))}
                                 </div>
-                            </section>
+                            </div>
+                        </div>
+                        <div className="mt-8">
+                            <Link href="/admissions/tuition" className="cc-btn-primary no-underline">
+                                View Detailed Fee Information <ArrowRight size={14} weight="bold" />
+                            </Link>
+                        </div>
+                    </section>
 
-                            {/* Admission Requirements */}
-                            <section id="admission" className="scroll-mt-32">
-                                <h2 className="text-3xl md:text-4xl font-bold mb-12 uppercase tracking-widest">Admission Requirements</h2>
-                                <div className="bg-card border border-black p-10 md:p-16">
-                                    <div className="grid md:grid-cols-2 gap-16">
-                                        <div>
-                                            <h3 className="text-2xl font-bold mb-8 uppercase tracking-wide border-b border-black pb-4">Bachelor's</h3>
-                                            <ul className="space-y-6">
-                                                {[
-                                                    "High school diploma or equivalent",
-                                                    "Minimum GPA requirements",
-                                                    "English language proficiency",
-                                                    "Entrance examination (if required)"
-                                                ].map((req, index) => (
-                                                    <li key={index} className="flex items-start gap-4">
-                                                        <ArrowRight size={20} weight="bold" className="text-black flex-shrink-0 mt-1" />
-                                                        <span className="text-black text-lg font-medium">{req}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-2xl font-bold mb-8 uppercase tracking-wide border-b border-black pb-4">Master's</h3>
-                                            <ul className="space-y-6">
-                                                {[
-                                                    "Bachelor's degree or equivalent",
-                                                    "Relevant work experience",
-                                                    "Academic transcripts",
-                                                    "Letters of recommendation",
-                                                    "Statement of purpose"
-                                                ].map((req, index) => (
-                                                    <li key={index} className="flex items-start gap-4">
-                                                        <ArrowRight size={20} weight="bold" className="text-black flex-shrink-0 mt-1" />
-                                                        <span className="text-black text-lg font-medium">{req}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            {/* Tuition & Fees */}
-                            <section id="fees" className="scroll-mt-32">
-                                <h2 className="text-3xl md:text-4xl font-bold mb-12 uppercase tracking-widest">Tuition & Fees</h2>
-                                <div className="grid md:grid-cols-2 gap-0 border border-black">
-                                    <div className="bg-card p-10 border-b md:border-b-0 md:border-r border-black">
-                                        <h3 className="text-2xl font-bold mb-8 uppercase tracking-wide">EU/EEA Students</h3>
-                                        <div className="space-y-6">
-                                            <div className="flex justify-between items-center border-b border-black/10 pb-4">
-                                                <span className="text-black font-medium">Bachelor's programmes</span>
-                                                <span className="font-bold text-xl uppercase">Free</span>
-                                            </div>
-                                            <div className="flex justify-between items-center border-b border-black/10 pb-4">
-                                                <span className="text-black font-medium">Master's programmes</span>
-                                                <span className="font-bold text-xl uppercase">Free</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="bg-card p-10">
-                                        <h3 className="text-2xl font-bold mb-8 uppercase tracking-wide">Non-EU Students</h3>
-                                        <div className="space-y-6">
-                                            <div className="flex justify-between items-center border-b border-black/10 pb-4">
-                                                <span className="text-black font-medium">Bachelor's programmes</span>
-                                                <span className="font-bold text-xl">€12,000/year</span>
-                                            </div>
-                                            <div className="flex justify-between items-center border-b border-black/10 pb-4">
-                                                <span className="text-black font-medium">Master's programmes</span>
-                                                <span className="font-bold text-xl">€15,000/year</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="mt-12">
-                                    <Link href="/admissions/tuition" className="w-full md:w-auto bg-black text-white px-10 py-5 font-bold uppercase tracking-widest text-base hover:bg-neutral-800 transition-colors inline-block text-center">
-                                        View Detailed Fee Information
-                                    </Link>
-                                </div>
-                            </section>
-
-                        </main>
-                    </div>
                 </div>
             </div>
         </GuideSidebarLayout>
     );
 }
-

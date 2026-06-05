@@ -6,7 +6,7 @@ import { Link } from "@aalto-dx/react-components"
 import { usePathname } from "next/navigation"
 import { Logo } from "@/components/ui/Logo"
 import { LanguageSelector } from "@/components/ui/LanguageSelector"
-import { CaretDown, List, X, Plus, Minus, MagnifyingGlass as SearchIcon } from "@phosphor-icons/react"
+import { CaretDown, List, X, Plus, Minus, MagnifyingGlass as SearchIcon, MapPin } from "@phosphor-icons/react"
 import { Search } from "./Search"
 
 type NavItem = {
@@ -21,26 +21,7 @@ type NavItem = {
 
 const navigation: NavItem[] = [
     {
-        name: "Penkka",
-        href: "#",
-        children: [
-            { name: "Student Guide", href: "/student-guide" },
-            { name: "International Students", href: "/student-guide/international" },
-            { name: "Chat with Students", href: "/student-guide/chat-with-penkka-students" },
-            { name: "Housing for students", href: "/student-guide/housing-for-students" },
-            { name: "Arrival Guide", href: "/student-guide/arrival" },
-            { name: "Exchange Guide", href: "/student-guide/exchange" },
-            { name: "Penkka Student Ambassadors", href: "https://ourblogs.penkka.fi/" },
-            { name: "News and Events", href: "/news" },
-            { name: "Academic Calendar", href: "/student-guide#calendar" },
-            { name: "Support Services", href: "/student-guide#support" },
-            { name: "Careers", href: "/careers" },
-            { name: "Alumni", href: "/alumni" },
-            { name: "Contact", href: "/contact" },
-        ]
-    },
-    {
-        name: "Schools",
+        name: "Programs",
         href: "/schools",
         sections: [
             {
@@ -78,29 +59,68 @@ const navigation: NavItem[] = [
         ]
     },
     {
-        name: "Admissions",
-        href: "/admissions",
+        name: "Financial Aid",
+        href: "/admissions/tuition",
         children: [
-            { name: "Bachelor's Admission (EN)", href: "/admissions/bachelor" },
-            { name: "Bachelor's Admission (FI & SV)", href: "/admissions/bachelor-fi" },
-            { name: "Master's Admissions", href: "/admissions/master" },
-            { name: "How to Apply", href: "/admissions/application-process" },
-
             { name: "Scholarships & Tuition Fees", href: "/admissions/tuition" },
-            { name: "Admission Services Contact Information", href: "/admissions/contact-information" },
+            { name: "Refund & Withdrawal Policy", href: "/refund-withdrawal-policy" },
         ]
     },
     {
-        name: "Research",
-        href: "/research",
+        name: "Future Students",
+        href: "/admissions",
         children: [
-            { name: "Research Hub", href: "/research" },
-            { name: "Projects", href: "/research/projects" },
-            { name: "Publications", href: "/research/publications" },
+            { name: "Degree Programs", href: "/degree-programmes" },
+            { name: "How to Apply", href: "/admissions/application-process" },
+            { name: "Bachelor's Admission", href: "/admissions/bachelor" },
+            { name: "Master's Admissions", href: "/admissions/master" },
+            { name: "Admissions Policy", href: "/admissions-policy" },
+            { name: "Admission Services Contact", href: "/admissions/contact-information" },
         ]
     },
-    { name: "Student Life", href: "/student-life" },
-    { name: "About", href: "/about-penkka-university" },
+    {
+        name: "Current Students",
+        href: "/student-guide",
+        children: [
+            { name: "Student Guide", href: "/student-guide" },
+            { name: "Academic Calendar", href: "/student-guide#calendar" },
+            { name: "Support Services", href: "/student-guide#support" },
+            { name: "Student Handbook", href: "/student-handbook" },
+            { name: "Academic Regulations", href: "/academic-regulations" },
+            { name: "Code of Conduct", href: "/code-of-conduct" },
+        ]
+    },
+    {
+        name: "International Students",
+        href: "/student-guide/international",
+        children: [
+            { name: "International Student Guide", href: "/student-guide/international" },
+            { name: "Housing for Students", href: "/student-guide/housing-for-students" },
+            { name: "Arrival Guide", href: "/student-guide/arrival" },
+            { name: "Exchange Guide", href: "/student-guide/exchange" },
+            { name: "Chat with Students", href: "/student-guide/chat-with-cannoga-students" },
+        ]
+    },
+    {
+        name: "Employees",
+        href: "/portal",
+        children: [
+            { name: "IT Support", href: "/portal/support" },
+            { name: "Student Portal Login", href: "/login" },
+        ]
+    },
+    {
+        name: "About",
+        href: "/about-cannoga-college",
+        children: [
+            { name: "Our Story", href: "/about-cannoga-college" },
+            { name: "News & Events", href: "/news" },
+            { name: "Research Hub", href: "/research" },
+            { name: "Careers", href: "/careers" },
+            { name: "Alumni", href: "/alumni" },
+            { name: "Contact Us", href: "/contact" },
+        ]
+    }
 ]
 
 export function Header() {
@@ -109,48 +129,65 @@ export function Header() {
     const [expandedMobileSections, setExpandedMobileSections] = React.useState<Record<string, boolean>>({})
     const [openDropdown, setOpenDropdown] = React.useState<string | null>(null)
 
-
-    const isAdmissionsPage = false // Removed orange header logic
+    const isAdmissionsPage = false
     const isPortalOrAdmin = pathname.startsWith('/portal') || pathname.startsWith('/admin')
 
     if (isPortalOrAdmin) return null;
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isAdmissionsPage ? 'bg-[#fd6402]' : 'bg-white shadow-sm'}`}
+            className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm flex flex-col"
         >
-            <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+            {/* Top Utility Bar (Desktop only) */}
+            <div className="hidden lg:block bg-[#2e1150] text-[#f7f4fc] text-xs h-8 w-full">
+                <div className="container mx-auto px-4 h-full flex items-center justify-between font-semibold">
+                    <div className="flex items-center gap-6">
+                        <Link href="/site-index" className="hover:underline text-[#f7f4fc] no-underline">Site Index</Link>
+                        <Link href="/student-guide#calendar" className="hover:underline text-[#f7f4fc] no-underline">Campus Maps</Link>
+                        <div className="flex items-center gap-1.5 text-white">
+                            <MapPin size={14} weight="fill" className="text-[#9b51e0]" />
+                            <span>Ottawa Campus</span>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-6">
+                        <Link href="/student-guide/international" className="hover:underline text-[#f7f4fc] no-underline font-semibold">International</Link>
+                        <Link href="/portal/support" className="hover:underline text-[#f7f4fc] no-underline font-semibold">IT Support</Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className="container mx-auto px-4 h-28 flex items-center justify-between">
                 <Logo
-                    className={`h-8 md:h-12 ${isAdmissionsPage ? 'text-white' : ''}`}
+                    className="h-14 md:h-20 lg:mr-24 mr-8 shrink-0"
                     onClick={() => setIsMobileMenuOpen(false)}
                 />
 
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-4">
+                <nav className="hidden lg:flex items-center gap-8">
                     {navigation.map((item) => (
                         <div
                             key={item.name}
-                            className="relative group h-20 flex items-center"
+                            className="relative group h-28 flex items-center"
                             onMouseEnter={() => setOpenDropdown(item.name)}
                             onMouseLeave={() => setOpenDropdown(null)}
                         >
                             <Link
                                 href={item.href}
-                                className={`text-sm font-bold uppercase tracking-wider flex items-center gap-1 transition-colors ${isAdmissionsPage ? 'hover:text-white' : 'hover:opacity-70'} ${pathname.startsWith(item.href) ? "text-primary" : "text-[#2d2d2d]"
+                                className={`text-[15.2px] font-bold flex items-center gap-1 transition-colors hover:text-[#5c2d91] ${pathname.startsWith(item.href) ? "text-[#5c2d91]" : "text-[#2d2d2d]"
                                     }`}
                             >
                                 {item.name}
-                                {(item.children || item.sections) && <CaretDown size={14} weight="regular" />}
+                                {(item.children || item.sections) && <CaretDown size={14} weight="bold" />}
                             </Link>
 
                             {/* Standard Dropdown */}
                             {item.children && (
-                                <div className={`absolute top-20 left-0 w-64 shadow-xl hidden group-hover:block animate-in fade-in slide-in-from-top-1 duration-200 ${isAdmissionsPage ? 'bg-[#fd6402]' : 'bg-white'}`}>
+                                <div className="absolute top-28 left-0 w-64 shadow-xl hidden group-hover:block animate-in fade-in slide-in-from-top-1 duration-200 bg-white border border-neutral-100">
                                     {item.children.map((child) => (
                                         <Link
                                             key={child.name}
                                             href={child.href}
-                                            className="block px-6 py-4 text-base font-medium text-[#2d2d2d] hover:bg-black/5"
+                                            className="block px-6 py-4 text-base font-semibold text-[#2d2d2d] hover:bg-neutral-50 hover:text-[#5c2d91] no-underline border-b border-neutral-50 last:border-b-0"
                                         >
                                             {child.name}
                                         </Link>
@@ -160,11 +197,11 @@ export function Header() {
 
                             {/* Mega Dropdown for Sections */}
                             {item.sections && (
-                                <div className={`absolute top-20 left-0 w-[600px] max-h-[80vh] overflow-y-auto shadow-2xl hidden group-hover:block p-0 animate-in fade-in slide-in-from-top-1 duration-200 ${isAdmissionsPage ? 'bg-[#fd6402]' : 'bg-white'}`}>
+                                <div className="absolute top-28 left-0 w-[600px] max-h-[80vh] overflow-y-auto shadow-2xl hidden group-hover:block p-0 animate-in fade-in slide-in-from-top-1 duration-200 bg-white border border-neutral-100">
                                     <div className="flex flex-col">
                                         {item.sections.map((section, idx) => (
                                             <div key={section.title}>
-                                                <div className="bg-neutral-50 px-6 py-3 font-bold uppercase text-base tracking-wider text-black sticky top-0">
+                                                <div className="bg-[#f7f4fc] px-6 py-3 font-bold uppercase text-sm tracking-wider text-[#2e1150] sticky top-0 border-b border-neutral-100">
                                                     {section.title}
                                                 </div>
                                                 <div className={`p-2 grid ${section.title === 'Departments' ? 'grid-cols-2' : 'grid-cols-1'} gap-x-4`}>
@@ -172,7 +209,7 @@ export function Header() {
                                                         <Link
                                                             key={subItem.name}
                                                             href={subItem.href}
-                                                            className="block px-4 py-2 text-base text-[#2d2d2d] hover:underline hover:bg-neutral-50 rounded-sm"
+                                                            className="block px-4 py-2 text-base font-semibold text-[#2d2d2d] hover:underline hover:bg-neutral-50 hover:text-[#5c2d91] no-underline"
                                                         >
                                                             {subItem.name}
                                                         </Link>
@@ -190,11 +227,8 @@ export function Header() {
                 {/* Actions */}
                 <div className="hidden lg:flex items-center gap-6">
                     <Search />
-                    <div className="flex items-center gap-4 pl-6">
+                    <div className="flex items-center gap-4 pl-6 border-l border-neutral-200">
                         <LanguageSelector />
-                        <Link href="/admissions/application-process" className="bg-black text-white w-[150px] h-[60px] flex items-center justify-center rounded-full text-xs font-bold tracking-wider hover:bg-neutral-800 transition-colors">
-                            Apply to Penkka
-                        </Link>
                     </div>
                 </div>
 
@@ -202,34 +236,34 @@ export function Header() {
                 <div className="lg:hidden flex items-center gap-2">
                     <Search />
                     <button
-                        className="p-2"
+                        className="p-2 text-[#2d2d2d] hover:text-[#5c2d91]"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
-                        {isMobileMenuOpen ? <X size={24} weight="regular" /> : <List size={24} weight="regular" />}
+                        {isMobileMenuOpen ? <X size={24} weight="bold" /> : <List size={24} weight="bold" />}
                     </button>
                 </div>
             </div>
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="lg:hidden absolute top-20 left-0 right-0 bg-white h-[calc(100vh-5rem)] overflow-y-auto">
+                <div className="lg:hidden absolute top-20 left-0 right-0 bg-white h-[calc(100vh-5rem)] overflow-y-auto border-t border-neutral-100">
                     <div className="flex flex-col pb-20">
                         {navigation.map((item) => (
-                            <div key={item.name}>
+                            <div key={item.name} className="border-b border-neutral-100">
                                 <Link
                                     href={item.href}
-                                    className="block text-xl font-bold uppercase p-4 text-[#2d2d2d] hover:bg-neutral-50"
+                                    className="block text-lg font-bold uppercase p-4 text-[#2e1150] hover:bg-neutral-50"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {item.name}
                                 </Link>
                                 {item.children && (
-                                    <div className="bg-neutral-50 pl-6">
+                                    <div className="bg-[#f7f4fc] pl-6 border-t border-neutral-100">
                                         {item.children.map((child) => (
                                             <Link
                                                 key={child.name}
                                                 href={child.href}
-                                                className="block py-4 pr-6 text-base font-medium text-[#2d2d2d]"
+                                                className="block py-4 pr-6 text-base font-semibold text-[#2d2d2d] hover:text-[#5c2d91] no-underline border-b border-white/50 last:border-0"
                                                 onClick={() => setIsMobileMenuOpen(false)}
                                             >
                                                 {child.name}
@@ -238,25 +272,25 @@ export function Header() {
                                     </div>
                                 )}
                                 {item.sections && (
-                                    <div className="bg-neutral-50">
+                                    <div className="bg-[#f7f4fc] border-t border-neutral-100">
                                         {item.sections.map((section) => {
                                             const isOpen = expandedMobileSections[section.title];
                                             return (
-                                                <div key={section.title}>
+                                                <div key={section.title} className="border-b border-white/50 last:border-0">
                                                     <button
                                                         onClick={() => setExpandedMobileSections(prev => ({ ...prev, [section.title]: !prev[section.title] }))}
-                                                        className="w-full text-left px-4 py-3 text-base font-bold uppercase text-[#2d2d2d] mt-2 flex items-center justify-between hover:bg-neutral-100"
+                                                        className="w-full text-left px-4 py-3.5 text-base font-bold uppercase text-[#2e1150] flex items-center justify-between hover:bg-neutral-100"
                                                     >
                                                         {section.title}
                                                         {isOpen ? <Minus size={14} weight="bold" /> : <Plus size={14} weight="bold" />}
                                                     </button>
                                                     {isOpen && (
-                                                        <div className="animate-in slide-in-from-top-1 duration-200">
+                                                        <div className="animate-in slide-in-from-top-1 duration-200 bg-white/50">
                                                             {section.items.map((subItem) => (
                                                                 <Link
                                                                     key={subItem.name}
                                                                     href={subItem.href}
-                                                                    className="block py-3 px-6 pl-8 text-base font-medium text-[#2d2d2d] hover:bg-neutral-100"
+                                                                    className="block py-3 px-6 pl-8 text-base font-semibold text-[#2d2d2d] hover:bg-neutral-100 hover:text-[#5c2d91] no-underline"
                                                                     onClick={() => setIsMobileMenuOpen(false)}
                                                                 >
                                                                     {subItem.name}
@@ -273,30 +307,35 @@ export function Header() {
                         ))}
 
                         {/* Mobile Language Selector */}
-                        <div>
+                        <div className="border-b border-neutral-100">
                             <button
                                 onClick={() => setExpandedMobileSections(prev => ({ ...prev, language: !prev.language }))}
-                                className="w-full text-left px-4 py-4 text-xl font-bold uppercase text-[#2d2d2d] flex items-center justify-between hover:bg-neutral-50"
+                                className="w-full text-left px-4 py-4 text-lg font-bold uppercase text-[#2e1150] flex items-center justify-between hover:bg-neutral-50"
                             >
                                 Language
                                 {expandedMobileSections.language ? <Minus size={20} weight="bold" /> : <Plus size={20} weight="bold" />}
                             </button>
                             {expandedMobileSections.language && (
-                                <div className="animate-in slide-in-from-top-1 duration-200">
+                                <div className="animate-in slide-in-from-top-1 duration-200 bg-[#f7f4fc]">
                                     <LanguageSelector mobile />
                                 </div>
                             )}
                         </div>
 
+                        {/* Mobile Ottawa Location Tag */}
+                        <div className="p-4 bg-[#f7f4fc] flex items-center gap-2 border-b border-neutral-100 text-xs font-semibold text-[#2e1150]">
+                            <MapPin size={16} weight="fill" className="text-[#9b51e0]" />
+                            <span>Ottawa Campus (Single Location)</span>
+                        </div>
+
                         <div className="p-4">
-                            <Link href="/admissions/application-process" className="flex w-[150px] h-[60px] items-center justify-center bg-black text-white font-bold hover:bg-neutral-800" onClick={() => setIsMobileMenuOpen(false)}>
-                                Apply to Penkka
+                            <Link href="/admissions/application-process" className="flex w-full h-[50px] items-center justify-center bg-[#5c2d91] hover:bg-[#4a2475] text-white font-bold no-underline transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                                Apply to Cannoga
                             </Link>
                         </div>
                     </div>
                 </div>
-            )
-            }
-        </header >
+            )}
+        </header>
     )
 }

@@ -24,7 +24,7 @@ export default function WelcomeEmail({
     firstName = 'Student',
     studentId = 'KCXXXXXXX',
 }: WelcomeEmailProps) {
-    const previewText = `Welcome to Penkka University! Your Student ID is ${studentId}.`;
+    const previewText = `Welcome to Cannoga College! Your Student ID is ${studentId}.`;
 
     return (
         <Html>
@@ -35,16 +35,16 @@ export default function WelcomeEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://penkka.fi/logo-penkka.png" // Replace with actual logo URL
+                                src="https://cannogacollege.ca/logo-cannoga.png" // Replace with actual logo URL
                                 width="64"
                                 height="64"
-                                alt="Penkka University"
+                                alt="Cannoga College"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
                         <Section className="mt-[16px]">
                             <Img
-                                src="https://penkka.fi/images/scholarships.png"
+                                src="https://cannogacollege.ca/images/scholarships.png"
                                 width="465"
                                 height="150"
                                 alt="Scholarships"
@@ -53,7 +53,7 @@ export default function WelcomeEmail({
                         </Section>
 
                         <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-                            Welcome to Penkka University
+                            Welcome to Cannoga College
                         </Heading>
 
                         <Text className="text-black text-[14px] leading-[24px]">
@@ -61,7 +61,7 @@ export default function WelcomeEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            Congratulations on creating your student account at Penkka University! We are excited to have you join our academic community.
+                            Congratulations on creating your student account at Cannoga College! We are excited to have you join our academic community.
                         </Text>
 
                         <Section className="bg-neutral-900 rounded-lg p-6 my-8 text-center">
@@ -83,27 +83,27 @@ export default function WelcomeEmail({
                         <Section className="text-center mt-[32px] mb-[32px]">
                             <Link
                                 className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                                href="https://penkka.fi/portal/account/login"
+                                href="https://cannogacollege.ca/portal/account/login"
                             >
                                 Enter Student Portal
                             </Link>
                         </Section>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            If you have any questions or need assistance, please feel free to reach out to our Admissions Office at <Link href="mailto:admissions@penkka.fi" className="text-blue-600 no-underline font-bold">admissions@penkka.fi</Link>.
+                            If you have any questions or need assistance, please feel free to reach out to our Admissions Office at <Link href="mailto:admissions@cannogacollege.ca" className="text-blue-600 no-underline font-bold">admissions@cannogacollege.ca</Link>.
                         </Text>
 
                         <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
                         <Section className="text-center mt-[10px] mb-[20px]">
                             <Text className="m-0">
-                                <Link href="https://www.linkedin.com/company/penkka-university" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">LinkedIn</Link>
-                                <Link href="https://www.tiktok.com/@penkkauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
-                                <Link href="https://snapchat.com/add/penkkauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Snapchat</Link>
+                                <Link href="https://www.linkedin.com/company/cannoga-university" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">LinkedIn</Link>
+                                <Link href="https://www.tiktok.com/@cannogauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
+                                <Link href="https://snapchat.com/add/cannogauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Snapchat</Link>
                             </Text>
                         </Section>
 
                         <Text className="text-[#666666] text-[12px] leading-[24px]">
-                            This email was sent to confirm your account registration at Penkka University.
+                            This email was sent to confirm your account registration at Cannoga College.
                         </Text>
                     </Container>
                 </Body>

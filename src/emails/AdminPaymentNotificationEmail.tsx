@@ -45,10 +45,10 @@ export default function AdminPaymentNotificationEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://penkka.fi/logo-penkka.png"
+                                src="https://cannogacollege.ca/logo-cannoga.png"
                                 width="40"
                                 height="40"
-                                alt="Penkka University"
+                                alt="Cannoga College"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
@@ -81,14 +81,14 @@ export default function AdminPaymentNotificationEmail({
                         <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
                         <Section className="text-center mt-[10px] mb-[20px]">
                             <Text className="m-0">
-                                <Link href="https://www.linkedin.com/company/penkka-university" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">LinkedIn</Link>
-                                <Link href="https://www.tiktok.com/@penkkauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
-                                <Link href="https://snapchat.com/add/penkkauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Snapchat</Link>
+                                <Link href="https://www.linkedin.com/company/cannoga-university" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">LinkedIn</Link>
+                                <Link href="https://www.tiktok.com/@cannogauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
+                                <Link href="https://snapchat.com/add/cannogauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Snapchat</Link>
                             </Text>
                         </Section>
 
                         <Text className="text-[#666666] text-[10px] uppercase font-bold tracking-widest leading-[24px]">
-                            Internal Notification Service — Penkka University
+                            Internal Notification Service — Cannoga College
                         </Text>
                     </Container>
                 </Body>

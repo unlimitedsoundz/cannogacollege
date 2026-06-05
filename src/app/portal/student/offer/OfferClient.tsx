@@ -76,9 +76,12 @@ export function OfferClient({ admission }: OfferClientProps) {
     const field = mapSchoolToTuitionField(school.slug || 'technology');
     const isEarlyBird = (admission.discount_amount || 0) > 0;
 
+    const nationality = app.personal_info?.nationality;
+    const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'canada' || nationality.toLowerCase().trim() === 'canadian' || nationality.toLowerCase().trim() === 'domestic') : false;
+
     const annualFee = getAnnualFeeFromTotal(admission.tuition_fee || 0, admission.discount_amount || 0, years);
     const firstYearFee = isEarlyBird ? calculateDiscountedFee(annualFee) : annualFee;
-    const depositAmount = calculateTuitionDeposit(annualFee, field, isEarlyBird);
+    const depositAmount = calculateTuitionDeposit(annualFee, field, isEarlyBird, course.degreeLevel, isDomestic);
     const remainingBalance = firstYearFee - depositAmount;
 
     return (
@@ -140,13 +143,13 @@ export function OfferClient({ admission }: OfferClientProps) {
                                 <div>
                                     <p className="text-[9px] font-black uppercase text-neutral-400 mb-1">Tuition Deposit</p>
                                     <p className="text-3xl font-black tracking-tight leading-none text-emerald-400">
-                                        €{depositAmount.toLocaleString()}
+                                        ${depositAmount.toLocaleString()}
                                     </p>
                                 </div>
                                 <div className="text-right">
                                     <p className="text-[9px] font-black uppercase text-neutral-400 mb-1">Remaining (1st Year)</p>
                                     <p className="text-sm font-black text-white">
-                                        €{remainingBalance.toLocaleString()}
+                                        ${remainingBalance.toLocaleString()}
                                     </p>
                                 </div>
                             </div>
@@ -175,7 +178,7 @@ export function OfferClient({ admission }: OfferClientProps) {
                             <div className="flex flex-col items-center">
                                 <div className="space-y-6 max-w-2xl w-full">
                                     <div className="text-center space-y-2 border-b border-neutral-200 pb-6">
-                                        <h2 className="text-2xl font-bold text-neutral-900">Welcome to Penkka University!</h2>
+                                        <h2 className="text-2xl font-bold text-neutral-900">Welcome to Cannoga College!</h2>
                                         <p className="text-sm text-neutral-600">
                                             Your Journey Starts Here
                                         </p>
@@ -198,7 +201,7 @@ export function OfferClient({ admission }: OfferClientProps) {
                                                     <h4 className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Next Steps for Enrollment:</h4>
                                                     <div className="grid gap-4">
                                                         <WelcomeStep number="01" title="Tuition Clearance" description="Proceed to the finance section to settle your initial tuition fees." />
-                                                        <WelcomeStep number="02" title="IT Credentials" description="You will receive your Penkka credentials once the payment is confirmed." />
+                                                        <WelcomeStep number="02" title="IT Credentials" description="You will receive your Cannoga credentials once the payment is confirmed." />
                                                         <WelcomeStep number="03" title="Orientation" description="Check your portal for the upcoming orientation schedule." />
                                                     </div>
                                                 </div>

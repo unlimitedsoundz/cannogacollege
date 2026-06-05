@@ -11,10 +11,10 @@ import { getPageContentSection } from '@/lib/pageContentConfig';
 
 
 export const metadata = {
-    title: 'Apply to Master’s Programmes | Penkka University',
-    description: 'Application guide for Master’s programmes at Penkka University. Deadlines, eligibility, and steps for 2026 admission.',
+    title: 'Apply to Master’s Programmes | Cannoga College',
+    description: 'Application guide for Master’s programmes at Cannoga College. Deadlines, eligibility, and steps for 2026 admission.',
     alternates: {
-        canonical: 'https://penkka.fi/admissions/master/',
+        canonical: 'https://cannogacollege.ca/admissions/master/',
     },
 };
 
@@ -83,199 +83,77 @@ export default function MasterAdmissionsPage() {
                 </Link>
             </Hero>
 
-            <div className="container mx-auto px-4 py-8 md:py-16">
-                <Link href="/admissions" className="inline-flex items-center gap-3 text-black font-bold uppercase tracking-widest text-sm mb-12 hover:opacity-50 transition-all group">
-                    <CaretLeft size={20} weight="bold" className="group-hover:-translate-x-2 transition-transform" /> Back to Admissions
-                </Link>
+            <div className="cc-container py-8 md:py-16">
+                <main className="space-y-12 md:space-y-20">
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    {/* Main Content */}
-                    <main className="lg:col-span-12 space-y-12 md:space-y-20">
+                    <section id="schedule" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">Admissions Schedule</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="schedule_content" fallbackContent={getSectionDefault('schedule_content')} /></div>
+                    </section>
 
-                        {/* 1. Admissions Schedule */}
-                        <section id="schedule" className="scroll-mt-32">
-                            <h2 className="text-4xl font-bold mb-0 text-black pb-0 uppercase tracking-widest leading-none">
-                                Admissions Schedule
-                            </h2>
-                            <div className="prose-arrows">
-                                <DbPageContent
-                                    pageSlug={pageSlug}
-                                    sectionKey="schedule_content"
-                                    fallbackContent={getSectionDefault('schedule_content')}
-                                />
-                            </div>
-                        </section>
+                    <section id="study-options" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">Study Options</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="study_options_content" fallbackContent={getSectionDefault('study_options_content')} /></div>
+                    </section>
 
-                         {/* 2. Study Options */}
-                         <section id="study-options" className="scroll-mt-32">
-                               <h2 className="text-2xl font-bold mb-0 uppercase tracking-widest text-black flex items-center gap-4 leading-none">
-                                   Study Options
-                               </h2>
-                               <div className="prose-arrows">
-                                   <DbPageContent
-                                       pageSlug={pageSlug}
-                                       sectionKey="study_options_content"
-                                       fallbackContent={getSectionDefault('study_options_content')}
-                                   />
-                               </div>
-                         </section>
+                    <section id="scholarships" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">Scholarships &amp; Fees</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="scholarships_content" fallbackContent={getSectionDefault('scholarships_content')} /></div>
+                    </section>
 
-                         {/* 3. Scholarships & Tuition Fees */}
-                         <section id="scholarships" className="scroll-mt-32">
-                             <h2 className="text-4xl font-bold mb-0 text-black uppercase tracking-widest pb-0 leading-none">
-                                  Scholarships & Fees
-                             </h2>
-                             <div className="prose-arrows">
-                                 <DbPageContent
-                                     pageSlug={pageSlug}
-                                     sectionKey="scholarships_content"
-                                     fallbackContent={getSectionDefault('scholarships_content')}
-                                 />
-                             </div>
-                         </section>
+                    <section id="eligibility" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">General Eligibility</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="eligibility_content" fallbackContent={getSectionDefault('eligibility_content')} /></div>
+                    </section>
 
-                         {/* 4. General Eligibility */}
-                         <section id="eligibility" className="scroll-mt-32">
-                               <h2 className="text-2xl font-bold mb-0 uppercase tracking-widest text-black flex items-center gap-4 leading-none">
-                                   General Eligibility
-                               </h2>
-                               <div className="prose-arrows">
-                                   <DbPageContent
-                                       pageSlug={pageSlug}
-                                       sectionKey="eligibility_content"
-                                       fallbackContent={getSectionDefault('eligibility_content')}
-                                   />
-                               </div>
-                         </section>
+                    <section id="field-reqs" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">Field-Specific Requirements</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="field_reqs_content" fallbackContent={getSectionDefault('field_reqs_content')} /></div>
+                    </section>
 
-                         {/* 5. Field-Specific Requirements */}
-                         <section id="field-reqs" className="scroll-mt-32">
-                               <h2 className="text-2xl font-bold mb-0 uppercase tracking-widest text-black flex items-center gap-4 leading-none">
-                                   Field-Specific Requirements
-                               </h2>
-                               <div className="prose-arrows">
-                                   <DbPageContent
-                                       pageSlug={pageSlug}
-                                       sectionKey="field_reqs_content"
-                                       fallbackContent={getSectionDefault('field_reqs_content')}
-                                   />
-                               </div>
-                         </section>
+                    <section id="incomplete" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">Incomplete Degree</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="incomplete_content" fallbackContent={getSectionDefault('incomplete_content')} /></div>
+                    </section>
 
-                         {/* 6. Incomplete Degree */}
-                         <section id="incomplete" className="scroll-mt-32">
-                               <h2 className="text-2xl font-bold mb-0 uppercase tracking-widest text-black flex items-center gap-4 leading-none">
-                                   Incomplete Degree
-                               </h2>
-                               <div className="prose-arrows">
-                                   <DbPageContent
-                                       pageSlug={pageSlug}
-                                       sectionKey="incomplete_content"
-                                       fallbackContent={getSectionDefault('incomplete_content')}
-                                   />
-                               </div>
-                         </section>
+                    <section id="steps" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">How to Apply</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="steps_content" fallbackContent={getSectionDefault('steps_content')} /></div>
+                    </section>
 
-                         {/* 7. Application Steps */}
-                         <section id="steps" className="scroll-mt-32">
-                             <h2 className="text-4xl font-bold mb-0 text-black uppercase tracking-widest pb-0 leading-none">
-                                  How to Apply
-                             </h2>
-                             <div className="prose-arrows">
-                                 <DbPageContent
-                                     pageSlug={pageSlug}
-                                     sectionKey="steps_content"
-                                     fallbackContent={getSectionDefault('steps_content')}
-                                 />
-                             </div>
-                         </section>
+                    <div className="my-8"><AdmissionsCTA /></div>
 
-                        {/* CTA Section */}
-                        <div className="my-24">
-                            <AdmissionsCTA />
-                        </div>
+                    <section id="documents" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">Required Documents</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="documents_content" fallbackContent={getSectionDefault('documents_content')} /></div>
+                    </section>
 
-                         {/* 8. Required Documents Detail */}
-                         <section id="documents" className="scroll-mt-32">
-                             <h2 className="text-2xl font-bold mb-0 uppercase tracking-widest text-black flex items-center gap-4 leading-none">
-                                 Required Documents
-                             </h2>
-                             <div className="prose-arrows">
-                                 <DbPageContent
-                                     pageSlug={pageSlug}
-                                     sectionKey="documents_content"
-                                     fallbackContent={getSectionDefault('documents_content')}
-                                 />
-                             </div>
-                         </section>
+                    <section id="language" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">Language Proficiency</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="language_content" fallbackContent={getSectionDefault('language_content')} /></div>
+                    </section>
 
-                         {/* Language Requirements */}
-                          <section id="language" className="scroll-mt-32">
-                              <h2 className="text-4xl font-bold mb-0 uppercase tracking-widest pb-0 leading-none">
-                                  Language Proficiency
-                              </h2>
-                              <div className="prose-arrows">
-                                  <DbPageContent
-                                      pageSlug={pageSlug}
-                                      sectionKey="language_content"
-                                      fallbackContent={getSectionDefault('language_content')}
-                                  />
-                              </div>
-                         </section>
+                    <section id="gmat" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">GMAT &amp; GRE</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="gmat_content" fallbackContent={getSectionDefault('gmat_content')} /></div>
+                    </section>
 
-                         {/* GMAT/GRE */}
-                          <section id="gmat" className="scroll-mt-32">
-                              <h2 className="text-2xl font-bold mb-0 uppercase tracking-widest text-black flex items-center gap-4 leading-none">
-                                  GMAT & GRE
-                              </h2>
-                              <div className="prose-arrows">
-                                  <DbPageContent
-                                      pageSlug={pageSlug}
-                                      sectionKey="gmat_content"
-                                      fallbackContent={getSectionDefault('gmat_content')}
-                                  />
-                              </div>
-                         </section>
+                    <section id="decisions" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">Decisions</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="decisions_content" fallbackContent={getSectionDefault('decisions_content')} /></div>
+                    </section>
 
-                         {/* Evaluation & Decisions */}
-                          <section id="decisions" className="scroll-mt-32">
-                              <h2 className="text-4xl font-bold mb-0 uppercase tracking-widest pb-0 leading-none">
-                                  Decisions
-                              </h2>
-                              <div className="prose-arrows">
-                                  <DbPageContent
-                                      pageSlug={pageSlug}
-                                      sectionKey="decisions_content"
-                                      fallbackContent={getSectionDefault('decisions_content')}
-                                  />
-                              </div>
-                         </section>
+                    <section id="after" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">After Admission</h2></div>
+                        <div className="prose-arrows"><DbPageContent pageSlug={pageSlug} sectionKey="after_content" fallbackContent={getSectionDefault('after_content')} /></div>
+                    </section>
 
-                         {/* After Being Admitted */}
-                          <section id="after" className="scroll-mt-32">
-                              <h2 className="text-2xl font-bold mb-0 uppercase tracking-widest text-black flex items-center gap-4 leading-none">
-                                  After Admission
-                              </h2>
-                              <div className="prose-arrows">
-                                  <DbPageContent
-                                      pageSlug={pageSlug}
-                                      sectionKey="after_content"
-                                      fallbackContent={getSectionDefault('after_content')}
-                                  />
-                              </div>
-                         </section>
+                    <section id="faq" className="scroll-mt-32">
+                        <div className="cc-section-divider"><h2 className="cc-h2">FAQ</h2></div>
+                        <MasterFAQ />
+                    </section>
 
-                         {/* FAQ */}
-                          <section id="faq" className="scroll-mt-32 pt-16">
-                              <h2 className="text-4xl font-bold mb-0 uppercase tracking-widest text-black leading-none">FAQ</h2>
-                             <MasterFAQ />
-                          </section>
-
-
-
-
-                    </main>
-                </div>
+                </main>
             </div>
         </div>
         </GuideSidebarLayout>

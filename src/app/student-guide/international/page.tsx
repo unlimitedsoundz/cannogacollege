@@ -1,4 +1,4 @@
-import { CheckCircle, Globe, Briefcase, Heart, MapPin, GraduationCap, ArrowRight, Question as HelpCircle, Users } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Link } from "@aalto-dx/react-components";
 import Image from 'next/image';
 import { Hero } from '@/components/layout/Hero';
@@ -10,19 +10,18 @@ import { Highlight } from '@/components/ui/Highlight';
 
 const tocSections = [
     { id: 'intro', title: 'Purpose of Guide', content: '' },
-    { id: 'why-finland', title: 'Why Study in Finland', content: '' },
+    { id: 'why-ottawa', title: 'Why Ottawa, Canada', content: '' },
     { id: 'admission', title: 'After Admission', content: '' },
     { id: 'arrival', title: 'After Arrival', content: '' },
-    { id: 'living', title: 'Living in Finland', content: '' },
-    { id: 'faq', title: 'FAQ', content: '' },
+    { id: 'living', title: 'Living in Ottawa', content: '' },
     { id: 'support', title: 'Support Services', content: '' },
 ];
 
 export const metadata = {
-    title: 'International Student Guide | Penkka University',
-    description: 'A comprehensive guide for international students joining Penkka University in Finland.',
+    title: 'International Student Guide | Cannoga College',
+    description: 'A comprehensive guide for international students joining Cannoga College in Ottawa, Canada — study permits, housing, transport, and settling in.',
     alternates: {
-        canonical: 'https://penkka.fi/student-guide/international/',
+        canonical: 'https://cannogacollege.ca/student-guide/international/',
     },
 };
 
@@ -36,15 +35,15 @@ export default function InternationalGuidePage() {
                 "name": "Is orientation mandatory?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, it provides essential info for starting your studies. All students are expected to attend the sessions during the first week."
+                    "text": "Yes, orientation is mandatory and provides essential info for starting your studies. All students are expected to attend sessions during the first week."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Can I bring my family?",
+                "name": "Can I bring my family to Canada?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, family members can apply for residence permits based on family ties. However, the student permit applicant must demonstrate sufficient financial resources for the entire family's stay."
+                    "text": "Yes, eligible family members may apply for an accompanying family member visa or open work permit. You must demonstrate sufficient financial resources for the entire family's stay."
                 }
             }
         ]
@@ -55,11 +54,10 @@ export default function InternationalGuidePage() {
             <div className="min-h-screen bg-white text-black font-sans pb-20">
             <SchemaLD data={faqSchema} />
 
-            {/* Hero Section */}
             <Hero
                 title="International Students"
-                body="Practical guidance for your journey to Finland and Penkka University."
-                backgroundColor="#dc6ade"
+                body="Practical guidance for your journey to Ottawa, Canada and Cannoga College."
+                backgroundColor="#5c2d91"
                 tinted
                 lightText={true}
                 breadcrumbs={[
@@ -69,192 +67,203 @@ export default function InternationalGuidePage() {
                 ]}
                 image={{
                     src: "/images/international-students-hero.png",
-                    alt: "International Students"
+                    alt: "International students at Cannoga College Ottawa"
                 }}
             />
 
-            <div className="container mx-auto px-4 py-16 md:py-24 max-w-6xl">
-                <div className="space-y-20">
+            <div className="cc-container py-12 md:py-20">
+                <div className="space-y-16 md:space-y-24">
 
                     {/* Purpose */}
                     <section id="intro" className="scroll-mt-32">
-                        <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">Purpose of This Guide</h2>
-                        <p className="text-aalto-3 text-black leading-aalto-3 max-w-4xl font-medium">
-                            This section provides international degree and exchange students with practical guidance on what to do after admission and after arrival in Finland. It covers practicalities related to living, studying, travel, and settling in Finland.
+                        <div className="cc-section-divider">
+                            <h2 className="cc-h2">Purpose of This Guide</h2>
+                        </div>
+                        <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl">
+                            This section provides international degree and exchange students with practical guidance on what to do after admission and after arrival in Ottawa, Canada. It covers study permits, housing, transportation, health coverage, and settling into your new community.
                         </p>
                     </section>
 
-                    {/* Why Finland */}
-                    <section id="why-finland" className="scroll-mt-32">
-                        <ContentBox
-                            size="large"
-                            icon="globe"
-                            title="Why Study in Finland?"
-                            image={{
-                                src: "/images/news/helsinki_study_hero_1771086684833.png",
-                                alt: "International students exploring Helsinki, Finland"
-                            }}
-                            body={
-                                <div className="space-y-8 text-left">
-                                    <div className="space-y-6 text-sm text-neutral-600 font-bold leading-relaxed">
-                                        <p>
-                                            Finland is consistently ranked among the happiest countries in the world, reflecting its strong social stability, high quality of life, and commitment to equality, integrity, and openness.
-                                        </p>
-                                        <p>
-                                            The Finnish education system is internationally recognized as one of the most advanced in the world, with a strong emphasis on student-centered learning.
-                                        </p>
-                                    </div>
-                                    <div className="bg-neutral-100 p-8 border-l-4 border-black">
-                                        <p className="font-bold text-sm text-black uppercase tracking-widest leading-relaxed">
-                                            Penkka University operates across four campuses within Helsinki, along with 15 international hubs.
-                                        </p>
-                                    </div>
-                                    <div className="flex flex-wrap gap-8">
-                                        <Link href="https://finland.fi" target="_blank" className="font-bold underline text-xs uppercase tracking-widest hover:text-neutral-500 transition-colors">thisisFINLAND →</Link>
-                                        <Link href="https://www.visitfinland.com" target="_blank" className="font-bold underline text-xs uppercase tracking-widest hover:text-neutral-500 transition-colors">Visit Finland →</Link>
-                                    </div>
+                    {/* Why Ottawa */}
+                    <section id="why-ottawa" className="scroll-mt-32">
+                        <div className="cc-section-divider mb-10">
+                            <h2 className="cc-h2">Why Study in Ottawa, Canada?</h2>
+                        </div>
+                        <div className="grid lg:grid-cols-2 gap-10 items-center">
+                            <div className="space-y-5">
+                                <p className="text-neutral-600 leading-relaxed">
+                                    Ottawa is Canada's capital — a bilingual, safe, and cosmopolitan city that consistently ranks among the best places in the world to live and study. With a thriving tech sector, world-class research institutions, and a welcoming multicultural community, Ottawa offers international students an unparalleled experience.
+                                </p>
+                                <p className="text-neutral-600 leading-relaxed">
+                                    The Canadian education system is internationally recognized, with a strong emphasis on applied learning, industry connections, and career readiness.
+                                </p>
+                                <div className="bg-[#f7f4fc] p-6 border-l-4 border-[#5c2d91]">
+                                    <p className="font-semibold text-[#2e1150] text-sm leading-relaxed">
+                                        Cannoga College operates in the heart of Ottawa with strong ties to Canada's public service, tech industry, and research community.
+                                    </p>
                                 </div>
-                            }
-                        />
+                                <div className="flex flex-wrap gap-6 pt-2">
+                                    <Link href="https://www.canada.ca" target="_blank" className="cc-btn-primary text-sm">Canada.ca →</Link>
+                                    <Link href="https://ottawatourism.ca" target="_blank" className="font-bold underline text-xs uppercase tracking-widest hover:text-[#5c2d91] transition-colors">Visit Ottawa →</Link>
+                                    <Link href="https://www.investottawa.ca" target="_blank" className="font-bold underline text-xs uppercase tracking-widest hover:text-[#5c2d91] transition-colors">Invest Ottawa →</Link>
+                                </div>
+                            </div>
+                            <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
+                                <Image
+                                    src="/images/news/helsinki_study_hero_1771086684833.png"
+                                    alt="International students exploring Ottawa, Canada"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                />
+                            </div>
+                        </div>
                     </section>
 
-                    <Highlight 
-                        body="The mix of high-tech innovation and beautiful nature in Helsinki is something you won't find anywhere else. It's the perfect environment for a Master's student."
+                    <Highlight
+                        body="The mix of innovation, nature, and culture in Ottawa is something special. I felt welcome from day one — the city and college community really made this an amazing experience."
                         source="Marco Rossi, International Student"
                         alignment="right"
                     />
 
                     {/* After Admission */}
                     <section id="admission" className="scroll-mt-32">
-                         <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">
-                             Practical Things to Do After Admission
-                         </h2>
-
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="cc-section-divider mb-10">
+                            <h2 className="cc-h2">Practical Things to Do After Admission</h2>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-6">
                             <Card
-                                title="Residence Permits & Insurance"
-                                body="Non-EU/EEA students should apply immediately. Check health insurance requirements as part of the permit application."
-                                cta={{ label: "Visit Migri.fi", linkComponentProps: { href: "https://migri.fi/en/home", target: "_blank" } }}
+                                title="Study Permit (Visa)"
+                                body="Apply for your Canadian study permit through IRCC as soon as you receive your acceptance letter. Processing takes 4–12 weeks."
+                                cta={{ label: "Apply via IRCC", linkComponentProps: { href: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html", target: "_blank" } }}
                             />
                             <Card
                                 title="Housing"
-                                body="Arrange accommodation before arrival. Explore student housing associations or private market options early."
+                                body="Arrange accommodation before arrival. Ottawa student housing providers and private rentals should be booked early, especially for September intake."
                                 cta={{ label: "Housing Guide", linkComponentProps: { href: "/student-guide/housing-for-students" } }}
                             />
                             <Card
-                                title="Financial Matters"
-                                body="Plan for local costs and banking. Ensure you have access to funds upon arrival before setting up a local account."
+                                title="Health Insurance"
+                                body="Ontario's OHIP health plan is available after a 3-month waiting period. Ensure you have private health insurance for your first 3 months."
+                                cta={{ label: "OHIP Info", linkComponentProps: { href: "https://www.ontario.ca/page/apply-ohip-and-get-health-card", target: "_blank" } }}
                             />
                             <Card
                                 title="Tuition & Scholarships"
-                                body="Policies apply to non-EU/EEA citizens. Check scholarship opportunities for fee support."
+                                body="International tuition fees apply. Check our merit scholarship opportunities — awards of up to 50% tuition waiver are available."
                                 cta={{ label: "Tuition Info", linkComponentProps: { href: "/admissions/tuition" } }}
                             />
                         </div>
                     </section>
 
-                    {/* After Moving */}
+                    {/* After Arrival */}
                     <section id="arrival" className="scroll-mt-32">
-                        <ContentBox
-                            size="large"
-                            icon="mapPin"
-                            title="After Moving to Finland"
-                            body={
-                                <div className="space-y-10 text-left">
-                                    <div>
-                                        <h4 className="font-bold text-black mb-2 uppercase tracking-widest text-xs">Local Transportation</h4>
-                                        <p className="text-sm text-neutral-600 font-bold leading-relaxed mb-4">
-                                            Public transport is punctual and extensive. Students are typically entitled to discounted travel on HSL and VR systems.
-                                        </p>
-                                    </div>
-
-                                    <div className="bg-neutral-50 p-8 border border-neutral-100">
-                                        <h4 className="font-bold text-lg mb-4 text-black">Registering with Authorities</h4>
-                                        <div className="space-y-3 text-sm font-bold">
-                                            <p className="flex gap-4 items-center underline"><ArrowRight size={14} weight="bold" /> EU/EEA Citizens: Register right of residence at DVV.</p>
-                                            <p className="flex gap-4 items-center underline"><ArrowRight size={14} weight="bold" /> Non-EU/EEA: Must visit DVV for municipality registration.</p>
-                                        </div>
-                                        <div className="mt-10">
-                                            <Link href="/student-guide/arrival" className="bg-black text-white px-8 py-4 font-bold inline-flex items-center gap-2 hover:bg-neutral-800 transition-all uppercase tracking-widest text-xs">
-                                                Arrival Guide <ArrowRight size={16} weight="bold" />
-                                            </Link>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="font-bold text-black mb-4 uppercase tracking-widest text-xs">Post-Arrival Checklist</h4>
-                                        <ul className="space-y-4 text-sm font-bold">
-                                            <li className="flex gap-4 items-center"><ArrowRight size={20} weight="bold" className="shrink-0" /> Pick up keys for housing</li>
-                                            <li className="flex gap-4 items-center"><ArrowRight size={20} weight="bold" className="shrink-0" /> Register at DVV</li>
-                                            <li className="flex gap-4 items-center"><ArrowRight size={20} weight="bold" className="shrink-0" /> Pay Student Union fee</li>
-                                            <li className="flex gap-4 items-center"><ArrowRight size={20} weight="bold" className="shrink-0" /> Get HSL transport card</li>
-                                        </ul>
-                                    </div>
+                        <div className="cc-section-divider mb-10">
+                            <h2 className="cc-h2">After Moving to Ottawa</h2>
+                        </div>
+                        <div className="grid lg:grid-cols-2 gap-10">
+                            <div className="cc-card cc-card-body space-y-6">
+                                <h3 className="font-bold text-lg text-[#2e1150]">Getting Around</h3>
+                                <p className="text-neutral-600 text-sm leading-relaxed">
+                                    Ottawa's public transit is operated by <strong>OC Transpo</strong>, offering bus and LRT (O-Train) services across the city. Students qualify for a discounted monthly pass — the <strong>U-Pass</strong>.
+                                </p>
+                                <div className="flex flex-wrap gap-4">
+                                    <Link href="https://www.octranspo.com" target="_blank" className="font-bold underline text-xs uppercase tracking-widest hover:text-[#5c2d91] transition-colors">OC Transpo →</Link>
+                                    <Link href="https://www.octranspo.com/en/fares/u-pass/" target="_blank" className="font-bold underline text-xs uppercase tracking-widest hover:text-[#5c2d91] transition-colors">U-Pass Info →</Link>
                                 </div>
-                            }
-                        />
-                    </section>
-
-                    {/* Living in Finland */}
-                    <section id="living" className="scroll-mt-32">
-                         <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">
-                             Living in Finland
-                         </h2>
-                        <div className="mb-12">
-                             <div className="relative aspect-video overflow-hidden border border-neutral-100">
-                                <Image
-                                    src="/images/news/helsinki_study_hero_1771086631952.png"
-                                    alt="Students enjoying life in Helsinki, Finland"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 1024px) 100vw, 1200px"
-                                />
+                                <h3 className="font-bold text-lg text-[#2e1150] pt-2">Registering with Authorities</h3>
+                                <div className="space-y-3 text-sm font-medium text-neutral-700">
+                                    <p className="flex gap-3 items-start"><ArrowRight size={14} weight="bold" className="mt-0.5 shrink-0 text-[#5c2d91]" /> All international students must report their address to <strong>Service Ontario</strong> and apply for an Ontario health card (after 3 months).</p>
+                                    <p className="flex gap-3 items-start"><ArrowRight size={14} weight="bold" className="mt-0.5 shrink-0 text-[#5c2d91]" /> Obtain your Social Insurance Number (SIN) from <strong>Service Canada</strong> if you plan to work.</p>
+                                    <p className="flex gap-3 items-start"><ArrowRight size={14} weight="bold" className="mt-0.5 shrink-0 text-[#5c2d91]" /> Open a Canadian bank account early — TD, RBC, and Scotiabank all offer student accounts with no monthly fees.</p>
+                                </div>
+                                <Link href="/student-guide/arrival" className="cc-btn-primary inline-flex items-center gap-2 text-sm">
+                                    Full Arrival Guide <ArrowRight size={16} weight="bold" />
+                                </Link>
+                            </div>
+                            <div className="cc-card cc-card-body space-y-5">
+                                <h3 className="font-bold text-lg text-[#2e1150]">Post-Arrival Checklist</h3>
+                                <ul className="space-y-4 text-sm">
+                                    {[
+                                        "Collect keys and move into your accommodation",
+                                        "Register at college and activate student card",
+                                        "Apply for Ontario health card (OHIP) at ServiceOntario",
+                                        "Get your SIN from Service Canada (if working)",
+                                        "Get your OC Transpo U-Pass from the college",
+                                        "Open a Canadian bank account",
+                                        "Attend mandatory orientation week",
+                                        "Join the Cannoga student community platform",
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex gap-3 items-start font-medium text-neutral-700">
+                                            <span className="w-5 h-5 rounded-full bg-[#5c2d91] text-white text-xs flex items-center justify-center shrink-0 mt-0.5 font-bold">{i + 1}</span>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
-                         <div className="grid md:grid-cols-2 gap-8">
+                    </section>
+
+                    {/* Living in Ottawa */}
+                    <section id="living" className="scroll-mt-32">
+                        <div className="cc-section-divider mb-10">
+                            <h2 className="cc-h2">Living in Ottawa</h2>
+                        </div>
+                        <div className="relative aspect-video overflow-hidden rounded-lg shadow mb-10">
+                            <Image
+                                src="/images/news/helsinki_study_hero_1771086631952.png"
+                                alt="Students enjoying life in Ottawa, Canada"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 1024px) 100vw, 1200px"
+                            />
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-6">
                             <Card
                                 title="Student Health Care"
-                                body="Degree students must pay the healthcare fee to Kela. This grants access to the Finnish Student Health Service (FSHS)."
+                                body="After a 3-month wait, you qualify for OHIP (Ontario Health Insurance Plan). In the interim, ensure you have private coverage. Cannoga partners with local clinics for walk-in care."
                             />
                             <Card
                                 title="Local Culture"
-                                body="Finland is safe and equal. English is widely spoken, but learning Finnish is encouraged for integration."
+                                body="Ottawa is bilingual (English & French), diverse, and welcoming. It's one of Canada's safest cities with a vibrant arts scene, national museums, and four distinct seasons."
                             />
                             <Card
-                                title="Working"
-                                body="International students can work part-time (up to 30h/week). Finnish skills improve employability."
+                                title="Working While Studying"
+                                body="Your Canadian study permit allows you to work up to 20 hours/week on campus (or off campus with an open work permit). Many local employers actively recruit Cannoga students."
                             />
                             <Card
-                                title="Studying Finnish"
-                                body="Language courses are available for all levels. It enhances job prospects and local integration."
+                                title="Language & Careers"
+                                body="Cannoga's Career Centre offers job boards, resume workshops, co-op placements, and networking events with Ottawa's tech, government, and business sectors."
+                                cta={{ label: "Career Centre", linkComponentProps: { href: "/careers" } }}
                             />
-                         </div>
-                     </section>
+                        </div>
+                    </section>
 
                     {/* Support Services */}
                     <section id="support" className="scroll-mt-32">
-                         <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">Support Services</h2>
-                         <div className="grid md:grid-cols-3 gap-8">
+                        <div className="cc-section-divider mb-10">
+                            <h2 className="cc-h2">Support Services</h2>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
                             <ContentBox
                                 icon="users"
                                 title="Peer Advice"
-                                body="Connect with current international students for practical tips on student life."
+                                body="Connect with current international students for practical tips on student life, housing, and finding your feet in Ottawa."
                             />
                             <ContentBox
                                 icon="identificationBadge"
-                                title="Service Desk"
-                                body="General guidance on academic procedures, enrollment, and registration."
+                                title="International Student Office"
+                                body="Guidance on study permits, enrollment, academic procedures, and immigration compliance throughout your studies."
                             />
                             <ContentBox
                                 icon="briefcase"
-                                title="Study & Stay"
-                                body="Specialised career support to help you plan your career and integrate in Finland."
+                                title="Career & Settlement"
+                                body="Dedicated career support to help you plan your professional future and integrate into Ottawa's vibrant job market."
                             />
-                         </div>
+                        </div>
                     </section>
 
-                    <div className="mt-12 pt-8 border-t border-neutral-100 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
-                        <p>Updated: 25.4.2026 | Penkka International Student Services</p>
+                    <div className="pt-8 border-t border-neutral-100 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+                        <p>Updated: June 2026 | Cannoga College International Student Services</p>
                     </div>
                 </div>
             </div>
@@ -262,4 +271,3 @@ export default function InternationalGuidePage() {
         </GuideSidebarLayout>
     );
 }
-

@@ -10,11 +10,11 @@ export function Logo({ className = "", onClick }: { className?: string, onClick?
             className={`flex items-center gap-2 group ${className}`}
             onClick={onClick}
         >
-            <div className={`relative h-full transition-all duration-300 ${isDarkBackground ? 'invert' : ''}`}>
+            <div className={`relative h-full transition-all duration-300 ${isDarkBackground ? 'brightness-0 invert' : ''}`}>
 
                 <Image
-                    src="/logo-penkka.png"
-                    alt="Penkka University"
+                    src="/logo-cannoga.png"
+                    alt="Cannoga College"
                     width={120}
                     height={120}
                     className="object-contain w-auto h-full"

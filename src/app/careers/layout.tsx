@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Careers | Penkka University',
-    description: 'Join the Penkka University team. Explore our open positions and learn about our multi-disciplinary institutional culture in Helsinki, Finland.',
+    title: 'Careers | Cannoga College',
+    description: 'Join the Cannoga College team. Explore our open positions and learn about our multi-disciplinary institutional culture in Ottawa, Canada.',
     alternates: {
-        canonical: 'https://www.penkka.fi/careers',
+        canonical: 'https://www.cannogacollege.ca/careers',
     },
 };
 

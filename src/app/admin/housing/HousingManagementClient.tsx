@@ -821,7 +821,7 @@ export default function HousingManagementClient({
                                     className="w-full px-4 py-2 border-2 border-black font-bold outline-none"
                                     value={newBuilding.campus_location}
                                     onChange={(e) => setNewBuilding({ ...newBuilding, campus_location: e.target.value })}
-                                    placeholder="e.g. Helsinki Campus"
+                                    placeholder="e.g. Ottawa Campus"
                                 />
                             </div>
                         </div>

@@ -16,19 +16,19 @@ const positions = [
     {
         title: 'University Lecturer, Engineering & Sustainability',
         type: 'Full-time',
-        location: 'Helsinki Campus',
+        location: 'Ottawa Campus',
         description: 'Leading research and teaching in a multi-disciplinary environment spanning engineering, science, and technology.'
     },
     {
         title: 'Admissions Coordinator',
         type: 'Part-time',
-        location: 'Remote / Helsinki',
-        description: 'Supporting international students through their application journey at Penkka University.'
+        location: 'Remote / Ottawa',
+        description: 'Supporting international students through their application journey at Cannoga College.'
     },
     {
         title: 'IT Support Specialist',
         type: 'Full-time',
-        location: 'Helsinki Campus',
+        location: 'Ottawa Campus',
         description: 'Managing campus infrastructure and supporting our digital learning environment.'
     }
 ];
@@ -44,9 +44,9 @@ export default function CareersPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "WebPage",
-                "name": "Careers at Penkka University",
-                "description": "Explore job opportunities at Penkka University in Helsinki.",
-                "url": "https://penkka.fi/careers"
+                "name": "Careers at Cannoga College",
+                "description": "Explore job opportunities at Cannoga College in Ottawa.",
+                "url": "https://cannogacollege.ca/careers"
             }} />
 
             {positions.map((pos, index) => (
@@ -60,18 +60,18 @@ export default function CareersPage() {
                     "employmentType": pos.type === "Full-time" ? "FULL_TIME" : "PART_TIME",
                     "hiringOrganization": {
                         "@type": "UniversityOrUniversity",
-                        "name": "Penkka University",
-                        "sameAs": "https://penkka.fi",
-                        "logo": "https://penkka.fi/logo-penkka.png"
+                        "name": "Cannoga College",
+                        "sameAs": "https://cannogacollege.ca",
+                        "logo": "https://cannogacollege.ca/logo-cannoga.png"
                     },
                     "jobLocation": {
                         "@type": "Place",
                         "address": {
                             "@type": "PostalAddress",
-                            "streetAddress": "Pohjoisesplanadi 51",
-                            "addressLocality": "Helsinki",
-                            "postalCode": "00150",
-                            "addressCountry": "FI"
+                            "streetAddress": "2368 Midway Ave",
+                            "addressLocality": "Ottawa",
+                            "postalCode": "K2B 5J8",
+                            "addressCountry": "CA"
                         }
                     }
                 }} />
@@ -79,8 +79,8 @@ export default function CareersPage() {
 
             {/* Hero Section */}
             <Hero
-                title={<>Work at <br className="hidden md:block" /> Penkka University</>}
-                body="Shape the future of higher education in Finland. We're looking for innovators, educators, and leaders to join our world-class faculty and staff."
+                title={<>Work at <br className="hidden md:block" /> Cannoga College</>}
+                body="Shape the future of higher education in Ottawa, Canada. We're looking for innovators, educators, and leaders to join our world-class faculty and staff."
                 backgroundColor="#5dd089"
                 tinted
                 lightText={false}
@@ -90,11 +90,11 @@ export default function CareersPage() {
                 ]}
                 image={{
                     src: "https://i.pinimg.com/736x/5d/cc/b7/5dccb711d4b73c6b11c943856693fe52.jpg",
-                    alt: "Work at Penkka University"
+                    alt: "Work at Cannoga College"
                 }}
             >
                 <div className="flex flex-wrap gap-6">
-                    <Link href="mailto:careers@penkka.fi" className="text-aalto-3 font-bold underline underline-offset-8 decoration-white hover:opacity-70 transition-colors text-white inline-flex items-center gap-2">
+                    <Link href="mailto:careers@cannogacollege.ca" className="text-aalto-3 font-bold underline underline-offset-8 decoration-white hover:opacity-70 transition-colors text-white inline-flex items-center gap-2">
                         Send your CV <ArrowRight size={20} weight="bold" />
                     </Link>
                 </div>
@@ -111,7 +111,7 @@ export default function CareersPage() {
                             body={
                                 <div className="space-y-8 text-left">
                                     <p className="text-aalto-2 text-black leading-relaxed font-medium">
-                                        Penkka University is an independent higher education institution in Helsinki, Finland, offering English-taught degree programmes focused on engineering, technology, business, science, and the arts.
+                                        Cannoga College is a dynamic and career-focused higher education institution located in Ottawa, Canada's capital city.
                                     </p>
                                     <div className="grid sm:grid-cols-2 gap-8">
                                         <div>
@@ -150,7 +150,7 @@ export default function CareersPage() {
                                     key={index}
                                     title={pos.title}
                                     body={pos.description}
-                                    cta={{ label: "Apply now", linkComponentProps: { href: "mailto:careers@penkka.fi" } }}
+                                    cta={{ label: "Apply now", linkComponentProps: { href: "mailto:careers@cannogacollege.ca" } }}
                                 />
                             ))}
                         </div>
@@ -164,7 +164,7 @@ export default function CareersPage() {
                                 cta={{
                                     label: "Send your CV",
                                     linkComponentProps: {
-                                        href: "mailto:careers@penkka.fi",
+                                        href: "mailto:careers@cannogacollege.ca",
                                     },
                                 }}
                             />

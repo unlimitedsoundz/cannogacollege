@@ -196,8 +196,8 @@ function AdmissionLetterContent() {
                         <div className="space-y-4">
                             <div className="relative w-40 h-10">
                                 <Image
-                                    src="/logo-penkka.png"
-                                    alt="Penkka University"
+                                    src="/logo-cannoga.png"
+                                    alt="Cannoga College"
                                     fill
                                     style={{ objectFit: 'contain', objectPosition: 'left center' }}
                                 />
@@ -211,12 +211,12 @@ function AdmissionLetterContent() {
                             </div>
                         </div>
                         <div className="text-left md:text-right text-[9px] font-medium text-black leading-tight uppercase tracking-wide">
-                            <strong className="text-black block mb-1 text-[10px]">Penkka University – Helsinki Campus</strong>
-                            Pohjoisesplanadi 51<br />
-                            00150 Helsinki, Finland<br />
-                            Phone: +358 09 42721884<br />
+                            <strong className="text-black block mb-1 text-[10px]">Cannoga College – Ottawa Campus</strong>
+                            2368 Midway Ave,<br />
+                            Ottawa, ON K2B 5J8, Canada<br />
+                            Phone: +1-613-727-4723<br />
                             <div className="mt-1 text-[8px]">
-                                penkka.fi | admissions@penkka.fi
+                                cannogacollege.ca | admissions@cannogacollege.ca
                             </div>
                         </div>
                     </div>
@@ -236,10 +236,10 @@ function AdmissionLetterContent() {
                     {/* Official Statement */}
                     <div className="text-xs print:text-[10px] leading-normal text-black mb-4 print:mb-2">
                         <p className="mb-2 print:mb-1 text-black">
-                            This letter serves as official notification that {studentName} (Passport: {passportNumber}, DOB: {dob}) has been formally admitted and fully enrolled as a degree student at Penkka University for the 2026 - 2027 academic year.
+                            This letter serves as official notification that {studentName} (Passport: {passportNumber}, DOB: {dob}) has been formally admitted and fully enrolled as a degree student at Cannoga College for the 2026 - 2027 academic year.
                         </p>
                         <p className="text-black">
-                            Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the <strong className="text-black">{application.course?.title} ({application.course?.programType || 'Full-time'})</strong>. This program is a full-time course of study conducted in the English language at our Helsinki campus location.
+                            Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the <strong className="text-black">{application.course?.title} ({application.course?.programType || 'Full-time'})</strong>. This program is a full-time course of study conducted in the English language at our Ottawa Campus location (2368 Midway Ave, Ottawa, ON K2B 5J8, Canada).
                         </p>
                     </div>
 
@@ -254,7 +254,7 @@ function AdmissionLetterContent() {
                                 { label: 'Intake', value: intake },
                                 { label: 'Programme Start Date', value: '17.08.2026' },
                                 { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '17.08.2028' : '17.08.2029' },
-                                { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 ECTS' : '180 ECTS' },
+                                { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 credits' : '180 credits' },
                                 { label: 'Programme of Study', value: `${application.course?.title} (${application.course?.programType || 'Full-time'})` }
                             ].map((row, idx) => (
                                 <li key={idx}><strong>{row.label}:</strong> {row.value}</li>
@@ -273,7 +273,7 @@ function AdmissionLetterContent() {
                         <div>
                             <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1">Official Use</h4>
                             <p className="text-[10px] text-black leading-tight italic">
-                                Certificate of admission for visa applications and residence permit processing (Migri).
+                                Certificate of admission for Canadian study permit (IRCC) and other official immigration applications.
                             </p>
                         </div>
                         <div>
@@ -287,7 +287,7 @@ function AdmissionLetterContent() {
                         <div>
                             <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1">Refund Policy</h4>
                             <p className="text-[10px] text-black leading-tight">
-                                Subject to the university’s refund policy at <a href="https://penkka.fi/refund-withdrawal-policy/" className="underline text-black">penkka.fi/refund</a>.
+                                Subject to the university’s refund policy at <a href="https://cannogacollege.ca/refund-withdrawal-policy/" className="underline text-black">cannogacollege.ca/refund</a>.
                             </p>
                         </div>
                     </div>
@@ -305,14 +305,14 @@ function AdmissionLetterContent() {
                                 />
                             </div>
                             <div className="text-[10px] font-black text-black uppercase">Office of the Registrar</div>
-                            <div className="text-[9px] font-bold text-black">Dosentti Anna Virtanen, FT</div>
-                            <div className="text-[8px] font-bold text-black uppercase tracking-widest">Penkka University | Finland</div>
+                            <div className="text-[9px] font-bold text-black">Office of the Registrar, Cannoga College</div>
+                            <div className="text-[8px] font-bold text-black uppercase tracking-widest">Cannoga College | Ottawa, Canada</div>
                         </div>
                     </div>
 
                     <div className="mt-6 text-center">
                         <p className="text-[10px] text-black italic">
-                            Generated electronically via Penkka SIS. Valid without physical signature if verified online.
+                            Generated electronically via Cannoga SIS. Valid without physical signature if verified online.
                         </p>
                     </div>
                 </div>

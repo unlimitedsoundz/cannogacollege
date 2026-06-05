@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: Props) {
     if (!event) return { title: 'Event Not Found' };
 
     return {
-        title: `${event.title} | Penkka University Events`,
-        description: event.content?.substring(0, 160) || `Join us for ${event.title} at Penkka University.`,
+        title: `${event.title} | Cannoga College Events`,
+        description: event.content?.substring(0, 160) || `Join us for ${event.title} at Cannoga College.`,
         alternates: {
-            canonical: `https://penkka.fi/news/events/${slug}/`,
+            canonical: `https://cannogacollege.ca/news/events/${slug}/`,
         },
     };
 }
@@ -72,22 +72,22 @@ export default async function EventDetailPage({ params }: Props) {
         eventStatus: 'https://schema.org/EventScheduled',
         location: {
             '@type': 'Place',
-            name: item.location || 'Penkka University – Helsinki Campus',
+            name: item.location || 'Cannoga College – Ottawa Campus',
             address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Pohjoisesplanadi 51',
-                addressLocality: 'Helsinki',
+                addressLocality: 'Ottawa',
                 postalCode: '00150',
                 addressRegion: 'Uusimaa',
                 addressCountry: 'FI'
             }
         },
         image: item.imageUrl ? [item.imageUrl] : undefined,
-        description: item.content?.substring(0, 160) || `Join us for ${item.title} at Penkka University.`,
+        description: item.content?.substring(0, 160) || `Join us for ${item.title} at Cannoga College.`,
         organizer: {
             '@type': 'EducationalOrganization',
-            name: 'Penkka University',
-            url: 'https://penkka.fi'
+            name: 'Cannoga College',
+            url: 'https://cannogacollege.ca'
         }
     };
 

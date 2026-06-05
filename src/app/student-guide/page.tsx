@@ -12,10 +12,10 @@ import { TagGroup } from '@/components/ui/TagGroup';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata = {
-    title: 'Student Guide | Penkka University',
-    description: 'Find all the information you need to navigate your studies and life at Penkka University.',
+    title: 'Student Guide | Cannoga College',
+    description: 'Find all the information you need to navigate your studies and life at Cannoga College.',
     alternates: {
-        canonical: 'https://penkka.fi/student-guide/',
+        canonical: 'https://cannogacollege.ca/student-guide/',
     },
 };
 
@@ -76,7 +76,7 @@ export default function StudentGuidePage() {
             items: [
                 { title: "Bachelor's Students", href: "/student-guide/bachelor" },
                 { title: "Master's Students", href: "/student-guide/master" },
-                { title: "Chat with Students", href: "/student-guide/chat-with-penkka-students" },
+                { title: "Chat with Students", href: "/student-guide/chat-with-cannoga-students" },
                 { title: "International Students", href: "/student-guide/international" },
                 { title: "Exchange Students", href: "/student-guide/exchange" },
             ]
@@ -102,7 +102,7 @@ export default function StudentGuidePage() {
             {/* HERO SECTION */}
             <Hero
                 title="Student Guide"
-                body="Find all the information you need to navigate your studies and life at Penkka University. From academic regulations to campus services, we support your journey every step of the way."
+                body="Find all the information you need to navigate your studies and life at Cannoga College. From academic regulations to campus services, we support your journey every step of the way."
                 backgroundColor="#472247"
                 tinted
                 lightText={true}
@@ -112,7 +112,7 @@ export default function StudentGuidePage() {
                 ]}
                 image={{
                     src: "/images/bachelors-group-v2.png",
-                    alt: "Students collaborating at Penkka University"
+                    alt: "Students collaborating at Cannoga College"
                 }}
             >
                 <Link href="#programmes" className="text-aalto-3 font-bold underline underline-offset-8 decoration-white hover:opacity-70 transition-colors flex items-center gap-2 text-white">
@@ -135,10 +135,10 @@ export default function StudentGuidePage() {
                         {/* Degree Programmes */}
                         <section id="programmes" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">
-                                Degree Programmes at Penkka University
+                                Degree Programmes at Cannoga College
                             </h2>
                             <p className="text-aalto-3 text-black mb-8">
-                                Penkka University offers Bachelor’s and Master’s degree programmes taught in English across business, economics, management, finance, information systems, entrepreneurship, and interdisciplinary fields.
+                                Cannoga College offers Bachelor’s and Master’s degree programmes taught in English across business, economics, management, finance, information systems, entrepreneurship, and interdisciplinary fields.
                             </p>
 
                             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -180,12 +180,12 @@ export default function StudentGuidePage() {
                                 <div className="flex-1">
                                     <h3 className="text-xl font-bold mb-3">What is a Minor?</h3>
                                     <p className="text-black mb-6 font-medium leading-relaxed">
-                                        A minor is a coherent set of courses, typically ranging from 20 to 30 ECTS credits, completed alongside a major degree. It allows students to deepen expertise in a specific area or broaden knowledge beyond their main field of study.
+                                        A minor is a coherent set of courses, typically ranging from 20 to 30 credits, completed alongside a major degree. It allows students to deepen expertise in a specific area or broaden knowledge beyond their main field of study.
                                     </p>
                                     <h3 className="text-xl font-bold mb-3">Choosing a Minor</h3>
                                     <ul className="space-y-3 mb-6 text-black font-medium">
                                         <li className="flex gap-2 underline"><ArrowRight size={18} weight="bold" className="mt-1 flex-shrink-0" /> Within their own school</li>
-                                        <li className="flex gap-2 underline"><ArrowRight size={18} weight="bold" className="mt-1 flex-shrink-0" /> From other schools at Penkka University</li>
+                                        <li className="flex gap-2 underline"><ArrowRight size={18} weight="bold" className="mt-1 flex-shrink-0" /> From other schools at Cannoga College</li>
                                         <li className="flex gap-2 underline"><ArrowRight size={18} weight="bold" className="mt-1 flex-shrink-0" /> From interdisciplinary or entrepreneurship offerings</li>
                                     </ul>
                                 </div>
@@ -214,7 +214,7 @@ export default function StudentGuidePage() {
                             <div className="grid md:grid-cols-2 gap-8">
                                 <div className="rounded-none p-6">
                                     <h3 className="font-bold text-xl mb-3">Course Structure</h3>
-                                    <p className="text-black mb-4 font-medium">Courses are assigned ECTS credits based on workload. Format includes:</p>
+                                    <p className="text-black mb-4 font-medium">Courses are assigned credits based on workload. Format includes:</p>
                                     <TagGroup tags={['Lectures', 'Seminars', 'Projects', 'Case Studies', 'Exams'].map(tag => ({ label: tag }))} />
                                 </div>
                                 <div className="bg-gray-100 rounded-none p-6">
@@ -247,9 +247,9 @@ export default function StudentGuidePage() {
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 {[
                                     "Academic communication", "Intercultural communication",
-                                    "Finnish language", "Swedish language"
+                                    "English for Academic Purposes", "French language (optional)"
                                 ].map(lang => (
-                                    <div key={lang} className="bg-neutral-100 p-4 rounded-none text-center font-bold text-black border-l-2 border-black">
+                                    <div key={lang} className="bg-neutral-100 p-4 rounded-none text-center font-bold text-black border-l-2 border-[#5c2d91]">
                                         {lang}
                                     </div>
                                 ))}
@@ -372,13 +372,13 @@ export default function StudentGuidePage() {
                                 <Card
                                     title="Chat with Students"
                                     image={{ src: "/images/chat-with-students-hero.png", alt: "Chat with Students" }}
-                                    body="Connect with current students and ambassadors to learn about life at Penkka."
-                                    cta={{ label: "Chat now", linkComponentProps: { href: "/student-guide/chat-with-penkka-students" } }}
+                                    body="Connect with current students and ambassadors to learn about life at Cannoga."
+                                    cta={{ label: "Chat now", linkComponentProps: { href: "/student-guide/chat-with-cannoga-students" } }}
                                 />
                                 <Card
                                     title="International Students"
                                     image={{ src: "/images/international-students-hero.png", alt: "International Students" }}
-                                    body="Support Services, residence permits, and integration into Finnish society."
+                                    body="Support services, study permits, and integration into Ottawa's multicultural community."
                                     cta={{ label: "View guide", linkComponentProps: { href: "/student-guide/international" } }}
                                 />
                                 <Card

@@ -19,9 +19,10 @@ interface FinancialOfferFormProps {
     degreeLevel?: DegreeLevel;
     tuitionField?: TuitionField;
     onSuccess?: () => void;
+    isDomestic?: boolean;
 }
 
-export function FinancialOfferForm({ applicationId, baseTuition, programYears, degreeLevel, tuitionField = 'TECHNOLOGY', onSuccess }: FinancialOfferFormProps) {
+export function FinancialOfferForm({ applicationId, baseTuition, programYears, degreeLevel, tuitionField = 'TECHNOLOGY', onSuccess, isDomestic = false }: FinancialOfferFormProps) {
     const [offerType, setOfferType] = useState<'DEPOSIT' | 'FIRST_YEAR' | 'FULL_PROGRAM'>('FIRST_YEAR');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
@@ -38,7 +39,7 @@ export function FinancialOfferForm({ applicationId, baseTuition, programYears, d
 
     if (isDeposit) {
         // Special case: if they issue just a deposit offer
-        discountedFee = calculateTuitionDeposit(baseTuition, tuitionField, false);
+        discountedFee = calculateTuitionDeposit(baseTuition, tuitionField, false, degreeLevel, isDomestic);
     } else if (offerType === 'FULL_PROGRAM') {
         discountedFee = calculateFullProgramDiscountedFee(baseTuition, programYears);
     } else {
@@ -46,7 +47,7 @@ export function FinancialOfferForm({ applicationId, baseTuition, programYears, d
     }
 
     // For display in the UI card
-    const displayDeposit = calculateTuitionDeposit(baseTuition, tuitionField, !isDeposit);
+    const displayDeposit = calculateTuitionDeposit(baseTuition, tuitionField, !isDeposit, degreeLevel, isDomestic);
     const discountAmount = isDeposit ? 0 : currentBase - discountedFee;
 
 
@@ -82,7 +83,7 @@ export function FinancialOfferForm({ applicationId, baseTuition, programYears, d
                 <div>
                     <h3 className="text-sm font-black text-emerald-900 uppercase tracking-widest leading-none mb-2">Offer Issued</h3>
                     <p className="text-[10px] font-bold text-emerald-600 uppercase leading-relaxed">
-                        Financial offer for €{discountedFee.toLocaleString()} has been generated and student notification triggered.
+                        Financial offer for ${discountedFee.toLocaleString()} has been generated and student notification triggered.
                     </p>
                 </div>
                 <button
@@ -130,24 +131,16 @@ export function FinancialOfferForm({ applicationId, baseTuition, programYears, d
                         {offerType === 'FULL_PROGRAM' ? `Full ${programYears} Years` : (offerType === 'DEPOSIT' ? 'Tuition Deposit' : '1st Year Full Tuition')}
                     </span>
                     <div className="text-right">
-                        <span className="text-xl font-black text-neutral-900 leading-none">€{discountedFee.toLocaleString()}</span>
-                        <p className="text-[8px] font-bold text-neutral-400 uppercase mt-1">
-                            Original: €{currentBase.toLocaleString()}
-                        </p>
+                        <span className="text-xl font-black text-neutral-900 leading-none">${discountedFee.toLocaleString()}</span>
+                        {discountAmount > 0 && (
+                            <p className="text-[8px] font-bold text-neutral-400 uppercase mt-1">
+                                Original: ${currentBase.toLocaleString()}
+                            </p>
+                        )}
                     </div>
                 </div>
 
-                {!isDeposit ? (
-                    <div className="flex items-center gap-2 p-2 bg-emerald-50 rounded-xl border border-emerald-100">
-                        <div className="w-6 h-6 bg-emerald-600 rounded-lg flex items-center justify-center text-white">
-                            <Percent size={12} weight="bold" />
-                        </div>
-                        <div>
-                            <p className="text-[10px] font-black text-emerald-900 uppercase leading-none mb-0.5">Early Bird Discount Applied</p>
-                            <p className="text-[8px] font-bold text-emerald-600 uppercase">Save €{discountAmount.toLocaleString()} ({EARLY_PAYMENT_DISCOUNT_PERCENT}%)</p>
-                        </div>
-                    </div>
-                ) : (
+                {isDeposit && (
                     <div className="flex items-center gap-2 p-2 bg-neutral-100 rounded-xl border border-neutral-200">
                         <div className="w-6 h-6 bg-neutral-400 rounded-lg flex items-center justify-center text-white">
                             <Award size={12} weight="bold" />
@@ -161,11 +154,11 @@ export function FinancialOfferForm({ applicationId, baseTuition, programYears, d
                 
                 <div className="flex items-center gap-2 p-2 bg-neutral-50 rounded-xl border border-neutral-100">
                     <div className="w-6 h-6 bg-neutral-900 rounded-lg flex items-center justify-center text-white text-[10px] font-bold">
-                        €
+                        $
                     </div>
                     <div>
                         <p className="text-[10px] font-black text-neutral-900 uppercase leading-none mb-0.5">Required Deposit</p>
-                        <p className="text-[8px] font-bold text-neutral-400 uppercase">€{displayDeposit.toLocaleString()} EUR</p>
+                        <p className="text-[8px] font-bold text-neutral-400 uppercase">${displayDeposit.toLocaleString()} CAD</p>
                     </div>
                 </div>
 

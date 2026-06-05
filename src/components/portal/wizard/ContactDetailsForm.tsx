@@ -44,7 +44,7 @@ export default function ContactDetailsForm({ applicationId, initialData, default
             addressLine2: '',
             city: '',
             postalCode: '',
-            country: 'Finland',
+            country: 'Ottawa, Canada',
         }
     });
 

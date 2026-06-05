@@ -46,7 +46,7 @@ export default function AdminLayout({
                 }
 
                 // 2. Database-Validated Session (Primary for Static Export)
-                const savedUser = localStorage.getItem('Penkka_user');
+                const savedUser = localStorage.getItem('Cannoga_user');
                 if (savedUser) {
                     const localProfile = JSON.parse(savedUser);
 
@@ -62,7 +62,7 @@ export default function AdminLayout({
                         setUser({ id: dbProfile.id, email: dbProfile.email });
                         setProfile(dbProfile);
                         // Refresh local cache with latest DB data
-                        localStorage.setItem('Penkka_user', JSON.stringify(dbProfile));
+                        localStorage.setItem('Cannoga_user', JSON.stringify(dbProfile));
                     } else {
                         throw new Error('Invalid database session');
                     }
@@ -71,7 +71,7 @@ export default function AdminLayout({
                 }
             } catch (error) {
                 console.error("Admin auth check error:", error);
-                localStorage.removeItem('Penkka_user');
+                localStorage.removeItem('Cannoga_user');
                 setRedirecting(true);
                 router.replace('/portal/account/admin-login');
             } finally {
@@ -89,7 +89,7 @@ export default function AdminLayout({
 
     const handleSignOut = async () => {
         await supabase.auth.signOut();
-        localStorage.removeItem('Penkka_user');
+        localStorage.removeItem('Cannoga_user');
 
         // Clear local state
         setUser(null);

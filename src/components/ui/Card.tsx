@@ -56,7 +56,7 @@ export function Card({
                     />
                     {badge && (
                         <div className="absolute top-4 left-4">
-                            <span className={`px-3 py-1 text-[10px] font-semibold uppercase tracking-widest rounded-none ${badge.className || 'bg-black text-white'}`}>
+                            <span className={`px-3 py-1 text-[10px] font-semibold uppercase tracking-widest rounded-none ${badge.className || 'bg-[#5c2d91] text-white'}`}>
                                 {badge.label}
                             </span>
                         </div>
@@ -72,24 +72,24 @@ export function Card({
                 {tags && tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-4">
                         {tags.map((tag, idx) => (
-                            <span key={idx} className="text-[10px] font-bold uppercase tracking-widest text-black">
+                            <span key={idx} className="text-[10px] font-bold uppercase tracking-widest text-[#5c2d91]">
                                 {tag}
                             </span>
                         ))}
                     </div>
                 )}
-                <h3 className="text-aalto-4 font-semibold mb-aalto-p4 text-black tracking-tight leading-tight group-hover:underline">
+                <h3 className="text-aalto-4 font-semibold mb-aalto-p4 text-[#2e1150] tracking-tight leading-tight group-hover:underline">
                     {title}
                 </h3>
-                <div className="text-aalto-2 text-black leading-aalto-2 mb-8 flex-1">
+                <div className="text-aalto-2 text-neutral-800 leading-aalto-2 mb-8 flex-1">
                     {body}
                 </div>
                 {cta && (
                     <div className="mt-auto">
-                        <span className="text-aalto-1 font-medium uppercase tracking-widest text-black inline-flex items-center gap-2 group/cta">
+                        <span className="text-aalto-1 font-medium uppercase tracking-widest text-[#5c2d91] inline-flex items-center gap-2 group/cta">
                             {cta.label}
                             <ArrowRight size={16} weight="bold" className="transition-transform group-hover/cta:translate-x-1" />
-                            <div className="absolute bottom-[-4px] left-0 w-full h-[2px] bg-black scale-x-0 group-hover/cta:scale-x-100 transition-transform origin-left"></div>
+                            <div className="absolute bottom-[-4px] left-0 w-full h-[2px] bg-[#5c2d91] scale-x-0 group-hover/cta:scale-x-100 transition-transform origin-left"></div>
                         </span>
                     </div>
                 )}

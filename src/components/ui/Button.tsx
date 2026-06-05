@@ -21,13 +21,13 @@ export interface ButtonProps {
 }
 
 const buttonVariants = {
-    primary: "bg-black text-white hover:bg-neutral-800 shadow-sm",
-    secondary: "bg-neutral-100 text-black hover:bg-neutral-200 shadow-sm",
-    accent: "bg-[#0055A4] text-white hover:bg-[#004488] shadow-sm",
-    white: "bg-white text-black hover:bg-neutral-100 shadow-sm",
-    outline: "border-2 border-black bg-transparent text-black hover:bg-neutral-50",
-    ghost: "hover:bg-neutral-100 text-black",
-    link: "text-black underline-offset-4 hover:underline",
+    primary: "bg-[#5c2d91] text-white hover:bg-[#4a2475] shadow-sm",
+    secondary: "bg-[#f7f4fc] text-[#5c2d91] hover:bg-[#efeaf7] shadow-sm",
+    accent: "bg-[#2e1150] text-white hover:bg-[#1d0a33] shadow-sm",
+    white: "bg-white text-[#5c2d91] hover:bg-[#f7f4fc] shadow-sm",
+    outline: "border-2 border-[#5c2d91] bg-transparent text-[#5c2d91] hover:bg-[#f7f4fc]",
+    ghost: "hover:bg-[#f7f4fc] text-[#5c2d91]",
+    link: "text-[#5c2d91] underline-offset-4 hover:underline",
     "link-white": "text-white underline-offset-8 hover:opacity-70 underline decoration-white",
 }
 
@@ -40,7 +40,7 @@ const buttonSizes = {
 }
 
 /**
- * Standardized Button component for the Penkka University project.
+ * Standardized Button component for the Cannoga College project.
  * Aliased from @aalto-dx/react-components.
  */
 const Button = React.forwardRef<HTMLElement, ButtonProps>(

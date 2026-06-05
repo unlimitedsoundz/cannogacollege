@@ -8,10 +8,10 @@ import { ContentBox } from '@/components/ui/ContentBox';
 import { Card } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
-    title: 'Contact Information | Penkka University',
-    description: 'Contact details for Penkka University including Registry, Admissions, Student Services, and general inquiries.',
+    title: 'Contact Information | Cannoga College',
+    description: 'Contact details for Cannoga College including Registry, Admissions, Student Services, and general inquiries.',
     alternates: {
-        canonical: 'https://penkka.fi/contact/',
+        canonical: 'https://cannogacollege.ca/contact/',
     },
 };
 
@@ -26,25 +26,25 @@ export default function ContactPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "ContactPage",
-                "name": "Contact Penkka University",
-                "url": "https://penkka.fi/contact",
+                "name": "Contact Cannoga College",
+                "url": "https://cannogacollege.ca/contact",
                 "mainEntity": {
                     "@type": "EducationalOrganization",
-                    "name": "Penkka University",
-                    "email": "Penkka@penkka.fi",
+                    "name": "Cannoga College",
+                    "email": "Cannoga@cannogacollege.ca",
                     "address": {
                         "@type": "PostalAddress",
-                        "streetAddress": "Pohjoisesplanadi 51",
-                        "addressLocality": "Helsinki",
-                        "postalCode": "00150",
-                        "addressCountry": "FI"
+                        "streetAddress": "2368 Midway Ave",
+                        "addressLocality": "Ottawa",
+                        "postalCode": "K2B 5J8",
+                        "addressCountry": "CA"
                     }
                 }
             }} />
             {/* HERO SECTION */}
             <Hero
                 title="Contact Information"
-                body="Penkka University provides contact information for administrative services including Registry, Admissions, Student Services and general inquiries to support students, applicants, staff and partners."
+                body="Cannoga College provides contact information for administrative services including Registry, Admissions, Student Services and general inquiries to support students, applicants, staff and partners."
                 backgroundColor="#ff8d4f"
                 tinted
                 lightText={true}
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 ]}
                 image={{
                     src: "https://i.pinimg.com/736x/fa/28/ed/fa28ed6017e508a4291beda999617f25.jpg",
-                    alt: "Contact Penkka University"
+                    alt: "Contact Cannoga College"
                 }}
             />
 
@@ -71,24 +71,24 @@ export default function ContactPage() {
                                     <div>
                                         <a href="tel:+3580942721884" className="inline-flex items-center gap-2 text-xl font-bold text-black mb-2 underline underline-offset-4 hover:opacity-80 transition-opacity">
                                             <Phone size={24} weight="fill" />
-                                            Talk to Penkka
+                                            Talk to Cannoga
                                         </a>
-                                        <p className="text-neutral-500 font-bold uppercase tracking-widest text-xs">Finland resident enquiries</p>
+                                        <p className="text-neutral-500 font-bold uppercase tracking-widest text-xs">Ottawa, Canada resident enquiries</p>
                                     </div>
                                     <div>
-                                        <a href="tel:+15026865522" className="inline-flex items-center gap-2 text-xl font-bold text-black mb-2 underline underline-offset-4 hover:opacity-80 transition-opacity">
+                                        <a href="tel:+19842062656" className="inline-flex items-center gap-2 text-xl font-bold text-black mb-2 underline underline-offset-4 hover:opacity-80 transition-opacity">
                                             <Phone size={24} weight="fill" />
                                             Talk to Admissions
                                         </a>
                                         <p className="text-neutral-500 font-bold uppercase tracking-widest text-xs">Admissions office International students only</p>
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-black uppercase tracking-[0.2em] text-xs mb-4">Postal Address</h4>
+                                         <h4 className="font-bold text-black uppercase tracking-[0.2em] text-xs mb-4">Postal Address</h4>
                                         <address className="not-italic text-neutral-600 leading-relaxed text-sm font-bold">
-                                            Penkka University – Helsinki Campus<br />
-                                            Pohjoisesplanadi 51,<br />
-                                            00150 Helsinki, Uusimaa,<br />
-                                            Finland
+                                            Cannoga College – Ottawa Campus<br />
+                                            2368 Midway Ave,<br />
+                                            Ottawa, ON K2B 5J8,<br />
+                                            Canada
                                         </address>
                                     </div>
                                 </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Responsible for receiving official correspondence and documentation.</p>
-                                    <a href="mailto:registry@penkka.fi" className="block font-bold underline">registry@penkka.fi</a>
+                                    <a href="mailto:registry@cannogacollege.ca" className="block font-bold underline">registry@cannogacollege.ca</a>
                                 </div>
                             }
                         />
@@ -114,7 +114,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Information on programmes, applications, scholarships, and deadlines.</p>
-                                    <a href="mailto:admissions@penkka.fi" className="block font-bold underline">admissions@penkka.fi</a>
+                                    <a href="mailto:admissions@cannogacollege.ca" className="block font-bold underline">admissions@cannogacollege.ca</a>
                                 </div>
                             }
                         />
@@ -124,7 +124,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Support for enrolled students including study planning and wellbeing.</p>
-                                    <a href="mailto:studentservices@penkka.fi" className="block font-bold underline">studentservices@penkka.fi</a>
+                                    <a href="mailto:studentservices@cannogacollege.ca" className="block font-bold underline">studentservices@cannogacollege.ca</a>
                                 </div>
                             }
                         />
@@ -134,7 +134,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Storage of permanent records and official documentation.</p>
-                                    <a href="mailto:archives@penkka.fi" className="block font-bold underline">archives@penkka.fi</a>
+                                    <a href="mailto:archives@cannogacollege.ca" className="block font-bold underline">archives@cannogacollege.ca</a>
                                 </div>
                             }
                         />
@@ -167,14 +167,7 @@ export default function ContactPage() {
                     <hr className="border-neutral-200" />
 
                     {/* Footer Info Sections */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-                        <section>
-                            <h3 className="font-bold text-xs uppercase tracking-[0.2em] text-black mb-8">Business Info</h3>
-                            <div className="space-y-2">
-                                <span className="block text-[10px] text-neutral-500 uppercase font-bold tracking-widest">Business ID</span>
-                                <span className="text-sm font-bold text-black">9996326-7</span>
-                            </div>
-                        </section>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
 
                         <section>
                             <h3 className="font-bold text-xs uppercase tracking-[0.2em] text-black mb-8">Related Services</h3>

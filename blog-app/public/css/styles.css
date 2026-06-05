@@ -1,8 +1,6 @@
 @import '../../node_modules/ckeditor5/dist/ckeditor5.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source("../../views");
 
 /* ---- Cross-editor content styles. --------------------------------------------------------------- */
 .ck.ck-content:not(.ck-style-grid__button__preview):not(.ck-editor__nested-editable) {
@@ -58,10 +56,6 @@
   padding-top: 0.2em;
   margin-bottom: var(--ck-spacing-large);
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 
 

@@ -6,10 +6,10 @@ import { formatToDDMMYYYY } from '@/utils/date';
 import { Calendar, MapPin, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'News & Events | Penkka University',
-    description: 'The latest news, announcements, and upcoming events from Penkka University.',
+    title: 'News & Events | Cannoga College',
+    description: 'The latest news, announcements, and upcoming events from Cannoga College.',
     alternates: {
-        canonical: 'https://penkka.fi/news/',
+        canonical: 'https://cannogacollege.ca/news/',
     },
 };
 
@@ -21,10 +21,10 @@ export default async function NewsPage() {
     // Static editorial articles (not in DB)
     const staticArticles = [
         {
-            id: 'static-why-study-finland',
-            title: 'Why Study in Finland? 10 Reasons International Students Choose Helsinki',
-            slug: 'why-study-in-finland',
-            excerpt: 'Finland has become one of Europe\'s most attractive study destinations. From world-class education to a thriving tech scene, discover why students are flocking to Helsinki.',
+            id: 'static-why-study-ottawa-canada',
+            title: 'Why Study in Ottawa Canada? 10 Reasons International Students Choose Ottawa',
+            slug: 'why-study-in-ottawa-canada',
+            excerpt: 'Canada has become one of North America\'s most attractive study destinations. From world-class education to a thriving tech scene, discover why students are flocking to Ottawa.',
             imageUrl: '/images/news/helsinki-study-hero.png',
             publishDate: '2026.02.14',
             type: 'news',
@@ -38,7 +38,7 @@ export default async function NewsPage() {
             {/* HERO SECTION */}
             <Hero
                 title="News & Events"
-                body="Stay up to date with the latest stories, research breakthroughs, and upcoming events from Penkka University."
+                body="Stay up to date with the latest stories, research breakthroughs, and upcoming events from Cannoga College."
                 backgroundColor="#dc6ade"
                 tinted
                 lightText={true}
@@ -48,11 +48,11 @@ export default async function NewsPage() {
                 ]}
                 image={{
                     src: "/images/news/helsinki-study-hero.png",
-                    alt: "Penkka University News & Events"
+                    alt: "Cannoga College News & Events"
                 }}
             />
 
-            <div className="container mx-auto px-4 py-16">
+            <div className="cc-container cc-section">
                 <NewsList staticArticles={staticArticles} />
             </div>
         </div >

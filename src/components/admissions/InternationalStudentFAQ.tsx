@@ -24,13 +24,13 @@ const faqs: FAQItem[] = [
         answer: (
             <div className="space-y-4">
                 <p>
-                    If you are a non-EU/EEA citizen, you must apply for a student residence permit immediately after accepting your admission offer. EU/EEA citizens only need to register their right of residence after arrival.
+                    If you are an international student, you must apply for a Canadian study permit immediately after accepting your admission offer. Canadian citizens and Permanent Residents do not require a study permit but should complete enrolment through the student portal.
                 </p>
             </div>
         )
     },
     {
-        question: "How do I find housing in Finland?",
+        question: "How do I find housing in Ottawa, Canada?",
         answer: (
             <div className="space-y-4">
                 <p>
@@ -54,17 +54,17 @@ const faqs: FAQItem[] = [
         answer: (
             <div className="space-y-4">
                 <p>
-                    Attending degree students pay a healthcare fee to Kela, which grants access to the Finnish Student Health Service (FSHS) for general, mental, and oral health care.
+                    Attending degree students have access to on-campus health services and are encouraged to obtain provincial health coverage (OHIP in Ontario) after arrival. Cannoga College partners with local clinics for general, mental, and oral health care.
                 </p>
             </div>
         )
     },
-    {
-        question: "Do I need to speak Finnish to live in Finland?",
+                {
+        question: "Do I need to speak French to live in Ottawa, Canada?",
         answer: (
             <div className="space-y-4">
                 <p>
-                    English is widely spoken, and it is entirely possible to live and study in English. However, learning Finnish is highly encouraged for cultural integration and significantly improves your local employability.
+                    English is the primary language of instruction and daily life in Ottawa. While Ottawa is a bilingual city with some French spoken, all college programmes and services are fully available in English. Learning French is a bonus but not required.
                 </p>
             </div>
         )

@@ -1,7 +1,7 @@
 
 export const metadata = {
-    title: 'International Students — Penkka University Finland | Visa, Housing & Work Rights',
-    description: 'Essential information for international students at Penkka University. Residence permits, student housing, health insurance, working rights, and Finnish language courses in Helsinki.',
+    title: 'International Students — Cannoga College Ottawa, Canada | Visa, Housing & Work Rights',
+    description: 'Essential information for international students at Cannoga College. Residence permits, student housing, health insurance, working rights, and Finnish language courses in Ottawa.',
 };
 
 export default function InternationalPage() {
@@ -13,14 +13,14 @@ export default function InternationalPage() {
 
                 <div className="prose prose-lg max-w-none text-neutral-600 mb-12">
                     <p>
-                        Welcome to Penkka! Each year, we welcome hundreds of students from around the world. We are committed to making your transition to Finland as smooth as possible.
+                        Welcome to Cannoga! Each year, we welcome hundreds of students from around the world. We are committed to making your transition to Ottawa, Canada as smooth as possible.
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 mb-16">
                     <div className="bg-neutral-100 p-10 rounded-xl">
                         <h3 className="text-xl font-bold mb-4 text-emerald-800">🛂 Residence Permits</h3>
-                        <p className="mb-4 text-sm">Non-EU/EEA citizens typically need a student residence permit. You should apply as soon as you receive your acceptance letter.</p>
+                        <p className="mb-4 text-sm">Most international students require a Canadian study permit. You should apply as soon as you receive your acceptance letter from Cannoga College.</p>
                         <a href="#" className="text-emerald-600 font-bold text-sm underline">Read Migri.fi Guide</a>
                     </div>
                     <div className="bg-neutral-100 p-10 rounded-xl">
@@ -39,7 +39,7 @@ export default function InternationalPage() {
                         </details>
                         <details className="group p-4 rounded-lg cursor-pointer">
                             <summary className="font-bold text-neutral-900 group-hover:text-emerald-600">Is health insurance mandatory?</summary>
-                            <p className="mt-2 text-neutral-600">Yes, you must have valid private health insurance if you are a non-EU/EEA citizen to obtain your residence permit.</p>
+                            <p className="mt-2 text-neutral-600">Yes, you must have valid private health insurance for your first 3 months in Canada before OHIP kicks in. This is also required for your study permit application.</p>
                         </details>
                         <details className="group p-4 rounded-lg cursor-pointer">
                             <summary className="font-bold text-neutral-900 group-hover:text-emerald-600">Are Finnish classes available?</summary>

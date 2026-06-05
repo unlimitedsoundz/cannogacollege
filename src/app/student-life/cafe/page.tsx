@@ -5,10 +5,10 @@ import { ForkKnife as Utensils, Clock, MapPin, ArrowRight } from "@phosphor-icon
 import { Hero } from '@/components/layout/Hero';
 
 export const metadata = {
-    title: 'Opiskelija Café — Penkka University Student Restaurant | Menu & Hours',
-    description: 'Visit the Opiskelija Café at Penkka University Helsinki. Affordable student meals, coffee, and pastries. View the menu, opening hours, and location.',
+    title: 'Opiskelija Café — Cannoga College Student Restaurant | Menu & Hours',
+    description: 'Visit the Opiskelija Café at Cannoga College Ottawa. Affordable student meals, coffee, and pastries. View the menu, opening hours, and location.',
     alternates: {
-        canonical: 'https://penkka.fi/student-life/cafe/',
+        canonical: 'https://cannogacollege.ca/student-life/cafe/',
     },
 };
 

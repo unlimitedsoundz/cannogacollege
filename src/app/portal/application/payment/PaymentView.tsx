@@ -95,7 +95,7 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
                 </h2>
                 <p className="text-sm text-black mb-8 max-w-[280px] mx-auto leading-relaxed">
                     {isEnrolled
-                        ? <>Your enrollment is now confirmed. Welcome to <span className="font-semibold text-black">Penkka University</span>.</>
+                        ? <>Your enrollment is now confirmed. Welcome to <span className="font-semibold text-black">Cannoga College</span>.</>
                         : <>Your payment has been recorded and is currently under review. <span className="font-semibold text-black">Access to student services is paused</span> until our finance team verifies the transaction.</>
                     }
                 </p>
@@ -185,15 +185,15 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
                         <div className="space-y-4 mb-8">
                             <div className="flex justify-between text-sm">
                                 <span className="text-black font-normal uppercase tracking-wider">{invoiceTypeLabel}</span>
-                                <span className="font-normal text-black text-right">€ {finalAmount.toLocaleString()}</span>
+                                <span className="font-normal text-black text-right">$ {finalAmount.toLocaleString()}</span>
                             </div>
                             <div className="flex justify-between text-sm">
                                 <span className="text-black font-normal uppercase tracking-wider">Services Fee</span>
-                                <span className="font-normal text-black">€ 0.00</span>
+                                <span className="font-normal text-black">$ 0.00</span>
                             </div>
                             <div className="flex justify-between pt-2 font-normal text-lg text-black">
                                 <span>TOTAL</span>
-                                <span className="font-normal">€ {finalAmount.toLocaleString()}</span>
+                                <span className="font-normal">$ {finalAmount.toLocaleString()}</span>
                             </div>
                         </div>
                     </div>

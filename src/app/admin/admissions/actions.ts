@@ -45,7 +45,7 @@ export async function updateApplicationStatus(applicationId: string, status: App
                 // Fetch application with course + school to compute real tuition
                 const { data: appData } = await supabase
                     .from('applications')
-                    .select('course_id, Course:course_id(degreeLevel, school:schoolId(slug))')
+                    .select('course_id, personal_info, Course:course_id(degreeLevel, school:schoolId(slug))')
                     .eq('id', applicationId)
                     .single();
 
@@ -56,11 +56,14 @@ export async function updateApplicationStatus(applicationId: string, status: App
                 // Use tuition.ts computation (source of truth)
                 const { getTuitionFee, mapSchoolToTuitionField, calculateDiscountedFee, getProgramYears, calculateFullProgramDiscountedFee } = await import('@/utils/tuition');
                 const tuitionField = mapSchoolToTuitionField(schoolSlug);
-                const annualFee = getTuitionFee(degreeLevel, tuitionField);
+                const personal = (appData as any)?.personal_info || {};
+                const nationality = personal.nationality;
+                const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'canada' || nationality.toLowerCase().trim() === 'canadian' || nationality.toLowerCase().trim() === 'domestic') : false;
+                const annualFee = getTuitionFee(degreeLevel, tuitionField, isDomestic);
                 
                 // For automated first offer, we default to FULL_TUITION (Full Programme) 
-                // as requested: Bachelors x 3, Masters x 2 with Early Bird on 1st year.
-                const duration = (appData as any)?.Course?.duration || '3 years';
+                // as requested: Bachelors x 4, Masters x 2.
+                const duration = (appData as any)?.Course?.duration || '4 years';
                 const years = getProgramYears(duration, degreeLevel as any);
                 const discountedTotalFee = calculateFullProgramDiscountedFee(annualFee, years);
                 const discountAmount = (annualFee * years) - discountedTotalFee;

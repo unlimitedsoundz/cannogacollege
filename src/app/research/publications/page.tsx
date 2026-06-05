@@ -2,10 +2,10 @@
 import PublicationList from './PublicationList';
 
 export const metadata = {
-    title: 'Research Publications — Penkka University | Peer-Reviewed Journals & Papers',
-    description: 'Explore peer-reviewed publications by Penkka University faculty and researchers. Sustainable construction, smart grids, urban planning, and circular economy research.',
+    title: 'Research Publications — Cannoga College | Peer-Reviewed Journals & Papers',
+    description: 'Explore peer-reviewed publications by Cannoga College faculty and researchers. Sustainable construction, smart grids, urban planning, and circular economy research.',
     alternates: {
-        canonical: 'https://penkka.fi/research/publications/',
+        canonical: 'https://cannogacollege.ca/research/publications/',
     },
 };
 

@@ -5,10 +5,10 @@ import { CaretRight, Envelope, Phone, MapPin, ShareNetwork, ArrowRight } from "@
 import { Breadcrumbs } from '@aalto-dx/react-modules';
 
 export const metadata = {
-    title: 'Contact Information | Penkka University Admission Services',
-    description: 'Get in touch with Penkka University Admission Services. Find email, phone, and addresses for admissions inquiries.',
+    title: 'Contact Information | Cannoga College Admission Services',
+    description: 'Get in touch with Cannoga College Admission Services. Find email, phone, and addresses for admissions inquiries.',
     alternates: {
-        canonical: 'https://penkka.fi/admissions/contact-information/',
+        canonical: 'https://cannogacollege.ca/admissions/contact-information/',
     },
 };
 
@@ -27,7 +27,7 @@ export default function AdmissionsContactInfo() {
                                 <ul className="space-y-1">
                                     <li>
                                         <Link href="/admissions" className="block py-2 px-4 text-black hover:opacity-70 transition-opacity">
-                                            Study at Penkka
+                                            Study at Cannoga
                                         </Link>
                                     </li>
                                     <li>
@@ -56,7 +56,7 @@ export default function AdmissionsContactInfo() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="https://ourblogs.penkka.fi/" target="_blank" className="block py-2 px-4 text-black hover:opacity-70 transition-opacity">
+                                        <Link href="https://ourblogs.cannogacollege.ca/" target="_blank" className="block py-2 px-4 text-black hover:opacity-70 transition-opacity">
                                             Student stories
                                         </Link>
                                     </li>
@@ -79,10 +79,10 @@ export default function AdmissionsContactInfo() {
                             {/* Title & Ingress */}
                             <div className="mb-12">
                                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-6 leading-tight">
-                                    Contact Information for Penkka University Admission Services
+                                    Contact Information for Cannoga College Admission Services
                                 </h1>
                                 <p className="text-xl text-black leading-relaxed max-w-3xl">
-                                    You can contact Penkka University Admission Services by email or by phone during our customer service hours. If your inquiry concerns a specific study programme, please include the name of the programme in the subject line of your message.
+                                    You can contact Cannoga College Admission Services by email or by phone during our customer service hours. If your inquiry concerns a specific study programme, please include the name of the programme in the subject line of your message.
                                 </p>
                             </div>
 
@@ -91,7 +91,7 @@ export default function AdmissionsContactInfo() {
                                 <div className="rounded-2xl overflow-hidden aspect-[21/9] shadow-2xl relative group mb-4">
                                     <Image 
                                         src="/images/admissions/hero-main.png" 
-                                        alt="Penkka University Campus" 
+                                        alt="Cannoga College Campus" 
                                         width={1600}
                                         height={900}
                                         className="w-full h-full object-cover object-top"
@@ -99,7 +99,7 @@ export default function AdmissionsContactInfo() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                                 </div>
                                 <div className="text-[11px] text-black font-medium px-1">
-                                    Photo: Penkka University Campus, Helsinki
+                                    Photo: Cannoga College Campus, Ottawa
                                 </div>
                             </div>
 
@@ -122,19 +122,19 @@ export default function AdmissionsContactInfo() {
                                         <div className="space-y-4">
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-bold uppercase tracking-widest text-black mb-1">Email</span>
-                                                <a href="mailto:admissions@penkka.fi" className="text-black font-semibold text-lg hover:underline underline-offset-4">admissions@penkka.fi</a>
+                                                <a href="mailto:admissions@cannogacollege.ca" className="text-black font-semibold text-lg hover:underline underline-offset-4">admissions@cannogacollege.ca</a>
                                             </div>
                                             <div className="flex flex-col gap-4">
                                                 <div className="flex flex-col">
-                                                    <span className="text-xs font-bold uppercase tracking-widest text-black mb-1">Finland resident enquiries</span>
+                                                    <span className="text-xs font-bold uppercase tracking-widest text-black mb-1">Ottawa, Canada resident enquiries</span>
                                                     <a href="tel:+3580942721884" className="inline-flex items-center gap-2 text-black font-semibold text-base underline underline-offset-4 hover:opacity-80 transition-opacity">
                                                         <Phone size={18} weight="fill" />
-                                                        Talk to Penkka
+                                                        Talk to Cannoga
                                                     </a>
                                                 </div>
                                                 <div className="flex flex-col">
                                                     <span className="text-xs font-bold uppercase tracking-widest text-black mb-1">Admissions office International students only</span>
-                                                    <a href="tel:+15026865522" className="inline-flex items-center gap-2 text-black font-semibold text-base underline underline-offset-4 hover:opacity-80 transition-opacity">
+                                                    <a href="tel:+19842062656" className="inline-flex items-center gap-2 text-black font-semibold text-base underline underline-offset-4 hover:opacity-80 transition-opacity">
                                                         <Phone size={18} weight="fill" />
                                                         Talk to Admissions
                                                     </a>
@@ -163,17 +163,17 @@ export default function AdmissionsContactInfo() {
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-bold uppercase tracking-widest text-black mb-2">Mailing Address</span>
                                                 <p className="text-black leading-relaxed pl-4">
-                                                    Penkka University Admission Services,<br />
+                                                    Cannoga College Admission Services,<br />
                                                     P.O. Box 51000,<br />
-                                                    FI-00150 Helsinki, Finland.
+                                                    FI-00150 Ottawa, Canada.
                                                 </p>
                                             </div>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-bold uppercase tracking-widest text-black mb-2">Street Address (Couriers)</span>
                                                 <p className="text-black leading-relaxed pl-4">
-                                                    Penkka University Admission Services,<br />
+                                                    Cannoga College Admission Services,<br />
                                                     Pohjoisesplanadi 51,<br />
-                                                    FI-00150 Helsinki, Finland.
+                                                    FI-00150 Ottawa, Canada.
                                                 </p>
                                             </div>
                                         </div>
@@ -182,7 +182,7 @@ export default function AdmissionsContactInfo() {
                                     <div className="bg-black rounded-xl p-6 text-white text-center">
                                         <p className="text-xs font-bold uppercase tracking-widest mb-4 text-white/60">Application Note</p>
                                         <p className="text-sm leading-relaxed">
-                                            All formal applications must be submitted through the Penkka University online portal during the official application periods.
+                                            All formal applications must be submitted through the Cannoga College online portal during the official application periods.
                                         </p>
                                     </div>
                                 </div>

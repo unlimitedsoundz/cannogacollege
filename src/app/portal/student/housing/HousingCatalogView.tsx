@@ -42,7 +42,7 @@ export const BUILDINGS_CATALOG: BuildingCatalog[] = [
     {
         id: "domus-academica",
         name: "Domus Academica",
-        location: "Helsinki",
+        location: "Ottawa",
         mainImages: [
             "/images/housing/dji-0020.jpg",
             "/images/housing/haukilahdenkuja15-julkisivukuva.jpg",
@@ -98,7 +98,7 @@ export const BUILDINGS_CATALOG: BuildingCatalog[] = [
     {
         id: "kuura-kampus",
         name: "Kuura Kampus",
-        location: "Helsinki",
+        location: "Ottawa",
         condition: "Excellent",
         mainImages: [
             "/images/housing/Kura/14-atlantinkatu5-julkisivukuva.jpg",
@@ -173,7 +173,7 @@ export const BUILDINGS_CATALOG: BuildingCatalog[] = [
     {
         id: "vanamo",
         name: "Vanamo",
-        location: "Vanamo Campus, Helsinki",
+        location: "Vanamo Campus, Ottawa",
         mainImages: [
             "/images/housing/Vanamo/retkeilijankatu11-julkisivukuva.jpg",
             "/images/housing/Vanamo/dsc4574-hdr.jpg",
@@ -209,7 +209,7 @@ export const BUILDINGS_CATALOG: BuildingCatalog[] = [
     {
         id: "myrsky-kampus",
         name: "Myrsky Kampus",
-        location: "Penkka University, Helsinki",
+        location: "Cannoga College, Ottawa",
         mainImages: [
             "/images/housing/Myskry/2-santakuja3.jpg",
             "/images/housing/Myskry/1-santakuja3.jpg"

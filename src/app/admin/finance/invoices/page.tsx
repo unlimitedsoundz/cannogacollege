@@ -56,13 +56,20 @@ export default function AdminInvoicesPage() {
                 const offer = Array.isArray(app.offer) ? app.offer[0] : app.offer;
                 const program = (Array.isArray(app.program) ? app.program[0] : app.program) as any;
                 const title = (program?.title || '').toUpperCase();
-                let defaultFee = 2100;
-                if (title.includes('CERTIFICATE')) defaultFee = defaultFees['CERTIFICATE'];
-                else if (title.includes('ADVANCED') || title.includes('HIGHER')) defaultFee = defaultFees['ADVANCED_DIPLOMA'];
-                else if (title.includes('DIPLOMA')) defaultFee = defaultFees['DIPLOMA'];
-                else if (title.includes('BACHELOR') || title.includes('BSC')) defaultFee = defaultFees['BSc'];
-                else if (title.includes('MASTER') || title.includes('MSC')) defaultFee = defaultFees['MASTERS'];
-                else if (title.includes('POSTGRADUATE') || title.includes('PG')) defaultFee = defaultFees['PG_DIPLOMA'];
+                
+                const nationality = app.personal_info?.nationality;
+                const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'canada' || nationality.toLowerCase().trim() === 'canadian' || nationality.toLowerCase().trim() === 'domestic') : false;
+
+                let defaultFee = 2500;
+                if (title.includes('CERTIFICATE') || title.includes('DIPLOMA') || title.includes('ADVANCED')) {
+                    defaultFee = isDomestic ? 750 : 2500;
+                } else if (title.includes('BACHELOR') || title.includes('BSC')) {
+                    defaultFee = isDomestic ? 1250 : 3500;
+                } else if (title.includes('MASTER') || title.includes('MSC')) {
+                    defaultFee = isDomestic ? 2000 : 5000;
+                } else if (title.includes('POSTGRADUATE') || title.includes('PG')) {
+                    defaultFee = isDomestic ? 2000 : 5000;
+                }
 
                 return {
                     ...app,
@@ -102,7 +109,7 @@ export default function AdminInvoicesPage() {
         const feeToPush = customFee[appId] !== undefined ? customFee[appId] : currentFee;
         const invoiceType = customInvoiceType[appId] || 'TUITION_DEPOSIT';
 
-        if (!confirm(`Are you sure you want to push a ${invoiceType.replace(/_/g, ' ')} invoice of \u20AC${feeToPush} to this student?`)) return;
+        if (!confirm(`Are you sure you want to push a ${invoiceType.replace(/_/g, ' ')} invoice of $${feeToPush} to this student?`)) return;
 
         try {
             setActionLoading(appId);
@@ -142,7 +149,7 @@ export default function AdminInvoicesPage() {
                             <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Applicant</th>
                             <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Program</th>
                             <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Status</th>
-                            <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Fee (\u20AC)</th>
+                            <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Fee ($)</th>
                             <th className="p-4 font-bold text-neutral-600 text-xs uppercase text-right">Actions</th>
                         </tr>
                     </thead>
@@ -201,7 +208,7 @@ export default function AdminInvoicesPage() {
                                                     <option value="FULL_PROGRAM_TUITION">Full</option>
                                                 </select>
                                                 <div className="flex items-center gap-2">
-                                                    <span className="text-xs font-bold text-neutral-900">\u20AC</span>
+                                                    <span className="text-xs font-bold text-neutral-900">$</span>
                                                     <input
                                                         type="number"
                                                         className="border border-neutral-300 rounded-none px-2 py-1.5 w-full md:w-24 text-sm disabled:opacity-50 font-bold"

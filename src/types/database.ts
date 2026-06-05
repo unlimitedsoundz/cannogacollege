@@ -419,7 +419,7 @@ export type Course = {
   id: string;
   title: string;
   slug: string;
-  degreeLevel: 'BACHELOR' | 'MASTER';
+  degreeLevel: 'CERTIFICATE' | 'DIPLOMA' | 'BACHELOR' | 'MASTER';
   degreeType?: string;
   duration: string;
   credits?: number;

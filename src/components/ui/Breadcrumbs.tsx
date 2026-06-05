@@ -23,7 +23,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 /**
- * Standardized Breadcrumbs component for the Penkka University project.
+ * Standardized Breadcrumbs component for the Cannoga College project.
  * Aliased from @aalto-dx/react-modules.
  */
 export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {

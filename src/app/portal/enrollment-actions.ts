@@ -70,8 +70,10 @@ export async function confirmEnrollment(applicationId: string) {
             return { success: true, studentId: existingStudent.student_id, message: 'Student was already enrolled.' };
         }
 
-        // 3. Generate Student Identity (Format: SKXXXXXXXX)
-        const studentId = `SK${Math.floor(1000000 + Math.random() * 9000000)}`;
+        // 3. Generate Student Identity (Format: CNC + year + 5-digit unique number, e.g. CNC202415329)
+        const admissionYear = new Date().getFullYear();
+        const uniqueNum = String(Math.floor(10000 + Math.random() * 90000)); // always 5 digits
+        const studentId = `CNC${admissionYear}${uniqueNum}`;
         const studentUser = application.user;
 
         if (!studentUser) {
@@ -79,8 +81,8 @@ export async function confirmEnrollment(applicationId: string) {
         }
 
         const firstName = studentUser.first_name || 'Student';
-        const lastName = studentUser.last_name || 'Penkka';
-        let institutionalEmail = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@penkka.fi`.replace(/\s/g, '');
+        const lastName = studentUser.last_name || 'Cannoga';
+        let institutionalEmail = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@cannogacollege.ca`.replace(/\s/g, '');
         let emailCounter = 0;
 
         while (true) {
@@ -93,7 +95,7 @@ export async function confirmEnrollment(applicationId: string) {
             if (!emailConflict) break;
 
             emailCounter++;
-            institutionalEmail = `${firstName.toLowerCase()}.${lastName.toLowerCase()}${emailCounter}@penkka.fi`.replace(/\s/g, '');
+            institutionalEmail = `${firstName.toLowerCase()}.${lastName.toLowerCase()}${emailCounter}@cannogacollege.ca`.replace(/\s/g, '');
         }
 
         // 4. Create Student Record (SIS Handover)

@@ -3,11 +3,7 @@
 import { Link } from "@aalto-dx/react-components"
 import { usePathname } from "next/navigation"
 import { Logo } from "@/components/ui/Logo"
-import { LinkedinLogo as Linkedin, TiktokLogo as TikTok, SnapchatLogo as Snapchat, EnvelopeSimple, MapPin } from "@phosphor-icons/react"
-
-
-import GlobalNewsCards from "./GlobalNewsCards"
-
+import { EnvelopeSimple, MapPin, Phone } from "@phosphor-icons/react"
 
 export function Footer() {
     const pathname = usePathname();
@@ -17,8 +13,7 @@ export function Footer() {
     if (isPortalOrAdmin) return null;
     return (
         <>
-            {!isNewsPage && <GlobalNewsCards />}
-            <footer className="bg-black text-white">
+            <footer className="bg-[#2e1150] text-[#f7f4fc]">
             {/* Main Footer Content */}
             <div className="container mx-auto px-4 pt-16 pb-10">
 
@@ -26,22 +21,7 @@ export function Footer() {
                 <div className="mb-12 pb-10 border-b border-white/10">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                         <div>
-                            <Logo className="h-10 md:h-14 text-white mb-4" />
-                            <p className="text-neutral-400 text-sm max-w-md leading-relaxed">
-                                Penkka University is an independent higher education institution in Helsinki, Finland, offering English-taught Bachelor’s and Master’s degree programmes focused on engineering, technology, business, science, and the arts.
-                            </p>
-
-                        </div>
-                        <div className="flex gap-3">
-                            <a href="https://www.linkedin.com/company/penkka-university" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-white" aria-label="LinkedIn">
-                                <Linkedin size={18} weight="fill" />
-                            </a>
-                            <a href="https://www.tiktok.com/@penkkauniversity" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-white" aria-label="TikTok">
-                                <TikTok size={18} weight="fill" />
-                            </a>
-                            <a href="https://snapchat.com/add/penkkauniversity" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors text-white" aria-label="Snapchat">
-                                <Snapchat size={18} weight="fill" />
-                            </a>
+                            <Logo className="h-14 md:h-20 text-white mb-4" />
                         </div>
                     </div>
                 </div>
@@ -53,10 +33,10 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Study</h3>
                         <ul className="space-y-3">
-                            <li><Link href="/studies" className="text-neutral-400 text-sm hover:text-white transition-colors">All Courses</Link></li>
-                            <li><Link href="/admissions" className="text-neutral-400 text-sm hover:text-white transition-colors">Admissions</Link></li>
-                            <li><Link href="/admissions/tuition" className="text-neutral-400 text-sm hover:text-white transition-colors">Scholarships</Link></li>
-                            <li><Link href="/student-guide/international" className="text-neutral-400 text-sm hover:text-white transition-colors">International Students</Link></li>
+                            <li><Link href="/studies" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">All Courses</Link></li>
+                            <li><Link href="/admissions" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Admissions</Link></li>
+                            <li><Link href="/admissions/tuition" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Scholarships</Link></li>
+                            <li><Link href="/student-guide/international" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">International Students</Link></li>
                         </ul>
                     </div>
 
@@ -64,10 +44,10 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">About</h3>
                         <ul className="space-y-3">
-                            <li><Link href="/about-penkka-university" className="text-neutral-400 text-sm hover:text-white transition-colors">Our Story</Link></li>
-                            <li><Link href="/news" className="text-neutral-400 text-sm hover:text-white transition-colors">News & Events</Link></li>
-                            <li><Link href="/research" className="text-neutral-400 text-sm hover:text-white transition-colors">Research</Link></li>
-                            <li><Link href="/student-life" className="text-neutral-400 text-sm hover:text-white transition-colors">Campus Life</Link></li>
+                            <li><Link href="/about-cannoga-college" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Our Story</Link></li>
+                            <li><Link href="/news" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">News & Events</Link></li>
+                            <li><Link href="/research" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Research</Link></li>
+                            <li><Link href="/student-life" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Campus Life</Link></li>
                         </ul>
                     </div>
 
@@ -75,14 +55,14 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Resources</h3>
                         <ul className="space-y-3">
-                            <li><Link href="/admissions-policy" className="text-neutral-400 text-sm hover:text-white transition-colors">Admissions Policy</Link></li>
-                            <li><Link href="/academic-regulations" className="text-neutral-400 text-sm hover:text-white transition-colors">Academic Regulations</Link></li>
-                            <li><Link href="/student-handbook" className="text-neutral-400 text-sm hover:text-white transition-colors">Student Handbook</Link></li>
-                            <li><Link href="/refund-withdrawal-policy/" className="text-neutral-400 text-sm hover:text-white transition-colors">Refund Policy</Link></li>
-                            <li><Link href="/code-of-conduct" className="text-neutral-400 text-sm hover:text-white transition-colors">Code of Conduct</Link></li>
-                            <li><Link href="/alumni" className="text-neutral-400 text-sm hover:text-white transition-colors">Alumni</Link></li>
-                            <li><Link href="/portal/support" className="text-neutral-400 text-sm hover:text-white transition-colors">IT Support</Link></li>
-                            <li><Link href="/contact" className="text-neutral-400 text-sm hover:text-white transition-colors">Contact Us</Link></li>
+                            <li><Link href="/admissions-policy" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Admissions Policy</Link></li>
+                            <li><Link href="/academic-regulations" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Academic Regulations</Link></li>
+                            <li><Link href="/student-handbook" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Student Handbook</Link></li>
+                            <li><Link href="/refund-withdrawal-policy/" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Refund Policy</Link></li>
+                            <li><Link href="/code-of-conduct" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Code of Conduct</Link></li>
+                            <li><Link href="/alumni" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Alumni</Link></li>
+                            <li><Link href="/portal/support" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">IT Support</Link></li>
+                            <li><Link href="/contact" className="text-purple-200 text-sm hover:text-white transition-colors no-underline">Contact Us</Link></li>
                         </ul>
                     </div>
 
@@ -90,17 +70,21 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Contact</h3>
                         <ul className="space-y-4">
-                            <li className="flex items-start gap-3 text-neutral-400 text-sm">
-                                <MapPin size={16} className="shrink-0 text-neutral-500 mt-0.5" />
-                                <div className="space-y-3">
-                                    <span className="block">Penkka University – Helsinki Campus</span>
-                                    <span className="block">Pohjoisesplanadi 51,</span>
-                                    <span className="block">00150 Helsinki, Uusimaa</span>
+                            <li className="flex items-start gap-3 text-purple-200 text-sm">
+                                <MapPin size={16} className="shrink-0 text-purple-300 mt-0.5" />
+                                <div className="space-y-2">
+                                    <span className="block font-semibold text-white">Cannoga College – Ottawa Campus</span>
+                                    <span className="block text-xs">2368 Midway Ave,</span>
+                                    <span className="block text-xs">Ottawa, ON K2B 5J8</span>
                                 </div>
                             </li>
-                            <li className="flex items-center gap-3 text-neutral-400 text-sm">
-                                <EnvelopeSimple size={16} className="shrink-0 text-neutral-500" />
-                                <a href="mailto:info@penkka.fi" className="hover:text-white transition-colors">info@penkka.fi</a>
+                            <li className="flex items-center gap-3 text-purple-200 text-sm">
+                                <Phone size={16} className="shrink-0 text-purple-300" />
+                                <a href="tel:+16137274723" className="hover:text-white transition-colors no-underline">+1 (613) 727-4723</a>
+                            </li>
+                            <li className="flex items-center gap-3 text-purple-200 text-sm">
+                                <EnvelopeSimple size={16} className="shrink-0 text-purple-300" />
+                                <a href="mailto:info@cannogacollege.ca" className="hover:text-white transition-colors no-underline">info@cannogacollege.ca</a>
                             </li>
                         </ul>
                     </div>
@@ -111,20 +95,20 @@ export function Footer() {
             <div className="border-t border-white/10">
                 <div className="container mx-auto px-4 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-neutral-500 text-xs order-2 md:order-1">
-                            © 2026 Penkka University – Independent higher education institution in Helsinki, Finland. All rights reserved.
+                        <p className="text-purple-300/60 text-xs order-2 md:order-1">
+                            © 2026 Cannoga College. All rights reserved.
                         </p>
                         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 order-1 md:order-2">
-                            <Link href="/site-index" className="text-neutral-500 text-xs hover:text-white transition-colors">Site Index</Link>
-                            <Link href="/privacy" className="text-neutral-500 text-xs hover:text-white transition-colors">Privacy Policy</Link>
-                            <Link href="/terms" className="text-neutral-500 text-xs hover:text-white transition-colors">Terms of Use</Link>
-                            <Link href="/cookies" className="text-neutral-500 text-xs hover:text-white transition-colors">Cookie Policy</Link>
-                            <Link href="/accessibility" className="text-neutral-500 text-xs hover:text-white transition-colors">Accessibility</Link>
+                            <Link href="/site-index" className="text-purple-300/60 text-xs hover:text-white transition-colors no-underline">Site Index</Link>
+                            <Link href="/privacy" className="text-purple-300/60 text-xs hover:text-white transition-colors no-underline">Privacy Policy</Link>
+                            <Link href="/terms" className="text-purple-300/60 text-xs hover:text-white transition-colors no-underline">Terms of Use</Link>
+                            <Link href="/cookies" className="text-purple-300/60 text-xs hover:text-white transition-colors no-underline">Cookie Policy</Link>
+                            <Link href="/accessibility" className="text-purple-300/60 text-xs hover:text-white transition-colors no-underline">Accessibility</Link>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer >
+        </footer>
         </>
     )
 }

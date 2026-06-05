@@ -8,17 +8,17 @@ import { ContentBox } from '@/components/ui/ContentBox';
 import { CTA } from "@aalto-dx/react-modules";
 
 export const metadata = {
-    title: 'Arrival Guide | Penkka University',
-    description: 'Prepare for your journey to Penkka University. Enrolment, visa, housing, and settling in instructions.',
+    title: 'Arrival Guide | Cannoga College',
+    description: 'Prepare for your journey to Cannoga College. Enrolment, visa, housing, and settling in instructions.',
     alternates: {
-        canonical: 'https://penkka.fi/student-guide/arrival/',
+        canonical: 'https://cannogacollege.ca/student-guide/arrival/',
     },
 };
 
 const sections = [
     { id: 'before-you-arrive', title: 'Before You Arrive', content: '' },
     { id: 'arriving', title: 'Arriving in the Country', content: '' },
-    { id: 'starting', title: 'Starting at Penkka', content: '' },
+    { id: 'starting', title: 'Starting at Cannoga', content: '' },
     { id: 'living', title: 'Living & Studying', content: '' },
     { id: 'welcome', title: 'Welcome Message', content: '' },
 ];
@@ -31,7 +31,7 @@ export default function ArrivalGuidePage() {
             {/* Hero Section */}
             <Hero
                 title="Arrival Guide"
-                body="Starting your studies at Penkka University is an exciting step. This guide helps you prepare, settle in, and feel confident."
+                body="Starting your studies at Cannoga College is an exciting step. This guide helps you prepare, settle in, and feel confident."
                 backgroundColor="#dc6ade"
                 tinted
                 lightText={true}
@@ -42,7 +42,7 @@ export default function ArrivalGuidePage() {
                 ]}
                 image={{
                     src: "/images/arrival-hero-v2.jpg",
-                    alt: "Penkka Arrival"
+                    alt: "Cannoga Arrival"
                 }}
             />
 
@@ -59,12 +59,12 @@ export default function ArrivalGuidePage() {
                             />
                             <Card
                                 title="Visa & Permits"
-                                body="International students (outside EU/EEA) should apply for a residence permit early. Ensure your passport is valid."
+                                body="International students should apply for a Canadian study permit as soon as possible after accepting their offer. Ensure your passport is valid."
                                 badge={{ label: "Legal" }}
                             />
                             <Card
                                 title="Accommodation"
-                                body="Secure housing before arrival. Penkka assists with the application process for on-campus options."
+                                body="Secure housing before arrival. Cannoga assists with the application process for on-campus options."
                                 badge={{ label: "Housing" }}
                             />
                             <Card
@@ -104,12 +104,12 @@ export default function ArrivalGuidePage() {
                         />
                     </section>
 
-                    {/* Starting at Penkka */}
+                    {/* Starting at Cannoga */}
                     <section id="starting" className="scroll-mt-32">
                         <ContentBox
                             size="large"
                             icon="graduationCap"
-                            title="Starting at Penkka"
+                            title="Starting at Cannoga"
                             body={
                                 <div className="grid md:grid-cols-2 gap-12 text-left">
                                     <div>
@@ -139,17 +139,17 @@ export default function ArrivalGuidePage() {
                             />
                             <Card
                                 title="Stay Connected"
-                                body="Check your Penkka email and student portal regularly for updates, schedules, and important announcements."
+                                body="Check your Cannoga email and student portal regularly for updates, schedules, and important announcements."
                             />
                         </div>
                         <div className="mt-12">
                         <CTA
                             title="Learn the Language"
-                            body="While English is widely spoken, learning Finnish or Swedish will make your stay more rewarding and improve your career options significantly."
+                            body="While English is the primary language, Ottawa is a bilingual city. Learning some French can enrich your experience and improve career opportunities."
                             cta={{
-                                label: "Visit Kielibuusti",
+                                label: "Explore Language Resources",
                                 linkComponentProps: {
-                                    href: "https://www.kielibuusti.fi",
+                                    href: "#",
                                     target: "_blank",
                                 },
                             }}
@@ -161,7 +161,7 @@ export default function ArrivalGuidePage() {
                     <section id="welcome" className="scroll-mt-32">
                         <CTA
                             title="We Are Glad You Are Here"
-                            body="Arriving in a new place can feel overwhelming, but Penkka University is here to support you from arrival through graduation."
+                            body="Arriving in a new place can feel overwhelming, but Cannoga College is here to support you from arrival through graduation."
                             cta={{
                                 label: "Explore Student Guide",
                                 linkComponentProps: {

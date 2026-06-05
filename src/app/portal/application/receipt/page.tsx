@@ -194,17 +194,17 @@ function ReceiptContent() {
                 <div className="mb-12">
                     <div className="relative w-32 h-8 mb-4">
                         <Image
-                            src="/logo-penkka.png"
-                            alt="Penkka University"
+                            src="/logo-cannoga.png"
+                            alt="Cannoga College"
                             fill
                             style={{ objectFit: 'contain', objectPosition: 'left center' }}
                         />
                     </div>
                     <div className="text-[13px] uppercase tracking-wider mb-1">Official Tuition Receipt</div>
                     <div className="text-[11px] leading-relaxed">
-                        Penkka University – Helsinki Campus<br />
-                        Pohjoisesplanadi 51, 00150 Helsinki, Finland<br />
-                        financial.services@penkka.fi
+                        Cannoga College – Ottawa Campus<br />
+                        2368 Midway Ave, Ottawa, ON K2B 5J8, Canada<br />
+                        financial.services@cannogacollege.ca
                     </div>
                 </div>
 
@@ -242,11 +242,11 @@ function ReceiptContent() {
                                 {isDeposit ? 'Tuition Deposit' : 'Tuition Fees'} - {application.course?.title}<br />
                                 <span className="text-[11px] text-neutral-500">Academic Year {academicYear}</span>
                             </span>
-                            <span>€ {payment.amount.toLocaleString()}</span>
+                            <span>$ {payment.amount.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between pt-4 border-t-2 border-black text-lg">
                             <span>Total Paid</span>
-                            <span>€ {payment?.amount?.toLocaleString() || '0'}</span>
+                            <span>$ {payment?.amount?.toLocaleString() || '0'}</span>
                         </div>
                     </div>
                 </div>
@@ -262,12 +262,12 @@ function ReceiptContent() {
                                 className="mix-blend-multiply"
                             />
                         </div>
-                        <div className="text-sm font-bold">Timo Ottonien</div>
-                        <div className="text-[10px] text-neutral-500 uppercase tracking-widest">University Registrar</div>
+                        <div className="text-sm font-bold">Alex Moulton</div>
+                        <div className="text-[10px] text-neutral-500 uppercase tracking-widest">College Registrar</div>
                     </div>
                     
                     <p className="text-[10px] text-neutral-500 leading-relaxed max-w-prose mt-8">
-                        This is an official document of Penkka University. Verified through the Penkka SIS Gateway.
+                        This is an official document of Cannoga College. Verified through the Cannoga SIS Gateway.
                     </p>
                 </div>
 

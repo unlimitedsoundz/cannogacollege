@@ -15,15 +15,15 @@ const playfair = { variable: "font-playfair-var" };
 
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://penkka.fi'),
+    metadataBase: new URL('https://cannogacollege.ca'),
     title: {
-        default: "Penkka University Helsinki | English-Taught Degrees in Finland",
-        template: "%s | Penkka University"
+        default: "Cannoga College – Ottawa, Canada",
+        template: "%s | Cannoga College"
     },
-    description: "Penkka University Helsinki is an independent higher education institution in Finland offering English-taught degree programs for international students.",
-    applicationName: "Penkka University",
+    description: "Cannoga College is a dynamic and career-focused institution located in Ottawa, Canada's capital city. The college is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
+    applicationName: "Cannoga College",
     appleWebApp: {
-        title: "Penkka University",
+        title: "Cannoga College",
         statusBarStyle: "default",
         capable: true,
     },
@@ -39,24 +39,24 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://penkka.fi',
-        siteName: 'Penkka University',
-        title: 'Penkka University Helsinki | English-Taught Degrees in Finland',
-        description: 'Penkka University Helsinki is an independent higher education institution in Finland offering English-taught degree programs for international students.',
+        url: 'https://cannogacollege.ca',
+        siteName: 'Cannoga College',
+        title: 'Cannoga College – Ottawa, Canada',
+        description: "Cannoga College is a dynamic and career-focused institution located in Ottawa, Canada's capital city. The college is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
         images: [
             {
-                url: '/logo-penkka.png',
+                url: '/logo-cannoga.png',
                 width: 800,
                 height: 600,
-                alt: 'Penkka University Logo',
+                alt: 'Cannoga College Logo',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Penkka University Helsinki | English-Taught Degrees in Finland',
-        description: 'Penkka University Helsinki is an independent higher education institution in Finland offering English-taught degree programs for international students.',
-        images: ['/logo-penkka.png'],
+        title: 'Cannoga College – Ottawa, Canada',
+        description: "Cannoga College is a dynamic and career-focused institution located in Ottawa, Canada's capital city. The college is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
+        images: ['/logo-cannoga.png'],
     }
 };
 
@@ -71,10 +71,11 @@ export default function RootLayout({
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:wght@400..900&family=Rubik:wght@300..900&display=swap" rel="stylesheet" />
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/metropolis.min.css" />
                 <style dangerouslySetInnerHTML={{ __html: `
                     :root {
-                        --font-inter: 'Inter', sans-serif;
-                        --font-playfair: 'Playfair Display', serif;
+                        --font-inter: 'Metropolis', sans-serif;
+                        --font-playfair: 'Metropolis', sans-serif;
                     }
                 ` }} />
                 <script
@@ -83,31 +84,31 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "UniversityOrUniversity",
-                            "name": "Penkka University",
-                            "description": "Penkka University is an independent higher education institution in Helsinki, Finland offering English-taught degree programs for international students.",
-                            "alternateName": "Penkka University Helsinki",
-                            "url": "https://www.penkka.fi",
-                            "logo": "https://www.penkka.fi/logo-penkka.png",
+                            "name": "Cannoga College",
+                            "description": "Cannoga College is a dynamic and career-focused institution located in Ottawa, Canada’s capital city.",
+                            "alternateName": "Cannoga College Ottawa",
+                            "url": "https://www.cannogacollege.ca",
+                            "logo": "https://www.cannogacollege.ca/logo-cannoga.png",
                             "address": {
                                 "@type": "PostalAddress",
-                                "streetAddress": "Penkka University – Helsinki Campus, Pohjoisesplanadi 51",
-                                "addressLocality": "Helsinki",
-                                "postalCode": "00150",
-                                "addressRegion": "Uusimaa",
-                                "addressCountry": "FI"
+                                "streetAddress": "2368 Midway Ave",
+                                "addressLocality": "Ottawa",
+                                "postalCode": "K2B 5J8",
+                                "addressRegion": "Ontario",
+                                "addressCountry": "CA"
                             },
                             "location": {
                                 "@type": "Place",
-                                "name": "Helsinki, Finland"
+                                "name": "Ottawa, Canada"
                             },
                             "sameAs": [
-                                "https://www.linkedin.com/company/penkka-university"
+                                "https://www.linkedin.com/company/cannoga-university"
                             ],
                             "contactPoint": {
                                 "@type": "ContactPoint",
-                                "telephone": "+358-20-4721-739",
+                                "telephone": "+1-613-727-4723",
                                 "contactType": "admissions",
-                                "email": "admissions@penkka.fi"
+                                "email": "admissions@cannogacollege.ca"
                             }
                         })
                     }}
@@ -117,7 +118,7 @@ export default function RootLayout({
             <body className="font-sans antialiased">
                 <AuthProvider>
                     <Header />
-                    <main>
+                    <main className="pt-[112px] md:pt-[148px]">
                         {children}
                     </main>
                     <Footer />

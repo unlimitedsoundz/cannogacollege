@@ -1,17 +1,14 @@
 import * as React from "react";
 import Image from "next/image";
 import { Button, Link } from "@aalto-dx/react-components";
-import { ArrowRight, CaretRight as ChevronRight, CaretLeft as ChevronLeft } from "@phosphor-icons/react/dist/ssr";
-import { Hero } from "@/components/layout/Hero";
-import { createStaticClient } from "@/lib/supabase/static";
-import { formatToDDMMYYYY } from '@/utils/date';
+import { ArrowRight, CaretRight as ChevronRight, Calendar, MapPin, Notebook, GraduationCap } from "@phosphor-icons/react/dist/ssr";
+import { HomeCarousel } from "@/components/home/HomeCarousel";
+import { HomeNewsEventsGrid } from "@/components/home/HomeNewsEventsGrid";
 import { Metadata } from "next";
-import DynamicNewsSection from "@/components/news/DynamicNewsSection";
-import { Highlight } from "@/components/ui/Highlight";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://penkka.fi/',
+    canonical: 'https://cannogacollege.ca/',
   },
 };
 
@@ -24,183 +21,167 @@ export default async function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "Penkka University",
-            "alternateName": "Penkka University Helsinki",
-            "url": "https://penkka.fi"
+            "name": "Cannoga College",
+            "alternateName": "Cannoga College Ottawa",
+            "url": "https://cannogacollege.ca"
           })
         }}
       />
 
-      {/* HERO SECTION */}
-      <Hero
-        title="Welcome to Penkka"
-        body="Penkka University is an independent higher education institution based in Helsinki, Finland, offering internationally focused Bachelor’s and Master’s degree programmes taught in English."
-        backgroundColor="#392d56"
-        tinted
-        lightText={true}
-        image={{
-          src: "/images/penkka hero.png",
-          alt: "Student studying at Penkka University campus in Finland"
-        }}
-        imagePosition="object-center"
-      >
-        <div className="pt-4">
-          <Button
-            href="/admissions"
-            type="link-white"
-            label="Start your application"
-            size="none"
-            className="text-aalto-3"
-            icon={<ArrowRight size={20} weight="bold" />}
-          />
-        </div>
-      </Hero>
+      {/* 1. HERO CAROUSEL */}
+      <HomeCarousel />
 
-      {/* 2. SCHOOLS GRID */}
-      <section className="py-24 container mx-auto px-4">
-        <h2 className="text-aalto-5 font-bold mb-aalto-p6 text-black tracking-tight">Discover our campuses</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[
-            { name: "Arts & Design", href: "/schools/arts", img: "/images/school-arts.png", desc: "Creative excellence and professional practice." },
-            { name: "Business", href: "/schools/business", img: "/images/school-business.png", desc: "Innovative leadership and entrepreneurship." },
-            { name: "Technology", href: "/schools/technology", img: "/images/school-technology.png", desc: "Advanced engineering and smart-city solutions." },
-            { name: "Science", href: "/schools/science", img: "/images/school-science.png", desc: "Applied research and transformative innovation." },
-          ].map((school) => (
-            <Link 
-              key={school.name} 
-              linkComponentProps={{ href: school.href }}
-              className="group flex bg-card hover:bg-neutral-100 transition-all h-[200px] overflow-hidden border border-neutral-100"
-            >
-              <div className="flex-1 p-8 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold group-hover:underline leading-tight">School of {school.name}</h3>
-              </div>
-              <div className="w-1/3 relative">
-                <Image src={school.img} alt={school.name} fill className="object-cover object-top" sizes="33vw" />
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* 3. NEWS SECTION */}
-      <section className="pb-24 container mx-auto px-4">
-        <div className="flex justify-between items-end mb-16">
-          <div>
-            <h2 className="text-aalto-5 font-bold mb-4 tracking-tight">Limelight</h2>
-            <p className="text-aalto-3 font-medium text-neutral-600">Latest news and stories from Penkka University.</p>
-          </div>
-          <Button
-            href="/news"
-            type="link"
-            label="All news"
-            size="none"
-            className="hidden md:flex text-xs uppercase tracking-widest"
-            icon={<ArrowRight size={20} weight="bold" />}
-          />
-        </div>
-
-        <DynamicNewsSection limit={3} contentType="news" />
-      </section>
-
-      {/* 3.5. HIGHLIGHT QUOTE */}
-      <section className="pb-24 container mx-auto px-4">
-        <Highlight
-          body="My decision to move to Finland and study at Penkka has been one of the best decisions of my life. The community here is truly international and supportive."
-          source="Elena, Student Ambassador"
-          alignment="left"
-        />
-        <div className="flex justify-start">
-          <Button
-            href="/student-guide/chat-with-penkka-students"
-            type="primary"
-            label="Chat with our students"
-            icon={<ArrowRight size={20} weight="bold" />}
-          />
-        </div>
-      </section>
-
-      {/* 3.6. EVENTS SECTION */}
-      <section className="pb-24 container mx-auto px-4">
-        <div className="flex justify-between items-end mb-16">
-          <div>
-            <h2 className="text-aalto-5 font-bold mb-4 tracking-tight">Upcoming Events</h2>
-            <p className="text-aalto-3 font-medium text-neutral-600">Join our webinars and campus tours.</p>
-          </div>
-          <Button
-            href="/news"
-            type="link"
-            label="All events"
-            size="none"
-            className="hidden md:flex text-xs uppercase tracking-widest"
-            icon={<ArrowRight size={20} weight="bold" />}
-          />
-        </div>
-
-        <DynamicNewsSection limit={3} contentType="event" />
-      </section>
-
-      {/* 4. CAMPUS SECTION */}
-      <section className="py-24 bg-card">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-20 items-center">
-          <div className="w-full lg:w-1/2">
-            <div className="relative aspect-square overflow-hidden border border-neutral-200">
-              <Image
-                src="/images/campus-welcome-v2.png"
-                alt="Penkka campus"
-                fill
-                className="object-cover object-top"
-              />
-            </div>
-          </div>
-          <div className="lg:w-1/2 space-y-8">
-            <h2 className="text-aalto-6 font-bold tracking-tight text-black">Welcome to our campus</h2>
-            <p className="text-aalto-3 text-black leading-aalto-3 font-medium">
-              Are you hosting a group or organizing a visit? Our campus in Helsinki is a vibrant hub of learning and innovation.
-            </p>
-            <p className="text-aalto-3 text-black font-medium leading-relaxed">
-              We welcome prospective students to learn more about studying in Finland through guided visits and consultations.
-            </p>
-            <Button
-              href="/contact"
-              type="primary"
-              label="Book a visit"
-              icon={<ArrowRight size={20} weight="bold" />}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 5. CTA BAR */}
-      <section className="bg-black text-white py-20">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-          <div className="max-w-2xl">
-            <h2 className="text-aalto-6 font-bold tracking-tight">
-              Study at Penkka University
-            </h2>
-            <p className="text-neutral-400 text-aalto-2 mt-4 font-medium max-w-xl">
-              Join a community of innovators in the heart of Helsinki. Offering English-taught degree programmes across four specialized schools.
-            </p>
+      {/* 2. EXPLORE PROGRAMS & COURSES */}
+      <section className="py-20 bg-[#f7f4fc]">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-black text-[#2e1150] uppercase tracking-tight">Explore Our Programs and Courses</h2>
+            <p className="text-[#5c2d91] font-semibold mt-2">Find the right academic path tailored to your goals at our Ottawa Campus.</p>
           </div>
 
-          <div className="flex flex-col gap-6 w-full md:w-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { label: "Study at Penkka", href: "/studies" },
-              { label: "Open positions", href: "/careers" },
-              { label: "Contact us", href: "/contact" }
-            ].map((item) => (
-              <Link 
-                key={item.label} 
-                linkComponentProps={{ href: item.href }}
-                className="flex justify-between items-center gap-12 group border-b border-neutral-800 pb-4"
+              { name: "Programs A-Z", desc: "Browse all Bachelor's and Master's degrees", href: "/studies" },
+              { name: "Credential Types", desc: "Explore academic certs and degrees", href: "/admissions" },
+              { name: "Areas of Interest", desc: "Find courses based on your passions", href: "/schools" },
+              { name: "Schools & Institutes", desc: "Discover our four specialized faculties", href: "/schools" },
+              { name: "Ottawa Campus Info", desc: "Explore facilities and student hubs", href: "/contact" },
+              { name: "Courses A-Z", desc: "Detailed schedule and syllabus search", href: "/studies" },
+            ].map((card) => (
+              <Link
+                key={card.name}
+                linkComponentProps={{ href: card.href }}
+                className="group p-8 bg-white border border-neutral-100 flex flex-col justify-between hover:border-[#5c2d91] hover:shadow-lg transition-all duration-300 no-underline"
               >
-                <span className="font-bold text-xl group-hover:underline">{item.label}</span>
-                <ArrowRight size={24} weight="bold" className="transform group-hover:translate-x-2 transition-transform" />
+                <div>
+                  <h3 className="text-xl font-bold text-[#2e1150] group-hover:text-[#5c2d91] transition-colors">{card.name}</h3>
+                  <p className="text-neutral-500 text-sm mt-2">{card.desc}</p>
+                </div>
+                <div className="mt-6 flex items-center gap-1 text-[#5c2d91] font-bold text-xs uppercase tracking-wider">
+                  <span>Explore</span>
+                  <ChevronRight size={14} weight="bold" className="transform group-hover:translate-x-1 transition-transform" />
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
+
+      {/* 3. NEWS & EVENTS GRID (ALQONQUIN STYLE, NO IMAGES) */}
+      <section className="py-20 container mx-auto px-4">
+        <HomeNewsEventsGrid />
+      </section>
+
+
+      {/* 5. STUDENT RESOURCE LINKS */}
+      <section className="py-20 bg-neutral-50">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 border-b border-neutral-200 pb-4">
+            <h2 className="text-2xl font-black text-[#2e1150] uppercase tracking-tight">Student Resource Hub</h2>
+            <p className="text-neutral-500 text-sm">Quick access to campus programs, finance help, and student associations.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { title: "Explore campus and book a tour", href: "/contact", icon: MapPin },
+              { title: "Student Support Services", href: "/student-guide#support", icon: Notebook },
+              { title: "CU Career Opportunities", href: "/careers", icon: GraduationCap },
+              { title: "Financial Aid & Student Awards", href: "/admissions/tuition", icon: Calendar },
+              { title: "Admissions Office Details", href: "/admissions", icon: GraduationCap },
+              { title: "Students' Association Portal", href: "/student-guide", icon: Notebook },
+            ].map((link, idx) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={idx}
+                  linkComponentProps={{ href: link.href }}
+                  className="group flex items-start gap-4 p-4 hover:bg-white border border-transparent hover:border-neutral-200 transition-all no-underline"
+                >
+                  <div className="p-3 bg-[#f7f4fc] text-[#5c2d91] group-hover:bg-[#5c2d91] group-hover:text-white transition-colors">
+                    <Icon size={20} weight="bold" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#2e1150] group-hover:text-[#5c2d91] group-hover:underline transition-colors mt-1">
+                      {link.title}
+                    </h4>
+                    <p className="text-xs text-neutral-400 mt-1">Navigate to page</p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. GET CONNECTED SOCIAL FEED */}
+      <section className="py-20 container mx-auto px-4">
+        <div className="mb-12 border-b border-neutral-100 pb-4">
+          <h2 className="text-2xl font-black text-[#2e1150] uppercase tracking-tight">Get Connected</h2>
+          <p className="text-neutral-500 text-sm">Follow the life and vibe of Cannoga College in Ottawa.</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              type: "CU Blog",
+              title: "My Student Journey to Ottawa",
+              desc: "Read Elena's story about housing, winter sports, and adjusting to Canadian college life.",
+              img: "/images/school-arts.png",
+              href: "https://ourblogs.cannogacollege.ca/"
+            },
+            {
+              type: "Instagram",
+              title: "@CannogaOttawa Vibe",
+              desc: "Snapshots of our dynamic creative design gallery opening at the Ottawa campus exhibition hall.",
+              img: "/images/school-business.png",
+              href: "/student-life"
+            },
+            {
+              type: "X / Twitter",
+              title: "Campus Updates",
+              desc: "Announcement: IT Hackathon starts this Friday! Register your team at our Technology department.",
+              img: "/images/school-technology.png",
+              href: "/news"
+            },
+            {
+              type: "YouTube",
+              title: "Ottawa Campus Tour",
+              desc: "Watch our guided video tour highlighting the labs, digital library, and recreation areas.",
+              img: "/images/campus-welcome-v2.png",
+              href: "/about-cannoga-college"
+            }
+          ].map((feed, idx) => (
+            <Link
+              key={idx}
+              linkComponentProps={{ href: feed.href }}
+              className="group flex flex-col bg-white border border-neutral-100 overflow-hidden hover:border-[#5c2d91] transition-all no-underline"
+            >
+              <div className="relative aspect-video w-full">
+                <Image
+                  src={feed.img}
+                  alt={feed.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                />
+                <span className="absolute top-2 left-2 bg-[#5c2d91] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 z-10">
+                  {feed.type}
+                </span>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <h4 className="font-bold text-[#2e1150] group-hover:text-[#5c2d91] transition-colors">{feed.title}</h4>
+                  <p className="text-neutral-500 text-xs mt-2 leading-relaxed">{feed.desc}</p>
+                </div>
+                <div className="mt-4 flex items-center gap-1 text-xs text-[#5c2d91] font-bold uppercase tracking-wider">
+                  <span>View Feed</span>
+                  <ChevronRight size={12} weight="bold" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
-

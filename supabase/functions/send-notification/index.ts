@@ -216,10 +216,10 @@ serve(async (req) => {
                     </div>
                     <div style="margin: 20px 0;">
                         <p style="margin: 0 0 5px 0; font-weight: bold; text-decoration: underline;">Financial Summary (1st Year):</p>
-                        <p style="margin: 0 0 5px 0;">Annual Tuition Fee: €${applicationData?.course_degree_level === 'MASTER' ? '6,000' : (applicationData?.course_title?.toLowerCase().includes('science') ? '9,500' : '6,000')} EUR</p>
-                        <p style="margin: 0 0 5px 0;">Early Bird Waiver (25%): -€${applicationData?.course_degree_level === 'MASTER' ? '1,500' : (applicationData?.course_title?.toLowerCase().includes('science') ? '2,375' : '1,500')} EUR</p>
-                        <p style="margin: 0 0 5px 0;">Net First Year Fee: €${applicationData?.course_degree_level === 'MASTER' ? '4,500' : (applicationData?.course_title?.toLowerCase().includes('science') ? '7,125' : '4,500')} EUR</p>
-                        <p style="margin: 0; font-weight: bold;">Tuition Deposit (50% to Secure Place): €${applicationData?.course_degree_level === 'MASTER' ? '3,000' : (applicationData?.course_title?.toLowerCase().includes('science') ? '4,750' : '3,000')} EUR</p>
+                        <p style="margin: 0 0 5px 0;">Annual Tuition Fee: €${applicationData?.course_title?.toLowerCase().includes('science') ? '12,000' : '8,000'} EUR</p>
+                        <p style="margin: 0 0 5px 0;">Early Bird Waiver (25%): -€${applicationData?.course_title?.toLowerCase().includes('science') ? '3,000' : '2,000'} EUR</p>
+                        <p style="margin: 0 0 5px 0;">Net First Year Fee: €${applicationData?.course_title?.toLowerCase().includes('science') ? '9,000' : '6,000'} EUR</p>
+                        <p style="margin: 0; font-weight: bold;">Tuition Deposit (50% to Secure Place): €${applicationData?.course_title?.toLowerCase().includes('science') ? '6,000' : '4,000'} EUR</p>
                     </div>
                     <div style="margin: 20px 0;">
                         <p><strong>What Does a Conditional Offer Mean?</strong></p>
@@ -554,6 +554,10 @@ serve(async (req) => {
             </html>
         `;
 
+        let studentSuccess = true;
+        let adminSuccess = true;
+        const errors = [];
+
         // Send Student Email if applicable
         if (studentSubject && userEmail) {
             console.log(`[send-notification] Sending student email to: ${userEmail} (Subject: ${studentSubject})`);
@@ -570,6 +574,8 @@ serve(async (req) => {
             });
             if (error) {
                 console.error(`[send-notification] Resend Student Error:`, error);
+                studentSuccess = false;
+                errors.push({ type: 'student', error });
             } else {
                 console.log(`[send-notification] Student email sent successfully. ID: ${data?.id}`);
             }
@@ -588,9 +594,18 @@ serve(async (req) => {
             });
             if (error) {
                 console.error(`[send-notification] Resend Admin Error:`, error);
+                adminSuccess = false;
+                errors.push({ type: 'admin', error });
             } else {
                 console.log(`[send-notification] Admin email sent successfully. ID: ${data?.id}`);
             }
+        }
+
+        if (!studentSuccess || !adminSuccess) {
+            return new Response(JSON.stringify({ success: false, errors }), {
+                status: 500,
+                headers: { ...corsHeaders, "Content-Type": "application/json" },
+            });
         }
 
         return new Response(JSON.stringify({ success: true }), {

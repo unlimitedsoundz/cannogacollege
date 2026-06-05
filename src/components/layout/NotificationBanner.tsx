@@ -12,7 +12,7 @@ export function NotificationBanner() {
                 <div className="flex items-center gap-2">
                     <Bell size={20} weight="fill" className="text-white/80 animate-pulse" />
                     <span className="text-[14px] md:text-[15px] font-bold tracking-wide uppercase">
-                        Admissions Alert: Applications close on the 16th of April 2026
+                        Admissions: September intake apply Oct–Feb · January intake apply Jun–Sep · Apply early for best results
                     </span>
                 </div>
                 

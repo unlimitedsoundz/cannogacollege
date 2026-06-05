@@ -36,10 +36,10 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return {
-        title: `${course.title} — ${course.degreeType} | Penkka University`,
-        description: course.description?.replace(/Penkka C\x6Fllege|SYKLI|College/gi, 'Penkka University').substring(0, 160) || `Study ${course.title} (${course.degreeType}, ${course.ects} ECTS) at Penkka University.`,
+        title: `${course.title} — ${course.degreeType} | Cannoga College`,
+        description: course.description?.replace(/Cannoga C\x6Fllege|SYKLI|College/gi, 'Cannoga College').substring(0, 160) || `Study ${course.title} (${course.degreeType}, ${course.ects} credits) at Cannoga College.`,
         alternates: {
-            canonical: `https://penkka.fi/studies/${slug}/`,
+            canonical: `https://cannogacollege.ca/studies/${slug}/`,
         },
     };
 }
@@ -100,11 +100,11 @@ export default async function CourseDetailPage({ params }: Props) {
         '@context': 'https://schema.org',
         '@type': 'Course',
         name: course.title,
-        description: course.description?.replace(/Penkka C\x6Fllege/gi, 'Penkka University'),
+        description: course.description?.replace(/Cannoga C\x6Fllege/gi, 'Cannoga College'),
         provider: {
             '@type': 'EducationalOrganization',
-            name: 'Penkka University',
-            sameAs: 'https://penkka.fi'
+            name: 'Cannoga College',
+            sameAs: 'https://cannogacollege.ca'
         },
         educationalCredentialAwarded: course.degreeType,
         hasCourseInstance: {
@@ -145,7 +145,7 @@ export default async function CourseDetailPage({ params }: Props) {
                         </div>
                         <div className="flex flex-col gap-1">
                             <p className={`text-xs uppercase tracking-[0.2em] font-bold ${isLight ? 'text-black/50' : 'text-white'}`}>Credits</p>
-                            <p className="text-lg font-bold">{c.credits || c.subjects?.reduce((acc: number, s: any) => acc + (s.creditUnits || 0), 0) || 0} ECTS</p>
+                            <p className="text-lg font-bold">{c.credits || c.subjects?.reduce((acc: number, s: any) => acc + (s.creditUnits || 0), 0) || 0} Credits</p>
                         </div>
                     </div>
                 </div>
@@ -154,12 +154,12 @@ export default async function CourseDetailPage({ params }: Props) {
 
             <div className="border-b border-neutral-100 bg-white">
                 <div className="container mx-auto px-4 py-3">
-                    <Breadcrumbs 
+                    <Breadcrumbs
                         items={[
                             { icon: 'home', linkComponentProps: { href: '/' } },
                             { label: 'Studies', linkComponentProps: { href: '/studies' } },
                             { label: c.title }
-                        ]} 
+                        ]}
                     />
                 </div>
             </div>
@@ -183,16 +183,16 @@ export default async function CourseDetailPage({ params }: Props) {
                         <div className="bg-white p-8 lg:sticky lg:top-24 border border-black shadow-none">
                             {/* Default Sidebar Content */}
                             <h3 className="text-xl font-bold mb-8 uppercase tracking-widest">Entry Requirements</h3>
-                             <div className="space-y-6 text-base text-black mb-10">
-                                 <div className="flex gap-4 items-center">
-                                     <ArrowRight size={20} className="shrink-0 align-middle" />
-                                     <p className="leading-relaxed">{c.entryRequirements}</p>
-                                 </div>
-                                 <div className="flex gap-4 items-center">
-                                     <ArrowRight size={20} className="shrink-0 align-middle" />
-                                     <p className="leading-relaxed">Minimum Grade: <span className="font-bold underline">{c.minimumGrade || 'N/A'}</span></p>
-                                 </div>
-                             </div>
+                            <div className="space-y-6 text-base text-black mb-10">
+                                <div className="flex gap-4 items-center">
+                                    <ArrowRight size={20} className="shrink-0 align-middle" />
+                                    <p className="leading-relaxed">{c.entryRequirements}</p>
+                                </div>
+                                <div className="flex gap-4 items-center">
+                                    <ArrowRight size={20} className="shrink-0 align-middle" />
+                                    <p className="leading-relaxed">Minimum Grade: <span className="font-bold underline">{c.minimumGrade || 'N/A'}</span></p>
+                                </div>
+                            </div>
 
                             <Link
                                 href={`/portal/apply?program=${course.slug}`}
@@ -201,7 +201,7 @@ export default async function CourseDetailPage({ params }: Props) {
                                 Apply Now
                             </Link>
                         </div>
-                     )}
+                    )}
 
                 </div>
 
@@ -213,10 +213,10 @@ export default async function CourseDetailPage({ params }: Props) {
                             {c.sections.map((section: any) => (
                                 <section key={section.id} id={section.id} className="scroll-mt-32">
                                     <h2 className="text-3xl font-bold mb-8 text-black pb-10 border-b-2 border-black uppercase tracking-widest">{section.title}</h2>
-                                     <div
-                                         className="prose prose-lg text-black max-w-none prose-headings:font-bold prose-a:text-black hover:prose-a:opacity-70 transition-opacity prose-arrows"
-                                         dangerouslySetInnerHTML={{ __html: section.content.replace(/Penkka C\x6Fllege|SYKLI|College/g, 'Penkka University') }}
-                                     />
+                                    <div
+                                        className="prose prose-lg text-black max-w-none prose-headings:font-bold prose-a:text-black hover:prose-a:opacity-70 transition-opacity prose-arrows"
+                                        dangerouslySetInnerHTML={{ __html: section.content.replace(/Cannoga C\x6Fllege|SYKLI|College/g, 'Cannoga College') }}
+                                    />
                                 </section>
                             ))}
                         </div>
@@ -225,9 +225,9 @@ export default async function CourseDetailPage({ params }: Props) {
                         <>
                             <section>
                                 <h2 className="text-3xl font-bold mb-8 text-black pb-10 border-b-2 border-black uppercase tracking-widest">Program Overview</h2>
-                                 <div className="prose prose-lg text-black max-w-none leading-relaxed prose-arrows">
-                                     <p>{c.description?.replace(/Penkka C\x6Fllege|SYKLI|College/g, 'Penkka University')}</p>
-                                 </div>
+                                <div className="prose prose-lg text-black max-w-none leading-relaxed prose-arrows">
+                                    <p>{c.description?.replace(/Cannoga C\x6Fllege|SYKLI|College/g, 'Cannoga College')}</p>
+                                </div>
                             </section>
 
                             <section>
@@ -239,7 +239,7 @@ export default async function CourseDetailPage({ params }: Props) {
                                                 {c.subjects?.[0]?.code && <th className="p-5 border-r border-white/20">Code</th>}
                                                 {c.subjects?.[0]?.area && <th className="p-5 border-r border-white/20">Area</th>}
                                                 <th className="p-5 border-r border-white/20">Subject Name</th>
-                                                <th className="p-5 border-r border-white/20">ECTS</th>
+                                                <th className="p-5 border-r border-white/20">Credits</th>
                                                 {c.subjects?.[0]?.eligibility && <th className="p-5">Eligibility</th>}
                                             </tr>
                                         </thead>
@@ -268,10 +268,10 @@ export default async function CourseDetailPage({ params }: Props) {
 
                             <section>
                                 <h2 className="text-3xl font-bold mb-8 text-black pb-10 border-b-2 border-black uppercase tracking-widest">Career Prospects</h2>
-                                 <div className="bg-white p-10 border-l-4 border-black border-y border-r border-black/10">
-                                     <p className="text-black font-bold uppercase tracking-widest mb-4">Potential Roles:</p>
-                                     <p className="text-black text-lg leading-relaxed">{c.careerPaths?.replace(/Penkka C\x6Fllege|SYKLI|College/g, 'Penkka University')}</p>
-                                 </div>
+                                <div className="bg-white p-10 border-l-4 border-black border-y border-r border-black/10">
+                                    <p className="text-black font-bold uppercase tracking-widest mb-4">Potential Roles:</p>
+                                    <p className="text-black text-lg leading-relaxed">{c.careerPaths?.replace(/Cannoga C\x6Fllege|SYKLI|College/g, 'Cannoga College')}</p>
+                                </div>
                             </section>
                         </>
                     )}

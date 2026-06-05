@@ -7,10 +7,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata = {
-    title: 'Exchange Student Guide | Penkka University',
-    description: 'Detailed information for exchange students planning to study at Penkka University.',
+    title: 'Exchange Student Guide | Cannoga College',
+    description: 'Detailed information for exchange students planning to study at Cannoga College.',
     alternates: {
-        canonical: 'https://penkka.fi/student-guide/exchange/',
+        canonical: 'https://cannogacollege.ca/student-guide/exchange/',
     },
 };
 
@@ -31,7 +31,7 @@ export default function ExchangeStudentsPage() {
             {/* Hero Section */}
             <Hero
                 title="Exchange Students Guide"
-                body="Everything you need to know for your exchange semester or year at Penkka University. We look forward to welcoming you to our vibrant international community!"
+                body="Everything you need to know for your exchange semester or year at Cannoga College. We look forward to welcoming you to our vibrant international community!"
                 backgroundColor="#dc6ade"
                 tinted
                 lightText={true}
@@ -53,11 +53,11 @@ export default function ExchangeStudentsPage() {
                         <ContentBox
                             size="large"
                             icon="info"
-                            title="Welcome to Penkka University!"
+                            title="Welcome to Cannoga College!"
                             body={
                                 <div className="space-y-8 text-left">
                                     <p className="text-aalto-3 text-black font-medium leading-relaxed">
-                                        Completing an exchange at Penkka University is a unique opportunity to experience Finnish education, culture, and student life.
+                                        Completing an exchange at Cannoga College is a unique opportunity to experience Canadian education, culture, and student life.
                                     </p>
                                     <div className="grid md:grid-cols-2 gap-8">
                                         <div>
@@ -113,9 +113,9 @@ export default function ExchangeStudentsPage() {
                                 title="Learning Agreement"
                                 body={
                                     <ul className="space-y-3 text-sm font-bold text-black">
-                                        <li>• Signed by home university & Penkka before arrival.</li>
+                                        <li>• Signed by home university & Cannoga before arrival.</li>
                                         <li>• Updateable during the first 2 weeks.</li>
-                                        <li>• Standard workload: 30 ECTS per semester.</li>
+                                        <li>• Standard workload: 30 credits per semester.</li>
                                     </ul>
                                 }
                             />
@@ -153,7 +153,7 @@ export default function ExchangeStudentsPage() {
                                     <div className="grid sm:grid-cols-2 gap-8">
                                         <div>
                                             <h4 className="font-bold text-black mb-2">Travel to Campus</h4>
-                                            <p className="text-xs text-black font-bold"> commuter train or shuttle from Helsinki-Vantaa (HEL).</p>
+                                            <p className="text-xs text-black font-bold"> commuter train or shuttle from Ottawa International (HEL).</p>
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-black mb-2">When to Arrive?</h4>
@@ -206,7 +206,7 @@ export default function ExchangeStudentsPage() {
                                             </li>
                                         ))}
                                     </ul>
-                                    <p className="text-white text-sm italic">Questions? Contact exchange@penkka.fi</p>
+                                    <p className="text-white text-sm italic">Questions? Contact exchange@cannogacollege.ca</p>
                                 </div>
                             }
                         />

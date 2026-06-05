@@ -38,18 +38,25 @@ export default function GuideSidebarLayout({ sections, children }: Props) {
   return (
     <div className="relative">
       {/* Sidebar */}
-      <aside className={`fixed top-[80px] left-0 w-80 bg-black border-r border-white/10 h-[calc(100vh-80px)] transition-all duration-300 ease-aalto-in-out z-40 ${tocOpen ? 'translate-x-0' : '-translate-x-full'} ${tocOpen ? 'lg:block' : 'lg:hidden'}`}>
+      <aside
+        className={`fixed left-0 w-80 border-r border-white/10 overflow-y-auto transition-all duration-300 ease-aalto-in-out z-40 ${tocOpen ? 'translate-x-0' : '-translate-x-full'} ${tocOpen ? 'lg:block' : 'lg:hidden'}`}
+        style={{ top: '144px', height: 'calc(100vh - 144px)', backgroundColor: '#5c2d91' }}
+      >
         <SideNavigation sections={navSections} />
       </aside>
 
       {/* Toggle Button */}
-      <div className={`fixed top-[80px] transition-all duration-300 ease-aalto-in-out z-50 ${tocOpen ? 'left-80' : 'left-0'}`}>
+      <div
+        className={`fixed transition-all duration-300 ease-aalto-in-out z-50 ${tocOpen ? 'left-80' : 'left-0'}`}
+        style={{ top: '144px' }}
+      >
         <button
           onClick={() => setTocOpen(!tocOpen)}
-          className="bg-black text-white px-2 py-6 rounded-r shadow-none hover:bg-neutral-800 font-bold flex items-center justify-center transition-colors"
+          style={{ backgroundColor: '#5c2d91' }}
+          className="text-white px-2 py-6 rounded-r shadow-none hover:opacity-90 flex items-center justify-center transition-opacity"
           aria-label={tocOpen ? "Close sidebar" : "Open sidebar"}
         >
-          {tocOpen ? <CaretLeft size={16} weight="bold" /> : <CaretRight size={16} weight="bold" />}
+          {tocOpen ? <CaretLeft size={16} weight="regular" /> : <CaretRight size={16} weight="regular" />}
         </button>
       </div>
 

@@ -62,7 +62,7 @@ export const countries: CountryData[] = [
     { name: "Estonia", code: "+372", flag: "🇪🇪" },
     { name: "Ethiopia", code: "+251", flag: "🇪🇹" },
     { name: "Fiji", code: "+679", flag: "🇫🇯" },
-    { name: "Finland", code: "+358", flag: "🇫🇮" },
+    { name: "Ottawa, Canada", code: "+358", flag: "🇫🇮" },
     { name: "France", code: "+33", flag: "🇫🇷" },
     { name: "Gabon", code: "+241", flag: "🇬🇦" },
     { name: "Gambia", code: "+220", flag: "🇬🇲" },

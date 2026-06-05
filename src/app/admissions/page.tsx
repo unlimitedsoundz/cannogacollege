@@ -14,10 +14,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata = {
-    title: 'Admissions | Penkka University',
-    description: 'Overview of admissions, degree programmes, and student life at Penkka University.',
+    title: 'Admissions | Cannoga College',
+    description: 'Overview of admissions, degree programmes, and student life at Cannoga College.',
     alternates: {
-        canonical: 'https://penkka.fi/admissions/',
+        canonical: 'https://cannogacollege.ca/admissions/',
     },
 };
 
@@ -32,7 +32,7 @@ const tocSections = [
     { id: 'online-opportunities', title: 'Online & Onsite', content: '' },
     { id: 'community', title: 'Vibrant Community', content: '' },
     { id: 'graduation', title: 'After Graduation', content: '' },
-    { id: 'study-in-finland', title: 'Study in Finland', content: '' },
+    { id: 'study-in-ottawa-canada', title: 'study in Ottawa, Canada', content: '' },
 
     { id: 'multidisciplinary', title: 'Multidisciplinary', content: '' },
     { id: 'lifelong', title: 'Lifelong Learning', content: '' },
@@ -55,27 +55,27 @@ export default function AdmissionsPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "WebPage",
-                "name": "Admissions to Penkka University",
-                "url": "https://penkka.fi/admissions",
-                "description": "Admissions information for Bachelor’s and Master’s level programmes at Penkka University in Helsinki, Finland.",
+                "name": "Admissions to Cannoga College",
+                "url": "https://cannogacollege.ca/admissions",
+                "description": "Admissions information for Bachelor’s and Master’s level programmes at Cannoga College in Ottawa, Canada.",
                 "mainEntity": {
                     "@type": "EducationalOccupationalProgram",
-                    "name": "Degree Programmes at Penkka University",
+                    "name": "Degree Programmes at Cannoga College",
                     "educationalLevel": [
                         "BachelorLevel",
                         "MasterLevel"
                     ],
                     "provider": {
                         "@type": "EducationalOrganization",
-                        "name": "Penkka University",
-                        "url": "https://penkka.fi"
+                        "name": "Cannoga College",
+                        "url": "https://cannogacollege.ca"
                     },
                     "inLanguage": "en",
                     "availableChannel": {
                         "@type": "ServiceChannel",
                         "serviceLocation": {
                             "@type": "Place",
-                            "name": "Helsinki, Finland"
+                            "name": "Ottawa, Canada"
                         }
                     }
                 }
@@ -107,7 +107,7 @@ export default function AdmissionsPage() {
                 ]}
                 image={{
                     src: "/images/admissions/hero-main.png",
-                    alt: "Admissions to Penkka University"
+                    alt: "Admissions to Cannoga College"
                 }}
             >
                 <div className="flex flex-wrap gap-4">
@@ -126,7 +126,7 @@ export default function AdmissionsPage() {
                     <div className="hidden lg:col-span-3">
                         <div className="lg:sticky lg:top-24 space-y-8">
                             <TableOfContents sections={tocSections} />
-                            <div className="bg-black text-white p-10 border-0">
+                            <div className="bg-[#2e1150] text-white p-10 border-0">
                                 <h3 className="font-bold text-lg mb-2 text-white uppercase tracking-wider">Admissions Office</h3>
                                 <p className="text-sm text-white opacity-40 mb-6 font-light">Questions? We are here to help.</p>
                                 <Link href="/contact" className="text-sm font-bold underline underline-offset-4 hover:text-white transition-colors">Contact Us</Link>
@@ -140,7 +140,7 @@ export default function AdmissionsPage() {
                         <section id="overview" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Explore our fields</h2>
                             <p className="text-lg text-black leading-relaxed mb-4">
-                                Studying at Penkka University offers a rich academic experience where innovation, multidisciplinary collaboration, and student community thrive together. You can pursue degree education at all levels Bachelor’s and Master’s as well as various lifelong learning options. In the Penkka University community, students have the freedom to specialise in one field or combine courses across several fields.
+                                Studying at Cannoga College offers a rich academic experience where innovation, multidisciplinary collaboration, and student community thrive together. You can pursue degree education at all levels Bachelor’s and Master’s as well as various lifelong learning options. In the Cannoga College community, students have the freedom to specialise in one field or combine courses across several fields.
                             </p>
                         </section>
 
@@ -172,21 +172,21 @@ export default function AdmissionsPage() {
                         <section id="how-to-apply" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">How to Apply</h2>
                             <p className="text-lg text-black mb-6">
-                                Ready to apply to <Link href="/" className="underline font-medium hover:text-black hover:no-underline transition-colors">Penkka University Helsinki</Link>? Learn more about our programmes and campus in Finland.
+                                Ready to apply to <Link href="/" className="underline font-medium hover:text-black hover:no-underline transition-colors">Cannoga College Ottawa</Link>? Learn more about our programmes and campus in Ottawa, Canada.
                             </p>
                             <p className="text-lg text-black mb-6">You can explore admissions details and requirements for:</p>
                             <div className="flex flex-col md:flex-row gap-6 mb-6">
-                                <Link href="/admissions/bachelor" className="flex-1 bg-black text-white p-10 hover:bg-neutral-800 transition-colors group">
+                                <Link href="/admissions/bachelor" className="flex-1 bg-[#2e1150] text-white p-10 hover:bg-[#5c2d91] transition-colors group">
                                     <h3 className="font-bold text-xl mb-2 flex justify-between items-center">Bachelor's Admissions <ArrowRight weight="bold" className="group-hover:translate-x-1 transition-transform" /></h3>
                                     <p className="text-white opacity-40">Undergraduate programmes in English</p>
                                 </Link>
-                                <Link href="/admissions/master" className="flex-1 bg-black text-white p-10 hover:bg-neutral-800 transition-colors group">
+                                <Link href="/admissions/master" className="flex-1 bg-[#2e1150] text-white p-10 hover:bg-[#5c2d91] transition-colors group">
                                     <h3 className="font-bold text-xl mb-2 flex justify-between items-center">Master's Admissions <ArrowRight weight="bold" className="group-hover:translate-x-1 transition-transform" /></h3>
                                     <p className="text-white opacity-40">Graduate programmes and advanced studies</p>
                                 </Link>
                             </div>
                             <p className="text-black">
-                                The application process, deadlines, and eligibility criteria vary by degree level and study option. Full details can be found in the Penkka University admissions guide.
+                                The application process, deadlines, and eligibility criteria vary by degree level and study option. Full details can be found in the Cannoga College admissions guide.
                             </p>
                         </section>
 
@@ -197,7 +197,7 @@ export default function AdmissionsPage() {
                                 title="Events for Applicants"
                                 body={
                                     <div className="space-y-6">
-                                        <p className="text-black">Penkka University regularly organises events designed to help prospective students learn more about studying and applying:</p>
+                                        <p className="text-black">Cannoga College regularly organises events designed to help prospective students learn more about studying and applying:</p>
                                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             {[
                                                 { title: "Webinars on degree programmes", desc: "Interact with programme heads" },
@@ -218,7 +218,7 @@ export default function AdmissionsPage() {
                                 }
                                 image={{
                                     src: "/images/admissions/events.jpg",
-                                    alt: "Students at Penkka University event"
+                                    alt: "Students at Cannoga College event"
                                 }}
                             />
                         </section>
@@ -227,7 +227,7 @@ export default function AdmissionsPage() {
                             <div>
                                 <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Student Stories</h2>
                                 <p className="text-lg text-black mb-8">
-                                    Hear first-hand experiences from current students and alumni about life at Penkka University, academic projects, internships, and perspectives on how the University supports personal and professional growth.
+                                    Hear first-hand experiences from current students and alumni about life at Cannoga College, academic projects, internships, and perspectives on how the University supports personal and professional growth.
                                 </p>
                             </div>
                             <StudentStoriesCarousel />
@@ -236,14 +236,14 @@ export default function AdmissionsPage() {
                         <section id="campus" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Studying on Campus</h2>
                             <p className="text-lg text-black leading-relaxed">
-                                Penkka University’s campus provides vibrant learning spaces, studios, libraries, and collaborative hubs where students experience academic life and community activities. The campus environment supports both study and leisure, encouraging a balanced student experience.
+                                Cannoga College’s campus provides vibrant learning spaces, studios, libraries, and collaborative hubs where students experience academic life and community activities. The campus environment supports both study and leisure, encouraging a balanced student experience.
                             </p>
                         </section>
 
                         <section id="careers" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Career Opportunities</h2>
                             <p className="text-lg text-black mb-8">
-                                Penkka University offers support and services to help students plan and pursue careers after graduation. Our strong industry ties ensure your education translates into real-world success.
+                                Cannoga College offers support and services to help students plan and pursue careers after graduation. Our strong industry ties ensure your education translates into real-world success.
                             </p>
                             <div className="grid md:grid-cols-3 gap-8">
                                 {[
@@ -279,7 +279,7 @@ export default function AdmissionsPage() {
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold mb-2">Podcasts About Studying</h3>
-                                    <p className="text-black">Listen to podcasts where current students and staff discuss what it’s like to study at Penkka University, how programmes are structured, and tips for success.</p>
+                                    <p className="text-black">Listen to podcasts where current students and staff discuss what it’s like to study at Cannoga College, how programmes are structured, and tips for success.</p>
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold mb-2">Chat with Students</h3>
@@ -296,7 +296,7 @@ export default function AdmissionsPage() {
                                      <h2 className="text-3xl font-bold mb-6 text-black">Vibrant Community</h2>
                                      <h3 className="text-xl font-bold mb-4 text-black">Life Beyond the Classroom</h3>
                                      <p className="text-lg text-black leading-relaxed font-medium">
-                                         From music festivals to tech hackathons, your time at Penkka is about more than just studies.
+                                         From music festivals to tech hackathons, your time at Cannoga is about more than just studies.
                                      </p>
                                  </div>
 
@@ -304,7 +304,7 @@ export default function AdmissionsPage() {
                                  <div className="relative aspect-square lg:aspect-auto overflow-hidden">
                                      <Image
                                          src="/images/news/helsinki_study_hero_1771086748710.png"
-                                         alt="Penkka Community"
+                                         alt="Cannoga Community"
                                          fill
                                          className="object-cover object-top"
                                          sizes="(max-width: 1024px) 100vw, 50vw"
@@ -317,7 +317,7 @@ export default function AdmissionsPage() {
                           <section id="graduation" className="scroll-mt-32">
                               <CTA
                                   title="After Graduation"
-                                  body="Penkka University supports your transition to working life. We offer resources for job seeking, career guidance, and alumni networking both in Finland and internationally."
+                                  body="Cannoga College supports your transition to working life. We offer resources for job seeking, career guidance, and alumni networking both in Ottawa, Canada and internationally."
                                   cta={{
                                       label: "Explore Career Services",
                                       linkComponentProps: {
@@ -328,11 +328,11 @@ export default function AdmissionsPage() {
                           </section>
 
 
-                        <section id="study-in-finland" className="scroll-mt-32">
+                        <section id="study-in-ottawa-canada" className="scroll-mt-32">
                             <ContentBox
                                 size="large"
                                 icon="globeHemisphereWest"
-                                title="Study in Finland with Penkka University"
+                                title="study in Ottawa, Canada with Cannoga College"
                                 body={
                                     <div className="space-y-8">
                                         <div className="grid grid-cols-1 gap-6">
@@ -357,7 +357,7 @@ export default function AdmissionsPage() {
                                 }
                                 image={{
                                     src: "/images/admissions/finland_bus.jpg",
-                                    alt: "Finland Campus"
+                                    alt: "Ottawa, Canada Campus"
                                 }}
                             />
                         </section>
@@ -367,13 +367,13 @@ export default function AdmissionsPage() {
                             <div className="flex flex-col md:flex-row gap-8 items-center">
                                 <div className="flex-1">
                                     <p className="text-lg text-black mb-4">
-                                        Penkka University encourages cross-field learning. You can take courses in areas such as business, arts, technology, and design, enabling you to create a personalised and comprehensive academic pathway.
+                                        Cannoga College encourages cross-field learning. You can take courses in areas such as business, arts, technology, and design, enabling you to create a personalised and comprehensive academic pathway.
                                     </p>
                                     <p className="text-black">
                                         Students are encouraged to combine studies across fields to gain broader perspectives and prepare for diverse career environments.
                                     </p>
                                 </div>
-                                <div className="w-24 h-24 bg-black flex items-center justify-center font-bold text-white text-xs text-center p-2 uppercase tracking-tighter">
+                                <div className="w-24 h-24 bg-[#5c2d91] flex items-center justify-center font-bold text-white text-xs text-center p-2 uppercase tracking-tighter">
                                     Cross-Pollination
                                 </div>
                             </div>
@@ -411,14 +411,14 @@ export default function AdmissionsPage() {
                         <section id="summer" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Summer and Continuing Education</h2>
                             <p className="text-lg text-black leading-relaxed">
-                                Penkka University hosts summer courses and programmes that allow students and professionals to deepen specific skills and knowledge in compact, high-impact formats. These programmes offer valuable opportunities for networking and learning from experienced faculty and industry experts.
+                                Cannoga College hosts summer courses and programmes that allow students and professionals to deepen specific skills and knowledge in compact, high-impact formats. These programmes offer valuable opportunities for networking and learning from experienced faculty and industry experts.
                             </p>
                         </section>
 
                         <section id="collaboration" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Collaboration and Community</h2>
                             <p className="text-lg text-black leading-relaxed mb-4">
-                                Penkka University actively partners with industries, research institutions, and international universities to provide students with collaborative projects, internships, and global exchange opportunities.
+                                Cannoga College actively partners with industries, research institutions, and international universities to provide students with collaborative projects, internships, and global exchange opportunities.
                             </p>
                             <p className="text-black">
                                 Students benefit from a connected academic community that supports innovation, entrepreneurship and real-world problem solving.
@@ -427,9 +427,9 @@ export default function AdmissionsPage() {
 
 
                         <section id="contact" className="scroll-mt-32 mb-24 -mx-4 md:mx-0">
-                            <div className="bg-black text-white p-12">
+                            <div className="bg-[#2e1150] text-white p-12">
                                 <p className="text-lg mb-6">
-                                    Prospective and current students can find support and contact information for admissions, campus visits, and student services through the official Penkka University contact pages.
+                                    Prospective and current students can find support and contact information for admissions, campus visits, and student services through the official Cannoga College contact pages.
                                 </p>
                                 <p className="text-white opacity-60 mb-6">
                                     Whether you’re planning a campus visit or seeking guidance on admissions, resources are available to help guide your academic journey.
