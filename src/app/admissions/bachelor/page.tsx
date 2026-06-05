@@ -68,9 +68,10 @@ export default function BachelorAdmissionsPage() {
                     { label: 'Bachelor' }
                 ]}
                 image={{
-                    src: "/images/admissions/hero.jpg",
+                    src: "/images/admissions/bachelor-hero.png",
                     alt: "Bachelor's Students"
                 }}
+                imagePosition="object-left-top"
             >
                 <Link href="/admissions/application-process" className="text-aalto-3 font-bold underline underline-offset-8 decoration-black hover:opacity-70 transition-colors text-black inline-flex items-center gap-2">
                     Start application <ArrowRight size={20} weight="bold" />
