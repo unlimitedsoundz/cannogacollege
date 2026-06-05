@@ -44,7 +44,7 @@ export default function StudiesPage() {
                 </div>
             </Hero>
 
-            <div id="programmes" className="container mx-auto px-0 md:px-4 py-12 md:py-32">
+            <div id="programmes" className="container mx-auto py-12 md:py-32">
                 <div className="grid md:grid-cols-2 gap-4 md:gap-12">
                     {/* Bachelor's */}
                     <div className="group relative bg-black overflow-hidden aspect-[4/3] md:aspect-auto md:min-h-[500px]">

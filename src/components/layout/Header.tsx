@@ -246,7 +246,7 @@ export function Header() {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="lg:hidden absolute top-20 left-0 right-0 bg-white h-[calc(100vh-5rem)] overflow-y-auto border-t border-neutral-100">
+                <div className="lg:hidden absolute top-28 left-0 right-0 bg-white h-[calc(100vh-112px)] overflow-y-auto border-t border-neutral-100">
                     <div className="flex flex-col pb-20">
                         {navigation.map((item) => (
                             <div key={item.name} className="border-b border-neutral-100">

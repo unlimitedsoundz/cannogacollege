@@ -412,6 +412,11 @@
 }
 
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-sans);
   background: var(--color-background);
@@ -420,6 +425,7 @@ body {
   font-size: 1.125rem; /* aalto-3 */
   line-height: 1.75rem; /* aalto-3 */
 }
+
 
 /* Force unbolding of strong and b tags site-wide */
 strong, b {
