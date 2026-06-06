@@ -210,7 +210,7 @@ export default function InternationalGuidePage() {
                         </div>
                         <div className="relative aspect-video overflow-hidden rounded-lg shadow mb-10">
                             <Image
-                                src="/images/news/helsinki_study_hero_1771086631952.png"
+                                src="/images/fall-in-ottawa.png"
                                 alt="Students enjoying life in Ottawa, Canada"
                                 fill
                                 className="object-cover"
