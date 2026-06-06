@@ -38,7 +38,7 @@ export default function HousingGuidePage() {
                         { label: 'Housing' }
                     ]}
                     image={{
-                        src: "/images/housing-hero-pin.jpg",
+                        src: "/images/student-housing-hero.png",
                         alt: "Student Housing in Ottawa"
                     }}
                 />
