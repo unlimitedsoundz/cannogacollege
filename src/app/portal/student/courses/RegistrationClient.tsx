@@ -136,7 +136,7 @@ export default function RegistrationClient({
 
                         <div className="flex justify-between items-end mb-2">
                             <span className="text-3xl font-black text-black">{totalCredits}</span>
-                            <span className="text-sm font-bold text-black">/ {MAX_CREDITS} ECTS</span>
+                            <span className="text-sm font-bold text-black">/ {MAX_CREDITS} Credits</span>
                         </div>
 
                         <div className="h-2 w-full bg-neutral-100 rounded-full overflow-hidden mb-4">
@@ -206,7 +206,7 @@ export default function RegistrationClient({
                                                 {module.code}
                                             </span>
                                             <span className="text-[10px] font-bold bg-black text-white px-2 py-0.5 rounded-none uppercase">
-                                                {module.credits} ECTS
+                                                {module.credits} Credits
                                             </span>
                                         </div>
                                         <h3 className="text-lg font-bold text-black group-hover:underline mb-1">

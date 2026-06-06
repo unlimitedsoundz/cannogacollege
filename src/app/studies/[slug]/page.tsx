@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props) {
 
     const { data: course } = await supabase
         .from('Course')
-        .select('title, description, degreeType, ects')
+        .select('title, description, degreeType, credits')
         .eq('slug', slug)
         .single();
 
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props) {
 
     return {
         title: `${course.title} — ${course.degreeType} | Cannoga College`,
-        description: course.description?.replace(/Cannoga C\x6Fllege|SYKLI|College/gi, 'Cannoga College').substring(0, 160) || `Study ${course.title} (${course.degreeType}, ${course.ects} credits) at Cannoga College.`,
+        description: course.description?.replace(/Cannoga C\x6Fllege|SYKLI|College/gi, 'Cannoga College').substring(0, 160) || `Study ${course.title} (${course.degreeType}, ${course.credits} credits) at Cannoga College.`,
         alternates: {
             canonical: `https://cannogacollege.ca/studies/${slug}/`,
         },
@@ -110,7 +110,7 @@ export default async function CourseDetailPage({ params }: Props) {
         hasCourseInstance: {
             '@type': 'CourseInstance',
             courseMode: 'Blended',
-            courseWorkload: `P${course.ects}M` // ISO 8601 duration format approximation
+            courseWorkload: `P${course.credits}M` // ISO 8601 duration format approximation
         }
     };
 

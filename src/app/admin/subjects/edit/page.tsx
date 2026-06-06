@@ -129,9 +129,9 @@ function SubjectEditorContent() {
                             </select>
                         </div>
 
-                        {/* ECTS Credits */}
+                        {/* Credits */}
                         <div className="space-y-1.5">
-                            <label className="text-sm font-bold text-neutral-600">Credits (ECTS)</label>
+                            <label className="text-sm font-bold text-neutral-600">Credits</label>
                             <input
                                 name="creditUnits"
                                 type="number"

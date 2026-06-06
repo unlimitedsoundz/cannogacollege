@@ -276,7 +276,7 @@ function AdmissionLetterContent() {
                                 { label: 'Intake', value: 'August / Autumn 2026' },
                                 { label: 'Programme Start Date', value: '17.08.2026' },
                                 { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '17.08.2028' : '17.08.2029' },
-                                { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 ECTS' : '180 ECTS' },
+                                { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 credits' : '180 credits' },
                                 { label: 'Programme of Study', value: `${application.course?.title} (${application.course?.programType || 'Full-time'})` }
                             ].map((row, idx) => (
                                 <div key={idx} className="flex justify-between py-1.5 print:py-1 border-b border-black">
@@ -402,7 +402,7 @@ function AdmissionLetterContent() {
                                 </div>
                                 <div>
                                     <div className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 print:mb-0">Total Credits</div>
-                                    <div className="text-sm print:text-xs font-bold text-black">{(application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 ECTS' : '180 ECTS'}</div>
+                                    <div className="text-sm print:text-xs font-bold text-black">{(application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 credits' : '180 credits'}</div>
                                 </div>
                             </div>
                         </div>

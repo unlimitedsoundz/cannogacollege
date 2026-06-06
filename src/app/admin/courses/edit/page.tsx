@@ -127,7 +127,7 @@ function CourseEditorContent() {
                         </div>
 
                         <div className="space-y-1.5">
-                            <label className="text-[10px] font-black uppercase text-neutral-400 tracking-widest">ECTS Credits</label>
+                            <label className="text-[10px] font-black uppercase text-neutral-400 tracking-widest">Credits</label>
                             <input
                                 name="credits"
                                 type="number"
