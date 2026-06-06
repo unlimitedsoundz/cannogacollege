@@ -41,7 +41,7 @@ export default function ArrivalGuidePage() {
                     { label: 'Arrival Guide' }
                 ]}
                 image={{
-                    src: "/images/arrival-hero-v2.jpg",
+                    src: "/images/arrival-hero.png",
                     alt: "Cannoga Arrival"
                 }}
             />
