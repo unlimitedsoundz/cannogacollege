@@ -110,8 +110,8 @@ export default function InternationalGuidePage() {
                             </div>
                             <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
                                 <Image
-                                    src="/images/news/helsinki_study_hero_1771086684833.png"
-                                    alt="International students exploring Ottawa, Canada"
+                                    src="/images/byward-market-ottawa.jpg"
+                                    alt="ByWard Market in Ottawa, Canada"
                                     fill
                                     className="object-cover"
                                     sizes="(max-width: 1024px) 100vw, 50vw"
