@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { AuthProvider } from "@/components/auth/AuthProvider";
+import { MainLayoutWrapper } from "@/components/layout/MainLayoutWrapper";
 
 // next/font/google is disabled because build-time font fetching fails in this environment.
 // We use a standard Google Fonts link in the <head> instead.
@@ -118,9 +119,9 @@ export default function RootLayout({
             <body className="font-sans antialiased">
                 <AuthProvider>
                     <Header />
-                    <main className="pt-[112px] md:pt-[148px]">
+                    <MainLayoutWrapper>
                         {children}
-                    </main>
+                    </MainLayoutWrapper>
                     <Footer />
                     <CookieConsent />
                 </AuthProvider>
