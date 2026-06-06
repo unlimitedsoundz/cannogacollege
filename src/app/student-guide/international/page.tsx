@@ -104,8 +104,8 @@ export default function InternationalGuidePage() {
                                 </div>
                                 <div className="flex flex-wrap gap-6 pt-2">
                                     <Link href="https://www.canada.ca" target="_blank" className="cc-btn-primary text-sm">Canada.ca →</Link>
-                                    <Link href="https://ottawatourism.ca" target="_blank" className="font-bold underline text-xs uppercase tracking-widest hover:text-[#5c2d91] transition-colors">Visit Ottawa →</Link>
-                                    <Link href="https://www.investottawa.ca" target="_blank" className="font-bold underline text-xs uppercase tracking-widest hover:text-[#5c2d91] transition-colors">Invest Ottawa →</Link>
+                                    <Link href="https://ottawatourism.ca" target="_blank" className="cc-btn-primary text-sm">Visit Ottawa →</Link>
+                                    <Link href="https://www.investottawa.ca" target="_blank" className="cc-btn-primary text-sm">Invest Ottawa →</Link>
                                 </div>
                             </div>
                             <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
